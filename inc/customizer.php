@@ -75,7 +75,7 @@ function gp_theme_customize_register( $wp_customize ) {
 
     // Phone Number
     $wp_customize->add_setting( 'gp_company_phone', array(
-        'default'           => '+91-8591585497',
+        'default'           => '+91-9876543210',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
     $wp_customize->add_control( 'gp_company_phone', array(
@@ -86,7 +86,7 @@ function gp_theme_customize_register( $wp_customize ) {
 
     // Email Address
     $wp_customize->add_setting( 'gp_company_email', array(
-        'default'           => 'info@jyotiglobalplast.com',
+        'default'           => 'info@srspolymer.com',
         'sanitize_callback' => 'sanitize_email',
     ) );
     $wp_customize->add_control( 'gp_company_email', array(
@@ -97,7 +97,7 @@ function gp_theme_customize_register( $wp_customize ) {
 
     // Address
     $wp_customize->add_setting( 'gp_company_address', array(
-        'default'           => 'R-554/555/556/558 TTC MIDC Industrial Area, Rabale, Navi Mumbai, Thane 400701, MH, India',
+        'default'           => 'SRS Polymer Compounding Mill & Warehouse, Delhi-NCR & Bhiwadi, India',
         'sanitize_callback' => 'sanitize_textarea_field',
     ) );
     $wp_customize->add_control( 'gp_company_address', array(
@@ -125,18 +125,18 @@ function gp_theme_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_setting( 'gp_whatsapp_number', array(
-        'default'           => '918591585497',
+        'default'           => '919876543210',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
     $wp_customize->add_control( 'gp_whatsapp_number', array(
         'label'       => __( 'WhatsApp Phone Number (with Country Code)', 'gp-theme' ),
-        'description' => __( 'Example: 918591585497 (no plus or spaces)', 'gp-theme' ),
+        'description' => __( 'Example: 919876543210 (no plus or spaces)', 'gp-theme' ),
         'section'     => 'gp_whatsapp_section',
         'type'        => 'text',
     ) );
 
     $wp_customize->add_setting( 'gp_whatsapp_text', array(
-        'default'           => 'Hello! I need more info about plastic moulding and drone solutions.',
+        'default'           => 'Hi SRS Polymer! I need wholesale rates and availability for Plastic Granules (Dana).',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
     $wp_customize->add_control( 'gp_whatsapp_text', array(
@@ -154,7 +154,7 @@ function gp_theme_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_setting( 'gp_social_linkedin', array(
-        'default'           => 'https://in.linkedin.com/company/jyoti-globalplast-pvt-ltd',
+        'default'           => 'https://in.linkedin.com/company/srs-polymer',
         'sanitize_callback' => 'esc_url_raw',
     ) );
     $wp_customize->add_control( 'gp_social_linkedin', array(
@@ -164,7 +164,7 @@ function gp_theme_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_setting( 'gp_social_facebook', array(
-        'default'           => 'https://www.facebook.com/jypolycontainer/',
+        'default'           => 'https://www.facebook.com/srspolymer/',
         'sanitize_callback' => 'esc_url_raw',
     ) );
     $wp_customize->add_control( 'gp_social_facebook', array(

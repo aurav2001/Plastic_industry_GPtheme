@@ -13,12 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $phone     = get_theme_mod( 'gp_company_phone', '+91-8591585497' );
 $clean_tel = preg_replace( '/[^0-9]/', '', $phone );
-$email     = get_theme_mod( 'gp_company_email', 'info@jyotiglobalplast.com' );
-$address   = get_theme_mod( 'gp_company_address', 'R-554/555/556/558 TTC MIDC industrial area Rabale Navi Mumbai, Thane 400701, MH, India' );
-$cert      = get_theme_mod( 'gp_company_cert', 'ISO 9001:2015 Certified Company' );
+$email     = get_theme_mod( 'gp_company_email', 'info@srspolymer.com' );
+$address   = get_theme_mod( 'gp_company_address', 'Industrial Area, Phase-2, New Delhi / Navi Mumbai, India' );
+$cert      = get_theme_mod( 'gp_company_cert', 'ISO 9001:2015 Certified Polymer Supplier' );
 $wa_enable = get_theme_mod( 'gp_enable_whatsapp', true );
 $wa_number = get_theme_mod( 'gp_whatsapp_number', '918591585497' );
-$wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi Jyoti Global Plast! I need more info about your plastic moulding and drone solutions.' );
+$wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price and availability for Plastic Granules (Dana).' );
 ?>
 
     </div><!-- #content -->
@@ -32,16 +32,16 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi Jyoti Global Plast! I need m
             <div class="gp-cta-strip-card">
                 <div class="gp-cta-strip-text">
                     <span class="gp-tag-pill"><?php esc_html_e( 'PARTNER WITH LEADERS', 'gp-theme' ); ?></span>
-                    <h3><?php esc_html_e( 'Looking for High-Precision Plastic Moulding or Defence Drone Solutions?', 'gp-theme' ); ?></h3>
-                    <p><?php esc_html_e( 'From 100% leak-proof UN containers to aerospace-grade composite drone parts — we deliver superior quality at scale.', 'gp-theme' ); ?></p>
+                    <h3><?php esc_html_e( 'Looking for Premium Plastic Granules (Dana) & Custom Compounding?', 'gp-theme' ); ?></h3>
+                    <p><?php esc_html_e( 'From virgin PP & HDPE granules to high-impact ABS, PVC compounds, and masterbatches — we supply certified quality at competitive bulk rates.', 'gp-theme' ); ?></p>
                 </div>
                 <div class="gp-cta-strip-actions">
                     <a href="#contact" class="gp-btn gp-btn-light gp-btn-lg">
-                        <span><?php esc_html_e( 'Request Custom Quote', 'gp-theme' ); ?></span>
+                        <span><?php esc_html_e( 'Request Bulk Price Quote', 'gp-theme' ); ?></span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </a>
                     <a href="tel:<?php echo esc_attr( $clean_tel ); ?>" class="gp-btn gp-btn-glass gp-btn-lg">
-                        <span><?php esc_html_e( 'Call Our Engineers', 'gp-theme' ); ?></span>
+                        <span><?php esc_html_e( 'Speak to Polymer Specialist', 'gp-theme' ); ?></span>
                     </a>
                 </div>
             </div>
@@ -62,17 +62,17 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi Jyoti Global Plast! I need m
                                 <circle cx="20" cy="24" r="3" fill="#00b4d8"/>
                             </svg>
                         </div>
-                        <h3 class="gp-footer-company">Jyoti Global Plast Limited</h3>
+                        <h3 class="gp-footer-company">SRS Polymer Industries</h3>
                     </div>
                     <p class="gp-footer-cert-badge">
                         <span class="gp-pulse-dot"></span> <?php echo esc_html( $cert ); ?>
                     </p>
                     <p class="gp-footer-desc">
-                        <?php esc_html_e( 'Pioneers in Blow & Injection Moulding, Industrial Polymer Packaging, Precision Automotive Spares, and Defence & Aerospace Drones with over 40 years of engineering excellence. 100% Made in India.', 'gp-theme' ); ?>
+                        <?php esc_html_e( 'Leading manufacturer, importer, and supplier of Virgin and Reprocessed Plastic Granules (Plastic Dana) including PP, HDPE, LDPE, ABS, PVC, and Color Masterbatches for plastic moulding and extrusion industries across India.', 'gp-theme' ); ?>
                     </p>
                     <div class="gp-footer-socials">
-                        <?php if ( get_theme_mod( 'gp_social_linkedin', 'https://in.linkedin.com/company/jyoti-globalplast-pvt-ltd' ) ) : ?>
-                            <a href="<?php echo esc_url( get_theme_mod( 'gp_social_linkedin', 'https://in.linkedin.com/company/jyoti-globalplast-pvt-ltd' ) ); ?>" target="_blank" rel="noopener" aria-label="LinkedIn" class="gp-social-circle">
+                        <?php if ( get_theme_mod( 'gp_social_linkedin', 'https://in.linkedin.com/company/srs-polymer' ) ) : ?>
+                            <a href="<?php echo esc_url( get_theme_mod( 'gp_social_linkedin', 'https://in.linkedin.com/company/srs-polymer' ) ); ?>" target="_blank" rel="noopener" aria-label="LinkedIn" class="gp-social-circle">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                             </a>
                         <?php endif; ?>
@@ -153,7 +153,7 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi Jyoti Global Plast! I need m
         <div class="gp-footer-bottom">
             <div class="gp-container gp-footer-bottom-inner">
                 <p class="gp-copyright-text">
-                    &copy; <?php echo esc_html( date( 'Y' ) ); ?> <strong>Jyoti Global Plast Limited</strong>. <?php esc_html_e( 'All Rights Reserved.', 'gp-theme' ); ?>
+                    &copy; <?php echo esc_html( date( 'Y' ) ); ?> <strong>SRS Polymer Industries</strong>. <?php esc_html_e( 'All Rights Reserved.', 'gp-theme' ); ?>
                 </p>
                 <div class="gp-footer-bottom-links">
                     <a href="#investors"><?php esc_html_e( 'Privacy Policy', 'gp-theme' ); ?></a>
@@ -174,11 +174,11 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi Jyoti Global Plast! I need m
         <div class="gp-wa-chatbox" id="gp-wa-chatbox">
             <div class="gp-wa-header">
                 <div class="gp-wa-avatar">
-                    <div class="gp-wa-avatar-img">JP</div>
+                    <div class="gp-wa-avatar-img">SP</div>
                     <span class="gp-wa-status-dot"></span>
                 </div>
                 <div class="gp-wa-info">
-                    <h4>Jyoti Global Plast</h4>
+                    <h4>SRS Polymer</h4>
                     <span><?php esc_html_e( 'Typically replies within minutes', 'gp-theme' ); ?></span>
                 </div>
                 <button class="gp-wa-close" id="gp-wa-close" aria-label="<?php esc_attr_e( 'Close WhatsApp Dialog', 'gp-theme' ); ?>">✕</button>
@@ -186,7 +186,7 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi Jyoti Global Plast! I need m
             <div class="gp-wa-body">
                 <div class="gp-wa-msg-bubble">
                     <p><?php esc_html_e( 'Hello 👋 How can we help you today?', 'gp-theme' ); ?></p>
-                    <p class="gp-wa-sub"><?php esc_html_e( 'Feel free to ask about our Blow Moulded Drums, Jerry Cans, Buckets, or Drone Solutions.', 'gp-theme' ); ?></p>
+                    <p class="gp-wa-sub"><?php esc_html_e( 'Ask about today’s rates for PP Granules, HDPE Dana, ABS Engineering Pellets, or Masterbatches.', 'gp-theme' ); ?></p>
                     <span class="gp-wa-time"><?php echo esc_html( date( 'H:i' ) ); ?></span>
                 </div>
             </div>

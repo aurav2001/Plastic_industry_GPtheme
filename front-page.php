@@ -26,7 +26,7 @@ $default_news       = gp_get_default_news();
     <section class="gp-hero" id="home">
         <div class="gp-hero-slider" id="gp-hero-slider">
 
-            <!-- Slide 1: Defence & Aerospace -->
+            <!-- Slide 1: Premium Plastic Granules (Dana) -->
             <div class="gp-hero-slide gp-slide-active" data-slide="0">
                 <div class="gp-hero-bg gp-hero-bg-defence"></div>
                 <div class="gp-hero-overlay"></div>
@@ -34,18 +34,48 @@ $default_news       = gp_get_default_news();
                     <div class="gp-hero-content">
                         <div class="gp-hero-badge">
                             <span class="gp-badge-dot"></span>
-                            <span><?php esc_html_e( 'DEFENCE & AEROSPACE DIVISION', 'gp-theme' ); ?></span>
+                            <span><?php esc_html_e( 'PRIME VIRGIN & RECYCLED POLYMERS', 'gp-theme' ); ?></span>
                         </div>
                         <h1 class="gp-hero-title">
-                            <?php esc_html_e( 'Future of Defence', 'gp-theme' ); ?><br>
-                            <span class="gp-text-highlight"><?php esc_html_e( 'And Aerospace', 'gp-theme' ); ?></span>
+                            <?php esc_html_e( 'Premium Plastic Granules', 'gp-theme' ); ?><br>
+                            <span class="gp-text-highlight"><?php esc_html_e( '(Dana) For Industry', 'gp-theme' ); ?></span>
                         </h1>
                         <p class="gp-hero-lead">
-                            <?php esc_html_e( 'Cutting-edge indigenous drone technology, surveillance UAV systems, and high-strength composite airframe components built for mission-critical reliability.', 'gp-theme' ); ?>
+                            <?php esc_html_e( 'High-quality Polypropylene (PP), High-Density Polyethylene (HDPE), ABS Engineering Pellets, and PVC Compounds engineered for high-speed injection moulding, blow moulding, and extrusion.', 'gp-theme' ); ?>
                         </p>
                         <div class="gp-hero-cta-group">
-                            <a href="#defence" class="gp-btn gp-btn-primary gp-btn-lg">
-                                <span><?php esc_html_e( 'Explore Defence Solutions', 'gp-theme' ); ?></span>
+                            <a href="#products" class="gp-btn gp-btn-primary gp-btn-lg">
+                                <span><?php esc_html_e( 'Explore Plastic Dana', 'gp-theme' ); ?></span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                            <a href="#contact" class="gp-btn gp-btn-outline gp-btn-lg">
+                                <span><?php esc_html_e( 'Get Today’s Dana Rates', 'gp-theme' ); ?></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Consistent MFI & Compounding -->
+            <div class="gp-hero-slide" data-slide="1">
+                <div class="gp-hero-bg gp-hero-bg-plastics"></div>
+                <div class="gp-hero-overlay"></div>
+                <div class="gp-container gp-hero-content-wrapper">
+                    <div class="gp-hero-content">
+                        <div class="gp-hero-badge">
+                            <span class="gp-badge-dot"></span>
+                            <span><?php esc_html_e( 'SRS POLYMER COMPOUNDING', 'gp-theme' ); ?></span>
+                        </div>
+                        <h2 class="gp-hero-title">
+                            <?php esc_html_e( 'Consistent MFI & Batch-Tested', 'gp-theme' ); ?><br>
+                            <span class="gp-text-highlight"><?php esc_html_e( 'Polymer Pellets', 'gp-theme' ); ?></span>
+                        </h2>
+                        <p class="gp-hero-lead">
+                            <?php esc_html_e( 'Zero-impurity virgin and customized reprocessed plastic granules. Batch-tested for exact Melt Flow Index (MFI), tensile strength, density, and color consistency.', 'gp-theme' ); ?>
+                        </p>
+                        <div class="gp-hero-cta-group">
+                            <a href="#products" class="gp-btn gp-btn-primary gp-btn-lg">
+                                <span><?php esc_html_e( 'Browse Granules Catalog', 'gp-theme' ); ?></span>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                             </a>
                             <a href="#contact" class="gp-btn gp-btn-outline gp-btn-lg">
@@ -56,37 +86,7 @@ $default_news       = gp_get_default_news();
                 </div>
             </div>
 
-            <!-- Slide 2: Blow & Injection Moulding -->
-            <div class="gp-hero-slide" data-slide="1">
-                <div class="gp-hero-bg gp-hero-bg-plastics"></div>
-                <div class="gp-hero-overlay"></div>
-                <div class="gp-container gp-hero-content-wrapper">
-                    <div class="gp-hero-content">
-                        <div class="gp-hero-badge">
-                            <span class="gp-badge-dot"></span>
-                            <span><?php esc_html_e( '40+ YEARS OF EXCELLENCE', 'gp-theme' ); ?></span>
-                        </div>
-                        <h2 class="gp-hero-title">
-                            <?php esc_html_e( 'Manufacturing Pioneers in', 'gp-theme' ); ?><br>
-                            <span class="gp-text-highlight"><?php esc_html_e( 'Plastic Engineering', 'gp-theme' ); ?></span>
-                        </h2>
-                        <p class="gp-hero-lead">
-                            <?php esc_html_e( 'Widest range of Blow & Injection Moulded packaging, drums, jerry cans, pails, and precision automotive components. 100% Made in India under one roof.', 'gp-theme' ); ?>
-                        </p>
-                        <div class="gp-hero-cta-group">
-                            <a href="#products" class="gp-btn gp-btn-primary gp-btn-lg">
-                                <span><?php esc_html_e( 'Browse Product Catalog', 'gp-theme' ); ?></span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </a>
-                            <a href="#story" class="gp-btn gp-btn-outline gp-btn-lg">
-                                <span><?php esc_html_e( 'Our Manufacturing Story', 'gp-theme' ); ?></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 3: Sustainable Industrial Packaging -->
+            <!-- Slide 3: Sustainable Recycled Polymers -->
             <div class="gp-hero-slide" data-slide="2">
                 <div class="gp-hero-bg gp-hero-bg-sustainable"></div>
                 <div class="gp-hero-overlay"></div>
@@ -94,22 +94,22 @@ $default_news       = gp_get_default_news();
                     <div class="gp-hero-content">
                         <div class="gp-hero-badge">
                             <span class="gp-badge-dot"></span>
-                            <span><?php esc_html_e( 'ISO 9001:2015 CERTIFIED', 'gp-theme' ); ?></span>
+                            <span><?php esc_html_e( 'SUSTAINABLE CIRCULAR ECONOMY', 'gp-theme' ); ?></span>
                         </div>
                         <h2 class="gp-hero-title">
-                            <?php esc_html_e( 'Sustainable Manufacturing', 'gp-theme' ); ?><br>
-                            <span class="gp-text-highlight"><?php esc_html_e( 'The Path To Greener Future', 'gp-theme' ); ?></span>
+                            <?php esc_html_e( 'Cost-Effective Recycled', 'gp-theme' ); ?><br>
+                            <span class="gp-text-highlight"><?php esc_html_e( '& Custom Compounds', 'gp-theme' ); ?></span>
                         </h2>
                         <p class="gp-hero-lead">
-                            <?php esc_html_e( 'UN-certified hazardous chemical containment, food-grade FDA compliant containers, and zero-defect quality control across 4 manufacturing units.', 'gp-theme' ); ?>
+                            <?php esc_html_e( 'Cut raw material overheads with our premium reprocessed dana and specialized color masterbatches. Suitable for pipes, packaging, automotive, and household items.', 'gp-theme' ); ?>
                         </p>
                         <div class="gp-hero-cta-group">
                             <a href="#contact" class="gp-btn gp-btn-primary gp-btn-lg">
-                                <span><?php esc_html_e( 'Contact Sales Team', 'gp-theme' ); ?></span>
+                                <span><?php esc_html_e( 'Request Sample Bag', 'gp-theme' ); ?></span>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                             </a>
                             <a href="#testing" class="gp-btn gp-btn-outline gp-btn-lg">
-                                <span><?php esc_html_e( 'Testing Facilities', 'gp-theme' ); ?></span>
+                                <span><?php esc_html_e( 'Testing Lab Standards', 'gp-theme' ); ?></span>
                             </a>
                         </div>
                     </div>
@@ -135,7 +135,7 @@ $default_news       = gp_get_default_news();
     </section>
 
     <!-- ========================================================================= -->
-    <!-- 2. FLOATING COUNTER STATS BAR (4 Units, 1000+ Clients, 100+ Products)     -->
+    <!-- 2. FLOATING COUNTER STATS BAR (Polymer Compounding Capacity & Network)     -->
     <!-- ========================================================================= -->
     <section class="gp-stats-bar" id="units">
         <div class="gp-container">
@@ -146,9 +146,9 @@ $default_news       = gp_get_default_news();
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                     </div>
                     <div class="gp-stat-info">
-                        <div class="gp-stat-number"><span class="gp-counter" data-target="4">0</span></div>
-                        <h4 class="gp-stat-title"><?php esc_html_e( 'Manufacturing Units', 'gp-theme' ); ?></h4>
-                        <p class="gp-stat-desc"><?php esc_html_e( 'State-of-the-art blow & injection facilities ensuring efficiency & safety.', 'gp-theme' ); ?></p>
+                        <div class="gp-stat-number"><span class="gp-counter" data-target="50000">0</span><span class="gp-plus">+</span></div>
+                        <h4 class="gp-stat-title"><?php esc_html_e( 'MT Annual Capacity', 'gp-theme' ); ?></h4>
+                        <p class="gp-stat-desc"><?php esc_html_e( 'State-of-the-art twin screw extrusion & compounding facilities.', 'gp-theme' ); ?></p>
                     </div>
                 </div>
 
@@ -157,9 +157,9 @@ $default_news       = gp_get_default_news();
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                     </div>
                     <div class="gp-stat-info">
-                        <div class="gp-stat-number"><span class="gp-counter" data-target="1000">0</span><span class="gp-plus">+</span></div>
-                        <h4 class="gp-stat-title"><?php esc_html_e( 'Global Clients', 'gp-theme' ); ?></h4>
-                        <p class="gp-stat-desc"><?php esc_html_e( 'Trusted by industry leaders like BASF, APAR, HP, Nalco & Ipca.', 'gp-theme' ); ?></p>
+                        <div class="gp-stat-number"><span class="gp-counter" data-target="1200">0</span><span class="gp-plus">+</span></div>
+                        <h4 class="gp-stat-title"><?php esc_html_e( 'B2B Manufacturers', 'gp-theme' ); ?></h4>
+                        <p class="gp-stat-desc"><?php esc_html_e( 'Supplying injection moulders, blow molders, pipe & cable units.', 'gp-theme' ); ?></p>
                     </div>
                 </div>
 
@@ -168,9 +168,9 @@ $default_news       = gp_get_default_news();
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
                     </div>
                     <div class="gp-stat-info">
-                        <div class="gp-stat-number"><span class="gp-counter" data-target="100">0</span><span class="gp-plus">+</span></div>
-                        <h4 class="gp-stat-title"><?php esc_html_e( 'Products Offered', 'gp-theme' ); ?></h4>
-                        <p class="gp-stat-desc"><?php esc_html_e( 'Precision blow drums, jerry cans, pails, toys, auto parts & drones.', 'gp-theme' ); ?></p>
+                        <div class="gp-stat-number"><span class="gp-counter" data-target="50">0</span><span class="gp-plus">+</span></div>
+                        <h4 class="gp-stat-title"><?php esc_html_e( 'Polymer Dana Grades', 'gp-theme' ); ?></h4>
+                        <p class="gp-stat-desc"><?php esc_html_e( 'PP, HDPE, ABS, PVC, LDPE & custom color masterbatches.', 'gp-theme' ); ?></p>
                     </div>
                 </div>
 
@@ -179,9 +179,9 @@ $default_news       = gp_get_default_news();
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                     </div>
                     <div class="gp-stat-info">
-                        <div class="gp-stat-number"><span class="gp-counter" data-target="40">0</span><span class="gp-plus">+</span></div>
+                        <div class="gp-stat-number"><span class="gp-counter" data-target="25">0</span><span class="gp-plus">+</span></div>
                         <h4 class="gp-stat-title"><?php esc_html_e( 'Years Dedication', 'gp-theme' ); ?></h4>
-                        <p class="gp-stat-desc"><?php esc_html_e( 'Decades of polymer specialization with 100% in-house tooling.', 'gp-theme' ); ?></p>
+                        <p class="gp-stat-desc"><?php esc_html_e( 'Decades of polymer specialization with lab-tested batch consistency.', 'gp-theme' ); ?></p>
                     </div>
                 </div>
 
@@ -198,43 +198,43 @@ $default_news       = gp_get_default_news();
                 
                 <div class="gp-about-content">
                     <div class="gp-section-header">
-                        <span class="gp-sub-tag"><?php esc_html_e( 'OUR STORY', 'gp-theme' ); ?></span>
+                        <span class="gp-sub-tag"><?php esc_html_e( 'ABOUT SRS POLYMER', 'gp-theme' ); ?></span>
                         <h2 class="gp-section-title">
-                            <?php esc_html_e( 'Innovative Technologies,', 'gp-theme' ); ?><br>
-                            <span class="gp-accent"><?php esc_html_e( 'Tailored Solutions', 'gp-theme' ); ?></span>
+                            <?php esc_html_e( 'Consistent Polymer Quality,', 'gp-theme' ); ?><br>
+                            <span class="gp-accent"><?php esc_html_e( 'Tailored Compounding Solutions', 'gp-theme' ); ?></span>
                         </h2>
                     </div>
 
                     <p class="gp-lead-text">
-                        <?php esc_html_e( 'We are a leading Plastic & FRP moulding enterprise specializing in the manufacturing of Industrial Packaging Containers, Automotive Spares, Children Ergonomic Toys & Furniture, and advanced Defence & Aerospace Drone systems.', 'gp-theme' ); ?>
+                        <?php esc_html_e( 'SRS Polymer is a premier manufacturer, processor, and supplier of virgin and reprocessed plastic granules (plastic dana), engineering polymers, and specialty masterbatches across India.', 'gp-theme' ); ?>
                     </p>
 
                     <p class="gp-body-text">
-                        <?php esc_html_e( 'Our products are crafted using world-class extrusion blow moulding machines, high-tonnage micro-processor injection moulding presses, and aerospace composite cleanrooms. We collaborate closely with tier-1 enterprise clients to optimize manufacturing for superior durability, zero leakage, faster dispatch, and significant cost savings.', 'gp-theme' ); ?>
+                        <?php esc_html_e( 'We supply injection moulding, blow moulding, and pipe extrusion units with premium polymer pellets that ensure uniform melt flow index (MFI), zero nozzle choking, superior tensile strength, and reduced manufacturing cycle times.', 'gp-theme' ); ?>
                     </p>
 
                     <div class="gp-highlight-box">
                         <div class="gp-highlight-icon">🇮🇳</div>
                         <div class="gp-highlight-text">
-                            <strong><?php esc_html_e( '100% Made in India • Under One Roof', 'gp-theme' ); ?></strong>
-                            <p><?php esc_html_e( 'Our sustained dedication of over 40 years to polymer engineering empowers us to offer the widest array of industrial solutions with end-to-end tooling, quality testing, and logistics support.', 'gp-theme' ); ?></p>
+                            <strong><?php esc_html_e( 'Direct Compounding Plant • Ready 25kg Bag Stock', 'gp-theme' ); ?></strong>
+                            <p><?php esc_html_e( 'Our sustained dedication to polymer compounding empowers moulding factories with dependable batch-to-batch consistency and wholesale mill rates.', 'gp-theme' ); ?></p>
                         </div>
                     </div>
 
                     <div class="gp-features-pills">
-                        <span class="gp-pill">✓ <?php esc_html_e( 'UN Hazard Chemical Approved', 'gp-theme' ); ?></span>
-                        <span class="gp-pill">✓ <?php esc_html_e( 'FDA Approved Food Grade', 'gp-theme' ); ?></span>
-                        <span class="gp-pill">✓ <?php esc_html_e( 'ISO 9001:2015 Certified Lab', 'gp-theme' ); ?></span>
-                        <span class="gp-pill">✓ <?php esc_html_e( 'MIL-SPEC Defence Standards', 'gp-theme' ); ?></span>
+                        <span class="gp-pill">✓ <?php esc_html_e( 'Lab-Tested Melt Flow Index (MFI)', 'gp-theme' ); ?></span>
+                        <span class="gp-pill">✓ <?php esc_html_e( 'Prime Virgin & Reprocessed Dana', 'gp-theme' ); ?></span>
+                        <span class="gp-pill">✓ <?php esc_html_e( 'High ESCR & Izod Impact Tested', 'gp-theme' ); ?></span>
+                        <span class="gp-pill">✓ <?php esc_html_e( 'Standard 25 Kg Moisture Barrier Bags', 'gp-theme' ); ?></span>
                     </div>
 
                     <div class="gp-about-actions">
                         <a href="#contact" class="gp-btn gp-btn-primary">
-                            <span><?php esc_html_e( 'Schedule Plant Visit', 'gp-theme' ); ?></span>
+                            <span><?php esc_html_e( 'Request Bulk Price List', 'gp-theme' ); ?></span>
                             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </a>
                         <a href="#testing" class="gp-btn gp-btn-ghost">
-                            <span><?php esc_html_e( 'View Testing Standards ›', 'gp-theme' ); ?></span>
+                            <span><?php esc_html_e( 'View Lab Testing Standards ›', 'gp-theme' ); ?></span>
                         </a>
                     </div>
                 </div>
@@ -242,26 +242,23 @@ $default_news       = gp_get_default_news();
                 <div class="gp-about-visual">
                     <div class="gp-visual-card">
                         <div class="gp-visual-img-container">
-                            <!-- High quality industrial plant illustration/render -->
                             <div class="gp-industrial-scene">
                                 <div class="gp-industrial-badge-top">
-                                    <span class="gp-dot-live"></span> <?php esc_html_e( 'Unit 1-4 Operating at Full Capacity', 'gp-theme' ); ?>
+                                    <span class="gp-dot-live"></span> <?php esc_html_e( 'Twin-Screw Extrusion Lines Running', 'gp-theme' ); ?>
                                 </div>
                                 <div class="gp-scene-graphic">
                                     <svg viewBox="0 0 400 300" class="gp-tech-blueprint" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect width="400" height="300" rx="12" fill="#0b2545"/>
                                         <circle cx="200" cy="150" r="90" stroke="#134074" stroke-width="2" stroke-dasharray="6 6"/>
                                         <circle cx="200" cy="150" r="60" stroke="#00b4d8" stroke-width="2"/>
-                                        <!-- Drum Silhouette -->
-                                        <rect x="170" y="90" width="60" height="95" rx="12" stroke="#ffffff" stroke-width="3" fill="#134074"/>
-                                        <line x1="170" y1="115" x2="230" y2="115" stroke="#ffffff" stroke-width="2"/>
-                                        <line x1="170" y1="140" x2="230" y2="140" stroke="#ffffff" stroke-width="2"/>
-                                        <line x1="170" y1="165" x2="230" y2="165" stroke="#ffffff" stroke-width="2"/>
-                                        <!-- Drone Wing Silhouette -->
-                                        <path d="M120 70 L200 110 L280 70" stroke="#ef233c" stroke-width="3"/>
-                                        <circle cx="120" cy="70" r="8" fill="#ef233c"/>
-                                        <circle cx="280" cy="70" r="8" fill="#ef233c"/>
-                                        <circle cx="200" cy="110" r="6" fill="#00b4d8"/>
+                                        <!-- Granule Pellets Graphic -->
+                                        <circle cx="160" cy="130" r="14" fill="#00b4d8" opacity="0.9"/>
+                                        <circle cx="190" cy="120" r="12" fill="#ef233c" opacity="0.9"/>
+                                        <circle cx="225" cy="135" r="15" fill="#ffd166" opacity="0.9"/>
+                                        <circle cx="175" cy="165" r="13" fill="#06d6a0" opacity="0.9"/>
+                                        <circle cx="210" cy="170" r="14" fill="#118ab2" opacity="0.9"/>
+                                        <circle cx="240" cy="165" r="11" fill="#ffffff" opacity="0.9"/>
+                                        <text x="200" y="230" text-anchor="middle" fill="#90e0ef" font-size="14" font-weight="bold">SRS POLYMER DANA</text>
                                     </svg>
                                 </div>
                             </div>
@@ -269,13 +266,13 @@ $default_news       = gp_get_default_news();
 
                         <!-- Floating Stat Badges -->
                         <div class="gp-floating-badge gp-badge-left">
-                            <span class="gp-floating-num">40+</span>
-                            <span class="gp-floating-label"><?php esc_html_e( 'Years Industry Leadership', 'gp-theme' ); ?></span>
+                            <span class="gp-floating-num">50+</span>
+                            <span class="gp-floating-label"><?php esc_html_e( 'Polymer Dana Grades', 'gp-theme' ); ?></span>
                         </div>
 
                         <div class="gp-floating-badge gp-badge-right">
                             <span class="gp-floating-num">100%</span>
-                            <span class="gp-floating-label"><?php esc_html_e( 'Leakage-Free Guarantee', 'gp-theme' ); ?></span>
+                            <span class="gp-floating-label"><?php esc_html_e( 'Batch Lab Tested', 'gp-theme' ); ?></span>
                         </div>
                     </div>
                 </div>
@@ -290,80 +287,80 @@ $default_news       = gp_get_default_news();
     <section class="gp-section gp-section-services" id="capabilities">
         <div class="gp-container">
             <div class="gp-section-header gp-text-center">
-                <span class="gp-sub-tag"><?php esc_html_e( 'OUR CAPABILITIES', 'gp-theme' ); ?></span>
-                <h2 class="gp-section-title"><?php esc_html_e( 'What We Do', 'gp-theme' ); ?></h2>
+                <span class="gp-sub-tag"><?php esc_html_e( 'OUR PRODUCT RANGE', 'gp-theme' ); ?></span>
+                <h2 class="gp-section-title"><?php esc_html_e( 'What We Supply', 'gp-theme' ); ?></h2>
                 <p class="gp-section-subtitle">
-                    <?php esc_html_e( 'Comprehensive polymer processing, precision tooling, and aerospace composite engineering.', 'gp-theme' ); ?>
+                    <?php esc_html_e( 'Comprehensive polymer processing, custom compounding, and high-performance masterbatches.', 'gp-theme' ); ?>
                 </p>
             </div>
 
             <div class="gp-services-grid">
                 
-                <!-- Service 1: Defence & Aerospace -->
-                <div class="gp-service-card gp-card-featured" id="defence">
+                <!-- Service 1: PP & HDPE Granules -->
+                <div class="gp-service-card gp-card-featured" id="pp-hdpe">
                     <div class="gp-service-top">
                         <div class="gp-service-icon-box">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
                         </div>
-                        <span class="gp-service-pill"><?php esc_html_e( 'Specialized Division', 'gp-theme' ); ?></span>
+                        <span class="gp-service-pill"><?php esc_html_e( 'High Demand', 'gp-theme' ); ?></span>
                     </div>
-                    <h3 class="gp-service-title"><?php esc_html_e( 'Defence & Aerospace', 'gp-theme' ); ?></h3>
+                    <h3 class="gp-service-title"><?php esc_html_e( 'Polypropylene & HDPE Granules', 'gp-theme' ); ?></h3>
                     <p class="gp-service-desc">
-                        <?php esc_html_e( 'Manufacturing high-performance tactical drone platforms (IM4-Pro), agricultural & cleaning drones, and lightweight composite airframes with precision engineering.', 'gp-theme' ); ?>
+                        <?php esc_html_e( 'Virgin natural and reprocessed PP and HDPE dana pellets engineered for high-flow injection moulding, blow moulded containers, and heavy-duty raffia tapes.', 'gp-theme' ); ?>
                     </p>
                     <ul class="gp-service-list">
-                        <li><span class="gp-check">✓</span> <?php esc_html_e( 'IM4-Pro Surveillance Drones', 'gp-theme' ); ?></li>
-                        <li><span class="gp-check">✓</span> <?php esc_html_e( 'AeroClean & AeroCrop UAVs', 'gp-theme' ); ?></li>
-                        <li><span class="gp-check">✓</span> <?php esc_html_e( 'MIL-SPEC Avionics Connectors', 'gp-theme' ); ?></li>
+                        <li><span class="gp-check">✓</span> <?php esc_html_e( 'Virgin & Reprocessed PP Homopolymer / Copolymer', 'gp-theme' ); ?></li>
+                        <li><span class="gp-check">✓</span> <?php esc_html_e( 'High ESCR Blow Grade HDPE Granules (MFI 0.35 - 1.2)', 'gp-theme' ); ?></li>
+                        <li><span class="gp-check">✓</span> <?php esc_html_e( 'PP Raffia Dana for Woven Sacks & Straps', 'gp-theme' ); ?></li>
                     </ul>
-                    <a href="#products" class="gp-card-link" data-cat="defence-aerospace">
-                        <span><?php esc_html_e( 'Explore Defence Products', 'gp-theme' ); ?></span>
+                    <a href="#products" class="gp-card-link" data-cat="pp-granules">
+                        <span><?php esc_html_e( 'Explore PP & HDPE Dana', 'gp-theme' ); ?></span>
                         <span class="gp-arrow">→</span>
                     </a>
                 </div>
 
-                <!-- Service 2: Blow Moulding -->
+                <!-- Service 2: ABS & Engineering Polymers -->
                 <div class="gp-service-card">
                     <div class="gp-service-top">
                         <div class="gp-service-icon-box">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
                         </div>
-                        <span class="gp-service-pill"><?php esc_html_e( 'Industrial Grade', 'gp-theme' ); ?></span>
+                        <span class="gp-service-pill"><?php esc_html_e( 'Engineering Grade', 'gp-theme' ); ?></span>
                     </div>
-                    <h3 class="gp-service-title"><?php esc_html_e( 'Blow Moulding Packaging', 'gp-theme' ); ?></h3>
+                    <h3 class="gp-service-title"><?php esc_html_e( 'ABS & Engineering Dana', 'gp-theme' ); ?></h3>
                     <p class="gp-service-desc">
-                        <?php esc_html_e( 'Robust container solutions engineered for corrosive chemicals, edible oils, and hazardous fluids with zero-permeation and stackable strength.', 'gp-theme' ); ?>
+                        <?php esc_html_e( 'High-impact ABS, Polycarbonate, and Nylon granules delivering superior dimensional stability, heat resistance, and mirror-gloss surface finish.', 'gp-theme' ); ?>
                     </p>
                     <ul class="gp-service-list">
-                        <li><span class="gp-check">✓</span> <?php esc_html_e( 'Full Open Top Drums (30L - 250L)', 'gp-theme' ); ?></li>
-                        <li><span class="gp-check">✓</span> <?php esc_html_e( 'Stackable Jerry Cans (5L - 35L)', 'gp-theme' ); ?></li>
-                        <li><span class="gp-check">✓</span> <?php esc_html_e( 'Narrow & Wide Mouth Carboys', 'gp-theme' ); ?></li>
+                        <li><span class="gp-check">✓</span> <?php esc_html_e( 'High-Gloss Natural Ivory & Black ABS Pellets', 'gp-theme' ); ?></li>
+                        <li><span class="gp-check">✓</span> <?php esc_html_e( 'Flame Retardant (FR-V0) Formulations', 'gp-theme' ); ?></li>
+                        <li><span class="gp-check">✓</span> <?php esc_html_e( 'Impact Strength > 250 J/m for Electronic Casings', 'gp-theme' ); ?></li>
                     </ul>
-                    <a href="#products" class="gp-card-link" data-cat="blow-moulding">
-                        <span><?php esc_html_e( 'Explore Blow Moulded', 'gp-theme' ); ?></span>
+                    <a href="#products" class="gp-card-link" data-cat="abs-granules">
+                        <span><?php esc_html_e( 'Explore ABS Granules', 'gp-theme' ); ?></span>
                         <span class="gp-arrow">→</span>
                     </a>
                 </div>
 
-                <!-- Service 3: Injection Moulding -->
+                <!-- Service 3: PVC & Masterbatches -->
                 <div class="gp-service-card">
                     <div class="gp-service-top">
                         <div class="gp-service-icon-box">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
                         </div>
-                        <span class="gp-service-pill"><?php esc_html_e( 'High Precision', 'gp-theme' ); ?></span>
+                        <span class="gp-service-pill"><?php esc_html_e( 'Compound & Color', 'gp-theme' ); ?></span>
                     </div>
-                    <h3 class="gp-service-title"><?php esc_html_e( 'Injection Moulding', 'gp-theme' ); ?></h3>
+                    <h3 class="gp-service-title"><?php esc_html_e( 'PVC Compounds & Masterbatches', 'gp-theme' ); ?></h3>
                     <p class="gp-service-desc">
-                        <?php esc_html_e( 'High-tonnage precision injection moulding for tamper-evident pails, In-Mould Labelling (IML), automotive engineering parts, and durable children furniture.', 'gp-theme' ); ?>
+                        <?php esc_html_e( 'Pre-stabilized flexible/rigid PVC compounds for wire insulation, footwear, and conduit pipes, plus high-dispersion color masterbatches.', 'gp-theme' ); ?>
                     </p>
                     <ul class="gp-service-list">
-                        <li><span class="gp-check">✓</span> <?php esc_html_e( 'Pail Buckets for Paints & Grease', 'gp-theme' ); ?></li>
-                        <li><span class="gp-check">✓</span> <?php esc_html_e( 'Toys & Ergonomic Kids Furniture', 'gp-theme' ); ?></li>
-                        <li><span class="gp-check">✓</span> <?php esc_html_e( 'Automotive Functional Spares', 'gp-theme' ); ?></li>
+                        <li><span class="gp-check">✓</span> <?php esc_html_e( 'Flexible PVC Compound for Cables & Footwear Soles', 'gp-theme' ); ?></li>
+                        <li><span class="gp-check">✓</span> <?php esc_html_e( 'Rigid PVC Granules for Conduit & Profiles', 'gp-theme' ); ?></li>
+                        <li><span class="gp-check">✓</span> <?php esc_html_e( 'Concentrated Color & White TiO2 Masterbatches', 'gp-theme' ); ?></li>
                     </ul>
-                    <a href="#products" class="gp-card-link" data-cat="injection-moulding">
-                        <span><?php esc_html_e( 'Explore Injection Moulded', 'gp-theme' ); ?></span>
+                    <a href="#products" class="gp-card-link" data-cat="pvc-compounds">
+                        <span><?php esc_html_e( 'Explore PVC & Masterbatches', 'gp-theme' ); ?></span>
                         <span class="gp-arrow">→</span>
                     </a>
                 </div>
@@ -422,19 +419,20 @@ $default_news       = gp_get_default_news();
     <section class="gp-section gp-section-products" id="products">
         <div class="gp-container">
             <div class="gp-section-header gp-text-center">
-                <span class="gp-sub-tag"><?php esc_html_e( 'CATALOG SHOWCASE', 'gp-theme' ); ?></span>
-                <h2 class="gp-section-title"><?php esc_html_e( 'Engineered Product Solutions', 'gp-theme' ); ?></h2>
+                <span class="gp-sub-tag"><?php esc_html_e( 'POLYMER CATALOG', 'gp-theme' ); ?></span>
+                <h2 class="gp-section-title"><?php esc_html_e( 'Engineered Plastic Granules (Dana)', 'gp-theme' ); ?></h2>
                 <p class="gp-section-subtitle">
-                    <?php esc_html_e( 'Discover our precision manufactured portfolio across industrial packaging, automotive plastics, and defence UAV systems.', 'gp-theme' ); ?>
+                    <?php esc_html_e( 'Discover our ready stock of prime virgin and high-grade recycled granules for injection moulding, blow moulding, and extrusion.', 'gp-theme' ); ?>
                 </p>
             </div>
 
             <!-- Filter Tabs -->
             <div class="gp-filter-tabs">
-                <button class="gp-filter-btn active" data-filter="all"><?php esc_html_e( 'All Products (100+)', 'gp-theme' ); ?></button>
-                <button class="gp-filter-btn" data-filter="blow-moulding"><?php esc_html_e( 'Blow Moulding', 'gp-theme' ); ?></button>
-                <button class="gp-filter-btn" data-filter="injection-moulding"><?php esc_html_e( 'Injection Moulding', 'gp-theme' ); ?></button>
-                <button class="gp-filter-btn" data-filter="defence-aerospace"><?php esc_html_e( 'Defence & Aerospace', 'gp-theme' ); ?></button>
+                <button class="gp-filter-btn active" data-filter="all"><?php esc_html_e( 'All Polymers', 'gp-theme' ); ?></button>
+                <button class="gp-filter-btn" data-filter="pp-granules"><?php esc_html_e( 'PP Granules', 'gp-theme' ); ?></button>
+                <button class="gp-filter-btn" data-filter="hdpe-granules"><?php esc_html_e( 'HDPE Granules', 'gp-theme' ); ?></button>
+                <button class="gp-filter-btn" data-filter="abs-granules"><?php esc_html_e( 'ABS Granules', 'gp-theme' ); ?></button>
+                <button class="gp-filter-btn" data-filter="pvc-compounds"><?php esc_html_e( 'PVC & Masterbatch', 'gp-theme' ); ?></button>
             </div>
 
             <!-- Product Cards Grid -->
@@ -450,8 +448,8 @@ $default_news       = gp_get_default_news();
                 if ( $product_query->have_posts() ) :
                     while ( $product_query->have_posts() ) : $product_query->the_post();
                         $terms = get_the_terms( get_the_ID(), 'gp_product_cat' );
-                        $cat_slug = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->slug : 'blow-moulding';
-                        $cat_name = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : 'Industrial';
+                        $cat_slug = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->slug : 'pp-granules';
+                        $cat_name = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : 'Polymer Dana';
                         $capacity = get_post_meta( get_the_ID(), '_gp_capacity', true );
                         $material = get_post_meta( get_the_ID(), '_gp_material', true );
                 ?>
@@ -471,7 +469,7 @@ $default_news       = gp_get_default_news();
                             <p class="gp-product-excerpt"><?php echo wp_trim_words( get_the_excerpt(), 14 ); ?></p>
                             <?php if ( ! empty( $capacity ) ) : ?>
                                 <div class="gp-product-meta-row">
-                                    <span class="gp-meta-tag">📏 <?php echo esc_html( $capacity ); ?></span>
+                                    <span class="gp-meta-tag">⚙️ <?php echo esc_html( $capacity ); ?></span>
                                 </div>
                             <?php endif; ?>
                             <div class="gp-product-actions">
@@ -486,15 +484,17 @@ $default_news       = gp_get_default_news();
                     endwhile;
                     wp_reset_postdata();
                 else :
-                    // Default Fallback Products matching Jyoti Global Plast reference
+                    // Default Fallback Products for SRS Polymer Plastic Granules
                     foreach ( $default_products as $p ) :
-                        $img_src = GP_THEME_URI . '/assets/images/product-drum-blue.jpg';
-                        if ( 'jerrycan' === $p['image_type'] ) {
-                            $img_src = GP_THEME_URI . '/assets/images/product-jerrycan.jpg';
-                        } elseif ( strpos( $p['image_type'], 'drone' ) !== false || 'connector' === $p['image_type'] ) {
-                            $img_src = GP_THEME_URI . '/assets/images/product-uav-drone.jpg';
-                        } elseif ( 'bucket' === $p['image_type'] || 'jar' === $p['image_type'] ) {
-                            $img_src = GP_THEME_URI . '/assets/images/product-bucket-paint.jpg';
+                        $img_src = GP_THEME_URI . '/assets/images/product-pp-granules.jpg';
+                        if ( 'hdpe_granules' === $p['image_type'] ) {
+                            $img_src = GP_THEME_URI . '/assets/images/product-hdpe-granules.jpg';
+                        } elseif ( 'abs_granules' === $p['image_type'] ) {
+                            $img_src = GP_THEME_URI . '/assets/images/product-abs-granules.jpg';
+                        } elseif ( 'pvc_granules' === $p['image_type'] ) {
+                            $img_src = GP_THEME_URI . '/assets/images/product-hdpe-granules.jpg';
+                        } elseif ( 'masterbatch' === $p['image_type'] ) {
+                            $img_src = GP_THEME_URI . '/assets/images/hero-slide-granules.jpg';
                         }
                 ?>
                     <div class="gp-product-card" data-category="<?php echo esc_attr( $p['cat_slug'] ); ?>">
@@ -508,11 +508,11 @@ $default_news       = gp_get_default_news();
                             <p class="gp-product-excerpt"><?php echo esc_html( $p['desc'] ); ?></p>
                             <div class="gp-specs-meta">
                                 <div class="gp-spec-row">
-                                    <span class="gp-spec-label"><?php esc_html_e( 'Capacity:', 'gp-theme' ); ?></span>
+                                    <span class="gp-spec-label"><?php esc_html_e( 'MFI / Grade:', 'gp-theme' ); ?></span>
                                     <span class="gp-spec-val"><?php echo esc_html( $p['capacity'] ); ?></span>
                                 </div>
                                 <div class="gp-spec-row">
-                                    <span class="gp-spec-label"><?php esc_html_e( 'Material:', 'gp-theme' ); ?></span>
+                                    <span class="gp-spec-label"><?php esc_html_e( 'Polymer:', 'gp-theme' ); ?></span>
                                     <span class="gp-spec-val"><?php echo esc_html( $p['material'] ); ?></span>
                                 </div>
                             </div>
@@ -544,9 +544,9 @@ $default_news       = gp_get_default_news();
             </div>
 
             <div class="gp-catalog-cta gp-text-center">
-                <p><?php esc_html_e( 'Require custom moulds, specialized polymer blends, or tailored drone payload capacities?', 'gp-theme' ); ?></p>
+                <p><?php esc_html_e( 'Need custom Melt Flow Index (MFI) compounding, color matching, or bulk truckload pricing?', 'gp-theme' ); ?></p>
                 <a href="#contact" class="gp-btn gp-btn-outline gp-btn-lg">
-                    <span><?php esc_html_e( 'Consult Our Tooling & Moulding Engineers', 'gp-theme' ); ?></span>
+                    <span><?php esc_html_e( 'Get Wholesale Dana Quote Today', 'gp-theme' ); ?></span>
                 </a>
             </div>
         </div>
@@ -558,44 +558,44 @@ $default_news       = gp_get_default_news();
                 <div class="gp-quickview-inner">
                     <div class="gp-quickview-media">
                         <div class="gp-product-main-image">
-                            <img id="gp-qv-img" src="<?php echo esc_url( GP_THEME_URI . '/assets/images/product-drum-blue.jpg' ); ?>" alt="Product Preview" />
+                            <img id="gp-qv-img" src="<?php echo esc_url( GP_THEME_URI . '/assets/images/product-pp-granules.jpg' ); ?>" alt="Product Preview" />
                         </div>
                         <div class="gp-product-badges-row" style="margin-top: 15px;">
-                            <span class="gp-cert-badge" id="gp-qv-cert">UN Approved Packaging</span>
-                            <span class="gp-cert-badge">ISO 9001:2015</span>
+                            <span class="gp-cert-badge" id="gp-qv-cert">Virgin & Reprocessed</span>
+                            <span class="gp-cert-badge">ASTM Tested</span>
                         </div>
                     </div>
                     <div class="gp-quickview-info">
-                        <span class="gp-product-category-label" id="gp-qv-cat">Blow Moulding</span>
+                        <span class="gp-product-category-label" id="gp-qv-cat">PP Granules</span>
                         <h3 class="gp-product-detail-title" id="gp-qv-title" style="font-size: 1.8rem;">Product Title</h3>
-                        <p class="gp-product-short-desc" id="gp-qv-desc">Full product engineering specification.</p>
+                        <p class="gp-product-short-desc" id="gp-qv-desc">Full polymer specification and processing parameters.</p>
                         
                         <div class="gp-specs-table-wrapper" style="padding: 16px; margin-bottom: 20px;">
                             <h4 class="gp-specs-heading" style="font-size: 1.1rem; margin-bottom: 10px;"><?php esc_html_e( 'Technical Specifications', 'gp-theme' ); ?></h4>
                             <table class="gp-specs-table">
                                 <tbody>
                                     <tr>
-                                        <th><?php esc_html_e( 'Capacity', 'gp-theme' ); ?></th>
+                                        <th><?php esc_html_e( 'Melt Flow Index (MFI)', 'gp-theme' ); ?></th>
                                         <td id="gp-qv-capacity">-</td>
                                     </tr>
                                     <tr>
-                                        <th><?php esc_html_e( 'Material', 'gp-theme' ); ?></th>
+                                        <th><?php esc_html_e( 'Polymer Grade / Material', 'gp-theme' ); ?></th>
                                         <td id="gp-qv-material">-</td>
                                     </tr>
                                     <tr>
-                                        <th><?php esc_html_e( 'Approx Weight', 'gp-theme' ); ?></th>
+                                        <th><?php esc_html_e( 'Packaging Size', 'gp-theme' ); ?></th>
                                         <td id="gp-qv-weight">-</td>
                                     </tr>
                                     <tr>
-                                        <th><?php esc_html_e( 'Neck / Process', 'gp-theme' ); ?></th>
+                                        <th><?php esc_html_e( 'Pellet Shape / Cut', 'gp-theme' ); ?></th>
                                         <td id="gp-qv-neck">-</td>
                                     </tr>
                                     <tr>
-                                        <th><?php esc_html_e( 'Colors', 'gp-theme' ); ?></th>
+                                        <th><?php esc_html_e( 'Available Colors', 'gp-theme' ); ?></th>
                                         <td id="gp-qv-color">-</td>
                                     </tr>
                                     <tr>
-                                        <th><?php esc_html_e( 'Application', 'gp-theme' ); ?></th>
+                                        <th><?php esc_html_e( 'Recommended Application', 'gp-theme' ); ?></th>
                                         <td id="gp-qv-app">-</td>
                                     </tr>
                                 </tbody>
@@ -621,13 +621,13 @@ $default_news       = gp_get_default_news();
             <div class="gp-testing-layout">
                 
                 <div class="gp-testing-header">
-                    <span class="gp-sub-tag"><?php esc_html_e( 'ZERO-DEFECT BENCHMARKS', 'gp-theme' ); ?></span>
+                    <span class="gp-sub-tag"><?php esc_html_e( 'BATCH QUALITY ASSURANCE', 'gp-theme' ); ?></span>
                     <h2 class="gp-section-title">
-                        <?php esc_html_e( 'World-Class Quality &', 'gp-theme' ); ?><br>
+                        <?php esc_html_e( 'State-of-the-Art Polymer', 'gp-theme' ); ?><br>
                         <span class="gp-accent"><?php esc_html_e( 'Testing Laboratory', 'gp-theme' ); ?></span>
                     </h2>
                     <p class="gp-section-subtitle">
-                        <?php esc_html_e( 'Every batch undergoes rigorous chemical, mechanical, and environmental endurance tests to ensure 100% UN packaging compliance and aerospace-grade durability.', 'gp-theme' ); ?>
+                        <?php esc_html_e( 'Every polymer batch is analyzed in our testing lab to guarantee consistent melt flow rates, zero contamination, and optimal moulding performance.', 'gp-theme' ); ?>
                     </p>
                 </div>
 
@@ -635,38 +635,38 @@ $default_news       = gp_get_default_news();
                     
                     <div class="gp-testing-card">
                         <div class="gp-test-number">01</div>
-                        <h4 class="gp-test-title"><?php esc_html_e( 'Drop Impact Test', 'gp-theme' ); ?></h4>
+                        <h4 class="gp-test-title"><?php esc_html_e( 'Melt Flow Index (MFI) Test', 'gp-theme' ); ?></h4>
                         <p class="gp-test-desc">
-                            <?php esc_html_e( 'Filled to nominal capacity with chilled anti-freeze liquid down to -18°C and dropped from heights up to 1.8 meters onto concrete without any rupture or leakage.', 'gp-theme' ); ?>
+                            <?php esc_html_e( 'Computerized extrusion plastometer testing under ASTM D1238 standards guarantees precise flowability for high-speed injection and extrusion.', 'gp-theme' ); ?>
                         </p>
-                        <span class="gp-test-badge"><?php esc_html_e( 'UN Standard 6.1.5.3', 'gp-theme' ); ?></span>
+                        <span class="gp-test-badge"><?php esc_html_e( 'ASTM D1238 Standard', 'gp-theme' ); ?></span>
                     </div>
 
                     <div class="gp-testing-card">
                         <div class="gp-test-number">02</div>
-                        <h4 class="gp-test-title"><?php esc_html_e( 'Hydrostatic Pressure Test', 'gp-theme' ); ?></h4>
+                        <h4 class="gp-test-title"><?php esc_html_e( 'Density & Specific Gravity', 'gp-theme' ); ?></h4>
                         <p class="gp-test-desc">
-                            <?php esc_html_e( 'Internal hydraulic pressurization up to 250 kPa sustained for 30 minutes to verify seam integrity, gasket resilience, and zero fluid seepage.', 'gp-theme' ); ?>
+                            <?php esc_html_e( 'Electronic immersion balance analysis confirms virgin polymer purity and precise density tolerances between 0.90 g/cm³ and 1.45 g/cm³.', 'gp-theme' ); ?>
                         </p>
-                        <span class="gp-test-badge"><?php esc_html_e( 'Zero Seepage Rating', 'gp-theme' ); ?></span>
+                        <span class="gp-test-badge"><?php esc_html_e( 'ASTM D792 Certified', 'gp-theme' ); ?></span>
                     </div>
 
                     <div class="gp-testing-card">
                         <div class="gp-test-number">03</div>
-                        <h4 class="gp-test-title"><?php esc_html_e( 'Stacking & Load Endurance', 'gp-theme' ); ?></h4>
+                        <h4 class="gp-test-title"><?php esc_html_e( 'Izod Impact & Tensile Modulus', 'gp-theme' ); ?></h4>
                         <p class="gp-test-desc">
-                            <?php esc_html_e( 'Subjected to top-load compressive force equivalent to a 3-meter warehouse stack at 40°C for 28 consecutive days without deformation.', 'gp-theme' ); ?>
+                            <?php esc_html_e( 'Digital pendulum impact hammer testing ensures maximum toughness and structural resilience for automotive and engineering applications.', 'gp-theme' ); ?>
                         </p>
-                        <span class="gp-test-badge"><?php esc_html_e( '1+3 Stack Endurance', 'gp-theme' ); ?></span>
+                        <span class="gp-test-badge"><?php esc_html_e( 'ASTM D256 / ISO 180', 'gp-theme' ); ?></span>
                     </div>
 
                     <div class="gp-testing-card">
                         <div class="gp-test-number">04</div>
-                        <h4 class="gp-test-title"><?php esc_html_e( 'Aero Composite Analysis', 'gp-theme' ); ?></h4>
+                        <h4 class="gp-test-title"><?php esc_html_e( 'Ash & Moisture Content', 'gp-theme' ); ?></h4>
                         <p class="gp-test-desc">
-                            <?php esc_html_e( 'Ultrasonic non-destructive testing (NDT), vibration harmonics, and thermal resistance validation for drone airframes and avionics connectors.', 'gp-theme' ); ?>
+                            <?php esc_html_e( 'Halogen moisture analyzers and high-temp muffle furnace incineration eliminate splay marks, bubbles, and thermal degradation in finished products.', 'gp-theme' ); ?>
                         </p>
-                        <span class="gp-test-badge"><?php esc_html_e( 'Aerospace Standards', 'gp-theme' ); ?></span>
+                        <span class="gp-test-badge"><?php esc_html_e( 'Moisture < 0.05%', 'gp-theme' ); ?></span>
                     </div>
 
                 </div>
@@ -801,11 +801,11 @@ $default_news       = gp_get_default_news();
                     <div class="gp-contact-left">
                         <span class="gp-sub-tag"><?php esc_html_e( 'DIRECT FACTORY ENQUIRY', 'gp-theme' ); ?></span>
                         <h2 class="gp-contact-title">
-                            <?php esc_html_e( 'Let’s Build Superior', 'gp-theme' ); ?><br>
-                            <span class="gp-accent"><?php esc_html_e( 'Solutions Together', 'gp-theme' ); ?></span>
+                            <?php esc_html_e( 'Get Wholesale Polymer Rates', 'gp-theme' ); ?><br>
+                            <span class="gp-accent"><?php esc_html_e( 'Direct Mill & Compounding Supply', 'gp-theme' ); ?></span>
                         </h2>
                         <p class="gp-contact-desc">
-                            <?php esc_html_e( 'Whether you require bulk supply of UN-certified drums, custom blow moulds, precision injection parts, or tactical drone components, our engineering team is here to help.', 'gp-theme' ); ?>
+                            <?php esc_html_e( 'Whether you require a sample 25kg bag or regular truckloads of PP, HDPE, ABS, or PVC granules, our technical polymer team ensures best competitive market rates and immediate dispatch.', 'gp-theme' ); ?>
                         </p>
 
                         <div class="gp-contact-details-list">
@@ -813,28 +813,28 @@ $default_news       = gp_get_default_news();
                                 <div class="gp-line-icon">📍</div>
                                 <div>
                                     <strong><?php esc_html_e( 'Plant & Corporate Office:', 'gp-theme' ); ?></strong>
-                                    <p><?php echo esc_html( get_theme_mod( 'gp_company_address', 'R-554/555/556/558 TTC MIDC industrial area Rabale Navi Mumbai, Thane 400701, MH, India' ) ); ?></p>
+                                    <p><?php echo esc_html( get_theme_mod( 'gp_company_address', 'SRS Polymer Industrial Area, Delhi-NCR & Bhiwadi, India' ) ); ?></p>
                                 </div>
                             </div>
                             <div class="gp-contact-line">
                                 <div class="gp-line-icon">📞</div>
                                 <div>
                                     <strong><?php esc_html_e( 'Telephone & WhatsApp:', 'gp-theme' ); ?></strong>
-                                    <p><a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9]/', '', get_theme_mod( 'gp_company_phone', '+91-8591585497' ) ) ); ?>"><?php echo esc_html( get_theme_mod( 'gp_company_phone', '+91-8591585497' ) ); ?></a></p>
+                                    <p><a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9]/', '', get_theme_mod( 'gp_company_phone', '+91-9876543210' ) ) ); ?>"><?php echo esc_html( get_theme_mod( 'gp_company_phone', '+91-9876543210' ) ); ?></a></p>
                                 </div>
                             </div>
                             <div class="gp-contact-line">
                                 <div class="gp-line-icon">✉️</div>
                                 <div>
                                     <strong><?php esc_html_e( 'Official Email:', 'gp-theme' ); ?></strong>
-                                    <p><a href="mailto:<?php echo esc_attr( get_theme_mod( 'gp_company_email', 'info@jyotiglobalplast.com' ) ); ?>"><?php echo esc_html( get_theme_mod( 'gp_company_email', 'info@jyotiglobalplast.com' ) ); ?></a></p>
+                                    <p><a href="mailto:<?php echo esc_attr( get_theme_mod( 'gp_company_email', 'info@srspolymer.com' ) ); ?>"><?php echo esc_html( get_theme_mod( 'gp_company_email', 'info@srspolymer.com' ) ); ?></a></p>
                                 </div>
                             </div>
                             <div class="gp-contact-line">
                                 <div class="gp-line-icon">⏱️</div>
                                 <div>
                                     <strong><?php esc_html_e( 'Operating Hours:', 'gp-theme' ); ?></strong>
-                                    <p><?php esc_html_e( 'Monday to Saturday: 9:00 AM - 6:30 PM IST', 'gp-theme' ); ?></p>
+                                    <p><?php esc_html_e( 'Monday to Saturday: 9:00 AM - 7:00 PM IST', 'gp-theme' ); ?></p>
                                 </div>
                             </div>
                         </div>
@@ -843,8 +843,8 @@ $default_news       = gp_get_default_news();
                     <!-- Right: Interactive RFQ Form -->
                     <div class="gp-contact-right">
                         <div class="gp-form-card">
-                            <h3 class="gp-form-card-title"><?php esc_html_e( 'Request a Quote / Callback', 'gp-theme' ); ?></h3>
-                            <p class="gp-form-card-subtitle"><?php esc_html_e( 'Guaranteed response within 4 business hours.', 'gp-theme' ); ?></p>
+                            <h3 class="gp-form-card-title"><?php esc_html_e( 'Request a Quote / Sample Bag', 'gp-theme' ); ?></h3>
+                            <p class="gp-form-card-subtitle"><?php esc_html_e( 'Guaranteed response with today’s polymer rates within 2 hours.', 'gp-theme' ); ?></p>
 
                             <form class="gp-ajax-rfq-form" id="gp-main-contact-form">
                                 <input type="hidden" name="action" value="gp_submit_contact">
@@ -855,8 +855,8 @@ $default_news       = gp_get_default_news();
                                         <input type="text" id="rfq_name" name="fullname" required placeholder="John Doe">
                                     </div>
                                     <div class="gp-form-group">
-                                        <label for="rfq_company"><?php esc_html_e( 'Company Name', 'gp-theme' ); ?></label>
-                                        <input type="text" id="rfq_company" name="company" placeholder="e.g. Acme Chemicals">
+                                        <label for="rfq_company"><?php esc_html_e( 'Company / Factory Name', 'gp-theme' ); ?></label>
+                                        <input type="text" id="rfq_company" name="company" placeholder="e.g. Modern Plastics Ltd">
                                     </div>
                                 </div>
 
@@ -873,25 +873,26 @@ $default_news       = gp_get_default_news();
 
                                 <div class="gp-form-row">
                                     <div class="gp-form-group">
-                                        <label for="rfq_product"><?php esc_html_e( 'Product / Requirement', 'gp-theme' ); ?></label>
+                                        <label for="rfq_product"><?php esc_html_e( 'Polymer / Granules Requirement', 'gp-theme' ); ?></label>
                                         <select id="rfq_product" name="product">
-                                            <option value="Blow Moulded Drums & Jerry Cans"><?php esc_html_e( 'Blow Moulded Drums & Jerry Cans', 'gp-theme' ); ?></option>
-                                            <option value="Injection Moulded Pail Buckets"><?php esc_html_e( 'Injection Moulded Pail Buckets', 'gp-theme' ); ?></option>
-                                            <option value="Toys & Children Furniture"><?php esc_html_e( 'Toys & Children Furniture', 'gp-theme' ); ?></option>
-                                            <option value="Automotive Precision Spares"><?php esc_html_e( 'Automotive Precision Spares', 'gp-theme' ); ?></option>
-                                            <option value="Defence Drones & Components"><?php esc_html_e( 'Defence Drones & UAV Components', 'gp-theme' ); ?></option>
-                                            <option value="Custom OEM Tooling & Moulding"><?php esc_html_e( 'Custom OEM Tooling & Moulding', 'gp-theme' ); ?></option>
+                                            <option value="Polypropylene (PP) Granules"><?php esc_html_e( 'Polypropylene (PP) Granules', 'gp-theme' ); ?></option>
+                                            <option value="HDPE Granules (Blow & Pipe Grade)"><?php esc_html_e( 'HDPE Granules (Blow & Pipe Grade)', 'gp-theme' ); ?></option>
+                                            <option value="ABS Engineering Polymer Dana"><?php esc_html_e( 'ABS Engineering Polymer Dana', 'gp-theme' ); ?></option>
+                                            <option value="PVC Compound (Rigid / Flexible)"><?php esc_html_e( 'PVC Compound (Rigid / Flexible)', 'gp-theme' ); ?></option>
+                                            <option value="LDPE & LLDPE Film Granules"><?php esc_html_e( 'LDPE & LLDPE Film Granules', 'gp-theme' ); ?></option>
+                                            <option value="Color & Additive Masterbatches"><?php esc_html_e( 'Color & Additive Masterbatches', 'gp-theme' ); ?></option>
+                                            <option value="Custom Polymer Compounding"><?php esc_html_e( 'Custom Polymer Compounding', 'gp-theme' ); ?></option>
                                         </select>
                                     </div>
                                     <div class="gp-form-group">
-                                        <label for="rfq_quantity"><?php esc_html_e( 'Estimated Quantity', 'gp-theme' ); ?></label>
-                                        <input type="text" id="rfq_quantity" name="quantity" placeholder="e.g. 5,000 units">
+                                        <label for="rfq_quantity"><?php esc_html_e( 'Estimated Quantity (MT / Bags)', 'gp-theme' ); ?></label>
+                                        <input type="text" id="rfq_quantity" name="quantity" placeholder="e.g. 5 MT or 200 Bags">
                                     </div>
                                 </div>
 
                                 <div class="gp-form-group">
-                                    <label for="rfq_message"><?php esc_html_e( 'Project Specifications & Details', 'gp-theme' ); ?></label>
-                                    <textarea id="rfq_message" name="message" rows="4" placeholder="Mention volume requirements, UN packaging specs, color choices or custom technical dimensions..."></textarea>
+                                    <label for="rfq_message"><?php esc_html_e( 'MFI, Grade & Delivery Requirements', 'gp-theme' ); ?></label>
+                                    <textarea id="rfq_message" name="message" rows="4" placeholder="Mention required Melt Flow Index (MFI), virgin or reprocessed grade, color, destination city, etc."></textarea>
                                 </div>
 
                                 <div class="gp-form-feedback"></div>

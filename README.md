@@ -1,28 +1,28 @@
-# GP Theme — Blow & Injection Moulding | Defence & Aerospace
+# SRS Polymer — Plastic Granules & Polymer Compounding
 **A Modern, High-Performance, Production-Ready WordPress Theme**  
-*Inspired by [Jyoti Global Plast](https://jyotiglobalplast.com/)*
+*Tailored for **SRS Polymer** (Plastic Granules / Dana, Polymer Compounding & Masterbatches)*
 
 ---
 
 ## 🌟 Theme Highlights / मुख्य विशेषताएं
 
-- **Industry-Specific Design**: Precision engineering, industrial blow & injection moulding, hazardous chemical packaging (UN Certified), and tactical Defence & Aerospace UAV drone systems.
-- **Modern High-Tech Aesthetic**: Deep precision navy (`#0b2545`), energy red (`#ef233c`), and aerospace cyan accents with glassmorphism, micro-animations, and fluid layouts.
-- **Full WordPress Standards Compliant**:
+- **Industry-Specific Design**: Virgin & Reprocessed Plastic Granules (Plastic Dana), Polypropylene (PP), High-Density Polyethylene (HDPE), ABS Engineering Pellets, PVC Compounds, and Color Masterbatches.
+- **Modern High-Tech Aesthetic**: Deep precision navy (`#0b2545`), energy red (`#ef233c`), and polymer cyan accents with glassmorphism, micro-animations, and fluid layouts.
+- **Full WordPress & Elementor Support**:
   - `style.css` with valid theme header tags
-  - `functions.php` with theme support (`title-tag`, `post-thumbnails`, `custom-logo`, `html5`, `nav-menus`, `widget-areas`)
+  - Elementor Theme Support & Full-Width canvas page template (`template-elementor-fullwidth.php`)
   - Full template hierarchy (`header.php`, `footer.php`, `front-page.php`, `index.php`, `page.php`, `single.php`, `archive.php`, `sidebar.php`, `search.php`, `404.php`, `comments.php`)
 - **Custom Post Type: Products (`gp_product`)**:
-  - Taxonomy: `gp_product_cat` (Blow Moulding, Injection Moulding, Defence & Aerospace)
-  - Custom Meta Boxes for Technical Specifications: Capacity, Polymer Material, Approx Weight, Neck Size/Process, Available Colors, Key Applications, Certifications.
+  - Taxonomy: `gp_product_cat` (PP Granules, HDPE Granules, ABS Granules, PVC & Masterbatches)
+  - Custom Meta Boxes for Technical Specifications: Melt Flow Index (MFI), Polymer Material/Grade, Packaging (25kg), Pellet Form, Available Colors, Key Applications, Certifications.
 - **Built-in Fallback Demo Data**:
-  - Theme displays the complete, rich Jyoti Global Plast industrial catalog right out of the box even before any posts are added!
+  - Theme displays the complete, rich SRS Polymer plastic dana catalog right out of the box even before any posts are added!
 - **Interactive Features**:
-  - 🚀 **Hero Carousel**: Multi-slide showcasing Defence Drones, Plastic Engineering, and Green Manufacturing.
-  - 🔢 **Animated Live Counters**: 4 Manufacturing Units, 1,000+ Clients, 100+ Products, 40+ Years of Dedication.
-  - 🔍 **Interactive Product Filter Tabs**: Instant client-side filtering between Blow Moulding, Injection Moulding, and Defence Drones.
+  - 🚀 **Hero Carousel**: Multi-slide showcasing Prime Virgin & Recycled Dana, MFI Testing, and Sustainable Compounding.
+  - 🔢 **Animated Live Counters**: 50,000+ MT Annual Capacity, 1,200+ Manufacturers, 50+ Polymer Grades, 25+ Years of Dedication.
+  - 🔍 **Interactive Product Filter Tabs**: Instant client-side filtering between PP Granules, HDPE, ABS, PVC & Masterbatch.
   - 💬 **Floating WhatsApp Chat Widget**: Configurable phone number and custom message popup.
-  - 📋 **Quick RFQ (Request for Quote) Modal**: Click "Enquire Now" on any product to open a pre-filled quote form.
+  - 📋 **Quick RFQ (Request for Quote) Modal**: Click "View Details" or "Enquire Now" on any product to open specs and quote form.
   - ✉️ **AJAX Form Processing**: Direct AJAX endpoint with nonce validation and instant user feedback.
   - 🏢 **Infinite Client Logo Marquee**: BASF, APAR, HP Lubricants, Nalco Water, Ipca Laboratories, Chem-Trend, etc.
   - 📱 **Mobile Navigation Drawer**: Smooth slide-in drawer with multi-level dropdowns.

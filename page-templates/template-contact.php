@@ -11,10 +11,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header();
 
-$phone     = get_theme_mod( 'gp_company_phone', '+91-8591585497' );
+$phone     = get_theme_mod( 'gp_company_phone', '+91-9876543210' );
 $clean_tel = preg_replace( '/[^0-9]/', '', $phone );
-$email     = get_theme_mod( 'gp_company_email', 'info@jyotiglobalplast.com' );
-$address   = get_theme_mod( 'gp_company_address', 'R-554/555/556/558 TTC MIDC industrial area Rabale Navi Mumbai, Thane 400701, MH, India' );
+$email     = get_theme_mod( 'gp_company_email', 'info@srspolymer.com' );
+$address   = get_theme_mod( 'gp_company_address', 'SRS Polymer Compounding Mill & Warehouse, Delhi-NCR & Bhiwadi, India' );
 ?>
 
 <main id="primary" class="site-main">
@@ -35,10 +35,10 @@ $address   = get_theme_mod( 'gp_company_address', 'R-554/555/556/558 TTC MIDC in
                 <div class="gp-contact-grid">
                     
                     <div class="gp-contact-left">
-                        <span class="gp-sub-tag"><?php esc_html_e( 'HEADQUARTERS & MANUFACTURING', 'gp-theme' ); ?></span>
-                        <h2 class="gp-contact-title"><?php esc_html_e( 'Jyoti Global Plast Limited', 'gp-theme' ); ?></h2>
+                        <span class="gp-sub-tag"><?php esc_html_e( 'HEADQUARTERS & COMPOUNDING PLANT', 'gp-theme' ); ?></span>
+                        <h2 class="gp-contact-title"><?php esc_html_e( 'SRS Polymer Industries', 'gp-theme' ); ?></h2>
                         <p class="gp-contact-desc">
-                            <?php esc_html_e( 'Our dedicated engineering and supply chain consultants are on hand to support your procurement, custom prototyping, and bulk manufacturing requirements.', 'gp-theme' ); ?>
+                            <?php esc_html_e( 'Our dedicated polymer consultants and lab engineers are on hand to support your procurement, custom MFI blending, and bulk dana supply requirements.', 'gp-theme' ); ?>
                         </p>
 
                         <div class="gp-contact-details-list">
@@ -66,8 +66,8 @@ $address   = get_theme_mod( 'gp_company_address', 'R-554/555/556/558 TTC MIDC in
                             <div class="gp-contact-line">
                                 <div class="gp-line-icon">🏭</div>
                                 <div>
-                                    <strong><?php esc_html_e( 'Manufacturing Units:', 'gp-theme' ); ?></strong>
-                                    <p><?php esc_html_e( '4 Strategic Units situated in Maharashtra Industrial Development Zones.', 'gp-theme' ); ?></p>
+                                    <strong><?php esc_html_e( 'Compounding Facilities:', 'gp-theme' ); ?></strong>
+                                    <p><?php esc_html_e( 'Twin-screw extrusion lines and automated pelletizing units with 50,000+ MT annual polymer capacity.', 'gp-theme' ); ?></p>
                                 </div>
                             </div>
                         </div>
@@ -76,7 +76,7 @@ $address   = get_theme_mod( 'gp_company_address', 'R-554/555/556/558 TTC MIDC in
                     <div class="gp-contact-right">
                         <div class="gp-form-card">
                             <h3 class="gp-form-card-title"><?php esc_html_e( 'Send a Direct Message', 'gp-theme' ); ?></h3>
-                            <p class="gp-form-card-subtitle"><?php esc_html_e( 'Our sales engineers respond within 4 business hours.', 'gp-theme' ); ?></p>
+                            <p class="gp-form-card-subtitle"><?php esc_html_e( 'Our sales engineers respond within 2 business hours.', 'gp-theme' ); ?></p>
 
                             <form class="gp-ajax-rfq-form" id="gp-page-contact-form">
                                 <input type="hidden" name="action" value="gp_submit_contact">
@@ -104,8 +104,8 @@ $address   = get_theme_mod( 'gp_company_address', 'R-554/555/556/558 TTC MIDC in
                                 </div>
 
                                 <div class="gp-form-group">
-                                    <label><?php esc_html_e( 'Product / Requirement', 'gp-theme' ); ?></label>
-                                    <input type="text" name="product" placeholder="e.g. 200L Full Open Top Drum / IM4-Pro Drone">
+                                    <label><?php esc_html_e( 'Polymer / Granule Requirement', 'gp-theme' ); ?></label>
+                                    <input type="text" name="product" placeholder="e.g. PP Granules / HDPE Blow Grade / ABS Dana">
                                 </div>
 
                                 <div class="gp-form-group">

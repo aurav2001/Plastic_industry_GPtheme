@@ -49,7 +49,7 @@ $cat_name = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : 'Industria
                             <?php the_post_thumbnail( 'full' ); ?>
                         <?php else : ?>
                             <div class="gp-product-placeholder-big">
-                                <span class="gp-placeholder-brand">JYOTI GLOBAL PLAST</span>
+                                <span class="gp-placeholder-brand">SRS POLYMER</span>
                                 <h3><?php the_title(); ?></h3>
                                 <p><?php echo esc_html( $cat_name ); ?></p>
                             </div>
@@ -57,8 +57,8 @@ $cat_name = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : 'Industria
                     </div>
 
                     <div class="gp-product-badges-row">
-                        <span class="gp-cert-badge">🛡️ UN Approved Packaging</span>
-                        <span class="gp-cert-badge">🏅 ISO 9001:2015</span>
+                        <span class="gp-cert-badge">🛡️ Prime Virgin & Recycled</span>
+                        <span class="gp-cert-badge">🏅 Lab Batch Tested (MFI)</span>
                         <span class="gp-cert-badge">🇮🇳 100% Made in India</span>
                     </div>
                 </div>
@@ -79,25 +79,25 @@ $cat_name = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : 'Industria
                             <tbody>
                                 <?php if ( ! empty( $capacity ) ) : ?>
                                     <tr>
-                                        <th><?php esc_html_e( 'Capacity / Dimensions', 'gp-theme' ); ?></th>
+                                        <th><?php esc_html_e( 'Melt Flow Index (MFI)', 'gp-theme' ); ?></th>
                                         <td><?php echo esc_html( $capacity ); ?></td>
                                     </tr>
                                 <?php endif; ?>
                                 <?php if ( ! empty( $material ) ) : ?>
                                     <tr>
-                                        <th><?php esc_html_e( 'Polymer Material', 'gp-theme' ); ?></th>
+                                        <th><?php esc_html_e( 'Polymer Grade / Material', 'gp-theme' ); ?></th>
                                         <td><?php echo esc_html( $material ); ?></td>
                                     </tr>
                                 <?php endif; ?>
                                 <?php if ( ! empty( $weight ) ) : ?>
                                     <tr>
-                                        <th><?php esc_html_e( 'Approx Weight', 'gp-theme' ); ?></th>
+                                        <th><?php esc_html_e( 'Packaging Size', 'gp-theme' ); ?></th>
                                         <td><?php echo esc_html( $weight ); ?></td>
                                     </tr>
                                 <?php endif; ?>
                                 <?php if ( ! empty( $neck_size ) ) : ?>
                                     <tr>
-                                        <th><?php esc_html_e( 'Neck / Process', 'gp-theme' ); ?></th>
+                                        <th><?php esc_html_e( 'Pellet Shape / Cut', 'gp-theme' ); ?></th>
                                         <td><?php echo esc_html( $neck_size ); ?></td>
                                     </tr>
                                 <?php endif; ?>
@@ -115,7 +115,7 @@ $cat_name = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : 'Industria
                                 <?php endif; ?>
                                 <?php if ( ! empty( $cert ) ) : ?>
                                     <tr>
-                                        <th><?php esc_html_e( 'Certifications', 'gp-theme' ); ?></th>
+                                        <th><?php esc_html_e( 'Grade / Classification', 'gp-theme' ); ?></th>
                                         <td><?php echo esc_html( $cert ); ?></td>
                                     </tr>
                                 <?php endif; ?>

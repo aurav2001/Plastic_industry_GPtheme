@@ -208,7 +208,7 @@ function gp_ajax_handle_contact() {
         wp_send_json_error( array( 'message' => esc_html__( 'Please fill all mandatory fields.', 'gp-theme' ) ) );
     }
 
-    $to      = get_theme_mod( 'gp_company_email', 'info@jyotiglobalplast.com' );
+    $to      = get_theme_mod( 'gp_company_email', 'info@srspolymer.com' );
     $subject = sprintf( 'New RFQ Enquiry from %s - %s', $name, get_bloginfo( 'name' ) );
     
     $body  = "You have received a new enquiry:\n\n";

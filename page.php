@@ -40,7 +40,7 @@ if ( did_action( 'elementor/loaded' ) && class_exists( '\Elementor\Plugin' ) ) {
     <section class="gp-page-banner">
         <div class="gp-container">
             <div class="gp-page-banner-content">
-                <span class="gp-sub-tag"><?php esc_html_e( 'JYOTI GLOBAL PLAST', 'gp-theme' ); ?></span>
+                <span class="gp-sub-tag"><?php esc_html_e( 'SRS POLYMER', 'gp-theme' ); ?></span>
                 <h1 class="gp-page-title"><?php the_title(); ?></h1>
                 <?php gp_breadcrumbs(); ?>
             </div>

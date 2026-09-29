@@ -19,7 +19,7 @@ get_header();
         <div class="gp-container">
             <div class="gp-page-banner-content">
                 <span class="gp-sub-tag"><?php esc_html_e( 'DISCOVER OUR HERITAGE', 'gp-theme' ); ?></span>
-                <h1 class="gp-page-title"><?php esc_html_e( 'About Jyoti Global Plast Limited', 'gp-theme' ); ?></h1>
+                <h1 class="gp-page-title"><?php esc_html_e( 'About SRS Polymer Industries', 'gp-theme' ); ?></h1>
                 <?php gp_breadcrumbs(); ?>
             </div>
         </div>
@@ -31,22 +31,22 @@ get_header();
             <div class="gp-about-grid">
                 
                 <div class="gp-about-content">
-                    <span class="gp-sub-tag"><?php esc_html_e( '40+ YEARS OF DEDICATION', 'gp-theme' ); ?></span>
-                    <h2 class="gp-section-title"><?php esc_html_e( 'Engineering Excellence Under One Roof', 'gp-theme' ); ?></h2>
+                    <span class="gp-sub-tag"><?php esc_html_e( '25+ YEARS OF DEDICATION', 'gp-theme' ); ?></span>
+                    <h2 class="gp-section-title"><?php esc_html_e( 'Polymer Compounding & Processing Excellence', 'gp-theme' ); ?></h2>
                     
                     <p class="gp-lead-text">
-                        <?php esc_html_e( 'Jyoti Global Plast Limited is an ISO 9001:2015 certified premier manufacturer of industrial plastic packaging containers, high-precision automotive components, non-toxic educational toys & kids furniture, and tactical Defence & Aerospace drone systems.', 'gp-theme' ); ?>
+                        <?php esc_html_e( 'SRS Polymer Industries is a premier manufacturer, processor, and distributor of virgin and reprocessed plastic granules (plastic dana), engineering polymers, and specialty masterbatches in India.', 'gp-theme' ); ?>
                     </p>
 
                     <p class="gp-body-text">
-                        <?php esc_html_e( 'Founded over four decades ago, our relentless pursuit of zero-defect moulding and cutting-edge polymer engineering has established us as a trusted supplier to Fortune 500 chemical companies, leading pharmaceutical manufacturers, automotive OEM majors, and defence establishments.', 'gp-theme' ); ?>
+                        <?php esc_html_e( 'With modern twin-screw compounding extruders and computerized Melt Flow Index (MFI) testing equipment, we supply high-tonnage injection moulders, blow moulding units, pipe extrusion plants, and raffia sack manufacturers with dependable raw materials at wholesale rates.', 'gp-theme' ); ?>
                     </p>
 
                     <div class="gp-highlight-box">
                         <div class="gp-highlight-icon">🎖️</div>
                         <div class="gp-highlight-text">
                             <strong><?php esc_html_e( 'Mission & Quality Commitment', 'gp-theme' ); ?></strong>
-                            <p><?php esc_html_e( 'To pioneer sustainable, leakage-free polymer solutions and indigenous defence aerospace technologies that set global standards in safety, precision, and endurance.', 'gp-theme' ); ?></p>
+                            <p><?php esc_html_e( 'To empower plastic manufacturers across India with zero-defect, uniform polymer dana that optimizes machine cycle times and lowers production costs.', 'gp-theme' ); ?></p>
                         </div>
                     </div>
                 </div>
@@ -54,20 +54,20 @@ get_header();
                 <div class="gp-about-visual">
                     <div class="gp-stats-card-group">
                         <div class="gp-mini-stat-card">
-                            <span class="gp-mini-stat-num">4</span>
-                            <span class="gp-mini-stat-label"><?php esc_html_e( 'Modern Manufacturing Units', 'gp-theme' ); ?></span>
+                            <span class="gp-mini-stat-num">50,000+</span>
+                            <span class="gp-mini-stat-label"><?php esc_html_e( 'MT Annual Polymer Capacity', 'gp-theme' ); ?></span>
                         </div>
                         <div class="gp-mini-stat-card">
-                            <span class="gp-mini-stat-num">1000+</span>
-                            <span class="gp-mini-stat-label"><?php esc_html_e( 'Satisfied Corporate Clients', 'gp-theme' ); ?></span>
+                            <span class="gp-mini-stat-num">1200+</span>
+                            <span class="gp-mini-stat-label"><?php esc_html_e( 'B2B Manufacturers Supplied', 'gp-theme' ); ?></span>
                         </div>
                         <div class="gp-mini-stat-card">
-                            <span class="gp-mini-stat-num">100+</span>
-                            <span class="gp-mini-stat-label"><?php esc_html_e( 'Moulded Products in Catalog', 'gp-theme' ); ?></span>
+                            <span class="gp-mini-stat-num">50+</span>
+                            <span class="gp-mini-stat-label"><?php esc_html_e( 'Polymer Dana Grades', 'gp-theme' ); ?></span>
                         </div>
                         <div class="gp-mini-stat-card">
                             <span class="gp-mini-stat-num">100%</span>
-                            <span class="gp-mini-stat-label"><?php esc_html_e( 'Indigenous Made In India', 'gp-theme' ); ?></span>
+                            <span class="gp-mini-stat-label"><?php esc_html_e( 'Computerized Lab Batch Tested', 'gp-theme' ); ?></span>
                         </div>
                     </div>
                 </div>

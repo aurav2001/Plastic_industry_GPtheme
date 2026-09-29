@@ -33,10 +33,11 @@ $default_products = gp_get_default_products();
             
             <!-- Category Filter Tabs -->
             <div class="gp-filter-tabs">
-                <button class="gp-filter-btn active" data-filter="all"><?php esc_html_e( 'All Products', 'gp-theme' ); ?></button>
-                <button class="gp-filter-btn" data-filter="blow-moulding"><?php esc_html_e( 'Blow Moulding', 'gp-theme' ); ?></button>
-                <button class="gp-filter-btn" data-filter="injection-moulding"><?php esc_html_e( 'Injection Moulding', 'gp-theme' ); ?></button>
-                <button class="gp-filter-btn" data-filter="defence-aerospace"><?php esc_html_e( 'Defence & Aerospace', 'gp-theme' ); ?></button>
+                <button class="gp-filter-btn active" data-filter="all"><?php esc_html_e( 'All Polymers', 'gp-theme' ); ?></button>
+                <button class="gp-filter-btn" data-filter="pp-granules"><?php esc_html_e( 'PP Granules', 'gp-theme' ); ?></button>
+                <button class="gp-filter-btn" data-filter="hdpe-granules"><?php esc_html_e( 'HDPE Granules', 'gp-theme' ); ?></button>
+                <button class="gp-filter-btn" data-filter="abs-granules"><?php esc_html_e( 'ABS Granules', 'gp-theme' ); ?></button>
+                <button class="gp-filter-btn" data-filter="pvc-compounds"><?php esc_html_e( 'PVC & Masterbatch', 'gp-theme' ); ?></button>
             </div>
 
             <div class="gp-products-grid" id="gp-products-grid">
@@ -44,8 +45,8 @@ $default_products = gp_get_default_products();
                 if ( have_posts() ) :
                     while ( have_posts() ) : the_post();
                         $terms = get_the_terms( get_the_ID(), 'gp_product_cat' );
-                        $cat_slug = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->slug : 'blow-moulding';
-                        $cat_name = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : 'Industrial';
+                        $cat_slug = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->slug : 'pp-granules';
+                        $cat_name = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : 'Polymer Dana';
                         $capacity = get_post_meta( get_the_ID(), '_gp_capacity', true );
                         $material = get_post_meta( get_the_ID(), '_gp_material', true );
                 ?>
@@ -65,7 +66,7 @@ $default_products = gp_get_default_products();
                             <p class="gp-product-excerpt"><?php echo wp_trim_words( get_the_excerpt(), 14 ); ?></p>
                             <?php if ( ! empty( $capacity ) ) : ?>
                                 <div class="gp-specs-meta">
-                                    <span class="gp-meta-tag">📏 <?php echo esc_html( $capacity ); ?></span>
+                                    <span class="gp-meta-tag">⚙️ <?php echo esc_html( $capacity ); ?></span>
                                 </div>
                             <?php endif; ?>
                             <div class="gp-product-actions">
@@ -83,13 +84,15 @@ $default_products = gp_get_default_products();
                 else :
                     // Default Fallback
                     foreach ( $default_products as $p ) :
-                        $img_src = GP_THEME_URI . '/assets/images/product-drum-blue.jpg';
-                        if ( 'jerrycan' === $p['image_type'] ) {
-                            $img_src = GP_THEME_URI . '/assets/images/product-jerrycan.jpg';
-                        } elseif ( strpos( $p['image_type'], 'drone' ) !== false || 'connector' === $p['image_type'] ) {
-                            $img_src = GP_THEME_URI . '/assets/images/product-uav-drone.jpg';
-                        } elseif ( 'bucket' === $p['image_type'] || 'jar' === $p['image_type'] ) {
-                            $img_src = GP_THEME_URI . '/assets/images/product-bucket-paint.jpg';
+                        $img_src = GP_THEME_URI . '/assets/images/product-pp-granules.jpg';
+                        if ( 'hdpe_granules' === $p['image_type'] ) {
+                            $img_src = GP_THEME_URI . '/assets/images/product-hdpe-granules.jpg';
+                        } elseif ( 'abs_granules' === $p['image_type'] ) {
+                            $img_src = GP_THEME_URI . '/assets/images/product-abs-granules.jpg';
+                        } elseif ( 'pvc_granules' === $p['image_type'] ) {
+                            $img_src = GP_THEME_URI . '/assets/images/product-hdpe-granules.jpg';
+                        } elseif ( 'masterbatch' === $p['image_type'] ) {
+                            $img_src = GP_THEME_URI . '/assets/images/hero-slide-granules.jpg';
                         }
                 ?>
                     <div class="gp-product-card" data-category="<?php echo esc_attr( $p['cat_slug'] ); ?>">
@@ -103,11 +106,11 @@ $default_products = gp_get_default_products();
                             <p class="gp-product-excerpt"><?php echo esc_html( $p['desc'] ); ?></p>
                             <div class="gp-specs-meta">
                                 <div class="gp-spec-row">
-                                    <span class="gp-spec-label"><?php esc_html_e( 'Capacity:', 'gp-theme' ); ?></span>
+                                    <span class="gp-spec-label"><?php esc_html_e( 'MFI / Grade:', 'gp-theme' ); ?></span>
                                     <span class="gp-spec-val"><?php echo esc_html( $p['capacity'] ); ?></span>
                                 </div>
                                 <div class="gp-spec-row">
-                                    <span class="gp-spec-label"><?php esc_html_e( 'Material:', 'gp-theme' ); ?></span>
+                                    <span class="gp-spec-label"><?php esc_html_e( 'Polymer:', 'gp-theme' ); ?></span>
                                     <span class="gp-spec-val"><?php echo esc_html( $p['material'] ); ?></span>
                                 </div>
                             </div>
@@ -127,7 +130,7 @@ $default_products = gp_get_default_products();
                                     <?php esc_html_e( 'View Details', 'gp-theme' ); ?>
                                 </button>
                                 <button class="gp-btn gp-btn-sm gp-btn-primary gp-btn-enquire" data-product="<?php echo esc_attr( $p['title'] ); ?>">
-                                    <span><?php esc_html_e( 'Enquire Now', 'gp-theme' ); ?></span>
+                                    <span><?php esc_html_e( 'Enquire', 'gp-theme' ); ?></span>
                                 </button>
                             </div>
                         </div>
@@ -145,44 +148,44 @@ $default_products = gp_get_default_products();
                     <div class="gp-quickview-inner">
                         <div class="gp-quickview-media">
                             <div class="gp-product-main-image">
-                                <img id="gp-qv-img" src="<?php echo esc_url( GP_THEME_URI . '/assets/images/product-drum-blue.jpg' ); ?>" alt="Product Preview" />
+                                <img id="gp-qv-img" src="<?php echo esc_url( GP_THEME_URI . '/assets/images/product-pp-granules.jpg' ); ?>" alt="Product Preview" />
                             </div>
                             <div class="gp-product-badges-row" style="margin-top: 15px;">
-                                <span class="gp-cert-badge" id="gp-qv-cert">UN Approved Packaging</span>
-                                <span class="gp-cert-badge">ISO 9001:2015</span>
+                                <span class="gp-cert-badge" id="gp-qv-cert">Virgin & Reprocessed</span>
+                                <span class="gp-cert-badge">ASTM Tested</span>
                             </div>
                         </div>
                         <div class="gp-quickview-info">
-                            <span class="gp-product-category-label" id="gp-qv-cat">Blow Moulding</span>
+                            <span class="gp-product-category-label" id="gp-qv-cat">PP Granules</span>
                             <h3 class="gp-product-detail-title" id="gp-qv-title" style="font-size: 1.8rem;">Product Title</h3>
-                            <p class="gp-product-short-desc" id="gp-qv-desc">Full product engineering specification.</p>
+                            <p class="gp-product-short-desc" id="gp-qv-desc">Full polymer specification and processing parameters.</p>
                             
                             <div class="gp-specs-table-wrapper" style="padding: 16px; margin-bottom: 20px;">
                                 <h4 class="gp-specs-heading" style="font-size: 1.1rem; margin-bottom: 10px;"><?php esc_html_e( 'Technical Specifications', 'gp-theme' ); ?></h4>
                                 <table class="gp-specs-table">
                                     <tbody>
                                         <tr>
-                                            <th><?php esc_html_e( 'Capacity', 'gp-theme' ); ?></th>
+                                            <th><?php esc_html_e( 'Melt Flow Index (MFI)', 'gp-theme' ); ?></th>
                                             <td id="gp-qv-capacity">-</td>
                                         </tr>
                                         <tr>
-                                            <th><?php esc_html_e( 'Material', 'gp-theme' ); ?></th>
+                                            <th><?php esc_html_e( 'Polymer Grade / Material', 'gp-theme' ); ?></th>
                                             <td id="gp-qv-material">-</td>
                                         </tr>
                                         <tr>
-                                            <th><?php esc_html_e( 'Approx Weight', 'gp-theme' ); ?></th>
+                                            <th><?php esc_html_e( 'Packaging Size', 'gp-theme' ); ?></th>
                                             <td id="gp-qv-weight">-</td>
                                         </tr>
                                         <tr>
-                                            <th><?php esc_html_e( 'Neck / Process', 'gp-theme' ); ?></th>
+                                            <th><?php esc_html_e( 'Pellet Shape / Cut', 'gp-theme' ); ?></th>
                                             <td id="gp-qv-neck">-</td>
                                         </tr>
                                         <tr>
-                                            <th><?php esc_html_e( 'Colors', 'gp-theme' ); ?></th>
+                                            <th><?php esc_html_e( 'Available Colors', 'gp-theme' ); ?></th>
                                             <td id="gp-qv-color">-</td>
                                         </tr>
                                         <tr>
-                                            <th><?php esc_html_e( 'Application', 'gp-theme' ); ?></th>
+                                            <th><?php esc_html_e( 'Recommended Application', 'gp-theme' ); ?></th>
                                             <td id="gp-qv-app">-</td>
                                         </tr>
                                     </tbody>
