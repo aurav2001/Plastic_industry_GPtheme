@@ -1,0 +1,219 @@
+<?php
+/**
+ * The template for displaying product archives
+ *
+ * @package GP_Theme
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+get_header();
+
+$default_products = gp_get_default_products();
+?>
+
+<main id="primary" class="site-main">
+
+    <!-- Archive Banner -->
+    <section class="gp-page-banner">
+        <div class="gp-container">
+            <div class="gp-page-banner-content">
+                <span class="gp-sub-tag"><?php esc_html_e( 'COMPLETE CATALOG', 'gp-theme' ); ?></span>
+                <h1 class="gp-page-title"><?php esc_html_e( 'Products & Solutions Catalog', 'gp-theme' ); ?></h1>
+                <?php gp_breadcrumbs(); ?>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Catalog Section -->
+    <section class="gp-section gp-catalog-section">
+        <div class="gp-container">
+            
+            <!-- Category Filter Tabs -->
+            <div class="gp-filter-tabs">
+                <button class="gp-filter-btn active" data-filter="all"><?php esc_html_e( 'All Products', 'gp-theme' ); ?></button>
+                <button class="gp-filter-btn" data-filter="blow-moulding"><?php esc_html_e( 'Blow Moulding', 'gp-theme' ); ?></button>
+                <button class="gp-filter-btn" data-filter="injection-moulding"><?php esc_html_e( 'Injection Moulding', 'gp-theme' ); ?></button>
+                <button class="gp-filter-btn" data-filter="defence-aerospace"><?php esc_html_e( 'Defence & Aerospace', 'gp-theme' ); ?></button>
+            </div>
+
+            <div class="gp-products-grid" id="gp-products-grid">
+                <?php
+                if ( have_posts() ) :
+                    while ( have_posts() ) : the_post();
+                        $terms = get_the_terms( get_the_ID(), 'gp_product_cat' );
+                        $cat_slug = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->slug : 'blow-moulding';
+                        $cat_name = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : 'Industrial';
+                        $capacity = get_post_meta( get_the_ID(), '_gp_capacity', true );
+                        $material = get_post_meta( get_the_ID(), '_gp_material', true );
+                ?>
+                    <div class="gp-product-card" data-category="<?php echo esc_attr( $cat_slug ); ?>">
+                        <div class="gp-product-thumb">
+                            <?php if ( has_post_thumbnail() ) : ?>
+                                <?php the_post_thumbnail( 'gp-product-thumb' ); ?>
+                            <?php else : ?>
+                                <div class="gp-product-placeholder">
+                                    <span><?php echo esc_html( $cat_name ); ?></span>
+                                </div>
+                            <?php endif; ?>
+                            <span class="gp-product-badge"><?php echo esc_html( $cat_name ); ?></span>
+                        </div>
+                        <div class="gp-product-content">
+                            <h3 class="gp-product-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                            <p class="gp-product-excerpt"><?php echo wp_trim_words( get_the_excerpt(), 14 ); ?></p>
+                            <?php if ( ! empty( $capacity ) ) : ?>
+                                <div class="gp-specs-meta">
+                                    <span class="gp-meta-tag">📏 <?php echo esc_html( $capacity ); ?></span>
+                                </div>
+                            <?php endif; ?>
+                            <div class="gp-product-actions">
+                                <a href="<?php the_permalink(); ?>" class="gp-btn gp-btn-sm gp-btn-outline gp-btn-view-details">
+                                    <?php esc_html_e( 'View Details', 'gp-theme' ); ?>
+                                </a>
+                                <button class="gp-btn gp-btn-sm gp-btn-primary gp-btn-enquire" data-product="<?php echo esc_attr( get_the_title() ); ?>">
+                                    <?php esc_html_e( 'Enquire Now', 'gp-theme' ); ?>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                    endwhile;
+                else :
+                    // Default Fallback
+                    foreach ( $default_products as $p ) :
+                        $img_src = GP_THEME_URI . '/assets/images/product-drum-blue.jpg';
+                        if ( 'jerrycan' === $p['image_type'] ) {
+                            $img_src = GP_THEME_URI . '/assets/images/product-jerrycan.jpg';
+                        } elseif ( strpos( $p['image_type'], 'drone' ) !== false || 'connector' === $p['image_type'] ) {
+                            $img_src = GP_THEME_URI . '/assets/images/product-uav-drone.jpg';
+                        } elseif ( 'bucket' === $p['image_type'] || 'jar' === $p['image_type'] ) {
+                            $img_src = GP_THEME_URI . '/assets/images/product-bucket-paint.jpg';
+                        }
+                ?>
+                    <div class="gp-product-card" data-category="<?php echo esc_attr( $p['cat_slug'] ); ?>">
+                        <div class="gp-product-thumb">
+                            <img src="<?php echo esc_url( $img_src ); ?>" alt="<?php echo esc_attr( $p['title'] ); ?>" loading="lazy" />
+                            <span class="gp-product-badge"><?php echo esc_html( $p['badge'] ); ?></span>
+                        </div>
+                        <div class="gp-product-content">
+                            <span class="gp-product-cat-name"><?php echo esc_html( $p['category'] ); ?></span>
+                            <h3 class="gp-product-title"><?php echo esc_html( $p['title'] ); ?></h3>
+                            <p class="gp-product-excerpt"><?php echo esc_html( $p['desc'] ); ?></p>
+                            <div class="gp-specs-meta">
+                                <div class="gp-spec-row">
+                                    <span class="gp-spec-label"><?php esc_html_e( 'Capacity:', 'gp-theme' ); ?></span>
+                                    <span class="gp-spec-val"><?php echo esc_html( $p['capacity'] ); ?></span>
+                                </div>
+                                <div class="gp-spec-row">
+                                    <span class="gp-spec-label"><?php esc_html_e( 'Material:', 'gp-theme' ); ?></span>
+                                    <span class="gp-spec-val"><?php echo esc_html( $p['material'] ); ?></span>
+                                </div>
+                            </div>
+                            <div class="gp-product-actions">
+                                <button class="gp-btn gp-btn-sm gp-btn-outline gp-btn-quickview"
+                                    data-title="<?php echo esc_attr( $p['title'] ); ?>"
+                                    data-cat="<?php echo esc_attr( $p['category'] ); ?>"
+                                    data-capacity="<?php echo esc_attr( $p['capacity'] ); ?>"
+                                    data-material="<?php echo esc_attr( $p['material'] ); ?>"
+                                    data-weight="<?php echo esc_attr( $p['weight'] ); ?>"
+                                    data-neck="<?php echo esc_attr( $p['neck_size'] ); ?>"
+                                    data-color="<?php echo esc_attr( $p['color'] ); ?>"
+                                    data-app="<?php echo esc_attr( $p['application'] ); ?>"
+                                    data-cert="<?php echo esc_attr( $p['badge'] ); ?>"
+                                    data-desc="<?php echo esc_attr( $p['desc'] ); ?>"
+                                    data-img="<?php echo esc_url( $img_src ); ?>">
+                                    <?php esc_html_e( 'View Details', 'gp-theme' ); ?>
+                                </button>
+                                <button class="gp-btn gp-btn-sm gp-btn-primary gp-btn-enquire" data-product="<?php echo esc_attr( $p['title'] ); ?>">
+                                    <span><?php esc_html_e( 'Enquire Now', 'gp-theme' ); ?></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                    endforeach;
+                endif;
+                ?>
+            </div>
+
+            <!-- Product Quick Details Modal -->
+            <div id="gp-quickview-modal" class="gp-quickview-modal" role="dialog" aria-modal="true" aria-hidden="true">
+                <div class="gp-quickview-dialog">
+                    <button type="button" class="gp-quickview-close" id="gp-quickview-close" aria-label="<?php esc_attr_e( 'Close', 'gp-theme' ); ?>">&times;</button>
+                    <div class="gp-quickview-inner">
+                        <div class="gp-quickview-media">
+                            <div class="gp-product-main-image">
+                                <img id="gp-qv-img" src="<?php echo esc_url( GP_THEME_URI . '/assets/images/product-drum-blue.jpg' ); ?>" alt="Product Preview" />
+                            </div>
+                            <div class="gp-product-badges-row" style="margin-top: 15px;">
+                                <span class="gp-cert-badge" id="gp-qv-cert">UN Approved Packaging</span>
+                                <span class="gp-cert-badge">ISO 9001:2015</span>
+                            </div>
+                        </div>
+                        <div class="gp-quickview-info">
+                            <span class="gp-product-category-label" id="gp-qv-cat">Blow Moulding</span>
+                            <h3 class="gp-product-detail-title" id="gp-qv-title" style="font-size: 1.8rem;">Product Title</h3>
+                            <p class="gp-product-short-desc" id="gp-qv-desc">Full product engineering specification.</p>
+                            
+                            <div class="gp-specs-table-wrapper" style="padding: 16px; margin-bottom: 20px;">
+                                <h4 class="gp-specs-heading" style="font-size: 1.1rem; margin-bottom: 10px;"><?php esc_html_e( 'Technical Specifications', 'gp-theme' ); ?></h4>
+                                <table class="gp-specs-table">
+                                    <tbody>
+                                        <tr>
+                                            <th><?php esc_html_e( 'Capacity', 'gp-theme' ); ?></th>
+                                            <td id="gp-qv-capacity">-</td>
+                                        </tr>
+                                        <tr>
+                                            <th><?php esc_html_e( 'Material', 'gp-theme' ); ?></th>
+                                            <td id="gp-qv-material">-</td>
+                                        </tr>
+                                        <tr>
+                                            <th><?php esc_html_e( 'Approx Weight', 'gp-theme' ); ?></th>
+                                            <td id="gp-qv-weight">-</td>
+                                        </tr>
+                                        <tr>
+                                            <th><?php esc_html_e( 'Neck / Process', 'gp-theme' ); ?></th>
+                                            <td id="gp-qv-neck">-</td>
+                                        </tr>
+                                        <tr>
+                                            <th><?php esc_html_e( 'Colors', 'gp-theme' ); ?></th>
+                                            <td id="gp-qv-color">-</td>
+                                        </tr>
+                                        <tr>
+                                            <th><?php esc_html_e( 'Application', 'gp-theme' ); ?></th>
+                                            <td id="gp-qv-app">-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="gp-product-cta-buttons">
+                                <button type="button" class="gp-btn gp-btn-primary gp-btn-lg gp-btn-enquire" id="gp-qv-rfq-btn">
+                                    <span><?php esc_html_e( 'Request Immediate Quote', 'gp-theme' ); ?></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="gp-pagination-wrapper">
+                <?php
+                the_posts_pagination( array(
+                    'mid_size'  => 2,
+                    'prev_text' => '← ' . esc_html__( 'Previous', 'gp-theme' ),
+                    'next_text' => esc_html__( 'Next', 'gp-theme' ) . ' →',
+                ) );
+                ?>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<?php
+get_footer();

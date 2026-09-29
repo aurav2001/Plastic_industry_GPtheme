@@ -1,0 +1,94 @@
+/*
+Theme Name: GP Theme - Blow & Injection Moulding
+Theme URI: https://jyotiglobalplast.com/
+Author: Antigravity & Gulshan Pandey
+Author URI: https://jyotiglobalplast.com/
+Description: A modern, high-performance, responsive WordPress theme designed for Industrial Manufacturing, Blow & Injection Moulding, Precision Engineering, and Defence & Aerospace sectors. Inspired by Jyoti Global Plast with rich interactive sections, custom post types, dynamic product filtering, WhatsApp chat widget, and full Customizer support.
+Version: 1.0.0
+Tested up to: 6.7
+Requires at least: 5.8
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: gp-theme
+Tags: industrial, manufacturing, plastic-moulding, defence, aerospace, products-catalog, corporate, responsive-layout, custom-menu, featured-images, theme-options
+
+--------------------------------------------------------------
+Note: Core theme styling is loaded via assets/css/main.css
+--------------------------------------------------------------
+*/
+
+/* WordPress Core Alignment Classes */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+.aligncenter, div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%;
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+}
