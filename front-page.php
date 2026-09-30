@@ -451,10 +451,10 @@ $default_news       = gp_get_default_news();
             <!-- Product Cards Grid -->
             <div class="gp-products-grid" id="gp-products-grid">
                 <?php
-                // Query all published products from WP CPT without arbitrary limits
+                // Show exactly 3 featured product cards on homepage
                 $product_query = new WP_Query( array(
                     'post_type'      => 'gp_product',
-                    'posts_per_page' => -1,
+                    'posts_per_page' => 3,
                     'post_status'    => 'publish',
                     'orderby'        => 'menu_order title',
                     'order'          => 'ASC',
@@ -530,8 +530,8 @@ $default_news       = gp_get_default_news();
                     endwhile;
                     wp_reset_postdata();
                 else :
-                    // Default Fallback Products for SRS Polymer Plastic Granules
-                    foreach ( $default_products as $p ) :
+                    // Default Fallback Products for SRS Polymer Plastic Granules (3 Cards)
+                    foreach ( array_slice( $default_products, 0, 3 ) as $p ) :
                         $img_src = GP_THEME_URI . '/assets/images/product-pp-granules.jpg';
                         if ( 'hdpe_granules' === $p['image_type'] ) {
                             $img_src = GP_THEME_URI . '/assets/images/product-hdpe-granules.jpg';
@@ -587,6 +587,14 @@ $default_news       = gp_get_default_news();
                     endforeach;
                 endif;
                 ?>
+            </div>
+
+            <!-- View All Products in Catalog -->
+            <div class="gp-view-all-wrap gp-text-center" style="margin-top: 35px; margin-bottom: 20px;">
+                <a href="<?php echo esc_url( get_post_type_archive_link( 'gp_product' ) ?: home_url( '/products/' ) ); ?>" class="gp-btn gp-btn-primary gp-btn-md">
+                    <span><?php esc_html_e( 'View All Products & Categories', 'gp-theme' ); ?></span>
+                    <span class="gp-arrow">→</span>
+                </a>
             </div>
 
             <div class="gp-catalog-cta gp-text-center">
