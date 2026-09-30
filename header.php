@@ -158,20 +158,6 @@ if ( ! defined( 'ABSPATH' ) ) {
                             <li><a href="#story"><?php esc_html_e( 'Company Profile', 'gp-theme' ); ?></a></li>
                             <li><a href="#infra"><?php esc_html_e( 'Our Infrastructure', 'gp-theme' ); ?></a></li>
                             <li><a href="#testing"><?php esc_html_e( 'Quality & Testing Lab', 'gp-theme' ); ?></a></li>
-                            <li><a href="#units"><?php esc_html_e( 'Manufacturing Units', 'gp-theme' ); ?></a></li>
-                        </ul>
-                    </li>
-
-                    <li class="menu-item menu-item-has-children">
-                        <a href="#defence"><?php esc_html_e( 'Defence & Aerospace', 'gp-theme' ); ?> <span class="gp-dropdown-icon">▾</span></a>
-                        <ul class="sub-menu">
-                            <li class="sub-heading"><span><?php esc_html_e( 'UAV & Drones', 'gp-theme' ); ?></span></li>
-                            <li><a href="#products" data-cat="defence-aerospace"><?php esc_html_e( 'Surveillance Drones (IM4-Pro)', 'gp-theme' ); ?></a></li>
-                            <li><a href="#products" data-cat="defence-aerospace"><?php esc_html_e( 'AeroClean Facade Drones', 'gp-theme' ); ?></a></li>
-                            <li><a href="#products" data-cat="defence-aerospace"><?php esc_html_e( 'AeroCrop Agri Drones', 'gp-theme' ); ?></a></li>
-                            <li class="sub-heading"><span><?php esc_html_e( 'Components', 'gp-theme' ); ?></span></li>
-                            <li><a href="#products" data-cat="defence-aerospace"><?php esc_html_e( 'Aerospace Connectors', 'gp-theme' ); ?></a></li>
-                            <li><a href="#products" data-cat="defence-aerospace"><?php esc_html_e( 'Composite Airframe Parts', 'gp-theme' ); ?></a></li>
                         </ul>
                     </li>
 
@@ -182,10 +168,9 @@ if ( ! defined( 'ABSPATH' ) ) {
                         <ul class="sub-menu">
                             <li>
                                 <a href="<?php echo esc_url( get_post_type_archive_link( 'gp_product' ) ?: home_url( '/products/' ) ); ?>" style="font-weight: 700; color: #00b4d8;">
-                                    ✦ <?php esc_html_e( 'All Polymer Products (View All)', 'gp-theme' ); ?>
+                                    ✦ <?php esc_html_e( 'All Products Catalog', 'gp-theme' ); ?>
                                 </a>
                             </li>
-                            <li class="sub-heading"><span><?php esc_html_e( 'Polymer Categories', 'gp-theme' ); ?></span></li>
                             <?php
                             $product_cats = get_terms( array(
                                 'taxonomy'   => 'gp_product_cat',
@@ -201,26 +186,13 @@ if ( ! defined( 'ABSPATH' ) ) {
                                 endforeach;
                             else :
                             ?>
-                                <li><a href="<?php echo esc_url( home_url( '/product-category/pp-granules/' ) ); ?>"><?php esc_html_e( 'Polypropylene (PP) Granules', 'gp-theme' ); ?></a></li>
-                                <li><a href="<?php echo esc_url( home_url( '/product-category/hdpe-granules/' ) ); ?>"><?php esc_html_e( 'HDPE Granules (Blow & Pipe)', 'gp-theme' ); ?></a></li>
-                                <li><a href="<?php echo esc_url( home_url( '/product-category/abs-granules/' ) ); ?>"><?php esc_html_e( 'ABS Engineering Pellets', 'gp-theme' ); ?></a></li>
-                                <li><a href="<?php echo esc_url( home_url( '/product-category/pvc-compounds/' ) ); ?>"><?php esc_html_e( 'PVC Compounds & Dana', 'gp-theme' ); ?></a></li>
-                                <li><a href="<?php echo esc_url( home_url( '/product-category/masterbatches/' ) ); ?>"><?php esc_html_e( 'Color & Additive Masterbatches', 'gp-theme' ); ?></a></li>
+                                <li><a href="#products" data-cat="blow-moulding"><?php esc_html_e( 'Blow Moulding', 'gp-theme' ); ?></a></li>
+                                <li><a href="#products" data-cat="injection-moulding"><?php esc_html_e( 'Injection Moulding', 'gp-theme' ); ?></a></li>
+                                <li><a href="#products" data-cat="defence-aerospace"><?php esc_html_e( 'Defence & Aerospace', 'gp-theme' ); ?></a></li>
                             <?php endif; ?>
                         </ul>
                     </li>
 
-                    <li class="menu-item menu-item-has-children">
-                        <a href="#investors"><?php esc_html_e( 'Investors', 'gp-theme' ); ?> <span class="gp-dropdown-icon">▾</span></a>
-                        <ul class="sub-menu">
-                            <li><a href="#investors"><?php esc_html_e( 'Board Composition', 'gp-theme' ); ?></a></li>
-                            <li><a href="#investors"><?php esc_html_e( 'Financial Information', 'gp-theme' ); ?></a></li>
-                            <li><a href="#investors"><?php esc_html_e( 'SEBI Disclosures & Policies', 'gp-theme' ); ?></a></li>
-                            <li><a href="#investors"><?php esc_html_e( 'RHP & IPO Documents', 'gp-theme' ); ?></a></li>
-                        </ul>
-                    </li>
-
-                    <li class="menu-item"><a href="#news"><?php esc_html_e( 'News', 'gp-theme' ); ?></a></li>
                     <li class="menu-item"><a href="#contact"><?php esc_html_e( 'Contact', 'gp-theme' ); ?></a></li>
                 </ul>
                 <?php endif; ?>
