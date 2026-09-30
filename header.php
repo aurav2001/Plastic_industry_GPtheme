@@ -170,8 +170,9 @@ if ( ! defined( 'ABSPATH' ) ) {
                         </a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="<?php echo esc_url( get_post_type_archive_link( 'gp_product' ) ?: home_url( '/products/' ) ); ?>" style="font-weight: 700; color: #00b4d8;">
-                                    ✦ <?php esc_html_e( 'All Products Catalog', 'gp-theme' ); ?>
+                                <a href="<?php echo esc_url( get_post_type_archive_link( 'gp_product' ) ?: home_url( '/products/' ) ); ?>" style="font-weight: 700; color: #00b4d8; display: inline-flex; align-items: center;">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 6px;"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg>
+                                    <?php esc_html_e( 'All Products Catalog', 'gp-theme' ); ?>
                                 </a>
                             </li>
                             <?php
@@ -189,9 +190,11 @@ if ( ! defined( 'ABSPATH' ) ) {
                                 endforeach;
                             else :
                             ?>
-                                <li><a href="#products" data-cat="blow-moulding"><?php esc_html_e( 'Blow Moulding', 'gp-theme' ); ?></a></li>
-                                <li><a href="#products" data-cat="injection-moulding"><?php esc_html_e( 'Injection Moulding', 'gp-theme' ); ?></a></li>
                                 <li><a href="#products" data-cat="pp-granules"><?php esc_html_e( 'PP Granules', 'gp-theme' ); ?></a></li>
+                                <li><a href="#products" data-cat="hdpe-granules"><?php esc_html_e( 'HDPE Granules', 'gp-theme' ); ?></a></li>
+                                <li><a href="#products" data-cat="abs-granules"><?php esc_html_e( 'ABS Granules', 'gp-theme' ); ?></a></li>
+                                <li><a href="#products" data-cat="pvc-compounds"><?php esc_html_e( 'PVC Compounds', 'gp-theme' ); ?></a></li>
+                                <li><a href="#products" data-cat="masterbatches"><?php esc_html_e( 'Masterbatches', 'gp-theme' ); ?></a></li>
                             <?php endif; ?>
                         </ul>
                     </li>
