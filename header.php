@@ -16,6 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     <link rel="profile" href="https://gmpg.org/xfn/11">
+    <?php if ( ! function_exists( 'has_site_icon' ) || ! has_site_icon() ) : ?>
+        <link rel="icon" type="image/svg+xml" href="<?php echo esc_url( get_template_directory_uri() . '/assets/images/favicon.svg' ); ?>">
+    <?php endif; ?>
     <?php wp_head(); ?>
     <style id="gp-whatsapp-critical-override">
         .gp-whatsapp-widget, #gp-whatsapp-widget, .joinchat, #joinchat, .wa-chat-box, .whatsapp-chat-button {

@@ -442,19 +442,20 @@ $default_news       = gp_get_default_news();
                     endforeach;
                 else :
                 ?>
-                    <button class="gp-filter-btn" data-filter="blow-moulding"><?php esc_html_e( 'Blow Moulding', 'gp-theme' ); ?></button>
-                    <button class="gp-filter-btn" data-filter="injection-moulding"><?php esc_html_e( 'Injection Moulding', 'gp-theme' ); ?></button>
                     <button class="gp-filter-btn" data-filter="pp-granules"><?php esc_html_e( 'PP Granules', 'gp-theme' ); ?></button>
+                    <button class="gp-filter-btn" data-filter="hdpe-granules"><?php esc_html_e( 'HDPE Granules', 'gp-theme' ); ?></button>
+                    <button class="gp-filter-btn" data-filter="abs-granules"><?php esc_html_e( 'ABS Granules', 'gp-theme' ); ?></button>
+                    <button class="gp-filter-btn" data-filter="pvc-compounds"><?php esc_html_e( 'PVC Compounds', 'gp-theme' ); ?></button>
+                    <button class="gp-filter-btn" data-filter="masterbatches"><?php esc_html_e( 'Masterbatches', 'gp-theme' ); ?></button>
                 <?php endif; ?>
             </div>
 
             <!-- Product Cards Grid -->
             <div class="gp-products-grid" id="gp-products-grid">
                 <?php
-                // Show exactly 3 featured product cards on homepage
                 $product_query = new WP_Query( array(
                     'post_type'      => 'gp_product',
-                    'posts_per_page' => 3,
+                    'posts_per_page' => 12,
                     'post_status'    => 'publish',
                     'orderby'        => 'menu_order title',
                     'order'          => 'ASC',
@@ -530,8 +531,8 @@ $default_news       = gp_get_default_news();
                     endwhile;
                     wp_reset_postdata();
                 else :
-                    // Default Fallback Products for SRS Polymer Plastic Granules (3 Cards)
-                    foreach ( array_slice( $default_products, 0, 3 ) as $p ) :
+                    // Default Fallback Products for SRS Polymer Plastic Granules
+                    foreach ( $default_products as $p ) :
                         $img_src = GP_THEME_URI . '/assets/images/product-pp-granules.jpg';
                         if ( 'hdpe_granules' === $p['image_type'] ) {
                             $img_src = GP_THEME_URI . '/assets/images/product-hdpe-granules.jpg';

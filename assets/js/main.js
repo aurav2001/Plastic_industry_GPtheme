@@ -116,21 +116,6 @@
         var counters = document.querySelectorAll('.gp-counter');
         if (!counters.length) return;
 
-        var observer = new IntersectionObserver(function (entries, obs) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    var counter = entry.target;
-                    var target = parseInt(counter.getAttribute('data-target'), 10) || 0;
-                    animateCounter(counter, target);
-                    obs.unobserve(counter);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        counters.forEach(function (counter) {
-            observer.observe(counter);
-        });
-
         function animateCounter(el, target) {
             var duration = 1800; // ms
             var startTime = performance.now();
@@ -152,6 +137,29 @@
             }
             requestAnimationFrame(updateCounter);
         }
+
+        if (!('IntersectionObserver' in window)) {
+            counters.forEach(function (counter) {
+                var target = parseInt(counter.getAttribute('data-target'), 10) || 0;
+                animateCounter(counter, target);
+            });
+            return;
+        }
+
+        var observer = new IntersectionObserver(function (entries, obs) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    var counter = entry.target;
+                    var target = parseInt(counter.getAttribute('data-target'), 10) || 0;
+                    animateCounter(counter, target);
+                    obs.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        counters.forEach(function (counter) {
+            observer.observe(counter);
+        });
     }
 
     /**
@@ -664,8 +672,11 @@
             el.classList.remove('gp-mark-pulse');
             void el.offsetWidth;
             el.classList.add('gp-mark-pulse');
+        }
+
         // Expose globally for testing or manual invocation
         window.toggleGPMark = toggleGPMark;
     }
 
 })();
+
