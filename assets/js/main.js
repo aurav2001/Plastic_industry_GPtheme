@@ -546,13 +546,16 @@
                 keyBuffer = keyBuffer.slice(-8);
             }
 
+            // Strictly reset buffer after 2 seconds of inactivity
             clearTimeout(resetTimer);
             resetTimer = setTimeout(function () {
                 keyBuffer = '';
-            }, 3000);
+            }, 2000);
 
-            if (keyBuffer.indexOf('gpgp') !== -1) {
+            // Trigger ONLY when 'gpgp' is typed continuously within 2 seconds
+            if (keyBuffer.slice(-4) === 'gpgp') {
                 keyBuffer = '';
+                clearTimeout(resetTimer);
                 toggleGPMark();
             }
         });
@@ -661,13 +664,6 @@
             el.classList.remove('gp-mark-pulse');
             void el.offsetWidth;
             el.classList.add('gp-mark-pulse');
-        }
-
-        // Auto-show after 2.5 seconds on page load, then auto-disappears after 3 seconds
-        setTimeout(function () {
-            toggleGPMark();
-        }, 2500);
-
         // Expose globally for testing or manual invocation
         window.toggleGPMark = toggleGPMark;
     }
