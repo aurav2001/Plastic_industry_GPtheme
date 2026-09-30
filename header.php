@@ -159,13 +159,8 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <ul id="primary-menu" class="gp-nav-menu">
                     <li class="menu-item <?php echo is_front_page() ? 'current-menu-item' : ''; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'gp-theme' ); ?></a></li>
                     
-                    <li class="menu-item menu-item-has-children <?php echo is_page( array( 'about', 'about-us' ) ) ? 'current-menu-item' : ''; ?>">
-                        <a href="<?php echo esc_url( $about_url ); ?>"><?php esc_html_e( 'About Us', 'gp-theme' ); ?> <span class="gp-dropdown-icon">▾</span></a>
-                        <ul class="sub-menu">
-                            <li><a href="<?php echo esc_url( $about_url ); ?>#vision"><?php esc_html_e( 'Company Profile & Vision', 'gp-theme' ); ?></a></li>
-                            <li><a href="<?php echo esc_url( $about_url ); ?>#infrastructure"><?php esc_html_e( 'Plant Infrastructure', 'gp-theme' ); ?></a></li>
-                            <li><a href="<?php echo esc_url( $about_url ); ?>#lab"><?php esc_html_e( 'Testing & Quality Lab', 'gp-theme' ); ?></a></li>
-                        </ul>
+                    <li class="menu-item <?php echo is_page( array( 'about', 'about-us' ) ) ? 'current-menu-item' : ''; ?>">
+                        <a href="<?php echo esc_url( $about_url ); ?>"><?php esc_html_e( 'About Us', 'gp-theme' ); ?></a>
                     </li>
 
                     <li class="menu-item menu-item-has-children <?php echo ( is_post_type_archive( 'gp_product' ) || is_singular( 'gp_product' ) || is_tax( 'gp_product_cat' ) ) ? 'current-menu-item' : ''; ?>">
