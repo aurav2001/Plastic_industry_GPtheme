@@ -188,7 +188,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                             ?>
                                 <li><a href="#products" data-cat="blow-moulding"><?php esc_html_e( 'Blow Moulding', 'gp-theme' ); ?></a></li>
                                 <li><a href="#products" data-cat="injection-moulding"><?php esc_html_e( 'Injection Moulding', 'gp-theme' ); ?></a></li>
-                                <li><a href="#products" data-cat="defence-aerospace"><?php esc_html_e( 'Defence & Aerospace', 'gp-theme' ); ?></a></li>
+                                <li><a href="#products" data-cat="pp-granules"><?php esc_html_e( 'PP Granules', 'gp-theme' ); ?></a></li>
                             <?php endif; ?>
                         </ul>
                     </li>

@@ -444,7 +444,7 @@ $default_news       = gp_get_default_news();
                 ?>
                     <button class="gp-filter-btn" data-filter="blow-moulding"><?php esc_html_e( 'Blow Moulding', 'gp-theme' ); ?></button>
                     <button class="gp-filter-btn" data-filter="injection-moulding"><?php esc_html_e( 'Injection Moulding', 'gp-theme' ); ?></button>
-                    <button class="gp-filter-btn" data-filter="defence-aerospace"><?php esc_html_e( 'Defence & Aerospace', 'gp-theme' ); ?></button>
+                    <button class="gp-filter-btn" data-filter="pp-granules"><?php esc_html_e( 'PP Granules', 'gp-theme' ); ?></button>
                 <?php endif; ?>
             </div>
 

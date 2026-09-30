@@ -116,8 +116,7 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
                         <li><a href="#products" data-cat="blow-moulding"><span class="gp-arrow">›</span> <?php esc_html_e( 'Wide Mouth Jars & Packaging', 'gp-theme' ); ?></a></li>
                         <li><a href="#products" data-cat="injection-moulding"><span class="gp-arrow">›</span> <?php esc_html_e( 'IML Pail Buckets (1L - 20L)', 'gp-theme' ); ?></a></li>
                         <li><a href="#products" data-cat="injection-moulding"><span class="gp-arrow">›</span> <?php esc_html_e( 'Toys & Ergonomic Kids Furniture', 'gp-theme' ); ?></a></li>
-                        <li><a href="#products" data-cat="injection-moulding"><span class="gp-arrow">›</span> <?php esc_html_e( 'Precision Automotive Spares', 'gp-theme' ); ?></a></li>
-                        <li><a href="#products" data-cat="defence-aerospace"><span class="gp-arrow">›</span> <?php esc_html_e( 'Mil-Spec Drone Components', 'gp-theme' ); ?></a></li>
+                        <li><a href="#products" data-cat="pp-granules"><span class="gp-arrow">›</span> <?php esc_html_e( 'Polypropylene & HDPE Granules', 'gp-theme' ); ?></a></li>
                     </ul>
                 </div>
 
