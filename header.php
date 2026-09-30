@@ -152,19 +152,23 @@ if ( ! defined( 'ABSPATH' ) ) {
                 else :
                     // Default Fallback Menu matching Jyoti Global Plast reference
                 ?>
+                <?php
+                $about_url   = home_url( '/about/' );
+                $contact_url = home_url( '/contact/' );
+                ?>
                 <ul id="primary-menu" class="gp-nav-menu">
-                    <li class="menu-item current-menu-item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'gp-theme' ); ?></a></li>
+                    <li class="menu-item <?php echo is_front_page() ? 'current-menu-item' : ''; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'gp-theme' ); ?></a></li>
                     
-                    <li class="menu-item menu-item-has-children">
-                        <a href="#about"><?php esc_html_e( 'About Us', 'gp-theme' ); ?> <span class="gp-dropdown-icon">▾</span></a>
+                    <li class="menu-item menu-item-has-children <?php echo is_page( array( 'about', 'about-us' ) ) ? 'current-menu-item' : ''; ?>">
+                        <a href="<?php echo esc_url( $about_url ); ?>"><?php esc_html_e( 'About Us', 'gp-theme' ); ?> <span class="gp-dropdown-icon">▾</span></a>
                         <ul class="sub-menu">
-                            <li><a href="#story"><?php esc_html_e( 'Company Profile', 'gp-theme' ); ?></a></li>
-                            <li><a href="#infra"><?php esc_html_e( 'Our Infrastructure', 'gp-theme' ); ?></a></li>
-                            <li><a href="#testing"><?php esc_html_e( 'Quality & Testing Lab', 'gp-theme' ); ?></a></li>
+                            <li><a href="<?php echo esc_url( $about_url ); ?>#vision"><?php esc_html_e( 'Company Profile & Vision', 'gp-theme' ); ?></a></li>
+                            <li><a href="<?php echo esc_url( $about_url ); ?>#infrastructure"><?php esc_html_e( 'Plant Infrastructure', 'gp-theme' ); ?></a></li>
+                            <li><a href="<?php echo esc_url( $about_url ); ?>#lab"><?php esc_html_e( 'Testing & Quality Lab', 'gp-theme' ); ?></a></li>
                         </ul>
                     </li>
 
-                    <li class="menu-item menu-item-has-children">
+                    <li class="menu-item menu-item-has-children <?php echo ( is_post_type_archive( 'gp_product' ) || is_singular( 'gp_product' ) || is_tax( 'gp_product_cat' ) ) ? 'current-menu-item' : ''; ?>">
                         <a href="<?php echo esc_url( get_post_type_archive_link( 'gp_product' ) ?: home_url( '/products/' ) ); ?>">
                             <?php esc_html_e( 'Products', 'gp-theme' ); ?> <span class="gp-dropdown-icon">▾</span>
                         </a>
@@ -190,23 +194,23 @@ if ( ! defined( 'ABSPATH' ) ) {
                                 endforeach;
                             else :
                             ?>
-                                <li><a href="#products" data-cat="pp-granules"><?php esc_html_e( 'PP Granules', 'gp-theme' ); ?></a></li>
-                                <li><a href="#products" data-cat="hdpe-granules"><?php esc_html_e( 'HDPE Granules', 'gp-theme' ); ?></a></li>
-                                <li><a href="#products" data-cat="abs-granules"><?php esc_html_e( 'ABS Granules', 'gp-theme' ); ?></a></li>
-                                <li><a href="#products" data-cat="pvc-compounds"><?php esc_html_e( 'PVC Compounds', 'gp-theme' ); ?></a></li>
-                                <li><a href="#products" data-cat="masterbatches"><?php esc_html_e( 'Masterbatches', 'gp-theme' ); ?></a></li>
+                                <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="pp-granules"><?php esc_html_e( 'PP Granules', 'gp-theme' ); ?></a></li>
+                                <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="hdpe-granules"><?php esc_html_e( 'HDPE Granules', 'gp-theme' ); ?></a></li>
+                                <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="abs-granules"><?php esc_html_e( 'ABS Granules', 'gp-theme' ); ?></a></li>
+                                <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="pvc-compounds"><?php esc_html_e( 'PVC Compounds', 'gp-theme' ); ?></a></li>
+                                <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="masterbatches"><?php esc_html_e( 'Masterbatches', 'gp-theme' ); ?></a></li>
                             <?php endif; ?>
                         </ul>
                     </li>
 
-                    <li class="menu-item"><a href="#contact"><?php esc_html_e( 'Contact', 'gp-theme' ); ?></a></li>
+                    <li class="menu-item <?php echo is_page( array( 'contact', 'contact-us' ) ) ? 'current-menu-item' : ''; ?>"><a href="<?php echo esc_url( $contact_url ); ?>"><?php esc_html_e( 'Contact', 'gp-theme' ); ?></a></li>
                 </ul>
                 <?php endif; ?>
             </nav>
 
             <!-- Header Right CTAs -->
             <div class="gp-header-actions">
-                <a href="#contact" class="gp-btn gp-btn-primary gp-btn-rfq" id="gp-header-rfq-btn">
+                <a href="<?php echo esc_url( $contact_url ); ?>" class="gp-btn gp-btn-primary gp-btn-rfq" id="gp-header-rfq-btn">
                     <span><?php esc_html_e( 'Request a Quote', 'gp-theme' ); ?></span>
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>

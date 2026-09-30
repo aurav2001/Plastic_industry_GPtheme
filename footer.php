@@ -36,7 +36,7 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
                     <p><?php esc_html_e( 'From virgin PP & HDPE granules to high-impact ABS, PVC compounds, and masterbatches — we supply certified quality at competitive bulk rates.', 'gp-theme' ); ?></p>
                 </div>
                 <div class="gp-cta-strip-actions">
-                    <a href="#contact" class="gp-btn gp-btn-light gp-btn-lg">
+                    <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="gp-btn gp-btn-light gp-btn-lg">
                         <span><?php esc_html_e( 'Request Bulk Price Quote', 'gp-theme' ); ?></span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </a>
@@ -81,7 +81,7 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
                     <div class="gp-footer-socials">
                         <?php if ( get_theme_mod( 'gp_social_linkedin', 'https://in.linkedin.com/company/srs-polymer' ) ) : ?>
                             <a href="<?php echo esc_url( get_theme_mod( 'gp_social_linkedin', 'https://in.linkedin.com/company/srs-polymer' ) ); ?>" target="_blank" rel="noopener" aria-label="LinkedIn" class="gp-social-circle">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.75-1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                             </a>
                         <?php endif; ?>
                         <?php if ( get_theme_mod( 'gp_social_facebook', 'https://www.facebook.com/jypolycontainer/' ) ) : ?>
@@ -96,27 +96,25 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
                 <div class="gp-footer-col gp-footer-col-2">
                     <h4 class="gp-footer-heading"><?php esc_html_e( 'Quick Links', 'gp-theme' ); ?></h4>
                     <ul class="gp-footer-links">
-                        <li><a href="#about"><span class="gp-arrow">›</span> <?php esc_html_e( 'Company Profile', 'gp-theme' ); ?></a></li>
-                        <li><a href="#story"><span class="gp-arrow">›</span> <?php esc_html_e( 'Our 40-Year History', 'gp-theme' ); ?></a></li>
-                        <li><a href="#units"><span class="gp-arrow">›</span> <?php esc_html_e( '4 Manufacturing Units', 'gp-theme' ); ?></a></li>
-                        <li><a href="#defence"><span class="gp-arrow">›</span> <?php esc_html_e( 'Defence Drones & UAVs', 'gp-theme' ); ?></a></li>
-                        <li><a href="#testing"><span class="gp-arrow">›</span> <?php esc_html_e( 'Quality & Testing Facilities', 'gp-theme' ); ?></a></li>
-                        <li><a href="#investors"><span class="gp-arrow">›</span> <?php esc_html_e( 'Investor Grievances & RHP', 'gp-theme' ); ?></a></li>
-                        <li><a href="#contact"><span class="gp-arrow">›</span> <?php esc_html_e( 'Career Opportunities', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><span class="gp-arrow">›</span> <?php esc_html_e( 'About SRS Polymer', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>#vision"><span class="gp-arrow">›</span> <?php esc_html_e( 'Our 25-Year Journey', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>#infrastructure"><span class="gp-arrow">›</span> <?php esc_html_e( 'Compounding Infrastructure', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>#lab"><span class="gp-arrow">›</span> <?php esc_html_e( 'MFI Testing & Lab Standards', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( get_post_type_archive_link( 'gp_product' ) ?: home_url( '/products/' ) ); ?>"><span class="gp-arrow">›</span> <?php esc_html_e( 'Plastic Dana Catalog', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><span class="gp-arrow">›</span> <?php esc_html_e( 'Contact & Direct Enquiry', 'gp-theme' ); ?></a></li>
                     </ul>
                 </div>
 
                 <!-- Col 3: Products Offered -->
                 <div class="gp-footer-col gp-footer-col-3">
-                    <h4 class="gp-footer-heading"><?php esc_html_e( 'Products Offered', 'gp-theme' ); ?></h4>
+                    <h4 class="gp-footer-heading"><?php esc_html_e( 'Polymer Products', 'gp-theme' ); ?></h4>
                     <ul class="gp-footer-links">
-                        <li><a href="#products" data-cat="blow-moulding"><span class="gp-arrow">›</span> <?php esc_html_e( 'Full Open Top Drums', 'gp-theme' ); ?></a></li>
-                        <li><a href="#products" data-cat="blow-moulding"><span class="gp-arrow">›</span> <?php esc_html_e( 'Industrial Jerry Cans (5L - 35L)', 'gp-theme' ); ?></a></li>
-                        <li><a href="#products" data-cat="blow-moulding"><span class="gp-arrow">›</span> <?php esc_html_e( 'Narrow Mouth Carboys', 'gp-theme' ); ?></a></li>
-                        <li><a href="#products" data-cat="blow-moulding"><span class="gp-arrow">›</span> <?php esc_html_e( 'Wide Mouth Jars & Packaging', 'gp-theme' ); ?></a></li>
-                        <li><a href="#products" data-cat="injection-moulding"><span class="gp-arrow">›</span> <?php esc_html_e( 'IML Pail Buckets (1L - 20L)', 'gp-theme' ); ?></a></li>
-                        <li><a href="#products" data-cat="injection-moulding"><span class="gp-arrow">›</span> <?php esc_html_e( 'Toys & Ergonomic Kids Furniture', 'gp-theme' ); ?></a></li>
-                        <li><a href="#products" data-cat="pp-granules"><span class="gp-arrow">›</span> <?php esc_html_e( 'Polypropylene & HDPE Granules', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="pp-granules"><span class="gp-arrow">›</span> <?php esc_html_e( 'Polypropylene (PP) Granules', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="hdpe-granules"><span class="gp-arrow">›</span> <?php esc_html_e( 'HDPE Granules (Blow & Pipe)', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="abs-granules"><span class="gp-arrow">›</span> <?php esc_html_e( 'ABS Engineering Pellets', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="pvc-compounds"><span class="gp-arrow">›</span> <?php esc_html_e( 'PVC Compounds & Dana', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="masterbatches"><span class="gp-arrow">›</span> <?php esc_html_e( 'Color Masterbatches', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="pp-granules"><span class="gp-arrow">›</span> <?php esc_html_e( 'Reprocessed Plastic Dana', 'gp-theme' ); ?></a></li>
                     </ul>
                 </div>
 

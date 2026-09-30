@@ -249,7 +249,7 @@ add_action( 'wp_ajax_nopriv_gp_submit_contact', 'gp_ajax_handle_contact' );
  * Automatically flush rewrite rules to prevent 404 errors on CPTs and Taxonomies
  */
 function gp_flush_rewrites_on_setup() {
-    if ( get_option( 'gp_theme_rewrites_version' ) !== '2.0' ) {
+    if ( get_option( 'gp_theme_rewrites_version' ) !== '2.1' ) {
         if ( function_exists( 'gp_register_product_cpt' ) ) {
             gp_register_product_cpt();
         }
@@ -257,8 +257,55 @@ function gp_flush_rewrites_on_setup() {
             gp_register_product_taxonomy();
         }
         flush_rewrite_rules( false );
-        update_option( 'gp_theme_rewrites_version', '2.0' );
+        update_option( 'gp_theme_rewrites_version', '2.1' );
     }
 }
 add_action( 'init', 'gp_flush_rewrites_on_setup', 99 );
+
+/**
+ * Auto-create essential pages (About Us, Contact Us) and assign their templates
+ */
+function gp_create_default_pages() {
+    if ( get_option( 'gp_default_pages_created_v3' ) ) {
+        return;
+    }
+
+    // 1. About Us Page
+    $about_page = get_page_by_path( 'about' ) ?: get_page_by_path( 'about-us' );
+    if ( ! $about_page ) {
+        $about_id = wp_insert_post( array(
+            'post_title'     => 'About Us',
+            'post_name'      => 'about',
+            'post_status'    => 'publish',
+            'post_type'      => 'page',
+            'comment_status' => 'closed',
+        ) );
+        if ( $about_id && ! is_wp_error( $about_id ) ) {
+            update_post_meta( $about_id, '_wp_page_template', 'page-templates/template-about.php' );
+        }
+    } else {
+        update_post_meta( $about_page->ID, '_wp_page_template', 'page-templates/template-about.php' );
+    }
+
+    // 2. Contact Us Page
+    $contact_page = get_page_by_path( 'contact' ) ?: get_page_by_path( 'contact-us' );
+    if ( ! $contact_page ) {
+        $contact_id = wp_insert_post( array(
+            'post_title'     => 'Contact Us',
+            'post_name'      => 'contact',
+            'post_status'    => 'publish',
+            'post_type'      => 'page',
+            'comment_status' => 'closed',
+        ) );
+        if ( $contact_id && ! is_wp_error( $contact_id ) ) {
+            update_post_meta( $contact_id, '_wp_page_template', 'page-templates/template-contact.php' );
+        }
+    } else {
+        update_post_meta( $contact_page->ID, '_wp_page_template', 'page-templates/template-contact.php' );
+    }
+
+    update_option( 'gp_default_pages_created_v3', 1 );
+}
+add_action( 'init', 'gp_create_default_pages', 20 );
+
 
