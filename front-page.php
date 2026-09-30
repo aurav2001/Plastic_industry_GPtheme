@@ -426,32 +426,53 @@ $default_news       = gp_get_default_news();
                 </p>
             </div>
 
-            <!-- Filter Tabs -->
+            <!-- Filter Tabs (Dynamically matches whatever categories exist in WP) -->
             <div class="gp-filter-tabs">
-                <button class="gp-filter-btn active" data-filter="all"><?php esc_html_e( 'All Polymers', 'gp-theme' ); ?></button>
-                <button class="gp-filter-btn" data-filter="pp-granules"><?php esc_html_e( 'PP Granules', 'gp-theme' ); ?></button>
-                <button class="gp-filter-btn" data-filter="hdpe-granules"><?php esc_html_e( 'HDPE Granules', 'gp-theme' ); ?></button>
-                <button class="gp-filter-btn" data-filter="abs-granules"><?php esc_html_e( 'ABS Granules', 'gp-theme' ); ?></button>
-                <button class="gp-filter-btn" data-filter="pvc-compounds"><?php esc_html_e( 'PVC & Masterbatch', 'gp-theme' ); ?></button>
+                <button class="gp-filter-btn active" data-filter="all"><?php esc_html_e( 'All Products', 'gp-theme' ); ?></button>
+                <?php
+                $existing_terms = get_terms( array(
+                    'taxonomy'   => 'gp_product_cat',
+                    'hide_empty' => true,
+                ) );
+                if ( ! empty( $existing_terms ) && ! is_wp_error( $existing_terms ) ) :
+                    foreach ( $existing_terms as $t ) :
+                ?>
+                    <button class="gp-filter-btn" data-filter="<?php echo esc_attr( $t->slug ); ?>"><?php echo esc_html( $t->name ); ?></button>
+                <?php
+                    endforeach;
+                else :
+                ?>
+                    <button class="gp-filter-btn" data-filter="blow-moulding"><?php esc_html_e( 'Blow Moulding', 'gp-theme' ); ?></button>
+                    <button class="gp-filter-btn" data-filter="injection-moulding"><?php esc_html_e( 'Injection Moulding', 'gp-theme' ); ?></button>
+                    <button class="gp-filter-btn" data-filter="defence-aerospace"><?php esc_html_e( 'Defence & Aerospace', 'gp-theme' ); ?></button>
+                <?php endif; ?>
             </div>
 
             <!-- Product Cards Grid -->
             <div class="gp-products-grid" id="gp-products-grid">
                 <?php
-                // Check if WP posts exist in 'gp_product' CPT
+                // Query all published products from WP CPT without arbitrary limits
                 $product_query = new WP_Query( array(
                     'post_type'      => 'gp_product',
-                    'posts_per_page' => 12,
+                    'posts_per_page' => -1,
                     'post_status'    => 'publish',
+                    'orderby'        => 'menu_order title',
+                    'order'          => 'ASC',
                 ) );
 
                 if ( $product_query->have_posts() ) :
                     while ( $product_query->have_posts() ) : $product_query->the_post();
                         $terms = get_the_terms( get_the_ID(), 'gp_product_cat' );
-                        $cat_slug = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->slug : 'pp-granules';
-                        $cat_name = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : 'Polymer Dana';
+                        $cat_slug = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->slug : 'all';
+                        $cat_name = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : __( 'Product', 'gp-theme' );
                         $capacity = get_post_meta( get_the_ID(), '_gp_capacity', true );
                         $material = get_post_meta( get_the_ID(), '_gp_material', true );
+                        $weight   = get_post_meta( get_the_ID(), '_gp_weight', true );
+                        $neck     = get_post_meta( get_the_ID(), '_gp_neck_size', true );
+                        $color    = get_post_meta( get_the_ID(), '_gp_color', true );
+                        $app      = get_post_meta( get_the_ID(), '_gp_application', true );
+                        $cert     = get_post_meta( get_the_ID(), '_gp_cert', true );
+                        $thumb_url = has_post_thumbnail() ? get_the_post_thumbnail_url( get_the_ID(), 'gp-product-thumb' ) : '';
                 ?>
                     <div class="gp-product-card" data-category="<?php echo esc_attr( $cat_slug ); ?>">
                         <div class="gp-product-thumb">
@@ -462,20 +483,45 @@ $default_news       = gp_get_default_news();
                                     <span class="gp-placeholder-cat"><?php echo esc_html( $cat_name ); ?></span>
                                 </div>
                             <?php endif; ?>
-                            <span class="gp-product-badge"><?php echo esc_html( $cat_name ); ?></span>
+                            <span class="gp-product-badge"><?php echo esc_html( ! empty( $cert ) ? $cert : $cat_name ); ?></span>
                         </div>
                         <div class="gp-product-content">
+                            <span class="gp-product-cat-name"><?php echo esc_html( $cat_name ); ?></span>
                             <h3 class="gp-product-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                             <p class="gp-product-excerpt"><?php echo wp_trim_words( get_the_excerpt(), 14 ); ?></p>
-                            <?php if ( ! empty( $capacity ) ) : ?>
-                                <div class="gp-product-meta-row">
-                                    <span class="gp-meta-tag">⚙️ <?php echo esc_html( $capacity ); ?></span>
+                            <?php if ( ! empty( $capacity ) || ! empty( $material ) ) : ?>
+                                <div class="gp-specs-meta">
+                                    <?php if ( ! empty( $capacity ) ) : ?>
+                                        <div class="gp-spec-row">
+                                            <span class="gp-spec-label"><?php esc_html_e( 'Capacity / Spec:', 'gp-theme' ); ?></span>
+                                            <span class="gp-spec-val"><?php echo esc_html( $capacity ); ?></span>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if ( ! empty( $material ) ) : ?>
+                                        <div class="gp-spec-row">
+                                            <span class="gp-spec-label"><?php esc_html_e( 'Material / Grade:', 'gp-theme' ); ?></span>
+                                            <span class="gp-spec-val"><?php echo esc_html( $material ); ?></span>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                             <?php endif; ?>
                             <div class="gp-product-actions">
-                                <a href="<?php the_permalink(); ?>" class="gp-btn gp-btn-sm gp-btn-outline"><?php esc_html_e( 'View Details', 'gp-theme' ); ?></a>
+                                <button class="gp-btn gp-btn-sm gp-btn-outline gp-btn-quickview"
+                                    data-title="<?php echo esc_attr( get_the_title() ); ?>"
+                                    data-cat="<?php echo esc_attr( $cat_name ); ?>"
+                                    data-capacity="<?php echo esc_attr( $capacity ); ?>"
+                                    data-material="<?php echo esc_attr( $material ); ?>"
+                                    data-weight="<?php echo esc_attr( $weight ); ?>"
+                                    data-neck="<?php echo esc_attr( $neck ); ?>"
+                                    data-color="<?php echo esc_attr( $color ); ?>"
+                                    data-app="<?php echo esc_attr( $app ); ?>"
+                                    data-cert="<?php echo esc_attr( $cert ); ?>"
+                                    data-desc="<?php echo esc_attr( get_the_excerpt() ); ?>"
+                                    data-img="<?php echo esc_url( $thumb_url ); ?>">
+                                    <?php esc_html_e( 'View Details', 'gp-theme' ); ?>
+                                </button>
                                 <button class="gp-btn gp-btn-sm gp-btn-primary gp-btn-enquire" data-product="<?php echo esc_attr( get_the_title() ); ?>">
-                                    <?php esc_html_e( 'Enquire Now', 'gp-theme' ); ?>
+                                    <span><?php esc_html_e( 'Enquire Now', 'gp-theme' ); ?></span>
                                 </button>
                             </div>
                         </div>
@@ -852,7 +898,7 @@ $default_news       = gp_get_default_news();
                                 <div class="gp-form-row">
                                     <div class="gp-form-group">
                                         <label for="rfq_name"><?php esc_html_e( 'Your Name *', 'gp-theme' ); ?></label>
-                                        <input type="text" id="rfq_name" name="fullname" required placeholder="John Doe">
+                                        <input type="text" id="rfq_name" name="fullname" required placeholder="Example Name">
                                     </div>
                                     <div class="gp-form-group">
                                         <label for="rfq_company"><?php esc_html_e( 'Company / Factory Name', 'gp-theme' ); ?></label>
@@ -863,7 +909,7 @@ $default_news       = gp_get_default_news();
                                 <div class="gp-form-row">
                                     <div class="gp-form-group">
                                         <label for="rfq_email"><?php esc_html_e( 'Email Address *', 'gp-theme' ); ?></label>
-                                        <input type="email" id="rfq_email" name="email" required placeholder="john@example.com">
+                                        <input type="email" id="rfq_email" name="email" required placeholder="example@example.com">
                                     </div>
                                     <div class="gp-form-group">
                                         <label for="rfq_phone"><?php esc_html_e( 'Mobile / WhatsApp *', 'gp-theme' ); ?></label>
@@ -875,13 +921,36 @@ $default_news       = gp_get_default_news();
                                     <div class="gp-form-group">
                                         <label for="rfq_product"><?php esc_html_e( 'Polymer / Granules Requirement', 'gp-theme' ); ?></label>
                                         <select id="rfq_product" name="product">
-                                            <option value="Polypropylene (PP) Granules"><?php esc_html_e( 'Polypropylene (PP) Granules', 'gp-theme' ); ?></option>
-                                            <option value="HDPE Granules (Blow & Pipe Grade)"><?php esc_html_e( 'HDPE Granules (Blow & Pipe Grade)', 'gp-theme' ); ?></option>
-                                            <option value="ABS Engineering Polymer Dana"><?php esc_html_e( 'ABS Engineering Polymer Dana', 'gp-theme' ); ?></option>
-                                            <option value="PVC Compound (Rigid / Flexible)"><?php esc_html_e( 'PVC Compound (Rigid / Flexible)', 'gp-theme' ); ?></option>
-                                            <option value="LDPE & LLDPE Film Granules"><?php esc_html_e( 'LDPE & LLDPE Film Granules', 'gp-theme' ); ?></option>
-                                            <option value="Color & Additive Masterbatches"><?php esc_html_e( 'Color & Additive Masterbatches', 'gp-theme' ); ?></option>
-                                            <option value="Custom Polymer Compounding"><?php esc_html_e( 'Custom Polymer Compounding', 'gp-theme' ); ?></option>
+                                            <option value=""><?php esc_html_e( '-- Select Polymer / Granules Grade --', 'gp-theme' ); ?></option>
+                                            <?php
+                                            $rfq_query = new WP_Query( array(
+                                                'post_type'      => 'gp_product',
+                                                'posts_per_page' => 50,
+                                                'post_status'    => 'publish',
+                                                'orderby'        => 'title',
+                                                'order'          => 'ASC',
+                                            ) );
+                                            if ( $rfq_query->have_posts() ) :
+                                                while ( $rfq_query->have_posts() ) : $rfq_query->the_post();
+                                                    printf( '<option value="%s">%s</option>', esc_attr( get_the_title() ), esc_html( get_the_title() ) );
+                                                endwhile;
+                                                wp_reset_postdata();
+                                            else :
+                                                // Fallback industry granule grades
+                                                $fallback_granules = array(
+                                                    'Polypropylene (PP) Granules',
+                                                    'HDPE Granules (Blow & Pipe Grade)',
+                                                    'ABS Engineering Polymer Dana',
+                                                    'PVC Compound (Rigid / Flexible)',
+                                                    'LDPE & LLDPE Film Granules',
+                                                    'Color & Additive Masterbatches',
+                                                    'Custom Polymer Compounding',
+                                                );
+                                                foreach ( $fallback_granules as $fg ) :
+                                                    printf( '<option value="%s">%s</option>', esc_attr( $fg ), esc_html( $fg ) );
+                                                endforeach;
+                                            endif;
+                                            ?>
                                         </select>
                                     </div>
                                     <div class="gp-form-group">

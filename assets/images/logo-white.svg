@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 75" width="340" height="75" fill="none">
+    <defs>
+        <linearGradient id="srsGradWhite1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00b4d8"/>
+            <stop offset="100%" stop-color="#90e0ef"/>
+        </linearGradient>
+        <linearGradient id="srsGradWhite2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ef233c"/>
+            <stop offset="100%" stop-color="#ff758f"/>
+        </linearGradient>
+        <filter id="glowWhite" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00b4d8" flood-opacity="0.5"/>
+        </filter>
+    </defs>
+
+    <!-- Symbol: Molecular Polymer Structure & Granules -->
+    <g transform="translate(10, 7)">
+        <!-- Outer Hexagonal Polymer Lattice -->
+        <polygon points="30,3 54,16 54,44 30,57 6,44 6,16" stroke="#90e0ef" stroke-width="2.5" fill="rgba(19, 64, 116, 0.4)" stroke-linejoin="round"/>
+        
+        <!-- Connecting Bonds -->
+        <line x1="30" y1="18" x2="30" y2="42" stroke="#48cae4" stroke-width="2" stroke-linecap="round"/>
+        <line x1="16" y1="23" x2="44" y2="37" stroke="#48cae4" stroke-width="2" stroke-linecap="round"/>
+        <line x1="16" y1="37" x2="44" y2="23" stroke="#48cae4" stroke-width="2" stroke-linecap="round"/>
+
+        <!-- Polymer Granule Nodes -->
+        <circle cx="30" cy="30" r="6" fill="#ffffff"/>
+        <circle cx="30" cy="18" r="4.5" fill="url(#srsGradWhite1)" filter="url(#glowWhite)"/>
+        <circle cx="30" cy="42" r="4.5" fill="url(#srsGradWhite2)"/>
+        <circle cx="16" cy="23" r="4.5" fill="url(#srsGradWhite2)"/>
+        <circle cx="44" cy="37" r="4.5" fill="url(#srsGradWhite1)" filter="url(#glowWhite)"/>
+        <circle cx="16" cy="37" r="4" fill="url(#srsGradWhite1)"/>
+        <circle cx="44" cy="23" r="4" fill="url(#srsGradWhite2)"/>
+
+        <!-- Micro Pellets Orbiting -->
+        <circle cx="7" cy="8" r="3" fill="url(#srsGradWhite1)"/>
+        <circle cx="53" cy="8" r="2.5" fill="url(#srsGradWhite2)"/>
+        <circle cx="53" cy="52" r="3" fill="url(#srsGradWhite1)"/>
+        <circle cx="7" cy="52" r="2.5" fill="#ffffff"/>
+    </g>
+
+    <!-- Brand Typography -->
+    <g transform="translate(82, 12)">
+        <!-- Main Brand Name -->
+        <text x="0" y="32" font-family="'Rajdhani', 'Inter', 'Segoe UI', sans-serif" font-weight="800" font-size="34" letter-spacing="1.5" fill="#ffffff">
+            SRS <tspan fill="#ef233c">POLYMER</tspan>
+        </text>
+
+        <!-- Tagline / Subtitle -->
+        <text x="2" y="47" font-family="'Inter', 'Segoe UI', sans-serif" font-weight="600" font-size="9" letter-spacing="2.2" fill="#90e0ef">
+            PLASTIC GRANULES &amp; COMPOUNDING
+        </text>
+    </g>
+</svg>

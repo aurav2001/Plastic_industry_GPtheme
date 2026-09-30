@@ -64,9 +64,37 @@ $default_products = gp_get_default_products();
                         <div class="gp-product-content">
                             <h3 class="gp-product-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                             <p class="gp-product-excerpt"><?php echo wp_trim_words( get_the_excerpt(), 14 ); ?></p>
-                            <?php if ( ! empty( $capacity ) ) : ?>
-                                <div class="gp-specs-meta">
-                                    <span class="gp-meta-tag">⚙️ <?php echo esc_html( $capacity ); ?></span>
+                            <?php if ( ! empty( $capacity ) || ! empty( $material ) ) : ?>
+                                <div class="gp-product-specs-chip-box">
+                                    <?php if ( ! empty( $capacity ) ) : ?>
+                                        <div class="gp-spec-chip">
+                                            <span class="gp-spec-chip-icon">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                                                </svg>
+                                            </span>
+                                            <div class="gp-spec-chip-info">
+                                                <span class="gp-spec-chip-lbl"><?php esc_html_e( 'Capacity / Dimensions', 'gp-theme' ); ?></span>
+                                                <span class="gp-spec-chip-val"><?php echo esc_html( $capacity ); ?></span>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if ( ! empty( $material ) ) : ?>
+                                        <div class="gp-spec-chip">
+                                            <span class="gp-spec-chip-icon gp-icon-polymer">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                                    <polyline points="2 17 12 22 22 17"></polyline>
+                                                    <polyline points="2 12 12 17 22 12"></polyline>
+                                                </svg>
+                                            </span>
+                                            <div class="gp-spec-chip-info">
+                                                <span class="gp-spec-chip-lbl"><?php esc_html_e( 'Material / Grade', 'gp-theme' ); ?></span>
+                                                <span class="gp-spec-chip-val"><?php echo esc_html( $material ); ?></span>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                             <?php endif; ?>
                             <div class="gp-product-actions">

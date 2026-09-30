@@ -462,6 +462,19 @@ ul, ol {
     transform: rotate(180deg);
 }
 
+/* Automatic dropdown icon for dynamic WordPress menus */
+.gp-nav-menu > li.menu-item-has-children > a:not(:has(.gp-dropdown-icon))::after {
+    content: '▾';
+    font-size: 0.75rem;
+    margin-left: 6px;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.gp-nav-menu > li.menu-item-has-children:hover > a:not(:has(.gp-dropdown-icon))::after {
+    transform: rotate(180deg);
+}
+
 /* Submenu / Dropdown */
 .gp-nav-menu .sub-menu {
     position: absolute;
@@ -480,7 +493,8 @@ ul, ol {
     z-index: 100;
 }
 
-.gp-nav-menu > li:hover > .sub-menu {
+.gp-nav-menu > li:hover > .sub-menu,
+.gp-nav-menu > li.menu-item-has-children:hover > .sub-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -1461,6 +1475,138 @@ ul, ol {
     font-weight: 700;
 }
 
+/* Modern Technical Specs Chip Box */
+.gp-product-specs-chip-box {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: var(--gp-radius-md);
+    padding: 10px 14px;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: var(--gp-transition);
+}
+
+.gp-product-card:hover .gp-product-specs-chip-box {
+    border-color: #cbd5e1;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(11, 37, 69, 0.05);
+}
+
+.gp-spec-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gp-spec-chip-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: rgba(11, 37, 69, 0.07);
+    color: var(--gp-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: var(--gp-transition);
+}
+
+.gp-spec-chip-icon.gp-icon-polymer {
+    background: rgba(0, 180, 216, 0.12);
+    color: var(--gp-primary-light);
+}
+
+.gp-product-card:hover .gp-spec-chip-icon {
+    transform: rotate(30deg);
+}
+
+.gp-product-card:hover .gp-spec-chip-icon.gp-icon-polymer {
+    transform: scale(1.08);
+}
+
+.gp-spec-chip-info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.gp-spec-chip-lbl {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gp-text-muted);
+    line-height: 1.2;
+}
+
+.gp-spec-chip-val {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--gp-primary);
+    line-height: 1.3;
+    font-family: var(--gp-font-heading);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* Specs Meta Rows */
+.gp-specs-meta {
+    margin: 12px 0 16px;
+    background: #f8fafc;
+    border-radius: var(--gp-radius-sm);
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    border: 1px solid #e2e8f0;
+}
+
+.gp-spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    gap: 8px;
+}
+
+.gp-spec-label {
+    color: var(--gp-text-muted);
+    font-weight: 600;
+    font-size: 0.78rem;
+    flex-shrink: 0;
+}
+
+.gp-spec-val {
+    color: var(--gp-primary);
+    font-weight: 700;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Fallback Meta Tag Pill */
+.gp-product-meta-row {
+    margin-bottom: 18px;
+}
+
+.gp-meta-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #f0f7fd 0%, #e8f4fd 100%);
+    color: var(--gp-primary);
+    border: 1px solid #bfdbfe;
+    padding: 6px 12px;
+    border-radius: var(--gp-radius-sm);
+    font-size: 0.84rem;
+    font-weight: 700;
+    font-family: var(--gp-font-heading);
+    box-shadow: 0 2px 4px rgba(11, 37, 69, 0.04);
+}
+
 .gp-product-actions {
     margin-top: auto;
     display: flex;
@@ -2155,7 +2301,8 @@ ul, ol {
 .gp-whatsapp-widget {
     position: fixed;
     bottom: 30px;
-    left: 30px;
+    right: 30px;
+    left: auto;
     z-index: 999;
 }
 
@@ -2216,7 +2363,8 @@ ul, ol {
 .gp-wa-chatbox {
     position: absolute;
     bottom: 75px;
-    left: 0;
+    right: 0;
+    left: auto;
     width: 330px;
     background: #ffffff;
     border-radius: var(--gp-radius-md);
@@ -2227,7 +2375,7 @@ ul, ol {
     visibility: hidden;
     transform: translateY(15px) scale(0.95);
     transition: var(--gp-transition);
-    transform-origin: bottom left;
+    transform-origin: bottom right;
 }
 
 .gp-wa-chatbox.open {
@@ -2353,8 +2501,8 @@ ul, ol {
 /* Back to Top */
 .gp-back-to-top {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 102px;
+    right: 36px;
     width: 48px;
     height: 48px;
     background: var(--gp-primary);
@@ -2823,11 +2971,17 @@ ul, ol {
     }
     .gp-whatsapp-widget {
         bottom: 20px;
-        left: 20px;
+        right: 20px;
+        left: auto;
     }
     .gp-wa-chatbox {
         width: calc(100vw - 40px);
-        left: 0;
+        right: 0;
+        left: auto;
+    }
+    .gp-back-to-top {
+        bottom: 90px;
+        right: 26px;
     }
 }
 
@@ -3575,4 +3729,206 @@ ul, ol {
         padding: 25px 20px;
     }
 }
+
+/* ==========================================================================
+   21. SECRET THEME WATERMARK IDENTITY BADGE (TRIGGERED BY 'gpgp')
+   ========================================================================== */
+
+/* Watermark Container */
+.gp-secret-watermark {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    z-index: 999998;
+    transform: translateY(80px) scale(0.9);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, visibility 0.3s ease;
+    user-select: none;
+    font-family: var(--gp-font-main, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+}
+
+.gp-secret-watermark.gp-mark-active {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Translucent Minimal Watermark Badge */
+.gp-wm-badge {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 14px 8px 10px;
+    background: linear-gradient(135deg, rgba(11, 37, 69, 0.72), rgba(6, 17, 34, 0.78));
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 180, 216, 0.38);
+    border-radius: 999px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 180, 216, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.gp-wm-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 180, 216, 0.35);
+    border-color: rgba(72, 202, 228, 0.65);
+}
+
+/* Subtle Shimmer */
+.gp-wm-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+    transform: skewX(-25deg);
+    animation: gpWmShimmer 5s infinite;
+    pointer-events: none;
+}
+
+@keyframes gpWmShimmer {
+    0% { left: -100%; }
+    25% { left: 160%; }
+    100% { left: 160%; }
+}
+
+/* Rotating Polymer Icon */
+.gp-wm-icon {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(0, 119, 182, 0.4), rgba(0, 180, 216, 0.25));
+    border: 1px solid rgba(0, 180, 216, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.gp-wm-icon svg {
+    filter: drop-shadow(0 0 5px rgba(0, 180, 216, 0.7));
+    animation: gpPolySpin 18s linear infinite;
+}
+
+@keyframes gpPolySpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Info Text */
+.gp-wm-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    line-height: 1.2;
+}
+
+.gp-wm-line1 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.gp-wm-brand {
+    font-size: 11px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.8px;
+}
+
+.gp-wm-sep {
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.gp-wm-company {
+    font-size: 10px;
+    font-weight: 700;
+    color: #48cae4;
+    letter-spacing: 0.5px;
+}
+
+.gp-wm-live-dot {
+    width: 6px;
+    height: 6px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #10b981;
+    animation: gpDotPulse 2s infinite;
+}
+
+.gp-wm-line2 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.gp-wm-id {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    color: #00b4d8;
+    font-weight: 600;
+}
+
+.gp-wm-sub {
+    font-size: 8.5px;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+}
+
+/* Close button */
+.gp-wm-close {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 17px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 2px 4px;
+    margin-left: 2px;
+    border-radius: 4px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.gp-wm-close:hover {
+    color: #ef233c;
+    transform: scale(1.15);
+}
+
+/* Pulse Animation on Show/Copy */
+.gp-mark-pulse {
+    animation: gpWmBounce 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes gpWmBounce {
+    0% { transform: translateY(40px) scale(0.85); opacity: 0; }
+    70% { transform: translateY(-3px) scale(1.03); opacity: 1; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@media (max-width: 600px) {
+    .gp-secret-watermark {
+        bottom: 18px;
+        left: 12px;
+    }
+    .gp-wm-badge {
+        padding: 6px 12px 6px 8px;
+        gap: 8px;
+    }
+    .gp-wm-sub {
+        display: none;
+    }
+}
+
 

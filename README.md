@@ -26,6 +26,7 @@
   - ✉️ **AJAX Form Processing**: Direct AJAX endpoint with nonce validation and instant user feedback.
   - 🏢 **Infinite Client Logo Marquee**: BASF, APAR, HP Lubricants, Nalco Water, Ipca Laboratories, Chem-Trend, etc.
   - 📱 **Mobile Navigation Drawer**: Smooth slide-in drawer with multi-level dropdowns.
+  - 💎 **Transparent Theme Watermark & Signature (Easter Egg)**: Type `gpgp` on your keyboard anywhere on the site to reveal the translucent polymer identity badge, verified signature ID (`GP-POLYMER-2026-X9`), minimize disc, and optional full-page background watermark overlay stamp.
 
 ---
 
@@ -95,7 +96,7 @@ Go to **Appearance > Customize** (कस्टमाइज़) in your WordPress
    - Company Tagline / Certification (`ISO 9001:2015 Certified Company`)
    - Primary Phone Number (`+91-8591585497`)
    - Official Email (`info@jyotiglobalplast.com`)
-   - Factory & Plant Address (Rabale MIDC Navi Mumbai)
+   - Factory & Plant Address (Delhi-NCR Industrial Area)
 2. **WhatsApp Floating Widget**:
    - Enable / Disable floating button
    - WhatsApp Number (e.g. `918591585497`)

@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 
-define( 'GP_THEME_VERSION', '1.0.0' );
+define( 'GP_THEME_VERSION', '1.2.0' );
 define( 'GP_THEME_DIR', get_template_directory() );
 define( 'GP_THEME_URI', get_template_directory_uri() );
 
@@ -117,9 +117,10 @@ function gp_theme_scripts() {
     // Google Fonts: Rajdhani & Inter
     wp_enqueue_style( 'gp-google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap', array(), null );
 
-    // Core Theme Stylesheet
-    wp_enqueue_style( 'gp-main-style', GP_THEME_URI . '/assets/css/main.css', array(), GP_THEME_VERSION );
-    wp_enqueue_style( 'gp-style', get_stylesheet_uri(), array( 'gp-main-style' ), GP_THEME_VERSION );
+    // Core Theme Stylesheet with automatic cache-busting
+    $css_version = file_exists( GP_THEME_DIR . '/assets/css/main.css' ) ? filemtime( GP_THEME_DIR . '/assets/css/main.css' ) : GP_THEME_VERSION;
+    wp_enqueue_style( 'gp-main-style', GP_THEME_URI . '/assets/css/main.css', array(), $css_version );
+    wp_enqueue_style( 'gp-style', get_stylesheet_uri(), array( 'gp-main-style' ), $css_version );
 
     // Custom Logo Dimension dynamic styles from Customizer
     $logo_w = absint( get_theme_mod( 'gp_logo_width', 180 ) );
@@ -141,8 +142,9 @@ function gp_theme_scripts() {
     ";
     wp_add_inline_style( 'gp-main-style', $custom_logo_css );
 
-    // Core Theme JavaScript
-    wp_enqueue_script( 'gp-main-script', GP_THEME_URI . '/assets/js/main.js', array(), GP_THEME_VERSION, true );
+    // Core Theme JavaScript with automatic cache-busting
+    $js_version = file_exists( GP_THEME_DIR . '/assets/js/main.js' ) ? filemtime( GP_THEME_DIR . '/assets/js/main.js' ) : GP_THEME_VERSION;
+    wp_enqueue_script( 'gp-main-script', GP_THEME_URI . '/assets/js/main.js', array(), $js_version, true );
 
     // Localize Script for AJAX contact form submission
     wp_localize_script( 'gp-main-script', 'gpAjax', array(
@@ -242,3 +244,21 @@ function gp_ajax_handle_contact() {
 }
 add_action( 'wp_ajax_gp_submit_contact', 'gp_ajax_handle_contact' );
 add_action( 'wp_ajax_nopriv_gp_submit_contact', 'gp_ajax_handle_contact' );
+
+/**
+ * Automatically flush rewrite rules to prevent 404 errors on CPTs and Taxonomies
+ */
+function gp_flush_rewrites_on_setup() {
+    if ( get_option( 'gp_theme_rewrites_version' ) !== '2.0' ) {
+        if ( function_exists( 'gp_register_product_cpt' ) ) {
+            gp_register_product_cpt();
+        }
+        if ( function_exists( 'gp_register_product_taxonomy' ) ) {
+            gp_register_product_taxonomy();
+        }
+        flush_rewrite_rules( false );
+        update_option( 'gp_theme_rewrites_version', '2.0' );
+    }
+}
+add_action( 'init', 'gp_flush_rewrites_on_setup', 99 );
+

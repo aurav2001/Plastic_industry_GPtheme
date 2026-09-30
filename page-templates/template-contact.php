@@ -84,7 +84,7 @@ $address   = get_theme_mod( 'gp_company_address', 'SRS Polymer Compounding Mill 
                                 <div class="gp-form-row">
                                     <div class="gp-form-group">
                                         <label><?php esc_html_e( 'Full Name *', 'gp-theme' ); ?></label>
-                                        <input type="text" name="fullname" required placeholder="John Doe">
+                                        <input type="text" name="fullname" required placeholder="Example Name">
                                     </div>
                                     <div class="gp-form-group">
                                         <label><?php esc_html_e( 'Company Name', 'gp-theme' ); ?></label>
@@ -95,7 +95,7 @@ $address   = get_theme_mod( 'gp_company_address', 'SRS Polymer Compounding Mill 
                                 <div class="gp-form-row">
                                     <div class="gp-form-group">
                                         <label><?php esc_html_e( 'Email Address *', 'gp-theme' ); ?></label>
-                                        <input type="email" name="email" required placeholder="john@example.com">
+                                        <input type="email" name="email" required placeholder="example@example.com">
                                     </div>
                                     <div class="gp-form-group">
                                         <label><?php esc_html_e( 'Mobile / WhatsApp *', 'gp-theme' ); ?></label>

@@ -19,6 +19,7 @@
         initRfqModal();
         initProductQuickView();
         initAjaxForms();
+        initSecretGPMark();
     });
 
     /**
@@ -518,6 +519,157 @@
                 });
             });
         });
+    }
+
+    /**
+     * Secret Easter Egg & Auto Theme Watermark:
+     * - Automatically appears after 2.5s on page load and auto-hides after 3s
+     * - Can also be triggered anytime by typing 'gpgp'
+     */
+    function initSecretGPMark() {
+        var keyBuffer = '';
+        var resetTimer = null;
+        var autoHideTimer = null;
+
+        window.addEventListener('keydown', function (e) {
+            // Ignore keystrokes inside form controls
+            var tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : '';
+            if (tag === 'input' || tag === 'textarea' || tag === 'select' || (e.target && e.target.isContentEditable)) {
+                return;
+            }
+
+            var key = (e.key || '').toLowerCase();
+            if (!key || key.length !== 1) return;
+
+            keyBuffer += key;
+            if (keyBuffer.length > 8) {
+                keyBuffer = keyBuffer.slice(-8);
+            }
+
+            clearTimeout(resetTimer);
+            resetTimer = setTimeout(function () {
+                keyBuffer = '';
+            }, 3000);
+
+            if (keyBuffer.indexOf('gpgp') !== -1) {
+                keyBuffer = '';
+                toggleGPMark();
+            }
+        });
+
+        function scheduleAutoHide(el, delayMs) {
+            clearTimeout(autoHideTimer);
+            autoHideTimer = setTimeout(function () {
+                if (el && el.classList.contains('gp-mark-active')) {
+                    el.classList.remove('gp-mark-active');
+                }
+            }, delayMs || 3000);
+        }
+
+        function toggleGPMark() {
+            var existing = document.getElementById('gp-secret-watermark');
+            if (existing) {
+                if (existing.classList.contains('gp-mark-active')) {
+                    existing.classList.remove('gp-mark-active');
+                    clearTimeout(autoHideTimer);
+                } else {
+                    existing.classList.add('gp-mark-active');
+                    playPulseAnimation(existing);
+                    scheduleAutoHide(existing, 3000);
+                }
+                return;
+            }
+
+            var mark = document.createElement('div');
+            mark.id = 'gp-secret-watermark';
+            mark.className = 'gp-secret-watermark gp-mark-active';
+            mark.setAttribute('role', 'status');
+            mark.setAttribute('aria-label', 'GP Theme Polymer Watermark');
+
+            mark.innerHTML = 
+                '<div class="gp-wm-badge" id="gp-wm-badge" title="GP Theme • Verified Polymer Watermark (Click to copy ID)">' +
+                    '<div class="gp-wm-icon">' +
+                        '<svg viewBox="0 0 32 32" width="22" height="22" fill="none">' +
+                            '<polygon points="16,3 27,9 27,23 16,29 5,23 5,9" stroke="#00b4d8" stroke-width="2" fill="rgba(0,180,216,0.12)"/>' +
+                            '<circle cx="16" cy="16" r="3.5" fill="#48cae4"/>' +
+                        '</svg>' +
+                    '</div>' +
+                    '<div class="gp-wm-info">' +
+                        '<div class="gp-wm-line1">' +
+                            '<span class="gp-wm-brand">GP THEME</span>' +
+                            '<span class="gp-wm-sep">•</span>' +
+                            '<span class="gp-wm-company">SRS POLYMER</span>' +
+                            '<span class="gp-wm-live-dot" title="Active Theme Instance"></span>' +
+                        '</div>' +
+                        '<div class="gp-wm-line2" id="gp-wm-line2">' +
+                            '<span class="gp-wm-id">ID: GP-POLY-2026</span>' +
+                            '<span class="gp-wm-sep">•</span>' +
+                            '<span class="gp-wm-sub">PLASTIC DANA</span>' +
+                        '</div>' +
+                    '</div>' +
+                    '<button type="button" class="gp-wm-close" id="gp-wm-close-btn" title="Close" aria-label="Close">&times;</button>' +
+                '</div>';
+
+            document.body.appendChild(mark);
+
+            // Pause auto-hide when hovering over the badge
+            mark.addEventListener('mouseenter', function () {
+                clearTimeout(autoHideTimer);
+            });
+
+            mark.addEventListener('mouseleave', function () {
+                if (mark.classList.contains('gp-mark-active')) {
+                    scheduleAutoHide(mark, 2500);
+                }
+            });
+
+            // Close button
+            var closeBtn = document.getElementById('gp-wm-close-btn');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function (ev) {
+                    ev.stopPropagation();
+                    clearTimeout(autoHideTimer);
+                    mark.classList.remove('gp-mark-active');
+                });
+            }
+
+            // Click on badge to copy ID with feedback
+            var badge = document.getElementById('gp-wm-badge');
+            var line2 = document.getElementById('gp-wm-line2');
+            if (badge && line2) {
+                badge.addEventListener('click', function (ev) {
+                    if (ev.target && (ev.target.id === 'gp-wm-close-btn' || ev.target.closest('#gp-wm-close-btn'))) return;
+                    var textToCopy = 'GP-POLY-2026';
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(textToCopy);
+                    }
+                    var origHtml = line2.innerHTML;
+                    line2.innerHTML = '<span style="color:#10b981;font-weight:700;">Copied: GP-POLY-2026 ✓</span>';
+                    setTimeout(function () {
+                        line2.innerHTML = origHtml;
+                    }, 2000);
+                    playPulseAnimation(mark);
+                    scheduleAutoHide(mark, 3000);
+                });
+            }
+
+            playPulseAnimation(mark);
+            scheduleAutoHide(mark, 3000);
+        }
+
+        function playPulseAnimation(el) {
+            el.classList.remove('gp-mark-pulse');
+            void el.offsetWidth;
+            el.classList.add('gp-mark-pulse');
+        }
+
+        // Auto-show after 2.5 seconds on page load, then auto-disappears after 3 seconds
+        setTimeout(function () {
+            toggleGPMark();
+        }, 2500);
+
+        // Expose globally for testing or manual invocation
+        window.toggleGPMark = toggleGPMark;
     }
 
 })();

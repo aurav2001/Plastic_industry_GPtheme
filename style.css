@@ -4,7 +4,7 @@ Theme URI: https://github.com/aurav2001/Plastic_industry_GPtheme
 Author: Antigravity & Gulshan Pandey
 Author URI: https://github.com/aurav2001/Plastic_industry_GPtheme
 Description: A modern, high-performance, responsive WordPress theme designed for Plastic Granules (Plastic Dana), Polymer Compounding, Blow & Injection Moulding Raw Materials, and Color Masterbatches for SRS Polymer Industries. Features rich interactive sections, custom post types, dynamic product filtering, WhatsApp chat widget, and Elementor support.
-Version: 1.1.0
+Version: 1.2.0
 Tested up to: 6.7
 Requires at least: 5.8
 Requires PHP: 7.4
@@ -91,4 +91,35 @@ a img.aligncenter {
     position: absolute !important;
     width: 1px;
     word-wrap: normal !important;
+}
+
+/* WhatsApp Widget Global Right Override */
+.gp-whatsapp-widget,
+#gp-whatsapp-widget,
+.joinchat,
+#joinchat,
+.wa-chat-box,
+.whatsapp-chat-button {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    left: auto !important;
+    z-index: 999999 !important;
+}
+
+.gp-wa-chatbox,
+#gp-wa-chatbox {
+    position: absolute !important;
+    bottom: 75px !important;
+    right: 0 !important;
+    left: auto !important;
+    transform-origin: bottom right !important;
+}
+
+.gp-back-to-top,
+#gp-back-to-top {
+    position: fixed !important;
+    bottom: 102px !important;
+    right: 36px !important;
+    left: auto !important;
 }

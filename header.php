@@ -17,6 +17,43 @@ if ( ! defined( 'ABSPATH' ) ) {
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <?php wp_head(); ?>
+    <style id="gp-whatsapp-critical-override">
+        .gp-whatsapp-widget, #gp-whatsapp-widget, .joinchat, #joinchat, .wa-chat-box, .whatsapp-chat-button {
+            position: fixed !important;
+            bottom: 30px !important;
+            right: 30px !important;
+            left: auto !important;
+            z-index: 999999 !important;
+        }
+        .gp-wa-chatbox, #gp-wa-chatbox {
+            position: absolute !important;
+            bottom: 75px !important;
+            right: 0 !important;
+            left: auto !important;
+            transform-origin: bottom right !important;
+        }
+        .gp-back-to-top, #gp-back-to-top {
+            position: fixed !important;
+            bottom: 102px !important;
+            right: 36px !important;
+            left: auto !important;
+        }
+        @media (max-width: 768px) {
+            .gp-whatsapp-widget, #gp-whatsapp-widget, .joinchat, #joinchat {
+                bottom: 20px !important;
+                right: 20px !important;
+                left: auto !important;
+            }
+            .gp-wa-chatbox, #gp-wa-chatbox {
+                right: 0 !important;
+                left: auto !important;
+            }
+            .gp-back-to-top, #gp-back-to-top {
+                bottom: 90px !important;
+                right: 26px !important;
+            }
+        }
+    </style>
 </head>
 
 <body <?php body_class(); ?>>
@@ -38,7 +75,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 </span>
                 <span class="gp-topbar-item gp-hidden-mobile">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    <span>Rabale MIDC, Navi Mumbai, India</span>
+                    <span><?php echo esc_html( get_theme_mod( 'gp_company_topbar_loc', 'Delhi-NCR Industrial Area, India' ) ); ?></span>
                 </span>
             </div>
 
@@ -77,10 +114,18 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <?php else : ?>
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="gp-logo-link" rel="home">
                         <div class="gp-logo-mark">
-                            <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
-                                <rect width="40" height="40" rx="8" fill="#0b2545"/>
-                                <path d="M10 28L20 8L30 28H23L20 18L17 28H10Z" fill="#ef233c"/>
-                                <circle cx="20" cy="24" r="3" fill="#00b4d8"/>
+                            <svg width="38" height="38" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="25,4 45,15 45,37 25,48 5,37 5,15" stroke="#0b2545" stroke-width="2.5" fill="#f0f7fd" stroke-linejoin="round"/>
+                                <line x1="25" y1="16" x2="25" y2="36" stroke="#0077b6" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="13" y1="21" x2="37" y2="31" stroke="#0077b6" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="13" y1="31" x2="37" y2="21" stroke="#0077b6" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="25" cy="26" r="5" fill="#0b2545"/>
+                                <circle cx="25" cy="16" r="3.5" fill="#00b4d8"/>
+                                <circle cx="25" cy="36" r="3.5" fill="#ef233c"/>
+                                <circle cx="13" cy="21" r="3.5" fill="#ef233c"/>
+                                <circle cx="37" cy="31" r="3.5" fill="#00b4d8"/>
+                                <circle cx="13" cy="31" r="3" fill="#00b4d8"/>
+                                <circle cx="37" cy="21" r="3" fill="#ef233c"/>
                             </svg>
                         </div>
                         <div class="gp-logo-text">
@@ -131,17 +176,37 @@ if ( ! defined( 'ABSPATH' ) ) {
                     </li>
 
                     <li class="menu-item menu-item-has-children">
-                        <a href="#products"><?php esc_html_e( 'Products', 'gp-theme' ); ?> <span class="gp-dropdown-icon">▾</span></a>
+                        <a href="<?php echo esc_url( get_post_type_archive_link( 'gp_product' ) ?: home_url( '/products/' ) ); ?>">
+                            <?php esc_html_e( 'Products', 'gp-theme' ); ?> <span class="gp-dropdown-icon">▾</span>
+                        </a>
                         <ul class="sub-menu">
-                            <li class="sub-heading"><span><?php esc_html_e( 'Blow Moulded', 'gp-theme' ); ?></span></li>
-                            <li><a href="#products" data-cat="blow-moulding"><?php esc_html_e( 'Full Open Top Drums', 'gp-theme' ); ?></a></li>
-                            <li><a href="#products" data-cat="blow-moulding"><?php esc_html_e( 'Jerry Cans (5L - 35L)', 'gp-theme' ); ?></a></li>
-                            <li><a href="#products" data-cat="blow-moulding"><?php esc_html_e( 'Narrow Mouth Carboys', 'gp-theme' ); ?></a></li>
-                            <li><a href="#products" data-cat="blow-moulding"><?php esc_html_e( 'Wide Mouth Packaging', 'gp-theme' ); ?></a></li>
-                            <li class="sub-heading"><span><?php esc_html_e( 'Injection Moulded', 'gp-theme' ); ?></span></li>
-                            <li><a href="#products" data-cat="injection-moulding"><?php esc_html_e( 'Pail Buckets with IML', 'gp-theme' ); ?></a></li>
-                            <li><a href="#products" data-cat="injection-moulding"><?php esc_html_e( 'Toys & Kids Furniture', 'gp-theme' ); ?></a></li>
-                            <li><a href="#products" data-cat="injection-moulding"><?php esc_html_e( 'Automotive Precision Parts', 'gp-theme' ); ?></a></li>
+                            <li>
+                                <a href="<?php echo esc_url( get_post_type_archive_link( 'gp_product' ) ?: home_url( '/products/' ) ); ?>" style="font-weight: 700; color: #00b4d8;">
+                                    ✦ <?php esc_html_e( 'All Polymer Products (View All)', 'gp-theme' ); ?>
+                                </a>
+                            </li>
+                            <li class="sub-heading"><span><?php esc_html_e( 'Polymer Categories', 'gp-theme' ); ?></span></li>
+                            <?php
+                            $product_cats = get_terms( array(
+                                'taxonomy'   => 'gp_product_cat',
+                                'hide_empty' => false,
+                            ) );
+                            if ( ! empty( $product_cats ) && ! is_wp_error( $product_cats ) ) :
+                                foreach ( $product_cats as $pcat ) :
+                                    printf(
+                                        '<li><a href="%s">%s</a></li>',
+                                        esc_url( get_term_link( $pcat ) ),
+                                        esc_html( $pcat->name )
+                                    );
+                                endforeach;
+                            else :
+                            ?>
+                                <li><a href="<?php echo esc_url( home_url( '/product-category/pp-granules/' ) ); ?>"><?php esc_html_e( 'Polypropylene (PP) Granules', 'gp-theme' ); ?></a></li>
+                                <li><a href="<?php echo esc_url( home_url( '/product-category/hdpe-granules/' ) ); ?>"><?php esc_html_e( 'HDPE Granules (Blow & Pipe)', 'gp-theme' ); ?></a></li>
+                                <li><a href="<?php echo esc_url( home_url( '/product-category/abs-granules/' ) ); ?>"><?php esc_html_e( 'ABS Engineering Pellets', 'gp-theme' ); ?></a></li>
+                                <li><a href="<?php echo esc_url( home_url( '/product-category/pvc-compounds/' ) ); ?>"><?php esc_html_e( 'PVC Compounds & Dana', 'gp-theme' ); ?></a></li>
+                                <li><a href="<?php echo esc_url( home_url( '/product-category/masterbatches/' ) ); ?>"><?php esc_html_e( 'Color & Additive Masterbatches', 'gp-theme' ); ?></a></li>
+                            <?php endif; ?>
                         </ul>
                     </li>
 

@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $phone     = get_theme_mod( 'gp_company_phone', '+91-8591585497' );
 $clean_tel = preg_replace( '/[^0-9]/', '', $phone );
 $email     = get_theme_mod( 'gp_company_email', 'info@srspolymer.com' );
-$address   = get_theme_mod( 'gp_company_address', 'Industrial Area, Phase-2, New Delhi / Navi Mumbai, India' );
+$address   = get_theme_mod( 'gp_company_address', 'SRS Polymer Industrial Area, Phase-2, New Delhi, India' );
 $cert      = get_theme_mod( 'gp_company_cert', 'ISO 9001:2015 Certified Polymer Supplier' );
 $wa_enable = get_theme_mod( 'gp_enable_whatsapp', true );
 $wa_number = get_theme_mod( 'gp_whatsapp_number', '918591585497' );
@@ -56,10 +56,18 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
                 <div class="gp-footer-col gp-footer-col-1">
                     <div class="gp-footer-brand">
                         <div class="gp-logo-mark">
-                            <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
-                                <rect width="40" height="40" rx="8" fill="#134074"/>
-                                <path d="M10 28L20 8L30 28H23L20 18L17 28H10Z" fill="#ef233c"/>
-                                <circle cx="20" cy="24" r="3" fill="#00b4d8"/>
+                            <svg width="38" height="38" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="25,4 45,15 45,37 25,48 5,37 5,15" stroke="#48cae4" stroke-width="2" fill="rgba(19, 64, 116, 0.5)" stroke-linejoin="round"/>
+                                <line x1="25" y1="16" x2="25" y2="36" stroke="#48cae4" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="13" y1="21" x2="37" y2="31" stroke="#48cae4" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="13" y1="31" x2="37" y2="21" stroke="#48cae4" stroke-width="1.8" stroke-linecap="round"/>
+                                <circle cx="25" cy="26" r="5" fill="#ffffff"/>
+                                <circle cx="25" cy="16" r="3.5" fill="#00b4d8"/>
+                                <circle cx="25" cy="36" r="3.5" fill="#ef233c"/>
+                                <circle cx="13" cy="21" r="3.5" fill="#ef233c"/>
+                                <circle cx="37" cy="31" r="3.5" fill="#00b4d8"/>
+                                <circle cx="13" cy="31" r="3" fill="#00b4d8"/>
+                                <circle cx="37" cy="21" r="3" fill="#ef233c"/>
                             </svg>
                         </div>
                         <h3 class="gp-footer-company">SRS Polymer Industries</h3>
@@ -169,9 +177,9 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
 
     <!-- Floating WhatsApp Widget (matching Jyoti Joinchat) -->
     <?php if ( $wa_enable ) : ?>
-    <div class="gp-whatsapp-widget" id="gp-whatsapp-widget">
+    <div class="gp-whatsapp-widget" id="gp-whatsapp-widget" style="position: fixed !important; bottom: 30px !important; right: 30px !important; left: auto !important; z-index: 99999 !important;">
         <!-- Chat Popup Box -->
-        <div class="gp-wa-chatbox" id="gp-wa-chatbox">
+        <div class="gp-wa-chatbox" id="gp-wa-chatbox" style="position: absolute !important; bottom: 75px !important; right: 0 !important; left: auto !important; transform-origin: bottom right !important;">
             <div class="gp-wa-header">
                 <div class="gp-wa-avatar">
                     <div class="gp-wa-avatar-img">SP</div>
@@ -208,7 +216,7 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
     <?php endif; ?>
 
     <!-- Back to Top Button -->
-    <button id="gp-back-to-top" class="gp-back-to-top" aria-label="<?php esc_attr_e( 'Back to top', 'gp-theme' ); ?>">
+    <button id="gp-back-to-top" class="gp-back-to-top" style="bottom: 102px !important; right: 36px !important; left: auto !important;" aria-label="<?php esc_attr_e( 'Back to top', 'gp-theme' ); ?>">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
     </button>
 
@@ -225,7 +233,7 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
                 <div class="gp-form-row">
                     <div class="gp-form-group">
                         <label><?php esc_html_e( 'Full Name *', 'gp-theme' ); ?></label>
-                        <input type="text" name="fullname" required placeholder="John Doe">
+                        <input type="text" name="fullname" required placeholder="Example Name">
                     </div>
                     <div class="gp-form-group">
                         <label><?php esc_html_e( 'Company Name', 'gp-theme' ); ?></label>
@@ -235,7 +243,7 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
                 <div class="gp-form-row">
                     <div class="gp-form-group">
                         <label><?php esc_html_e( 'Email Address *', 'gp-theme' ); ?></label>
-                        <input type="email" name="email" required placeholder="john@example.com">
+                        <input type="email" name="email" required placeholder="example@example.com">
                     </div>
                     <div class="gp-form-group">
                         <label><?php esc_html_e( 'Mobile / WhatsApp *', 'gp-theme' ); ?></label>
@@ -245,7 +253,7 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
                 <div class="gp-form-row">
                     <div class="gp-form-group">
                         <label><?php esc_html_e( 'Product of Interest', 'gp-theme' ); ?></label>
-                        <input type="text" name="product" id="gp-modal-product-field" placeholder="e.g. 50L Jerry Cans / IM4-Pro Drone">
+                        <input type="text" name="product" id="gp-modal-product-field" placeholder="e.g. PP Granules / HDPE Dana (MFI 12)">
                     </div>
                     <div class="gp-form-group">
                         <label><?php esc_html_e( 'Estimated Quantity', 'gp-theme' ); ?></label>
