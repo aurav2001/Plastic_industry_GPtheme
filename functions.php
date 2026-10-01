@@ -125,10 +125,27 @@ function gp_theme_scripts() {
     // Custom Logo Dimension dynamic styles from Customizer
     $logo_w = absint( get_theme_mod( 'gp_logo_width', 180 ) );
     $logo_h = absint( get_theme_mod( 'gp_logo_height', 55 ) );
-    $custom_logo_css = "
+
+    // Dynamic Global Colors from Customizer
+    $color_primary       = sanitize_hex_color( get_theme_mod( 'gp_color_primary', '#0b2545' ) ) ?: '#0b2545';
+    $color_primary_light = sanitize_hex_color( get_theme_mod( 'gp_color_primary_light', '#134074' ) ) ?: '#134074';
+    $color_accent        = sanitize_hex_color( get_theme_mod( 'gp_color_accent', '#ef233c' ) ) ?: '#ef233c';
+    $color_accent_hover  = sanitize_hex_color( get_theme_mod( 'gp_color_accent_hover', '#d90429' ) ) ?: '#d90429';
+    $color_secondary     = sanitize_hex_color( get_theme_mod( 'gp_color_secondary', '#00b4d8' ) ) ?: '#00b4d8';
+    $color_green         = sanitize_hex_color( get_theme_mod( 'gp_color_green', '#10b981' ) ) ?: '#10b981';
+    $color_bg_dark       = sanitize_hex_color( get_theme_mod( 'gp_color_bg_dark', '#0b192c' ) ) ?: '#0b192c';
+
+    $custom_theme_css = "
         :root {
             --gp-logo-width: {$logo_w}px;
             --gp-logo-height: {$logo_h}px;
+            --gp-primary: {$color_primary};
+            --gp-primary-light: {$color_primary_light};
+            --gp-accent-red: {$color_accent};
+            --gp-accent-red-hover: {$color_accent_hover};
+            --gp-accent-cyan: {$color_secondary};
+            --gp-accent-green: {$color_green};
+            --gp-bg-dark: {$color_bg_dark};
         }
         .site-branding .custom-logo {
             max-width: {$logo_w}px !important;
@@ -140,7 +157,7 @@ function gp_theme_scripts() {
             max-height: {$logo_h}px !important;
         }
     ";
-    wp_add_inline_style( 'gp-main-style', $custom_logo_css );
+    wp_add_inline_style( 'gp-main-style', $custom_theme_css );
 
     // Core Theme JavaScript with automatic cache-busting
     $js_version = file_exists( GP_THEME_DIR . '/assets/js/main.js' ) ? filemtime( GP_THEME_DIR . '/assets/js/main.js' ) : GP_THEME_VERSION;

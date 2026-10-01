@@ -114,26 +114,31 @@ if ( ! defined( 'ABSPATH' ) ) {
             <div class="site-branding">
                 <?php if ( has_custom_logo() ) : ?>
                     <?php the_custom_logo(); ?>
-                <?php else : ?>
+                <?php else : 
+                    $company_name  = get_theme_mod( 'gp_company_name', 'SHRI RAM SHARNAM OVERSEAS' );
+                    $company_div   = get_theme_mod( 'gp_company_division', 'GREEN POLYTECH LIMITED' );
+                    $company_short = get_theme_mod( 'gp_company_short', 'SRS' );
+                ?>
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="gp-logo-link" rel="home">
                         <div class="gp-logo-mark">
-                            <svg width="38" height="38" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <polygon points="25,4 45,15 45,37 25,48 5,37 5,15" stroke="#0b2545" stroke-width="2.5" fill="#f0f7fd" stroke-linejoin="round"/>
-                                <line x1="25" y1="16" x2="25" y2="36" stroke="#0077b6" stroke-width="2" stroke-linecap="round"/>
-                                <line x1="13" y1="21" x2="37" y2="31" stroke="#0077b6" stroke-width="2" stroke-linecap="round"/>
-                                <line x1="13" y1="31" x2="37" y2="21" stroke="#0077b6" stroke-width="2" stroke-linecap="round"/>
-                                <circle cx="25" cy="26" r="5" fill="#0b2545"/>
-                                <circle cx="25" cy="16" r="3.5" fill="#00b4d8"/>
-                                <circle cx="25" cy="36" r="3.5" fill="#ef233c"/>
-                                <circle cx="13" cy="21" r="3.5" fill="#ef233c"/>
-                                <circle cx="37" cy="31" r="3.5" fill="#00b4d8"/>
-                                <circle cx="13" cy="31" r="3" fill="#00b4d8"/>
-                                <circle cx="37" cy="21" r="3" fill="#ef233c"/>
+                            <svg width="42" height="42" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="25,4 45,15 45,37 25,48 5,37 5,15" stroke="var(--gp-primary)" stroke-width="2.5" fill="#f0f7fd" stroke-linejoin="round"/>
+                                <line x1="25" y1="16" x2="25" y2="36" stroke="var(--gp-accent-cyan)" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="13" y1="21" x2="37" y2="31" stroke="var(--gp-accent-cyan)" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="13" y1="31" x2="37" y2="21" stroke="var(--gp-accent-cyan)" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="25" cy="26" r="9.5" fill="var(--gp-primary)"/>
+                                <text x="25" y="29.5" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="900" font-family="'Rajdhani', sans-serif"><?php echo esc_html( $company_short ); ?></text>
+                                <circle cx="25" cy="16" r="3" fill="var(--gp-accent-cyan)"/>
+                                <circle cx="25" cy="36" r="3" fill="var(--gp-accent-red)"/>
+                                <circle cx="13" cy="21" r="3" fill="var(--gp-accent-red)"/>
+                                <circle cx="37" cy="31" r="3" fill="var(--gp-accent-cyan)"/>
+                                <circle cx="13" cy="31" r="3" fill="var(--gp-accent-cyan)"/>
+                                <circle cx="37" cy="21" r="3" fill="var(--gp-accent-red)"/>
                             </svg>
                         </div>
                         <div class="gp-logo-text">
-                            <span class="gp-brand-name">SRS <span class="gp-accent">POLYMER</span></span>
-                            <span class="gp-brand-sub"><?php esc_html_e( 'Virgin & Recycled Plastic Granules (Dana)', 'gp-theme' ); ?></span>
+                            <span class="gp-brand-name"><?php echo esc_html( $company_name ); ?></span>
+                            <span class="gp-brand-sub"><?php echo esc_html( $company_div ); ?></span>
                         </div>
                     </a>
                 <?php endif; ?>
@@ -228,7 +233,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     <div class="gp-mobile-drawer" id="gp-mobile-drawer">
         <div class="gp-drawer-header">
             <div class="gp-logo-text">
-                <span class="gp-brand-name">SRS <span class="gp-accent">POLYMER</span></span>
+                <span class="gp-brand-name"><?php echo esc_html( get_theme_mod( 'gp_company_short', 'SRS' ) ); ?> &bull; <?php echo esc_html( get_theme_mod( 'gp_company_name', 'SHRI RAM SHARNAM OVERSEAS' ) ); ?></span>
+                <span class="gp-brand-sub"><?php echo esc_html( get_theme_mod( 'gp_company_division', 'GREEN POLYTECH LIMITED' ) ); ?></span>
             </div>
             <button class="gp-drawer-close" id="gp-drawer-close" aria-label="<?php esc_attr_e( 'Close Navigation', 'gp-theme' ); ?>">✕</button>
         </div>

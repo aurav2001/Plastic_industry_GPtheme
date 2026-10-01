@@ -403,19 +403,29 @@ ul, ol {
 
 .gp-brand-name {
     font-family: var(--gp-font-heading);
-    font-size: 1.45rem;
+    font-size: 1.18rem;
     font-weight: 800;
     color: var(--gp-primary);
-    line-height: 1.1;
+    line-height: 1.15;
     letter-spacing: 0.02em;
+    text-transform: uppercase;
 }
 
 .gp-brand-sub {
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: var(--gp-text-muted);
-    letter-spacing: 0.04em;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--gp-accent-cyan);
+    letter-spacing: 0.05em;
     text-transform: uppercase;
+}
+
+@media (max-width: 992px) {
+    .gp-brand-name {
+        font-size: 0.98rem;
+    }
+    .gp-brand-sub {
+        font-size: 0.60rem;
+    }
 }
 
 /* Navigation Menu */

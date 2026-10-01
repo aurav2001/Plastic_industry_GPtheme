@@ -1,6 +1,7 @@
 <?php
 /**
  * GP Theme Customizer Options
+ * Includes Global Color Controls and Company Info
  *
  * @package GP_Theme
  */
@@ -54,12 +55,143 @@ function gp_theme_customize_register( $wp_customize ) {
     ) );
 
     // -------------------------------------------------------------
+    // Section: Global Site Colors (NEW)
+    // -------------------------------------------------------------
+    $wp_customize->add_section( 'gp_theme_colors', array(
+        'title'       => __( 'Global Site Colors', 'gp-theme' ),
+        'priority'    => 25,
+        'description' => __( 'Customize the global color palette across your entire website (buttons, headers, accents, footer). Changes reflect in real-time.', 'gp-theme' ),
+    ) );
+
+    // Primary Brand Color (Dark Navy)
+    $wp_customize->add_setting( 'gp_color_primary', array(
+        'default'           => '#0b2545',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gp_color_primary', array(
+        'label'       => __( 'Primary Brand Color', 'gp-theme' ),
+        'description' => __( 'Used for headers, brand text, and primary dark styling.', 'gp-theme' ),
+        'section'     => 'gp_theme_colors',
+    ) ) );
+
+    // Primary Light Color
+    $wp_customize->add_setting( 'gp_color_primary_light', array(
+        'default'           => '#134074',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gp_color_primary_light', array(
+        'label'       => __( 'Primary Light / Navy', 'gp-theme' ),
+        'description' => __( 'Used for gradients, topbar highlights, and accents.', 'gp-theme' ),
+        'section'     => 'gp_theme_colors',
+    ) ) );
+
+    // Primary Accent Color (CTA Buttons)
+    $wp_customize->add_setting( 'gp_color_accent', array(
+        'default'           => '#ef233c',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gp_color_accent', array(
+        'label'       => __( 'CTA / Action Accent Color', 'gp-theme' ),
+        'description' => __( 'Used for Request a Quote buttons, badges, and prominent links.', 'gp-theme' ),
+        'section'     => 'gp_theme_colors',
+    ) ) );
+
+    // Accent Hover Color
+    $wp_customize->add_setting( 'gp_color_accent_hover', array(
+        'default'           => '#d90429',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gp_color_accent_hover', array(
+        'label'       => __( 'CTA Button Hover Color', 'gp-theme' ),
+        'section'     => 'gp_theme_colors',
+    ) ) );
+
+    // Secondary Accent Color (Cyan / Tech Blue)
+    $wp_customize->add_setting( 'gp_color_secondary', array(
+        'default'           => '#00b4d8',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gp_color_secondary', array(
+        'label'       => __( 'Secondary Accent (Cyan / Blue)', 'gp-theme' ),
+        'description' => __( 'Used for product tags, subtitles, icon highlights, and borders.', 'gp-theme' ),
+        'section'     => 'gp_theme_colors',
+    ) ) );
+
+    // Eco / Green Accent Color
+    $wp_customize->add_setting( 'gp_color_green', array(
+        'default'           => '#10b981',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gp_color_green', array(
+        'label'       => __( 'Eco / Green Accent Color', 'gp-theme' ),
+        'description' => __( 'Used for sustainability tags, recycled badges, and online status.', 'gp-theme' ),
+        'section'     => 'gp_theme_colors',
+    ) ) );
+
+    // Footer & Dark Background Color
+    $wp_customize->add_setting( 'gp_color_bg_dark', array(
+        'default'           => '#0b192c',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'gp_color_bg_dark', array(
+        'label'       => __( 'Footer & Dark Background', 'gp-theme' ),
+        'description' => __( 'Background color for site footer and dark highlight sections.', 'gp-theme' ),
+        'section'     => 'gp_theme_colors',
+    ) ) );
+
+    // -------------------------------------------------------------
     // Section: Company Info & Contact
     // -------------------------------------------------------------
     $wp_customize->add_section( 'gp_company_info', array(
         'title'       => __( 'Company Info & Contact', 'gp-theme' ),
         'priority'    => 30,
-        'description' => __( 'Configure contact details and certification displayed across the theme header and footer.', 'gp-theme' ),
+        'description' => __( 'Configure your company name, brand abbreviation, and contact details displayed across header, footer, and contact sections.', 'gp-theme' ),
+    ) );
+
+    // Full Company Name
+    $wp_customize->add_setting( 'gp_company_name', array(
+        'default'           => 'SHRI RAM SHARNAM OVERSEAS',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'gp_company_name', array(
+        'label'       => __( 'Full Company Name (Main)', 'gp-theme' ),
+        'description' => __( 'Example: SHRI RAM SHARNAM OVERSEAS', 'gp-theme' ),
+        'section'     => 'gp_company_info',
+        'type'        => 'text',
+    ) );
+
+    // Division / Subtitle
+    $wp_customize->add_setting( 'gp_company_division', array(
+        'default'           => 'GREEN POLYTECH LIMITED',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'gp_company_division', array(
+        'label'       => __( 'Company Division / Subtitle', 'gp-theme' ),
+        'description' => __( 'Example: GREEN POLYTECH LIMITED', 'gp-theme' ),
+        'section'     => 'gp_company_info',
+        'type'        => 'text',
+    ) );
+
+    // Short Name / Brand Acronym
+    $wp_customize->add_setting( 'gp_company_short', array(
+        'default'           => 'SRS',
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'gp_company_short', array(
+        'label'       => __( 'Short Name / Acronym', 'gp-theme' ),
+        'description' => __( 'Example: SRS (displayed on logo badge and short labels)', 'gp-theme' ),
+        'section'     => 'gp_company_info',
+        'type'        => 'text',
     ) );
 
     // ISO Certification Tagline
@@ -69,6 +201,17 @@ function gp_theme_customize_register( $wp_customize ) {
     ) );
     $wp_customize->add_control( 'gp_company_cert', array(
         'label'    => __( 'Certification / Subtitle', 'gp-theme' ),
+        'section'  => 'gp_company_info',
+        'type'     => 'text',
+    ) );
+
+    // Topbar Location
+    $wp_customize->add_setting( 'gp_company_topbar_loc', array(
+        'default'           => 'Delhi-NCR & Bhiwadi Industrial Area, India',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'gp_company_topbar_loc', array(
+        'label'    => __( 'Topbar Location Text', 'gp-theme' ),
         'section'  => 'gp_company_info',
         'type'     => 'text',
     ) );
@@ -97,7 +240,7 @@ function gp_theme_customize_register( $wp_customize ) {
 
     // Address
     $wp_customize->add_setting( 'gp_company_address', array(
-        'default'           => 'SRS Polymer Compounding Mill & Warehouse, Delhi-NCR & Bhiwadi, India',
+        'default'           => 'SHRI RAM SHARNAM OVERSEAS - GREEN POLYTECH LIMITED, Industrial Area, Delhi-NCR & Bhiwadi, India',
         'sanitize_callback' => 'sanitize_textarea_field',
     ) );
     $wp_customize->add_control( 'gp_company_address', array(
@@ -136,7 +279,7 @@ function gp_theme_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_setting( 'gp_whatsapp_text', array(
-        'default'           => 'Hi SRS Polymer! I need wholesale rates and availability for Plastic Granules (Dana).',
+        'default'           => 'Hi SRS Green Polytech! I need wholesale rates and availability for Plastic Granules (Dana).',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
     $wp_customize->add_control( 'gp_whatsapp_text', array(

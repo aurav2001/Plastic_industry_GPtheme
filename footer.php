@@ -69,8 +69,7 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
                                 <circle cx="13" cy="31" r="3" fill="#00b4d8"/>
                                 <circle cx="37" cy="21" r="3" fill="#ef233c"/>
                             </svg>
-                        </div>
-                        <h3 class="gp-footer-company">SRS Polymer Industries</h3>
+                        <h3 class="gp-footer-company"><?php echo esc_html( get_theme_mod( 'gp_company_name', 'SHRI RAM SHARNAM OVERSEAS' ) ); ?><span style="display:block; font-size: 0.8rem; font-weight: 600; color: var(--gp-accent-cyan); letter-spacing: 0.04em; margin-top: 4px;"><?php echo esc_html( get_theme_mod( 'gp_company_division', 'GREEN POLYTECH LIMITED' ) ); ?> (<?php echo esc_html( get_theme_mod( 'gp_company_short', 'SRS' ) ); ?>)</span></h3>
                     </div>
                     <p class="gp-footer-cert-badge">
                         <span class="gp-pulse-dot"></span> <?php echo esc_html( $cert ); ?>
@@ -158,7 +157,7 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
         <div class="gp-footer-bottom">
             <div class="gp-container gp-footer-bottom-inner">
                 <p class="gp-copyright-text">
-                    &copy; <?php echo esc_html( date( 'Y' ) ); ?> <strong>SRS Polymer Industries</strong>. <?php esc_html_e( 'All Rights Reserved.', 'gp-theme' ); ?>
+                    &copy; <?php echo esc_html( date( 'Y' ) ); ?> <strong><?php echo esc_html( get_theme_mod( 'gp_company_name', 'SHRI RAM SHARNAM OVERSEAS' ) ); ?> (<?php echo esc_html( get_theme_mod( 'gp_company_division', 'GREEN POLYTECH LIMITED' ) ); ?>)</strong>. <?php esc_html_e( 'All Rights Reserved.', 'gp-theme' ); ?>
                 </p>
                 <div class="gp-footer-bottom-links">
                     <a href="#investors"><?php esc_html_e( 'Privacy Policy', 'gp-theme' ); ?></a>
