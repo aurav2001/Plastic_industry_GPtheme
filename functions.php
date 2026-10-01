@@ -191,6 +191,14 @@ function gp_theme_customize_preview_js() {
 add_action( 'customize_preview_init', 'gp_theme_customize_preview_js' );
 
 /**
+ * Enqueue scripts for Customizer controls sidebar (Reset button).
+ */
+function gp_theme_customize_controls_js() {
+    wp_enqueue_script( 'gp-customizer-controls', GP_THEME_URI . '/assets/js/customizer-controls.js', array( 'customize-controls', 'jquery', 'wp-color-picker' ), GP_THEME_VERSION, true );
+}
+add_action( 'customize_controls_enqueue_scripts', 'gp_theme_customize_controls_js' );
+
+/**
  * Include Custom Post Types (Products, Taxonomies)
  */
 require_once GP_THEME_DIR . '/inc/custom-post-types.php';

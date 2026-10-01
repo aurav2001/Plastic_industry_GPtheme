@@ -10,6 +10,24 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+if ( class_exists( 'WP_Customize_Control' ) ) {
+    class GP_Customize_Reset_Colors_Control extends WP_Customize_Control {
+        public $type = 'gp_reset_colors';
+        public function render_content() {
+            ?>
+            <div style="margin: 20px 0 10px 0; padding: 14px; background: #f0f7fd; border: 1px dashed #0077b6; border-radius: 8px; text-align: center;">
+                <p style="margin: 0 0 10px 0; font-size: 13px; color: #0b2545; font-weight: 600;">
+                    <?php esc_html_e( 'Want to restore original colors?', 'gp-theme' ); ?>
+                </p>
+                <button type="button" id="gp-reset-colors-btn" class="button button-secondary" style="width: 100%; font-weight: 700; color: #0b2545; border-color: #0077b6; padding: 6px 12px; height: auto;">
+                    🔄 <?php esc_html_e( 'Reset to Default Colors (Purana Color)', 'gp-theme' ); ?>
+                </button>
+            </div>
+            <?php
+        }
+    }
+}
+
 function gp_theme_customize_register( $wp_customize ) {
     // -------------------------------------------------------------
     // Section: Site Identity (Logo Dimensions)
@@ -144,6 +162,15 @@ function gp_theme_customize_register( $wp_customize ) {
         'label'       => __( 'Footer & Dark Background', 'gp-theme' ),
         'description' => __( 'Background color for site footer and dark highlight sections.', 'gp-theme' ),
         'section'     => 'gp_theme_colors',
+    ) ) );
+
+    // Reset to Default Colors Action Control
+    $wp_customize->add_setting( 'gp_color_reset_action', array(
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( new GP_Customize_Reset_Colors_Control( $wp_customize, 'gp_color_reset_action', array(
+        'section'  => 'gp_theme_colors',
+        'priority' => 150,
     ) ) );
 
     // -------------------------------------------------------------
