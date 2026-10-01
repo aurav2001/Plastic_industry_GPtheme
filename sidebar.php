@@ -58,7 +58,8 @@ if ( ! defined( 'ABSPATH' ) ) {
             <h3 class="widget-title"><?php esc_html_e( 'Need Immediate Assistance?', 'gp-theme' ); ?></h3>
             <p><?php esc_html_e( 'Our application engineers are available Mon-Sat to consult on your custom moulding needs.', 'gp-theme' ); ?></p>
             <a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9]/', '', get_theme_mod( 'gp_company_phone', '+91-8591585497' ) ) ); ?>" class="gp-btn gp-btn-primary gp-btn-full" style="margin-top: 10px;">
-                📞 <?php echo esc_html( get_theme_mod( 'gp_company_phone', '+91-8591585497' ) ); ?>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: middle;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span><?php echo esc_html( get_theme_mod( 'gp_company_phone', '+91-8591585497' ) ); ?></span>
             </a>
         </section>
     <?php endif; ?>

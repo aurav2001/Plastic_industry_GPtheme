@@ -57,9 +57,18 @@ $cat_name = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : 'Industria
                     </div>
 
                     <div class="gp-product-badges-row">
-                        <span class="gp-cert-badge">🛡️ Prime Virgin & Recycled</span>
-                        <span class="gp-cert-badge">🏅 Lab Batch Tested (MFI)</span>
-                        <span class="gp-cert-badge">🇮🇳 100% Made in India</span>
+                        <span class="gp-cert-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 5px; vertical-align: middle;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            <?php esc_html_e( 'Prime Virgin & Recycled', 'gp-theme' ); ?>
+                        </span>
+                        <span class="gp-cert-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 5px; vertical-align: middle;"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                            <?php esc_html_e( 'Lab Batch Tested (MFI)', 'gp-theme' ); ?>
+                        </span>
+                        <span class="gp-cert-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 5px; vertical-align: middle;"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                            <?php esc_html_e( '100% Made in India', 'gp-theme' ); ?>
+                        </span>
                     </div>
                 </div>
 
