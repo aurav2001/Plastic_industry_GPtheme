@@ -19,7 +19,7 @@
         $(document).on('click', '#gp-reset-colors-btn', function(e) {
             e.preventDefault();
 
-            if (!confirm('Kya aap sabhi site colors ko original default (purana color) me reset karna chahte hain?')) {
+            if (!confirm('Are you sure you want to reset all site colors to default?')) {
                 return;
             }
 

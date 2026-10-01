@@ -19,8 +19,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
                 <p style="margin: 0 0 10px 0; font-size: 13px; color: #0b2545; font-weight: 600;">
                     <?php esc_html_e( 'Want to restore original colors?', 'gp-theme' ); ?>
                 </p>
-                <button type="button" id="gp-reset-colors-btn" class="button button-secondary" style="width: 100%; font-weight: 700; color: #0b2545; border-color: #0077b6; padding: 6px 12px; height: auto;">
-                    🔄 <?php esc_html_e( 'Reset to Default Colors (Purana Color)', 'gp-theme' ); ?>
+                <button type="button" id="gp-reset-colors-btn" class="button button-secondary" style="width: 100%; font-weight: 600; color: #0b2545; border-color: #0077b6; padding: 7px 10px; height: auto; white-space: normal; line-height: 1.35; font-size: 13px;">
+                    🔄 <?php esc_html_e( 'Reset to Default Colors', 'gp-theme' ); ?>
                 </button>
             </div>
             <?php
