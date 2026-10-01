@@ -198,6 +198,10 @@ if ( ! defined( 'ABSPATH' ) ) {
                         </ul>
                     </li>
 
+                    <li class="menu-item <?php echo ( is_home() || is_singular( 'post' ) || is_category() || is_tag() ) ? 'current-menu-item' : ''; ?>">
+                        <a href="<?php echo esc_url( ( $blog_id = get_option( 'page_for_posts' ) ) ? get_permalink( $blog_id ) : home_url( '/blog/' ) ); ?>"><?php esc_html_e( 'Blog', 'gp-theme' ); ?></a>
+                    </li>
+
                     <li class="menu-item <?php echo is_page( array( 'contact', 'contact-us' ) ) ? 'current-menu-item' : ''; ?>"><a href="<?php echo esc_url( $contact_url ); ?>"><?php esc_html_e( 'Contact', 'gp-theme' ); ?></a></li>
                 </ul>
                 <?php endif; ?>

@@ -263,14 +263,42 @@ function gp_flush_rewrites_on_setup() {
 add_action( 'init', 'gp_flush_rewrites_on_setup', 99 );
 
 /**
- * Auto-create essential pages (About Us, Contact Us) and assign their templates
+ * Auto-create essential pages (Home, Blog, About Us, Contact Us) and configure reading settings
  */
 function gp_create_default_pages() {
-    if ( get_option( 'gp_default_pages_created_v3' ) ) {
+    if ( get_option( 'gp_default_pages_created_v4' ) ) {
         return;
     }
 
-    // 1. About Us Page
+    // 1. Home Page
+    $home_page = get_page_by_path( 'home' );
+    if ( ! $home_page ) {
+        $home_id = wp_insert_post( array(
+            'post_title'     => 'Home',
+            'post_name'      => 'home',
+            'post_status'    => 'publish',
+            'post_type'      => 'page',
+            'comment_status' => 'closed',
+        ) );
+    } else {
+        $home_id = $home_page->ID;
+    }
+
+    // 2. Blog Page
+    $blog_page = get_page_by_path( 'blog' ) ?: get_page_by_path( 'news' );
+    if ( ! $blog_page ) {
+        $blog_id = wp_insert_post( array(
+            'post_title'     => 'Blog',
+            'post_name'      => 'blog',
+            'post_status'    => 'publish',
+            'post_type'      => 'page',
+            'comment_status' => 'closed',
+        ) );
+    } else {
+        $blog_id = $blog_page->ID;
+    }
+
+    // 3. About Us Page
     $about_page = get_page_by_path( 'about' ) ?: get_page_by_path( 'about-us' );
     if ( ! $about_page ) {
         $about_id = wp_insert_post( array(
@@ -287,7 +315,7 @@ function gp_create_default_pages() {
         update_post_meta( $about_page->ID, '_wp_page_template', 'page-templates/template-about.php' );
     }
 
-    // 2. Contact Us Page
+    // 4. Contact Us Page
     $contact_page = get_page_by_path( 'contact' ) ?: get_page_by_path( 'contact-us' );
     if ( ! $contact_page ) {
         $contact_id = wp_insert_post( array(
@@ -304,7 +332,16 @@ function gp_create_default_pages() {
         update_post_meta( $contact_page->ID, '_wp_page_template', 'page-templates/template-contact.php' );
     }
 
-    update_option( 'gp_default_pages_created_v3', 1 );
+    // Auto-configure Reading Settings so user doesn't have to do it manually
+    if ( $home_id && ! is_wp_error( $home_id ) ) {
+        update_option( 'show_on_front', 'page' );
+        update_option( 'page_on_front', $home_id );
+    }
+    if ( $blog_id && ! is_wp_error( $blog_id ) ) {
+        update_option( 'page_for_posts', $blog_id );
+    }
+
+    update_option( 'gp_default_pages_created_v4', 1 );
 }
 add_action( 'init', 'gp_create_default_pages', 20 );
 
