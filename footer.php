@@ -56,20 +56,25 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
                 <div class="gp-footer-col gp-footer-col-1">
                     <div class="gp-footer-brand">
                         <div class="gp-logo-mark">
-                            <svg width="38" height="38" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="42" height="42" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <polygon points="25,4 45,15 45,37 25,48 5,37 5,15" stroke="#48cae4" stroke-width="2" fill="rgba(19, 64, 116, 0.5)" stroke-linejoin="round"/>
                                 <line x1="25" y1="16" x2="25" y2="36" stroke="#48cae4" stroke-width="1.8" stroke-linecap="round"/>
                                 <line x1="13" y1="21" x2="37" y2="31" stroke="#48cae4" stroke-width="1.8" stroke-linecap="round"/>
                                 <line x1="13" y1="31" x2="37" y2="21" stroke="#48cae4" stroke-width="1.8" stroke-linecap="round"/>
-                                <circle cx="25" cy="26" r="5" fill="#ffffff"/>
-                                <circle cx="25" cy="16" r="3.5" fill="#00b4d8"/>
-                                <circle cx="25" cy="36" r="3.5" fill="#ef233c"/>
-                                <circle cx="13" cy="21" r="3.5" fill="#ef233c"/>
-                                <circle cx="37" cy="31" r="3.5" fill="#00b4d8"/>
+                                <circle cx="25" cy="26" r="9" fill="var(--gp-primary)"/>
+                                <text x="25" y="29.5" text-anchor="middle" fill="#ffffff" font-size="7.5" font-weight="900" font-family="'Rajdhani', sans-serif"><?php echo esc_html( get_theme_mod( 'gp_company_short', 'SRS' ) ); ?></text>
+                                <circle cx="25" cy="16" r="3" fill="#00b4d8"/>
+                                <circle cx="25" cy="36" r="3" fill="#ef233c"/>
+                                <circle cx="13" cy="21" r="3" fill="#ef233c"/>
+                                <circle cx="37" cy="31" r="3" fill="#00b4d8"/>
                                 <circle cx="13" cy="31" r="3" fill="#00b4d8"/>
                                 <circle cx="37" cy="21" r="3" fill="#ef233c"/>
                             </svg>
-                        <h3 class="gp-footer-company"><?php echo esc_html( get_theme_mod( 'gp_company_name', 'SHRI RAM SHARNAM OVERSEAS' ) ); ?><span style="display:block; font-size: 0.8rem; font-weight: 600; color: var(--gp-accent-cyan); letter-spacing: 0.04em; margin-top: 4px;"><?php echo esc_html( get_theme_mod( 'gp_company_division', 'GREEN POLYTECH LIMITED' ) ); ?> (<?php echo esc_html( get_theme_mod( 'gp_company_short', 'SRS' ) ); ?>)</span></h3>
+                        </div>
+                        <div class="gp-footer-brand-text">
+                            <h3 class="gp-footer-company" style="margin: 0; font-size: 1.15rem; font-weight: 800; line-height: 1.25; color: #ffffff;"><?php echo esc_html( get_theme_mod( 'gp_company_name', 'SHRI RAM SHARNAM OVERSEAS' ) ); ?></h3>
+                            <span class="gp-footer-company-sub" style="display: block; font-size: 0.72rem; font-weight: 700; color: var(--gp-accent-cyan); letter-spacing: 0.04em; margin-top: 3px; text-transform: uppercase;"><?php echo esc_html( get_theme_mod( 'gp_company_division', 'GREEN POLYTECH LIMITED' ) ); ?> (<?php echo esc_html( get_theme_mod( 'gp_company_short', 'SRS' ) ); ?>)</span>
+                        </div>
                     </div>
                     <p class="gp-footer-cert-badge">
                         <span class="gp-pulse-dot"></span> <?php echo esc_html( $cert ); ?>
