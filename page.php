@@ -9,30 +9,14 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-get_header();
-
-// Check if current page is built with Elementor
-$is_elementor = false;
-if ( did_action( 'elementor/loaded' ) && class_exists( '\Elementor\Plugin' ) ) {
-    $document = \Elementor\Plugin::$instance->documents->get( get_the_ID() );
-    if ( $document && $document->is_built_with_elementor() ) {
-        $is_elementor = true;
-    }
+// If this page is the Front Page, directly render the full front-page.php template
+if ( is_front_page() || ( is_page() && get_the_ID() == get_option( 'page_on_front' ) ) ) {
+    include get_template_directory() . '/front-page.php';
+    return;
 }
+
+get_header();
 ?>
-
-<?php if ( $is_elementor ) : ?>
-
-    <main id="primary" class="site-main gp-elementor-page-wrapper" style="width:100%; max-width:100%; padding:0; margin:0;">
-        <?php
-        while ( have_posts() ) :
-            the_post();
-            the_content();
-        endwhile;
-        ?>
-    </main>
-
-<?php else : ?>
 
 <main id="primary" class="site-main">
 
@@ -121,8 +105,6 @@ if ( did_action( 'elementor/loaded' ) && class_exists( '\Elementor\Plugin' ) ) {
     </section>
 
 </main>
-
-<?php endif; ?>
 
 <?php
 get_footer();

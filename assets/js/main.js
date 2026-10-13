@@ -13,10 +13,15 @@
         initHeroSlider();
         initCounters();
         initProductFilters();
+        initProductSpecAutoSlider();
+        initCardTiltEffect();
         initMobileDrawer();
         initWhatsAppWidget();
         initBackToTop();
         initRfqModal();
+        initCertificatesModal();
+        initQuickRatesForm();
+        initClientSectorFilters();
         initProductQuickView();
         initAjaxForms();
         initSecretGPMark();
@@ -46,7 +51,7 @@
         if (!slider) return;
 
         var slides = slider.querySelectorAll('.gp-hero-slide');
-        var indicators = document.querySelectorAll('.gp-indicator');
+        var indicators = slider.querySelectorAll('.gp-indicator');
         var prevBtn = document.getElementById('gp-prev-hero');
         var nextBtn = document.getElementById('gp-next-hero');
         var currentSlide = 0;
@@ -54,6 +59,13 @@
         var totalSlides = slides.length;
 
         if (totalSlides <= 1) return;
+
+        function updateSlideCounter() {
+            var counterEl = slider.querySelector('.gp-curr-slide-num');
+            if (counterEl) {
+                counterEl.textContent = (currentSlide + 1 < 10 ? '0' : '') + (currentSlide + 1);
+            }
+        }
 
         function goToSlide(n) {
             slides[currentSlide].classList.remove('gp-slide-active');
@@ -63,6 +75,7 @@
 
             slides[currentSlide].classList.add('gp-slide-active');
             if (indicators[currentSlide]) indicators[currentSlide].classList.add('active');
+            updateSlideCounter();
         }
 
         function nextSlide() {
@@ -75,7 +88,7 @@
 
         function startAutoplay() {
             stopAutoplay();
-            slideInterval = setInterval(nextSlide, 6500);
+            slideInterval = setInterval(nextSlide, 6000);
         }
 
         function stopAutoplay() {
@@ -83,29 +96,51 @@
         }
 
         if (nextBtn) {
-            nextBtn.addEventListener('click', function () {
+            nextBtn.addEventListener('click', function (e) {
+                e.preventDefault();
                 nextSlide();
                 startAutoplay();
             });
         }
 
         if (prevBtn) {
-            prevBtn.addEventListener('click', function () {
+            prevBtn.addEventListener('click', function (e) {
+                e.preventDefault();
                 prevSlide();
                 startAutoplay();
             });
         }
 
         indicators.forEach(function (ind, index) {
-            ind.addEventListener('click', function () {
+            ind.addEventListener('click', function (e) {
+                e.preventDefault();
                 goToSlide(index);
                 startAutoplay();
             });
         });
 
+        // Touch Swipe Support
+        var touchStartX = 0;
+        var touchEndX = 0;
+        slider.addEventListener('touchstart', function (e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        slider.addEventListener('touchend', function (e) {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) {
+                nextSlide();
+                startAutoplay();
+            } else if (touchEndX - touchStartX > 50) {
+                prevSlide();
+                startAutoplay();
+            }
+        }, { passive: true });
+
         slider.addEventListener('mouseenter', stopAutoplay);
         slider.addEventListener('mouseleave', startAutoplay);
 
+        updateSlideCounter();
         startAutoplay();
     }
 
@@ -166,8 +201,8 @@
      * 4. Product Category Filter Tabs
      */
     function initProductFilters() {
-        var filterBtns = document.querySelectorAll('.gp-filter-btn');
-        var cards = document.querySelectorAll('.gp-product-card');
+        var filterBtns = document.querySelectorAll('.gp-cat-btn, .gp-filter-btn');
+        var cards = document.querySelectorAll('.gp-plastin-product-card, .gp-product-card');
 
         if (!filterBtns.length || !cards.length) return;
 
@@ -194,15 +229,111 @@
         });
 
         // Allow navigation links to switch category filter
-        document.querySelectorAll('a[data-cat]').forEach(function (link) {
+        document.querySelectorAll('a[data-cat], a[data-filter]').forEach(function (link) {
             link.addEventListener('click', function () {
-                var cat = this.getAttribute('data-cat');
-                var matchingBtn = document.querySelector('.gp-filter-btn[data-filter="' + cat + '"]');
+                var cat = this.getAttribute('data-cat') || this.getAttribute('data-filter');
+                var matchingBtn = document.querySelector('.gp-cat-btn[data-filter="' + cat + '"], .gp-filter-btn[data-filter="' + cat + '"]');
                 if (matchingBtn) {
                     matchingBtn.click();
                 }
+                var track = document.getElementById('gp-products-track');
+                if (track) {
+                    track.scrollTo({ left: 0, behavior: 'smooth' });
+                }
             });
         });
+    }
+
+    /**
+     * 4.1. Single Row Auto-Sliding Product Specification Carousel
+     */
+    function initProductSpecAutoSlider() {
+        var track = document.getElementById('gp-products-track');
+        var prevBtn = document.getElementById('gp-pcard-prev');
+        var nextBtn = document.getElementById('gp-pcard-next');
+        if (!track) return;
+
+        var scrollInterval = null;
+        var isHovered = false;
+        var step = 335; // card width (315px) + gap (20px)
+
+        function slideNext() {
+            if (isHovered) return;
+            var maxScroll = track.scrollWidth - track.clientWidth;
+            if (track.scrollLeft >= maxScroll - 20) {
+                // Loop back to start smoothly
+                track.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                track.scrollBy({ left: step, behavior: 'smooth' });
+            }
+        }
+
+        function slidePrev() {
+            if (track.scrollLeft <= 20) {
+                track.scrollTo({ left: track.scrollWidth - track.clientWidth, behavior: 'smooth' });
+            } else {
+                track.scrollBy({ left: -step, behavior: 'smooth' });
+            }
+        }
+
+        function startAutoSlide() {
+            stopAutoSlide();
+            scrollInterval = setInterval(slideNext, 3000);
+        }
+
+        function stopAutoSlide() {
+            if (scrollInterval) clearInterval(scrollInterval);
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                slideNext();
+                startAutoSlide();
+            });
+        }
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                slidePrev();
+                startAutoSlide();
+            });
+        }
+
+        // Pause on hover
+        track.addEventListener('mouseenter', function () {
+            isHovered = true;
+            stopAutoSlide();
+        });
+        track.addEventListener('mouseleave', function () {
+            isHovered = false;
+            startAutoSlide();
+        });
+
+        // Touch swipe support
+        var touchStartX = 0;
+        var touchEndX = 0;
+        track.addEventListener('touchstart', function (e) {
+            touchStartX = e.changedTouches[0].screenX;
+            isHovered = true;
+            stopAutoSlide();
+        }, { passive: true });
+
+        track.addEventListener('touchend', function (e) {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) {
+                slideNext();
+            } else if (touchEndX - touchStartX > 50) {
+                slidePrev();
+            }
+            setTimeout(function () {
+                isHovered = false;
+                startAutoSlide();
+            }, 1500);
+        }, { passive: true });
+
+        // Start auto-slide after 1 second
+        setTimeout(startAutoSlide, 1000);
     }
 
     /**
@@ -321,7 +452,6 @@
         var closeBtn = document.getElementById('gp-rfq-modal-close');
         var backdrop = document.getElementById('gp-rfq-modal-backdrop');
         var productField = document.getElementById('gp-modal-product-field');
-        var headerRfq = document.getElementById('gp-header-rfq-btn');
 
         if (!modal) return;
 
@@ -338,8 +468,8 @@
             document.body.style.overflow = '';
         }
 
-        // Attach to all enquire buttons
-        document.querySelectorAll('.gp-btn-enquire').forEach(function (btn) {
+        // Attach to all enquire and rfq triggers
+        document.querySelectorAll('.gp-btn-enquire, .gp-rfq-modal-trigger, .gp-btn-rfq-prefill').forEach(function (btn) {
             btn.addEventListener('click', function (e) {
                 e.preventDefault();
                 var prod = this.getAttribute('data-product') || '';
@@ -354,6 +484,141 @@
             if (e.key === 'Escape' && modal.classList.contains('open')) {
                 closeModal();
             }
+        });
+    }
+
+    /**
+     * 8B. Official Certificate Lightbox Modal
+     */
+    function initCertificatesModal() {
+        var modal = document.getElementById('gp-cert-modal');
+        var closeBtn = document.getElementById('gp-cert-modal-close');
+        var reqBtn = document.getElementById('gp-cert-modal-req-btn');
+
+        if (!modal) return;
+
+        function openCertModal(data) {
+            var codeEl = document.getElementById('gp-cert-modal-code');
+            var titleEl = document.getElementById('gp-cert-modal-title');
+            var certNoEl = document.getElementById('gp-cert-modal-certno');
+            var bodyEl = document.getElementById('gp-cert-modal-body');
+            var valEl = document.getElementById('gp-cert-modal-validity');
+            var scopeEl = document.getElementById('gp-cert-modal-scope');
+
+            if (codeEl && data.code) codeEl.textContent = data.code;
+            if (titleEl && data.title) titleEl.textContent = data.title;
+            if (certNoEl && data.certno) certNoEl.textContent = data.certno;
+            if (bodyEl && data.body) bodyEl.textContent = data.body;
+            if (valEl && data.validity) valEl.textContent = data.validity;
+            if (scopeEl && data.scope) scopeEl.textContent = data.scope;
+
+            if (reqBtn && data.code) {
+                reqBtn.setAttribute('data-product', data.code + ' - Official Certificate / COA Copy');
+            }
+
+            modal.style.display = 'flex';
+            setTimeout(function () {
+                modal.classList.add('active');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCertModal() {
+            modal.classList.remove('active');
+            setTimeout(function () {
+                modal.style.display = 'none';
+            }, 250);
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.gp-btn-view-cert').forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                var data = {
+                    id: this.getAttribute('data-id') || '',
+                    code: this.getAttribute('data-code') || this.getAttribute('data-cert-code') || '',
+                    title: this.getAttribute('data-title') || this.getAttribute('data-cert-title') || '',
+                    certno: this.getAttribute('data-certno') || this.getAttribute('data-cert-number') || '',
+                    body: this.getAttribute('data-body') || this.getAttribute('data-cert-issuer') || '',
+                    validity: this.getAttribute('data-validity') || this.getAttribute('data-cert-validity') || '',
+                    scope: this.getAttribute('data-scope') || this.getAttribute('data-cert-scope') || '',
+                    color: this.getAttribute('data-color') || ''
+                };
+                openCertModal(data);
+            });
+        });
+
+        if (closeBtn) closeBtn.addEventListener('click', closeCertModal);
+
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                closeCertModal();
+            }
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && (modal.classList.contains('active') || modal.style.display === 'flex')) {
+                closeCertModal();
+            }
+        });
+    }
+
+    /**
+     * 8C. Plastin-Style Instant Dana Rates Form
+     */
+    function initQuickRatesForm() {
+        var form = document.getElementById('gp-quick-rates-form');
+        if (!form) return;
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var polymer = form.querySelector('[name="polymer"]').value || 'PP Granules';
+            var process = form.querySelector('[name="process"]').value || 'Injection Moulding';
+            var qty = form.querySelector('[name="quantity"]').value || '5 MT';
+            var phone = form.querySelector('[name="phone"]').value || '';
+
+            if (!phone) {
+                alert('Please enter your Mobile or WhatsApp number to get instant mill rates.');
+                return;
+            }
+
+            var text = 'Hello SRS Polymer! I need today\'s spot rate for:\n• Grade: ' + polymer + '\n• Process: ' + process + '\n• Requirement: ' + qty + '\n• Contact: ' + phone;
+            var waUrl = 'https://api.whatsapp.com/send?phone=918591585497&text=' + encodeURIComponent(text);
+            window.open(waUrl, '_blank');
+        });
+    }
+
+    /**
+     * 8D. Client Sector Filtering
+     */
+    function initClientSectorFilters() {
+        var chips = document.querySelectorAll('.gp-client-chip, .gp-sector-chip');
+        var cards = document.querySelectorAll('.gp-client-logo-card, .gp-client-card');
+
+        if (!chips.length || !cards.length) return;
+
+        chips.forEach(function (chip) {
+            chip.addEventListener('click', function () {
+                chips.forEach(function (c) { c.classList.remove('active'); });
+                this.classList.add('active');
+
+                var sector = (this.getAttribute('data-sector') || 'all').toLowerCase();
+
+                cards.forEach(function (card) {
+                    var cardSector = (card.getAttribute('data-sector') || '').toLowerCase();
+                    if (sector === 'all' || cardSector === sector) {
+                        card.style.opacity = '1';
+                        card.style.filter = 'none';
+                        card.style.borderColor = sector === 'all' ? '' : '#0097db';
+                        card.style.transform = sector === 'all' ? '' : 'scale(1.02)';
+                    } else {
+                        card.style.opacity = '0.3';
+                        card.style.filter = 'grayscale(100%)';
+                        card.style.borderColor = '';
+                        card.style.transform = 'scale(0.96)';
+                    }
+                });
+            });
         });
     }
 
@@ -676,6 +941,32 @@
 
         // Expose globally for testing or manual invocation
         window.toggleGPMark = toggleGPMark;
+    }
+
+    /**
+     * 15. Interactive 3D Card Tilt & Magnetic Micro-Motion
+     */
+    function initCardTiltEffect() {
+        var cards = document.querySelectorAll('.gp-plastin-product-card, .gp-lab-param-card, .gp-plant-feature-card');
+        if (!cards.length) return;
+
+        cards.forEach(function (card) {
+            card.addEventListener('mousemove', function (e) {
+                var rect = card.getBoundingClientRect();
+                var x = e.clientX - rect.left;
+                var y = e.clientY - rect.top;
+                var centerX = rect.width / 2;
+                var centerY = rect.height / 2;
+                var rotateX = ((y - centerY) / centerY) * -6;
+                var rotateY = ((x - centerX) / centerX) * 6;
+
+                card.style.transform = 'translateY(-10px) perspective(900px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg) scale(1.018)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                card.style.transform = '';
+            });
+        });
     }
 
 })();

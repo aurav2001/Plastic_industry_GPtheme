@@ -150,20 +150,192 @@ function gp_get_default_industries() {
 }
 
 /**
- * Get fallback client logos
+ * Get fallback client logos & OEM brand partners
  */
 function gp_get_default_clients() {
     return array(
-        array( 'name' => 'BASF Chemicals', 'tag' => 'Global Chemical Leader' ),
-        array( 'name' => 'APAR Industries', 'tag' => 'Specialty Oils & Conductors' ),
-        array( 'name' => 'HP Lubricants', 'tag' => 'Hindustan Petroleum' ),
-        array( 'name' => 'Nalco Water', 'tag' => 'An Ecolab Company' ),
-        array( 'name' => 'Ipca Laboratories', 'tag' => 'Global Pharma Leader' ),
-        array( 'name' => 'Chem-Trend', 'tag' => 'Mould Release Agents' ),
-        array( 'name' => 'Elantas Electrical', 'tag' => 'Insulation Solutions' ),
-        array( 'name' => 'Neogen Chemicals', 'tag' => 'Specialty Bromine Chemicals' ),
-        array( 'name' => 'Foseco India', 'tag' => 'Foundry Technologies' ),
-        array( 'name' => 'Vidhi Specialty', 'tag' => 'Food Colors & Additives' ),
+        array( 
+            'name'   => 'Tata AutoComp Systems', 
+            'tag'    => 'Tier-1 Automotive OEM Components', 
+            'sector' => 'Automotive',
+            'abbr'   => 'TATA AUTO',
+        ),
+        array( 
+            'name'   => 'Havells India Ltd', 
+            'tag'    => 'Electrical & Flame Retardant Plastics', 
+            'sector' => 'Electrical',
+            'abbr'   => 'HAVELLS',
+        ),
+        array( 
+            'name'   => 'Supreme Industries', 
+            'tag'    => 'Industrial Crates & Injection Moulding', 
+            'sector' => 'Packaging & Crates',
+            'abbr'   => 'SUPREME',
+        ),
+        array( 
+            'name'   => 'Motherson Group (MSSL)', 
+            'tag'    => 'High-Impact Engineering Polymers', 
+            'sector' => 'Automotive',
+            'abbr'   => 'MOTHERSON',
+        ),
+        array( 
+            'name'   => 'Nilkamal Limited', 
+            'tag'    => 'Material Handling & Heavy Duty Pallets', 
+            'sector' => 'Packaging & Crates',
+            'abbr'   => 'NILKAMAL',
+        ),
+        array( 
+            'name'   => 'Astral Poly Technik', 
+            'tag'    => 'High-Toughness Pipe & Fitting Polymers', 
+            'sector' => 'Pipes & Infra',
+            'abbr'   => 'ASTRAL',
+        ),
+        array( 
+            'name'   => 'Godrej Appliances', 
+            'tag'    => 'Consumer Electronics & White Goods', 
+            'sector' => 'Appliances',
+            'abbr'   => 'GODREJ',
+        ),
+        array( 
+            'name'   => 'Finolex Industries', 
+            'tag'    => 'Rigid PVC Compounds & Conduit Materials', 
+            'sector' => 'Pipes & Infra',
+            'abbr'   => 'FINOLEX',
+        ),
+        array( 
+            'name'   => 'Time Technoplast', 
+            'tag'    => 'Industrial Blow Moulding & Chemical Drums', 
+            'sector' => 'Packaging & Crates',
+            'abbr'   => 'TIME TECH',
+        ),
+        array( 
+            'name'   => 'Milton (Hamilton Housewares)', 
+            'tag'    => 'Food-Grade Thermoware & Housewares', 
+            'sector' => 'Consumer Goods',
+            'abbr'   => 'MILTON',
+        ),
+        array( 
+            'name'   => 'Lumax Industries', 
+            'tag'    => 'Automotive Lighting & Acrylic Polymers', 
+            'sector' => 'Automotive',
+            'abbr'   => 'LUMAX',
+        ),
+        array( 
+            'name'   => 'Crompton Greaves', 
+            'tag'    => 'Electrical Enclosures & Fan Blades', 
+            'sector' => 'Electrical',
+            'abbr'   => 'CROMPTON',
+        ),
+    );
+}
+
+/**
+ * Get fallback official certificates & accreditations
+ */
+function gp_get_default_certificates() {
+    return array(
+        array(
+            'id'           => 'iso-9001',
+            'code'         => 'ISO 9001:2015',
+            'title'        => 'Quality Management System',
+            'category'     => 'Quality Assurance',
+            'cert_no'      => 'QMS/SRS/2024/9081',
+            'body'         => 'TUV SUD / IAF Accredited Registrar',
+            'validity'     => 'Valid through Dec 2027',
+            'scope'        => 'Manufacturing, compounding, laboratory testing & wholesale distribution of virgin and reprocessed plastic granules (PP, HDPE, ABS, PVC, LDPE).',
+            'badge_color'  => '#0097db',
+            'seal_style'   => 'gp-seal-blue',
+            'points'       => array(
+                'ASTM D1238 Batch-Wise MFI Testing',
+                'Zero Particulate Impurity Guarantee',
+                'Batch Traceability & COA Included',
+            ),
+        ),
+        array(
+            'id'           => 'iso-14001',
+            'code'         => 'ISO 14001:2015',
+            'title'        => 'Environmental Management System',
+            'category'     => 'Sustainability',
+            'cert_no'      => 'EMS/SRS/2024/1429',
+            'body'         => 'JAS-ANZ Certified Registrar',
+            'validity'     => 'Valid through Aug 2027',
+            'scope'        => 'Eco-compliant closed-loop polymer reprocessing, energy-efficient twin-screw compounding, and zero hazardous discharge industrial operations.',
+            'badge_color'  => '#10b981',
+            'seal_style'   => 'gp-seal-green',
+            'points'       => array(
+                '100% Circular Polymer Sourcing',
+                'Zero Industrial Effluent Discharge',
+                'Low-Carbon Twin Screw Extrusion',
+            ),
+        ),
+        array(
+            'id'           => 'rohs-reach',
+            'code'         => 'RoHS & REACH Directive',
+            'title'        => 'EU Chemical Safety & Non-Toxic',
+            'category'     => 'Chemical Safety',
+            'cert_no'      => 'CHM/SRS/2024/7740',
+            'body'         => 'SGS International Laboratory Verified',
+            'validity'     => 'Annual Lot Compliance Audited',
+            'scope'        => 'Laboratory tested free from Lead (Pb), Cadmium (Cd), Mercury (Hg), Cr(VI), PBBs, PBDEs and 235+ EU REACH SVHC hazardous compounds.',
+            'badge_color'  => '#6366f1',
+            'seal_style'   => 'gp-seal-purple',
+            'points'       => array(
+                'Heavy Metal-Free Raw Formulations',
+                'Suitable for Toy & Consumer Molding',
+                'Full Export Regulatory Compliance',
+            ),
+        ),
+        array(
+            'id'           => 'astm-lab',
+            'code'         => 'ASTM Testing Standards',
+            'title'        => 'In-House Polymer Testing Lab',
+            'category'     => 'Laboratory Accreditation',
+            'cert_no'      => 'LAB/SRS/2024/5112',
+            'body'         => 'NABL Traceable Test Equipment',
+            'validity'     => 'Continuous In-House QA/QC',
+            'scope'        => 'Standardized digital testing for Melt Flow Index (ASTM D1238), Density & Specific Gravity (ASTM D792), Izod Impact (ASTM D256) and Moisture (<0.05%).',
+            'badge_color'  => '#ef233c',
+            'seal_style'   => 'gp-seal-red',
+            'points'       => array(
+                'Computerized Rheology Testing',
+                'Moisture Content < 0.05% Controlled',
+                'Tensile & Elongation Yield Tested',
+            ),
+        ),
+        array(
+            'id'           => 'bis-is',
+            'code'         => 'BIS / IS Standards',
+            'title'        => 'Bureau of Indian Standards',
+            'category'     => 'National Benchmark',
+            'cert_no'      => 'BIS/SRS/2024/3028',
+            'body'         => 'Government of India Standards',
+            'validity'     => 'Certified Supply Standards',
+            'scope'        => 'Conforming to IS 10951 (Polypropylene Moulding Materials) and IS 7328 (High Density Polyethylene Materials) for heavy engineering applications.',
+            'badge_color'  => '#f59e0b',
+            'seal_style'   => 'gp-seal-gold',
+            'points'       => array(
+                'Standard Raw Material Compliance',
+                'High ESCR & Environmental Resilience',
+                'Approved for Public & Infra Tenders',
+            ),
+        ),
+        array(
+            'id'           => 'msme-zed',
+            'code'         => 'MSME ZED Gold Certified',
+            'title'        => 'Zero Defect Zero Effect Standard',
+            'category'     => 'Government Certification',
+            'cert_no'      => 'ZED/SRS/2024/8831',
+            'body'         => 'Ministry of MSME, Govt of India',
+            'validity'     => 'National Excellence Awardee',
+            'scope'        => 'Recognized for world-class lean manufacturing, systematic defect prevention, environmental preservation, and standardized 5S plant safety.',
+            'badge_color'  => '#0d9488',
+            'seal_style'   => 'gp-seal-teal',
+            'points'       => array(
+                'Zero-Defect Quality Manufacturing',
+                'Strict 5S Industrial Plant Protocols',
+                'Govt Recognized Export-Ready Unit',
+            ),
+        ),
     );
 }
 
@@ -542,9 +714,26 @@ function gp_import_demo_posts() {
         if ( ! is_wp_error( $post_id ) ) {
             $count++;
 
-            // Set Category
-            $cat_id = wp_create_category( $p['category'] );
-            if ( $cat_id && ! is_wp_error( $cat_id ) ) {
+            // Set Category safely
+            if ( ! function_exists( 'wp_create_category' ) && defined( 'ABSPATH' ) && file_exists( ABSPATH . 'wp-admin/includes/taxonomy.php' ) ) {
+                require_once ABSPATH . 'wp-admin/includes/taxonomy.php';
+            }
+            $cat_id = 0;
+            $existing_cat = term_exists( $p['category'], 'category' );
+            if ( $existing_cat ) {
+                $cat_id = is_array( $existing_cat ) ? (int) $existing_cat['term_id'] : (int) $existing_cat;
+            } else {
+                $new_cat = wp_insert_term( $p['category'], 'category' );
+                if ( ! is_wp_error( $new_cat ) && ! empty( $new_cat['term_id'] ) ) {
+                    $cat_id = (int) $new_cat['term_id'];
+                } elseif ( function_exists( 'wp_create_category' ) ) {
+                    $res = wp_create_category( $p['category'] );
+                    if ( $res && ! is_wp_error( $res ) ) {
+                        $cat_id = (int) $res;
+                    }
+                }
+            }
+            if ( $cat_id > 0 ) {
                 wp_set_post_categories( $post_id, array( $cat_id ) );
             }
 
@@ -732,23 +921,56 @@ function gp_register_demo_import_menu() {
 add_action( 'admin_menu', 'gp_register_demo_import_menu' );
 
 /**
- * Theme Activation Notice Hook
+ * Theme Activation Hook - Automatically Setup Homepage, Pages, Products & Menus
  */
 function gp_theme_activation_flag() {
     update_option( 'gp_show_activation_notice', 1 );
+    
+    // Automatically setup pages, menus, reading settings and products on activation
+    if ( ! get_option( 'gp_demo_imported' ) ) {
+        gp_run_full_demo_import();
+    }
 }
 add_action( 'after_switch_theme', 'gp_theme_activation_flag' );
 
 /**
- * Admin Notice Prompting Demo Import
+ * Handle 1-Click Instant Setup Request from Admin
+ */
+function gp_handle_instant_setup_request() {
+    if ( ! is_admin() || ! current_user_can( 'manage_options' ) ) {
+        return;
+    }
+
+    if ( isset( $_GET['gp_run_instant_setup'] ) && check_admin_referer( 'gp_instant_setup_action', 'gp_nonce' ) ) {
+        gp_run_full_demo_import();
+        wp_safe_redirect( add_query_arg( array( 'gp_setup_done' => '1' ), remove_query_arg( array( 'gp_run_instant_setup', 'gp_nonce' ) ) ) );
+        exit;
+    }
+}
+add_action( 'admin_init', 'gp_handle_instant_setup_request' );
+
+/**
+ * Admin Notice Prompting Demo Import & Instant Setup
  */
 function gp_demo_import_admin_notice() {
     if ( ! current_user_can( 'manage_options' ) ) {
         return;
     }
 
-    // Dismiss notice if imported or dismissed
-    if ( get_option( 'gp_demo_imported' ) || get_option( 'gp_dismiss_import_notice' ) ) {
+    if ( isset( $_GET['gp_setup_done'] ) ) {
+        ?>
+        <div class="notice notice-success is-dismissible" style="padding: 14px 18px; border-left-color: #10b981; background: #ecfdf5;">
+            <strong style="color: #065f46; font-size: 15px;">✅ Theme Content & Homepage Successfully Activated!</strong>
+            <p style="margin: 4px 0 0 0; color: #047857; font-size: 13px;">
+                Homepage, Products Catalog, Navigation Menus, and Company Pages have been set up. 
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" target="_blank" style="font-weight: 700; color: #065f46; text-decoration: underline; margin-left: 8px;">View Live Site &rarr;</a>
+            </p>
+        </div>
+        <?php
+    }
+
+    // Dismiss notice if dismissed
+    if ( get_option( 'gp_dismiss_import_notice' ) ) {
         return;
     }
 
@@ -757,6 +979,7 @@ function gp_demo_import_admin_notice() {
         return;
     }
 
+    $setup_url = wp_nonce_url( add_query_arg( 'gp_run_instant_setup', '1' ), 'gp_instant_setup_action', 'gp_nonce' );
     $import_url = admin_url( 'themes.php?page=gp-demo-import' );
     $dismiss_url = wp_nonce_url( add_query_arg( 'gp_dismiss_notice', '1' ), 'gp_dismiss_nonce' );
 
@@ -765,17 +988,20 @@ function gp_demo_import_admin_notice() {
         return;
     }
     ?>
-    <div class="notice notice-info is-dismissible" style="padding: 14px 18px; border-left-color: #0077b6; background: #f0f7fd;">
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+    <div class="notice notice-info is-dismissible" style="padding: 16px 20px; border-left-color: #0b2545; background: #f0f7fd; box-shadow: 0 4px 12px rgba(11,37,69,0.06); border-radius: 6px; margin: 15px 0;">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
             <div>
-                <strong style="font-size: 15px; color: #0b2545;">🚀 Welcome to SRS Polymer Theme!</strong>
-                <p style="margin: 4px 0 0 0; color: #4a5568; font-size: 13px;">
-                    Would you like to import complete demo content (Pages, Blog Articles, Products Catalog, and Navigation Menu) in 1 click?
+                <strong style="font-size: 16px; color: #0b2545;">🏭 SRS Polymer (Green Polytech) Theme Setup</strong>
+                <p style="margin: 5px 0 0 0; color: #334155; font-size: 13.5px;">
+                    Make this theme's full content, homepage layout, products catalog, and navigation active on your site in 1 click!
                 </p>
             </div>
-            <div>
-                <a href="<?php echo esc_url( $import_url ); ?>" class="button button-primary" style="background: #0077b6; border-color: #005f92; font-weight: 600; padding: 4px 16px;">
-                    📥 Import Demo Data Now
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <a href="<?php echo esc_url( $setup_url ); ?>" class="button button-primary" style="background: #0b2545; border-color: #07172b; font-weight: 700; padding: 6px 18px; font-size: 13px; height: auto;">
+                    ⚡ 1-Click Activate Theme Content & Menus
+                </a>
+                <a href="<?php echo esc_url( $import_url ); ?>" class="button button-secondary" style="font-weight: 600;">
+                    ⚙️ Custom Setup
                 </a>
             </div>
         </div>

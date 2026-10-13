@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+            <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Rajdhani:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+        <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Rajdhani:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="style.css">
+    <style id="gp-critical-layout-override">
+        html {
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: #ffffff !important;
+        }
+        body {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            box-shadow: none !important;
+            background: #ffffff !important;
+            overflow-x: hidden;
+        }
+        #page, .site-wrapper {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            box-shadow: none !important;
+            overflow-x: hidden;
+        }
+        .gp-topbar-inner {
+            min-height: 40px;
+            height: auto !important;
+            padding: 4px 0 !important;
+        }
+        .gp-badge-iso {
+            white-space: nowrap !important;
+            flex-shrink: 0 !important;
+        }
+        .gp-topbar-item, .gp-topbar-link {
+            white-space: nowrap !important;
+        }
+        .gp-whatsapp-widget, #gp-whatsapp-widget, .joinchat, #joinchat, .wa-chat-box, .whatsapp-chat-button {
+            position: fixed !important;
+            bottom: 30px !important;
+            right: 30px !important;
+            left: auto !important;
+            z-index: 999999 !important;
+        }
+        .gp-wa-chatbox, #gp-wa-chatbox {
+            position: absolute !important;
+            bottom: 75px !important;
+            right: 0 !important;
+            left: auto !important;
+            transform-origin: bottom right !important;
+        }
+        .gp-back-to-top, #gp-back-to-top {
+            position: fixed !important;
+            bottom: 102px !important;
+            right: 36px !important;
+            left: auto !important;
+            width: 50px !important;
+            height: 50px !important;
+            background: #0b2545 !important;
+            background: linear-gradient(135deg, #0b2545 0%, #134074 100%) !important;
+            color: #ffffff !important;
+            border: 2px solid rgba(255, 255, 255, 0.25) !important;
+            border-radius: 50% !important;
+            box-shadow: 0 8px 24px rgba(11, 37, 69, 0.35), 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            cursor: pointer !important;
+            z-index: 99999 !important;
+            text-decoration: none !important;
+        }
+        .gp-back-to-top svg, #gp-back-to-top svg {
+            stroke: #ffffff !important;
+            width: 22px !important;
+            height: 22px !important;
+            display: block !important;
+        }
+        .gp-back-to-top:hover, #gp-back-to-top:hover {
+            background: #ef233c !important;
+            background: linear-gradient(135deg, #ef233c 0%, #d90429 100%) !important;
+            color: #ffffff !important;
+            box-shadow: 0 12px 30px rgba(239, 35, 60, 0.55) !important;
+        }
+        @media (max-width: 768px) {
+            .gp-whatsapp-widget, #gp-whatsapp-widget, .joinchat, #joinchat {
+                bottom: 20px !important;
+                right: 20px !important;
+                left: auto !important;
+            }
+            .gp-wa-chatbox, #gp-wa-chatbox {
+                right: 0 !important;
+                left: auto !important;
+            }
+            .gp-back-to-top, #gp-back-to-top {
+                bottom: 90px !important;
+                right: 26px !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="page page-template ">
+
+<div id="page" class="site-wrapper">
+    <a class="skip-link screen-reader-text" href="#primary">Skip to content</a>
+
+    <!-- Top Contact & Notification Bar -->
+    <div class="gp-topbar">
+        <div class="gp-container gp-topbar-inner">
+            <div class="gp-topbar-left">
+                <span class="gp-badge-iso">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                    ISO 9001:2015 Certified Company                </span>
+                <span class="gp-topbar-item gp-hidden-mobile">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Delhi-NCR Industrial Area, India</span>
+                </span>
+            </div>
+
+            <div class="gp-topbar-right">
+                <a href="tel:+918591585497" class="gp-topbar-link">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>+91-8591585497</span>
+                </a>
+                <a href="mailto:info@srspolymer.com" class="gp-topbar-link gp-hidden-mobile">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <span>info@srspolymer.com</span>
+                </a>
+                <button type="button" class="gp-topbar-quick-rfq gp-rfq-modal-trigger" id="gp-topbar-rfq-btn">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <span>Instant RFQ</span>
+                </button>
+                <div class="gp-topbar-socials gp-hidden-sm">
+                                            <a href="https://in.linkedin.com/company/srs-polymer" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                                                                <a href="https://www.facebook.com/srspolymer/" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.595 0 9 1.582 9 4.615V8z"/></svg>
+                        </a>
+                                    </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header (Professional Unified Header) -->
+    <header id="masthead" class="site-header gp-header gp-clean-header">
+        <div class="gp-container gp-header-inner">
+            <!-- Brand Logo -->
+            <div class="site-branding">
+                <a href="index.html" class="gp-logo-link" rel="home">
+                    <div class="gp-logo-mark">
+                        <svg width="40" height="40" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="25,4 45,15 45,37 25,48 5,37 5,15" stroke="#0097db" stroke-width="2.5" fill="#f0f7fd" stroke-linejoin="round"/>
+                            <line x1="25" y1="16" x2="25" y2="36" stroke="#0097db" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="13" y1="21" x2="37" y2="31" stroke="#0097db" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="13" y1="31" x2="37" y2="21" stroke="#0097db" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="25" cy="26" r="9.5" fill="#0b2545"/>
+                            <text x="25" y="29.5" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="900" font-family="'Poppins', sans-serif">SRS</text>
+                            <circle cx="25" cy="16" r="3" fill="#0097db"/>
+                            <circle cx="25" cy="36" r="3" fill="#00b4d8"/>
+                            <circle cx="13" cy="21" r="3" fill="#0b2545"/>
+                            <circle cx="37" cy="31" r="3" fill="#0097db"/>
+                            <circle cx="13" cy="31" r="3" fill="#0097db"/>
+                            <circle cx="37" cy="21" r="3" fill="#00b4d8"/>
+                        </svg>
+                    </div>
+                    <div class="gp-logo-text">
+                        <span class="gp-brand-name">SRS <span class="gp-accent" style="color:#0097db;">POLYMER</span></span>
+                        <span class="gp-brand-sub"><span class="gp-live-dot-sub"></span> GREEN POLYTECH • ISO 9001:2015</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Main Navigation Menu (Single Row, Crisp) -->
+            <nav id="site-navigation" class="main-navigation" aria-label="Main Menu">
+                <ul id="primary-menu" class="gp-nav-menu">
+                    <li class="menu-item ">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="menu-item menu-item-has-children ">
+                        <a href="products.html">
+                            Products <span class="gp-dropdown-arrow">▾</span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="products.html#pp">PPCP &amp; PP Compounds</a></li>
+                            <li><a href="products.html#hdpe">HDPE &amp; Blow Grades</a></li>
+                            <li><a href="products.html#abs">ABS Engineering Pellets</a></li>
+                            <li><a href="products.html#pvc">PVC Compounds &amp; Wire</a></li>
+                            <li><a href="products.html#nylon">Nylon &amp; Polyamide Dana</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item current-menu-item">
+                        <a href="about.html">About Mill</a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="testing.html">ASTM Lab</a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="certificates.html">Certifications</a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="industries.html">Industries</a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Header Right CTAs (Phone & RFQ Button) -->
+            <div class="gp-header-actions">
+                <a href="tel:+918591585497" class="gp-header-phone-quick gp-hidden-mobile" title="Call Mill Sales Desk">
+                    <div class="gp-hp-icon">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span class="gp-hp-pulse"></span>
+                    </div>
+                    <div class="gp-hp-details">
+                        <span class="gp-hp-lbl">Mill Sales Desk</span>
+                        <strong class="gp-hp-val">+91-8591585497</strong>
+                    </div>
+                </a>
+
+                <button type="button" class="gp-btn gp-btn-header-rfq gp-rfq-modal-trigger" id="gp-header-rfq-btn">
+                    <span>Instant Quote</span>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+
+                <!-- Mobile Menu Hamburger Button -->
+                <button class="gp-menu-toggle" id="gp-menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle Navigation">
+                    <span class="gp-hamburger-bar"></span>
+                    <span class="gp-hamburger-bar"></span>
+                    <span class="gp-hamburger-bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="gp-mobile-drawer" id="gp-mobile-drawer">
+        <div class="gp-drawer-header">
+            <div class="gp-logo-text">
+                <span class="gp-brand-name">SRS &bull; SRS POLYMER</span>
+                <span class="gp-brand-sub">Shri Ram Sharnam Overseas • Green Polytech</span>
+            </div>
+            <button class="gp-drawer-close" id="gp-drawer-close" aria-label="Close Navigation">✕</button>
+        </div>
+        <div class="gp-drawer-content" id="gp-drawer-content">
+            <!-- Injected dynamically via JS or WP Menu -->
+        </div>
+        <div class="gp-drawer-footer">
+            <a href="tel:+918591585497" class="gp-btn gp-btn-outline gp-btn-full">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: middle;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span>+91-8591585497</span>
+            </a>
+            <a href="#contact" class="gp-btn gp-btn-primary gp-btn-full" style="margin-top: 10px;">
+                Request a Quote            </a>
+        </div>
+    </div>
+    <div class="gp-drawer-backdrop" id="gp-drawer-backdrop"></div>
+
+    <div id="content" class="site-content">
+
+<main id="primary" class="site-main gp-about-page">
+
+    <!-- ========================================================================= -->
+    <!-- 1. HERO BANNER                                                            -->
+    <!-- ========================================================================= -->
+    <section class="gp-page-banner">
+        <div class="gp-container">
+            <div class="gp-page-banner-content">
+                <span class="gp-sub-tag">25+ YEARS OF POLYMER EXCELLENCE</span>
+                <h1 class="gp-page-title">About SRS Polymer Industries</h1>
+                <p class="gp-page-banner-desc">
+                    India’s trusted manufacturer, compounder, and wholesale supplier of virgin and reprocessed plastic granules (plastic dana) engineered for injection moulding, blow moulding, and extrusion.                </p>
+                <nav class="gp-breadcrumbs" aria-label="Breadcrumb" style="margin-top: 15px; font-size: 0.85rem; color: rgba(255,255,255,0.7);"><a href="index.html" style="color: #0097db; text-decoration: none;">Home</a> <span style="margin: 0 6px;">›</span> <span style="color: #ffffff;">About</span></nav>            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 2. EXECUTIVE STORY & HERITAGE                                             -->
+    <!-- ========================================================================= -->
+    <section class="gp-section gp-about-story-section" id="vision">
+        <div class="gp-container">
+            <div class="gp-about-story-grid">
+                
+                <!-- Story Left Content -->
+                <div class="gp-about-story-text">
+                    <span class="gp-sub-tag">OUR HERITAGE &amp; JOURNEY</span>
+                    <h2 class="gp-section-title">Engineering Consistency In Every Polymer Pellet</h2>
+                    
+                    <p class="gp-lead-text">
+                        Established in 1999, SRS Polymer Industries has grown from a humble single-line compounding unit into a state-of-the-art polymer manufacturing enterprise with an annual compounding capacity exceeding 50,000 Metric Tonnes.                    </p>
+
+                    <p class="gp-body-text">
+                        We specialize in formulating, compounding, and delivering prime virgin granules and high-grade reprocessed plastic dana (PP, HDPE, LDPE, ABS, PVC) alongside specialized color masterbatches. Our materials serve over 1,200 moulding and extrusion manufacturers across India, optimizing their cycle times and drastically lowering raw material overheads.                    </p>
+
+                    <div class="gp-about-points-list">
+                        <div class="gp-point-item">
+                            <span class="gp-point-icon">✓</span>
+                            <div>
+                                <strong>Strict Melt Flow Index (MFI) Control</strong>
+                                <p>Batch-by-batch ASTM testing ensures zero melt variation on your injection moulding and extrusion machines.</p>
+                            </div>
+                        </div>
+                        <div class="gp-point-item">
+                            <span class="gp-point-icon">✓</span>
+                            <div>
+                                <strong>Washed &amp; Filtered Reprocessed Polymers</strong>
+                                <p>Triple-stage melt filtration removes all particulate impurities for smooth, streak-free surface finishes.</p>
+                            </div>
+                        </div>
+                        <div class="gp-point-item">
+                            <span class="gp-point-icon">✓</span>
+                            <div>
+                                <strong>Direct Factory Pricing &amp; 25kg Bulk Bags</strong>
+                                <p>Moisture-barrier 25kg poly bags and prompt dispatch across Delhi-NCR, Rajasthan, Haryana, and Pan-India.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Right Visual Card -->
+                <div class="gp-about-story-visual">
+                    <div class="gp-director-card">
+                        <div class="gp-director-badge">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <span>ISO 9001:2015 Certified Company</span>
+                        </div>
+                        <blockquote class="gp-director-quote">
+                            "Our core philosophy is simple: delivering uniform melt consistency and zero-impurity plastic dana so moulders achieve faster machine cycles, fewer rejections, and higher profitability."
+                        </blockquote>
+                        <div class="gp-director-footer">
+                            <div class="gp-director-info">
+                                <h4>SRS Polymer Leadership Team</h4>
+                                <span>Plant Operations &amp; Compounding Specialists</span>
+                            </div>
+                            <div class="gp-plant-seal">
+                                <span class="gp-seal-txt">100% QUALITY TESTED</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gp-about-feature-box">
+                        <div class="gp-feature-row">
+                            <div class="gp-feature-item">
+                                <span class="gp-feature-title">Plant Location</span>
+                                <span class="gp-feature-val">Delhi-NCR &amp; Bhiwadi</span>
+                            </div>
+                            <div class="gp-feature-item">
+                                <span class="gp-feature-title">Packaging</span>
+                                <span class="gp-feature-val">25 Kg Laminated Bags</span>
+                            </div>
+                            <div class="gp-feature-item">
+                                <span class="gp-feature-title">Granule Size</span>
+                                <span class="gp-feature-val">2.5mm - 3mm Pellets</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 3. LIVE ANIMATED STATS BAR                                                -->
+    <!-- ========================================================================= -->
+    <section class="gp-stats-bar gp-about-stats-bar">
+        <div class="gp-container">
+            <div class="gp-stats-grid">
+                
+                <div class="gp-stat-item">
+                    <div class="gp-stat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    </div>
+                    <div class="gp-stat-info">
+                        <div class="gp-stat-number"><span class="gp-counter" data-target="50000">0</span><span class="gp-plus">+</span></div>
+                        <h4 class="gp-stat-title">MT Annual Capacity</h4>
+                        <p class="gp-stat-desc">High-tonnage twin-screw compounding output</p>
+                    </div>
+                </div>
+
+                <div class="gp-stat-item">
+                    <div class="gp-stat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <div class="gp-stat-info">
+                        <div class="gp-stat-number"><span class="gp-counter" data-target="1200">0</span><span class="gp-plus">+</span></div>
+                        <h4 class="gp-stat-title">B2B Moulders Supplied</h4>
+                        <p class="gp-stat-desc">Injection &amp; blow moulding partners across India</p>
+                    </div>
+                </div>
+
+                <div class="gp-stat-item">
+                    <div class="gp-stat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                    </div>
+                    <div class="gp-stat-info">
+                        <div class="gp-stat-number"><span class="gp-counter" data-target="50">0</span><span class="gp-plus">+</span></div>
+                        <h4 class="gp-stat-title">Polymer Formulations</h4>
+                        <p class="gp-stat-desc">PP, HDPE, ABS, PVC &amp; custom masterbatches</p>
+                    </div>
+                </div>
+
+                <div class="gp-stat-item">
+                    <div class="gp-stat-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                    </div>
+                    <div class="gp-stat-info">
+                        <div class="gp-stat-number"><span class="gp-counter" data-target="25">0</span><span class="gp-plus">+</span></div>
+                        <h4 class="gp-stat-title">Years Industry Trust</h4>
+                        <p class="gp-stat-desc">Consistent compounding excellence since 1999</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 4. CORE PILLARS & VALUE PROPOSITION                                      -->
+    <!-- ========================================================================= -->
+    <section class="gp-section gp-about-pillars-section">
+        <div class="gp-container">
+            <div class="gp-section-header gp-text-center">
+                <span class="gp-sub-tag">OUR COMPETITIVE EDGE</span>
+                <h2 class="gp-section-title">Why Plastic Manufacturers Choose SRS Polymer</h2>
+                <p class="gp-section-subtitle">
+                    From raw polymer sorting to microscopic pelletizing, we build consistency into every granule.                </p>
+            </div>
+
+            <div class="gp-about-pillars-grid">
+                
+                <div class="gp-about-pillar-card">
+                    <div class="gp-pillar-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </div>
+                    <h3>Cost-Effective Dana</h3>
+                    <p>Reduce your raw material costs by 25% to 40% without compromising tensile strength, impact resistance, or surface finish.</p>
+                    <span class="gp-pillar-tag">Economic Advantage</span>
+                </div>
+
+                <div class="gp-about-pillar-card">
+                    <div class="gp-pillar-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                    </div>
+                    <h3>Zero MFI Variation</h3>
+                    <p>Computerized melt flow indexing guarantees that every consignment runs seamlessly without needing constant barrel temperature adjustments.</p>
+                    <span class="gp-pillar-tag">MFI Consistency</span>
+                </div>
+
+                <div class="gp-about-pillar-card">
+                    <div class="gp-pillar-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    </div>
+                    <h3>Sustainable Recycling</h3>
+                    <p>Eco-compliant closed-loop recycling processes turning post-industrial polymer scrap into high-performance engineering granules.</p>
+                    <span class="gp-pillar-tag">Circular Economy</span>
+                </div>
+
+                <div class="gp-about-pillar-card">
+                    <div class="gp-pillar-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                    </div>
+                    <h3>Ready Stock &amp; Dispatch</h3>
+                    <p>Extensive warehousing maintaining 5,000+ MT buffer stock ensuring same-day dispatch for Delhi-NCR and prompt transport across India.</p>
+                    <span class="gp-pillar-tag">Fast Logistics</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 5. PLANT INFRASTRUCTURE & MACHINERY                                       -->
+    <!-- ========================================================================= -->
+    <section class="gp-section gp-about-infra-section" id="infrastructure">
+        <div class="gp-container">
+            <div class="gp-section-header gp-text-center">
+                <span class="gp-sub-tag">MANUFACTURING CAPACITY</span>
+                <h2 class="gp-section-title">Our Compounding Infrastructure</h2>
+                <p class="gp-section-subtitle">
+                    Engineered with high-tonnage compounding lines, automated gravimetric feeders, and multi-mesh hydraulic screen changers.                </p>
+            </div>
+
+            <div class="gp-infra-grid">
+                
+                <div class="gp-infra-card">
+                    <div class="gp-infra-badge">01</div>
+                    <h3 class="gp-infra-title">Co-Rotating Twin-Screw Extruders</h3>
+                    <p class="gp-infra-desc">
+                        High-torque intermeshing twin-screw compounding lines with multiple vacuum degassing zones. Capable of thorough dispersion of mineral fillers (talc/calcium), impact modifiers, and color pigments.                    </p>
+                    <ul class="gp-infra-features">
+                        <li><span>✓</span> L/D Ratio: 44:1 for optimal homogenization</li>
+                        <li><span>✓</span> Loss-in-weight gravimetric loss feeders</li>
+                        <li><span>✓</span> Continuous hydraulic dual-piston screen changers</li>
+                    </ul>
+                </div>
+
+                <div class="gp-infra-card">
+                    <div class="gp-infra-badge">02</div>
+                    <h3 class="gp-infra-title">Strand &amp; Water-Ring Pelletizers</h3>
+                    <p class="gp-infra-desc">
+                        Automated hot-face water ring and cold-strand pelletizers producing uniform 2.5mm - 3mm spherical and cylindrical granules with zero dust or oversize agglomerates.                    </p>
+                    <ul class="gp-infra-features">
+                        <li><span>✓</span> Centrifugal dewatering &amp; vibro-classifiers</li>
+                        <li><span>✓</span> Even pellet sizing for stable hopper feed</li>
+                        <li><span>✓</span> Air-conveyed cooling to automatic bagging bins</li>
+                    </ul>
+                </div>
+
+                <div class="gp-infra-card">
+                    <div class="gp-infra-badge">03</div>
+                    <h3 class="gp-infra-title">High-Speed Henschel Mixers</h3>
+                    <p class="gp-infra-desc">
+                        Heavy-duty thermokinetic mixers delivering rapid friction-blending of pigments, UV stabilizers, anti-oxidants, and polymer carrier resins for custom masterbatches.                    </p>
+                    <ul class="gp-infra-features">
+                        <li><span>✓</span> Streak-free colorant and TiO2 dispersion</li>
+                        <li><span>✓</span> Anti-blocking and slip additive premixing</li>
+                        <li><span>✓</span> Custom RAL &amp; Pantone shade compounding</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 6. QUALITY TESTING LAB STANDARDS                                         -->
+    <!-- ========================================================================= -->
+    <section class="gp-section gp-about-lab-section" id="lab">
+        <div class="gp-container">
+            <div class="gp-section-header gp-text-center">
+                <span class="gp-sub-tag">CERTIFIED TESTING FACILITY</span>
+                <h2 class="gp-section-title">Quality Control &amp; Lab Standards</h2>
+                <p class="gp-section-subtitle">
+                    Every polymer lot undergoes mandatory ASTM and ISO testing in our in-house lab before receiving dispatch approval.                </p>
+            </div>
+
+            <div class="gp-lab-grid">
+                
+                <div class="gp-lab-card">
+                    <div class="gp-lab-header">
+                        <span class="gp-lab-std">ASTM D1238 / ISO 1133</span>
+                        <h4>Melt Flow Index (MFI)</h4>
+                    </div>
+                    <p>Digital melt flow indexing at 190°C &amp; 230°C under 2.16kg and 5kg loads to confirm precise rheology for injection or blow processing.</p>
+                </div>
+
+                <div class="gp-lab-card">
+                    <div class="gp-lab-header">
+                        <span class="gp-lab-std">ASTM D792 / ISO 1183</span>
+                        <h4>Specific Gravity &amp; Density</h4>
+                    </div>
+                    <p>High-accuracy immersion densitometer testing ensuring true resin purity and zero filler deviation across polymer grades.</p>
+                </div>
+
+                <div class="gp-lab-card">
+                    <div class="gp-lab-header">
+                        <span class="gp-lab-std">ASTM D256 / ISO 180</span>
+                        <h4>Izod &amp; Charpy Impact</h4>
+                    </div>
+                    <p>Notched impact resistance testing verifying toughness and drop-impact resistance for heavy containers and automotive components.</p>
+                </div>
+
+                <div class="gp-lab-card">
+                    <div class="gp-lab-header">
+                        <span class="gp-lab-std">ASTM D638 / ISO 527</span>
+                        <h4>Tensile &amp; Elongation</h4>
+                    </div>
+                    <p>Universal tensile testing machine measuring ultimate tensile strength, yield stress, and percentage elongation at break.</p>
+                </div>
+
+                <div class="gp-lab-card">
+                    <div class="gp-lab-header">
+                        <span class="gp-lab-std">ASTM D5630 / ISO 3451</span>
+                        <h4>Ash &amp; Filler Content</h4>
+                    </div>
+                    <p>High-temperature muffle furnace ashing to precisely verify mineral filler loading (calcium carbonate, talc, glass fiber).</p>
+                </div>
+
+                <div class="gp-lab-card">
+                    <div class="gp-lab-header">
+                        <span class="gp-lab-std">Karl Fischer / Halogen</span>
+                        <h4>Moisture Content (&lt;0.05%)</h4>
+                    </div>
+                    <p>Halogen moisture analyzer verifying low moisture levels to eliminate splay marks, bubbles, and silver streaking during molding.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 7. COMPANY TIMELINE / MILESTONES                                         -->
+    <!-- ========================================================================= -->
+    <section class="gp-section gp-about-timeline-section">
+        <div class="gp-container">
+            <div class="gp-section-header gp-text-center">
+                <span class="gp-sub-tag">THE ROAD TO EXCELLENCE</span>
+                <h2 class="gp-section-title">Our Evolution: 1999 to 2026</h2>
+            </div>
+
+            <div class="gp-timeline-wrapper">
+                
+                <div class="gp-timeline-item">
+                    <div class="gp-timeline-year">1999</div>
+                    <div class="gp-timeline-dot"></div>
+                    <div class="gp-timeline-content">
+                        <h4>Founded in Delhi-NCR</h4>
+                        <p>Started initial processing operations supplying basic LDPE and PP reprocessed dana to local bucket and container manufacturers.</p>
+                    </div>
+                </div>
+
+                <div class="gp-timeline-item">
+                    <div class="gp-timeline-year">2008</div>
+                    <div class="gp-timeline-dot"></div>
+                    <div class="gp-timeline-content">
+                        <h4>Twin-Screw Compounding Facility</h4>
+                        <p>Installed our first high-torque twin-screw extrusion line, pioneering precision MFI blending for high-speed automated injection moulding.</p>
+                    </div>
+                </div>
+
+                <div class="gp-timeline-item">
+                    <div class="gp-timeline-year">2016</div>
+                    <div class="gp-timeline-dot"></div>
+                    <div class="gp-timeline-content">
+                        <h4>ASTM Certified Testing Lab</h4>
+                        <p>Commissioned computerized melt flow indexing, densitometers, and spectrometer color matching systems to offer guaranteed batch consistency.</p>
+                    </div>
+                </div>
+
+                <div class="gp-timeline-item">
+                    <div class="gp-timeline-year">2021</div>
+                    <div class="gp-timeline-dot"></div>
+                    <div class="gp-timeline-content">
+                        <h4>Crossed 35,000 MT/Year Output</h4>
+                        <p>Expanded manufacturing footprints across Bhiwadi and Delhi-NCR with dedicated lines for ABS engineering pellets and PVC compounding.</p>
+                    </div>
+                </div>
+
+                <div class="gp-timeline-item">
+                    <div class="gp-timeline-year">2026</div>
+                    <div class="gp-timeline-dot"></div>
+                    <div class="gp-timeline-content">
+                        <h4>50,000+ MT Sustainable Circular Hub</h4>
+                        <p>Operating as a premier multi-polymer compounding center serving 1,200+ clients with automated bagging and Pan-India logistics.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 8. ABOUT PAGE CTA STRIP                                                   -->
+    <!-- ========================================================================= -->
+    <section class="gp-cta-strip">
+        <div class="gp-container">
+            <div class="gp-cta-strip-card">
+                <div class="gp-cta-strip-text">
+                    <span class="gp-tag-pill">SAMPLE BAGS AVAILABLE</span>
+                    <h3>Looking for High-Consistency Plastic Dana for Your Moulding Machines?</h3>
+                    <p>Test our PP, HDPE, ABS, and PVC granules on your own production floor. We provide 25kg sample bags and comprehensive lab test reports.</p>
+                </div>
+                <div class="gp-cta-strip-actions">
+                    <a href="contact.html" class="gp-btn gp-btn-light gp-btn-lg">
+                        <span>Request Sample / Quote</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a href="https://wa.me/918591585497?text=Hello%20SRS%20Polymer,%20I%20would%20like%20to%20know%20more%20about%20your%20plastic%20granules." target="_blank" rel="noopener" class="gp-btn gp-btn-glass gp-btn-lg">
+                        <span>WhatsApp Us Directly</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+    </div><!-- #content -->
+
+    <!-- Industrial CTA Banner before footer -->
+    <section class="gp-cta-strip">
+        <div class="gp-container">
+            <div class="gp-cta-strip-card">
+                <div class="gp-cta-strip-text">
+                    <span class="gp-tag-pill">PARTNER WITH LEADERS</span>
+                    <h3>Looking for Premium Plastic Granules (Dana) &amp; Custom Compounding?</h3>
+                    <p>From virgin PP &amp; HDPE granules to high-impact ABS, PVC compounds, and masterbatches — we supply certified quality at competitive bulk rates.</p>
+                </div>
+                <div class="gp-cta-strip-actions">
+                    <a href="contact.html" class="gp-btn gp-btn-light gp-btn-lg">
+                        <span>Request Bulk Price Quote</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a href="tel:918591585497" class="gp-btn gp-btn-glass gp-btn-lg">
+                        <span>Speak to Polymer Specialist</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Site Footer -->
+    <footer id="colophon" class="site-footer gp-footer">
+        <div class="gp-container gp-footer-widgets">
+            <div class="gp-footer-grid">
+                <!-- Col 1: Bio & Cert -->
+                <div class="gp-footer-col gp-footer-col-1">
+                    <div class="gp-footer-brand">
+                        <div class="gp-logo-mark">
+                            <svg width="42" height="42" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="25,4 45,15 45,37 25,48 5,37 5,15" stroke="#48cae4" stroke-width="2" fill="rgba(19, 64, 116, 0.5)" stroke-linejoin="round"/>
+                                <line x1="25" y1="16" x2="25" y2="36" stroke="#48cae4" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="13" y1="21" x2="37" y2="31" stroke="#48cae4" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="13" y1="31" x2="37" y2="21" stroke="#48cae4" stroke-width="1.8" stroke-linecap="round"/>
+                                <circle cx="25" cy="26" r="9" fill="var(--gp-primary)"/>
+                                <text x="25" y="29.5" text-anchor="middle" fill="#ffffff" font-size="7.5" font-weight="900" font-family="'Rajdhani', sans-serif">SRS</text>
+                                <circle cx="25" cy="16" r="3" fill="#00b4d8"/>
+                                <circle cx="25" cy="36" r="3" fill="#ef233c"/>
+                                <circle cx="13" cy="21" r="3" fill="#ef233c"/>
+                                <circle cx="37" cy="31" r="3" fill="#00b4d8"/>
+                                <circle cx="13" cy="31" r="3" fill="#00b4d8"/>
+                                <circle cx="37" cy="21" r="3" fill="#ef233c"/>
+                            </svg>
+                        </div>
+                        <div class="gp-footer-brand-text">
+                            <h3 class="gp-footer-company" style="margin: 0; font-size: 1.15rem; font-weight: 800; line-height: 1.25; color: #ffffff;">SRS POLYMER</h3>
+                            <span class="gp-footer-company-sub" style="display: block; font-size: 0.72rem; font-weight: 700; color: var(--gp-accent-cyan); letter-spacing: 0.04em; margin-top: 3px; text-transform: uppercase;">Shri Ram Sharnam Overseas • Green Polytech (SRS)</span>
+                        </div>
+                    </div>
+                    <p class="gp-footer-cert-badge">
+                        <span class="gp-pulse-dot"></span> ISO 9001:2015 Certified Polymer Supplier                    </p>
+                    <p class="gp-footer-desc">
+                        Leading manufacturer, importer, and supplier of Virgin and Reprocessed Plastic Granules (Plastic Dana) including PP, HDPE, LDPE, ABS, PVC, and Color Masterbatches for plastic moulding and extrusion industries across India.                    </p>
+                    <div class="gp-footer-socials">
+                                                    <a href="https://in.linkedin.com/company/srs-polymer" target="_blank" rel="noopener" aria-label="LinkedIn" class="gp-social-circle">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.75-1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                                                                            <a href="https://www.facebook.com/srspolymer/" target="_blank" rel="noopener" aria-label="Facebook" class="gp-social-circle">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.595 0 9 1.582 9 4.615V8z"/></svg>
+                            </a>
+                                            </div>
+                </div>
+
+                <!-- Col 2: Useful Links -->
+                <div class="gp-footer-col gp-footer-col-2">
+                    <h4 class="gp-footer-heading">Quick Links</h4>
+                    <ul class="gp-footer-links">
+                        <li><a href="about.html"><span class="gp-arrow">›</span> About SRS Polymer</a></li>
+                        <li><a href="about.html#vision"><span class="gp-arrow">›</span> Our 25-Year Journey</a></li>
+                        <li><a href="certificates.html"><span class="gp-arrow">›</span> Quality Certifications (ISO 9001)</a></li>
+                        <li><a href="testing.html"><span class="gp-arrow">›</span> ASTM Lab &amp; Testing Protocols</a></li>
+                        <li><a href="industries.html"><span class="gp-arrow">›</span> Industries &amp; Market Sectors</a></li>
+                        <li><a href="products.html"><span class="gp-arrow">›</span> Plastic Dana Catalog</a></li>
+                        <li><a href="contact.html"><span class="gp-arrow">›</span> Contact &amp; Factory Connect</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Products Offered -->
+                <div class="gp-footer-col gp-footer-col-3">
+                    <h4 class="gp-footer-heading">Polymer Products</h4>
+                    <ul class="gp-footer-links">
+                        <li><a href="products.html#pp"><span class="gp-arrow">›</span> Polypropylene (PP) Granules</a></li>
+                        <li><a href="products.html#hdpe"><span class="gp-arrow">›</span> HDPE Granules (Blow &amp; Pipe)</a></li>
+                        <li><a href="products.html#abs"><span class="gp-arrow">›</span> ABS Engineering Pellets</a></li>
+                        <li><a href="products.html#pvc"><span class="gp-arrow">›</span> PVC Compounds &amp; Dana</a></li>
+                        <li><a href="products.html#nylon"><span class="gp-arrow">›</span> Nylon &amp; Polyamide Dana</a></li>
+                        <li><a href="products.html"><span class="gp-arrow">›</span> Reprocessed Plastic Dana</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact Us -->
+                <div class="gp-footer-col gp-footer-col-4">
+                    <h4 class="gp-footer-heading">Contact Plant &amp; Office</h4>
+                    <div class="gp-footer-contact-item">
+                        <div class="gp-contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </div>
+                        <div class="gp-contact-text">
+                            <strong>Plant Location:</strong>
+                            <p>Plot No. 42, Sector 8, IMT Manesar, Gurugram, Haryana - 122050</p>
+                        </div>
+                    </div>
+
+                    <div class="gp-footer-contact-item">
+                        <div class="gp-contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                        <div class="gp-contact-text">
+                            <strong>Call Direct:</strong>
+                            <p><a href="tel:918591585497">+91-8591585497</a></p>
+                        </div>
+                    </div>
+
+                    <div class="gp-footer-contact-item">
+                        <div class="gp-contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <div class="gp-contact-text">
+                            <strong>Email Enquiry:</strong>
+                            <p><a href="mailto:info@srspolymer.com">info@srspolymer.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="gp-footer-bottom">
+            <div class="gp-container gp-footer-bottom-inner">
+                <p class="gp-copyright-text">
+                    &copy; 2026 <strong>SRS POLYMER (Shri Ram Sharnam Overseas • Green Polytech)</strong>. All Rights Reserved.                </p>
+                <div class="gp-footer-bottom-links">
+                    <a href="#investors">Privacy Policy</a>
+                    <span class="sep">•</span>
+                    <a href="#investors">Terms of Supply</a>
+                    <span class="sep">•</span>
+                    <a href="#investors">SEBI Disclosures</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Widget (matching Jyoti Joinchat) -->
+        <div class="gp-whatsapp-widget" id="gp-whatsapp-widget" style="position: fixed !important; bottom: 30px !important; right: 30px !important; left: auto !important; z-index: 99999 !important;">
+        <!-- Chat Popup Box -->
+        <div class="gp-wa-chatbox" id="gp-wa-chatbox" style="position: absolute !important; bottom: 75px !important; right: 0 !important; left: auto !important; transform-origin: bottom right !important;">
+            <div class="gp-wa-header">
+                <div class="gp-wa-avatar">
+                    <div class="gp-wa-avatar-img">SP</div>
+                    <span class="gp-wa-status-dot"></span>
+                </div>
+                <div class="gp-wa-info">
+                    <h4>SRS Polymer</h4>
+                    <span>Typically replies within minutes</span>
+                </div>
+                <button class="gp-wa-close" id="gp-wa-close" aria-label="Close WhatsApp Dialog">✕</button>
+            </div>
+            <div class="gp-wa-body">
+                <div class="gp-wa-msg-bubble">
+                    <p>Hello 👋 How can we help you today?</p>
+                    <p class="gp-wa-sub">Ask about today’s rates for PP Granules, HDPE Dana, ABS Engineering Pellets, or Masterbatches.</p>
+                    <span class="gp-wa-time">13:31</span>
+                </div>
+            </div>
+            <div class="gp-wa-footer">
+                <a href="https://api.whatsapp.com/send?phone=918591585497&text=Hi%20SRS%20Polymer%21%20I%20need%20price%20and%20availability%20for%20Plastic%20Granules%20%28Dana%29." target="_blank" rel="noopener" class="gp-btn-wa-send">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    <span>Open Chat on WhatsApp</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Trigger Button -->
+        <button class="gp-wa-trigger" id="gp-wa-trigger" aria-label="Chat with us on WhatsApp">
+            <span class="gp-wa-pulse"></span>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="#ffffff"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span class="gp-wa-badge-notify">1</span>
+        </button>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <button id="gp-back-to-top" class="gp-back-to-top" style="bottom: 102px !important; right: 36px !important; left: auto !important; background: linear-gradient(135deg, #0b2545 0%, #134074 100%) !important; color: #ffffff !important;" aria-label="Back to top">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.8"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- Quick RFQ Modal Dialog -->
+    <div class="gp-modal" id="gp-rfq-modal" aria-hidden="true" role="dialog">
+        <div class="gp-modal-dialog">
+            <div class="gp-modal-header">
+                <h3>Request a Custom Quotation</h3>
+                <p>Direct line to our technical sales team for bulk supply &amp; OEM custom moulding.</p>
+                <button class="gp-modal-close" id="gp-rfq-modal-close" aria-label="Close">✕</button>
+            </div>
+            <form class="gp-modal-form gp-ajax-rfq-form">
+                <input type="hidden" name="action" value="gp_submit_contact">
+                <div class="gp-form-row">
+                    <div class="gp-form-group">
+                        <label>Full Name *</label>
+                        <input type="text" name="fullname" required placeholder="Example Name">
+                    </div>
+                    <div class="gp-form-group">
+                        <label>Company Name</label>
+                        <input type="text" name="company" placeholder="ABC Chemicals Ltd">
+                    </div>
+                </div>
+                <div class="gp-form-row">
+                    <div class="gp-form-group">
+                        <label>Email Address *</label>
+                        <input type="email" name="email" required placeholder="example@example.com">
+                    </div>
+                    <div class="gp-form-group">
+                        <label>Mobile / WhatsApp *</label>
+                        <input type="tel" name="phone" required placeholder="+91 98765 43210">
+                    </div>
+                </div>
+                <div class="gp-form-row">
+                    <div class="gp-form-group">
+                        <label>Product of Interest</label>
+                        <input type="text" name="product" id="gp-modal-product-field" placeholder="e.g. PP Granules / HDPE Dana (MFI 12)">
+                    </div>
+                    <div class="gp-form-group">
+                        <label>Estimated Quantity</label>
+                        <input type="text" name="quantity" placeholder="e.g. 5,000 pcs / 10 Units">
+                    </div>
+                </div>
+                <div class="gp-form-group">
+                    <label>Detailed Requirements / Specifications</label>
+                    <textarea name="message" rows="3" placeholder="Please specify UN certification needs, color, neck aperture, delivery timeline..."></textarea>
+                </div>
+                <div class="gp-form-feedback"></div>
+                <button type="submit" class="gp-btn gp-btn-primary gp-btn-full gp-btn-submit">
+                    <span>Submit Request Now</span>
+                </button>
+            </form>
+        </div>
+        <div class="gp-modal-backdrop" id="gp-rfq-modal-backdrop"></div>
+    </div>
+
+</div><!-- #page -->
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

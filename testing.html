@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+            <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Rajdhani:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+        <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Rajdhani:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="style.css">
+    <style id="gp-critical-layout-override">
+        html {
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: #ffffff !important;
+        }
+        body {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            box-shadow: none !important;
+            background: #ffffff !important;
+            overflow-x: hidden;
+        }
+        #page, .site-wrapper {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            box-shadow: none !important;
+            overflow-x: hidden;
+        }
+        .gp-topbar-inner {
+            min-height: 40px;
+            height: auto !important;
+            padding: 4px 0 !important;
+        }
+        .gp-badge-iso {
+            white-space: nowrap !important;
+            flex-shrink: 0 !important;
+        }
+        .gp-topbar-item, .gp-topbar-link {
+            white-space: nowrap !important;
+        }
+        .gp-whatsapp-widget, #gp-whatsapp-widget, .joinchat, #joinchat, .wa-chat-box, .whatsapp-chat-button {
+            position: fixed !important;
+            bottom: 30px !important;
+            right: 30px !important;
+            left: auto !important;
+            z-index: 999999 !important;
+        }
+        .gp-wa-chatbox, #gp-wa-chatbox {
+            position: absolute !important;
+            bottom: 75px !important;
+            right: 0 !important;
+            left: auto !important;
+            transform-origin: bottom right !important;
+        }
+        .gp-back-to-top, #gp-back-to-top {
+            position: fixed !important;
+            bottom: 102px !important;
+            right: 36px !important;
+            left: auto !important;
+            width: 50px !important;
+            height: 50px !important;
+            background: #0b2545 !important;
+            background: linear-gradient(135deg, #0b2545 0%, #134074 100%) !important;
+            color: #ffffff !important;
+            border: 2px solid rgba(255, 255, 255, 0.25) !important;
+            border-radius: 50% !important;
+            box-shadow: 0 8px 24px rgba(11, 37, 69, 0.35), 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            cursor: pointer !important;
+            z-index: 99999 !important;
+            text-decoration: none !important;
+        }
+        .gp-back-to-top svg, #gp-back-to-top svg {
+            stroke: #ffffff !important;
+            width: 22px !important;
+            height: 22px !important;
+            display: block !important;
+        }
+        .gp-back-to-top:hover, #gp-back-to-top:hover {
+            background: #ef233c !important;
+            background: linear-gradient(135deg, #ef233c 0%, #d90429 100%) !important;
+            color: #ffffff !important;
+            box-shadow: 0 12px 30px rgba(239, 35, 60, 0.55) !important;
+        }
+        @media (max-width: 768px) {
+            .gp-whatsapp-widget, #gp-whatsapp-widget, .joinchat, #joinchat {
+                bottom: 20px !important;
+                right: 20px !important;
+                left: auto !important;
+            }
+            .gp-wa-chatbox, #gp-wa-chatbox {
+                right: 0 !important;
+                left: auto !important;
+            }
+            .gp-back-to-top, #gp-back-to-top {
+                bottom: 90px !important;
+                right: 26px !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="page page-template ">
+
+<div id="page" class="site-wrapper">
+    <a class="skip-link screen-reader-text" href="#primary">Skip to content</a>
+
+    <!-- Top Contact & Notification Bar -->
+    <div class="gp-topbar">
+        <div class="gp-container gp-topbar-inner">
+            <div class="gp-topbar-left">
+                <span class="gp-badge-iso">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                    ISO 9001:2015 Certified Company                </span>
+                <span class="gp-topbar-item gp-hidden-mobile">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Delhi-NCR Industrial Area, India</span>
+                </span>
+            </div>
+
+            <div class="gp-topbar-right">
+                <a href="tel:+918591585497" class="gp-topbar-link">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>+91-8591585497</span>
+                </a>
+                <a href="mailto:info@srspolymer.com" class="gp-topbar-link gp-hidden-mobile">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <span>info@srspolymer.com</span>
+                </a>
+                <button type="button" class="gp-topbar-quick-rfq gp-rfq-modal-trigger" id="gp-topbar-rfq-btn">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <span>Instant RFQ</span>
+                </button>
+                <div class="gp-topbar-socials gp-hidden-sm">
+                                            <a href="https://in.linkedin.com/company/srs-polymer" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                                                                <a href="https://www.facebook.com/srspolymer/" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.595 0 9 1.582 9 4.615V8z"/></svg>
+                        </a>
+                                    </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header (Professional Unified Header) -->
+    <header id="masthead" class="site-header gp-header gp-clean-header">
+        <div class="gp-container gp-header-inner">
+            <!-- Brand Logo -->
+            <div class="site-branding">
+                <a href="index.html" class="gp-logo-link" rel="home">
+                    <div class="gp-logo-mark">
+                        <svg width="40" height="40" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="25,4 45,15 45,37 25,48 5,37 5,15" stroke="#0097db" stroke-width="2.5" fill="#f0f7fd" stroke-linejoin="round"/>
+                            <line x1="25" y1="16" x2="25" y2="36" stroke="#0097db" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="13" y1="21" x2="37" y2="31" stroke="#0097db" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="13" y1="31" x2="37" y2="21" stroke="#0097db" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="25" cy="26" r="9.5" fill="#0b2545"/>
+                            <text x="25" y="29.5" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="900" font-family="'Poppins', sans-serif">SRS</text>
+                            <circle cx="25" cy="16" r="3" fill="#0097db"/>
+                            <circle cx="25" cy="36" r="3" fill="#00b4d8"/>
+                            <circle cx="13" cy="21" r="3" fill="#0b2545"/>
+                            <circle cx="37" cy="31" r="3" fill="#0097db"/>
+                            <circle cx="13" cy="31" r="3" fill="#0097db"/>
+                            <circle cx="37" cy="21" r="3" fill="#00b4d8"/>
+                        </svg>
+                    </div>
+                    <div class="gp-logo-text">
+                        <span class="gp-brand-name">SRS <span class="gp-accent" style="color:#0097db;">POLYMER</span></span>
+                        <span class="gp-brand-sub"><span class="gp-live-dot-sub"></span> GREEN POLYTECH • ISO 9001:2015</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Main Navigation Menu (Single Row, Crisp) -->
+            <nav id="site-navigation" class="main-navigation" aria-label="Main Menu">
+                <ul id="primary-menu" class="gp-nav-menu">
+                    <li class="menu-item ">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="menu-item menu-item-has-children ">
+                        <a href="products.html">
+                            Products <span class="gp-dropdown-arrow">▾</span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="products.html#pp">PPCP &amp; PP Compounds</a></li>
+                            <li><a href="products.html#hdpe">HDPE &amp; Blow Grades</a></li>
+                            <li><a href="products.html#abs">ABS Engineering Pellets</a></li>
+                            <li><a href="products.html#pvc">PVC Compounds &amp; Wire</a></li>
+                            <li><a href="products.html#nylon">Nylon &amp; Polyamide Dana</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="about.html">About Mill</a>
+                    </li>
+                    <li class="menu-item current-menu-item">
+                        <a href="testing.html">ASTM Lab</a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="certificates.html">Certifications</a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="industries.html">Industries</a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Header Right CTAs (Phone & RFQ Button) -->
+            <div class="gp-header-actions">
+                <a href="tel:+918591585497" class="gp-header-phone-quick gp-hidden-mobile" title="Call Mill Sales Desk">
+                    <div class="gp-hp-icon">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span class="gp-hp-pulse"></span>
+                    </div>
+                    <div class="gp-hp-details">
+                        <span class="gp-hp-lbl">Mill Sales Desk</span>
+                        <strong class="gp-hp-val">+91-8591585497</strong>
+                    </div>
+                </a>
+
+                <button type="button" class="gp-btn gp-btn-header-rfq gp-rfq-modal-trigger" id="gp-header-rfq-btn">
+                    <span>Instant Quote</span>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+
+                <!-- Mobile Menu Hamburger Button -->
+                <button class="gp-menu-toggle" id="gp-menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle Navigation">
+                    <span class="gp-hamburger-bar"></span>
+                    <span class="gp-hamburger-bar"></span>
+                    <span class="gp-hamburger-bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="gp-mobile-drawer" id="gp-mobile-drawer">
+        <div class="gp-drawer-header">
+            <div class="gp-logo-text">
+                <span class="gp-brand-name">SRS &bull; SRS POLYMER</span>
+                <span class="gp-brand-sub">Shri Ram Sharnam Overseas • Green Polytech</span>
+            </div>
+            <button class="gp-drawer-close" id="gp-drawer-close" aria-label="Close Navigation">✕</button>
+        </div>
+        <div class="gp-drawer-content" id="gp-drawer-content">
+            <!-- Injected dynamically via JS or WP Menu -->
+        </div>
+        <div class="gp-drawer-footer">
+            <a href="tel:+918591585497" class="gp-btn gp-btn-outline gp-btn-full">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: middle;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span>+91-8591585497</span>
+            </a>
+            <a href="#contact" class="gp-btn gp-btn-primary gp-btn-full" style="margin-top: 10px;">
+                Request a Quote            </a>
+        </div>
+    </div>
+    <div class="gp-drawer-backdrop" id="gp-drawer-backdrop"></div>
+
+    <div id="content" class="site-content">
+
+<main id="primary" class="site-main gp-testing-page">
+
+    <!-- ========================================================================= -->
+    <!-- 1. HERO BANNER                                                            -->
+    <!-- ========================================================================= -->
+    <section class="gp-page-banner">
+        <div class="gp-container">
+            <div class="gp-page-banner-content">
+                <span class="gp-sub-tag">IN-HOUSE ACCREDITED POLYMER LABORATORY</span>
+                <h1 class="gp-page-title">ASTM &amp; ISO Quality Testing Lab</h1>
+                <p class="gp-page-banner-desc">
+                    Every polymer compounding lot produced at SRS Polymer is subjected to stringent physical, rheological, and mechanical testing. Learn about our testing protocols and computerized equipment.                </p>
+                <nav class="gp-breadcrumbs" aria-label="Breadcrumb" style="margin-top: 15px; font-size: 0.85rem; color: rgba(255,255,255,0.7);"><a href="index.html" style="color: #0097db; text-decoration: none;">Home</a> <span style="margin: 0 6px;">›</span> <span style="color: #ffffff;">Testing</span></nav>            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 2. TESTING PARAMETERS & EQUIPMENT GRID                                    -->
+    <!-- ========================================================================= -->
+    <section class="gp-section gp-section-plastin-testing" id="testing-lab">
+        <div class="gp-container">
+            
+            <div class="gp-section-header-plastin gp-sh-center">
+                <span class="gp-section-kicker">RIGOROUS BATCH VERIFICATION</span>
+                <h2 class="gp-section-title-clean">6 Key Testing Parameters &amp; Instruments</h2>
+                <p class="gp-section-sub-clean gp-sub-center">
+                    Each polymer shipment is accompanied by a certified Batch Certificate of Analysis (COA) guaranteeing zero variation in production runs.                </p>
+            </div>
+
+            <!-- Testing Parameters Grid (6 Parameters) -->
+            <div class="gp-testing-grid-plastin">
+                
+                <!-- 1. MFI Testing -->
+                <div class="gp-test-card">
+                    <div class="gp-test-card-top">
+                        <span class="gp-test-standard">ASTM D1238 / ISO 1133</span>
+                        <div class="gp-test-icon-badge">MFI</div>
+                    </div>
+                    <h3 class="gp-test-title">Melt Flow Index (MFI)</h3>
+                    <p class="gp-test-desc">Precision computerized MFI tester measuring exact melt mass-flow rate to guarantee consistent flow in injection and extrusion dies.</p>
+                    <div class="gp-test-meta">
+                        <span>Equipment: <strong>Digital Extrusion Plastometer</strong></span>
+                    </div>
+                </div>
+
+                <!-- 2. Tensile & UTM -->
+                <div class="gp-test-card">
+                    <div class="gp-test-card-top">
+                        <span class="gp-test-standard">ASTM D638 / ISO 527</span>
+                        <div class="gp-test-icon-badge">UTM</div>
+                    </div>
+                    <h3 class="gp-test-title">Tensile &amp; Flexural Strength</h3>
+                    <p class="gp-test-desc">Universal Testing Machine (UTM) measuring tensile yield, elongation at break, and 3-point flexural bending modulus.</p>
+                    <div class="gp-test-meta">
+                        <span>Equipment: <strong>Microprocessor UTM (50 kN)</strong></span>
+                    </div>
+                </div>
+
+                <!-- 3. Izod Impact -->
+                <div class="gp-test-card">
+                    <div class="gp-test-card-top">
+                        <span class="gp-test-standard">ASTM D256 / ISO 180</span>
+                        <div class="gp-test-icon-badge">IZOD</div>
+                    </div>
+                    <h3 class="gp-test-title">Izod &amp; Charpy Impact Test</h3>
+                    <p class="gp-test-desc">Pendulum impact testing on notched test specimens to measure fracture toughness and cold resistance down to -20°C.</p>
+                    <div class="gp-test-meta">
+                        <span>Equipment: <strong>Motorized Izod Impact Tester</strong></span>
+                    </div>
+                </div>
+
+                <!-- 4. Ash & Filler Content -->
+                <div class="gp-test-card">
+                    <div class="gp-test-card-top">
+                        <span class="gp-test-standard">ASTM D5630 / ISO 3451</span>
+                        <div class="gp-test-icon-badge">ASH</div>
+                    </div>
+                    <h3 class="gp-test-title">Ash &amp; Mineral Filler %</h3>
+                    <p class="gp-test-desc">High-temperature muffle furnace up to 1000°C verifying precise glass fiber, talc, and calcium carbonate percentage.</p>
+                    <div class="gp-test-meta">
+                        <span>Equipment: <strong>Programmed Muffle Furnace</strong></span>
+                    </div>
+                </div>
+
+                <!-- 5. Specific Gravity & Density -->
+                <div class="gp-test-card">
+                    <div class="gp-test-card-top">
+                        <span class="gp-test-standard">ASTM D792 / ISO 1183</span>
+                        <div class="gp-test-icon-badge">DENS</div>
+                    </div>
+                    <h3 class="gp-test-title">Specific Gravity &amp; Density</h3>
+                    <p class="gp-test-desc">Electronic immersion balance checking material purity, buoyancy, and displacement density with 4 decimal accuracy.</p>
+                    <div class="gp-test-meta">
+                        <span>Equipment: <strong>Digital Densimeter (0.0001 g/cm³)</strong></span>
+                    </div>
+                </div>
+
+                <!-- 6. Spectrophotometer Color Matching -->
+                <div class="gp-test-card">
+                    <div class="gp-test-card-top">
+                        <span class="gp-test-standard">CIE L*a*b* / ASTM E1347</span>
+                        <div class="gp-test-icon-badge">COLOR</div>
+                    </div>
+                    <h3 class="gp-test-title">Color Matching (Delta E &lt; 0.5)</h3>
+                    <p class="gp-test-desc">Dual-beam spectrophotometer guaranteeing identical color hue across repeating production batches for OEM parts.</p>
+                    <div class="gp-test-meta">
+                        <span>Equipment: <strong>X-Rite Color Spectrophotometer</strong></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 4-Step Lab Testing Flow -->
+            <div class="gp-testing-flow-box" style="margin-top: 50px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 36px 30px;">
+                <h3 style="font-size: 1.35rem; font-weight: 800; color: #0b2545; margin-bottom: 24px; text-align: center;">Our Standard 4-Step Quality Control Protocol</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+                    <div style="padding: 20px; background: #f8fafc; border-radius: 12px; border-left: 4px solid #0097db;">
+                        <span style="font-size: 0.8rem; font-weight: 800; color: #0097db; text-transform: uppercase;">Step 01</span>
+                        <h4 style="font-size: 1.05rem; font-weight: 700; color: #0b2545; margin: 8px 0 6px;">Raw Material Screening</h4>
+                        <p style="font-size: 0.88rem; color: #64748b; line-height: 1.5; margin: 0;">Spectroscopy & moisture analysis on all virgin resin and pre-sorted post-industrial feedstocks before compounding.</p>
+                    </div>
+                    <div style="padding: 20px; background: #f8fafc; border-radius: 12px; border-left: 4px solid #0097db;">
+                        <span style="font-size: 0.8rem; font-weight: 800; color: #0097db; text-transform: uppercase;">Step 02</span>
+                        <h4 style="font-size: 1.05rem; font-weight: 700; color: #0b2545; margin: 8px 0 6px;">In-Line Compounding Control</h4>
+                        <p style="font-size: 0.88rem; color: #64748b; line-height: 1.5; margin: 0;">Continuous melt temperature and pressure monitoring across 10 heating zones in German twin-screw extruders.</p>
+                    </div>
+                    <div style="padding: 20px; background: #f8fafc; border-radius: 12px; border-left: 4px solid #0097db;">
+                        <span style="font-size: 0.8rem; font-weight: 800; color: #0097db; text-transform: uppercase;">Step 03</span>
+                        <h4 style="font-size: 1.05rem; font-weight: 700; color: #0b2545; margin: 8px 0 6px;">Sample Test Moulding</h4>
+                        <p style="font-size: 0.88rem; color: #64748b; line-height: 1.5; margin: 0;">ASTM test specimens moulded in-house to verify tensile yield, Izod impact, flexural modulus, and heat deflection.</p>
+                    </div>
+                    <div style="padding: 20px; background: #f8fafc; border-radius: 12px; border-left: 4px solid #0097db;">
+                        <span style="font-size: 0.8rem; font-weight: 800; color: #0097db; text-transform: uppercase;">Step 04</span>
+                        <h4 style="font-size: 1.05rem; font-weight: 700; color: #0b2545; margin: 8px 0 6px;">Batch COA Authorization</h4>
+                        <p style="font-size: 0.88rem; color: #64748b; line-height: 1.5; margin: 0;">Formal sign-off by Quality Assurance Head. Sealed pallet labels with QR code linking directly to batch test results.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab Action Strip -->
+            <div class="gp-lab-coa-strip" style="margin-top: 40px;">
+                <div class="gp-coa-text">
+                    <strong>Need a Lot-Specific Certificate of Analysis (COA)?</strong>
+                    <span>Download standard batch COA or request custom testing on your polymer sample.</span>
+                </div>
+                <div class="gp-coa-actions">
+                    <a href="contact.html" class="gp-btn gp-btn-primary gp-rfq-modal-trigger" data-product="Certificate of Analysis (COA)">
+                        <span>Request Batch COA Report</span>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+
+    </div><!-- #content -->
+
+    <!-- Industrial CTA Banner before footer -->
+    <section class="gp-cta-strip">
+        <div class="gp-container">
+            <div class="gp-cta-strip-card">
+                <div class="gp-cta-strip-text">
+                    <span class="gp-tag-pill">PARTNER WITH LEADERS</span>
+                    <h3>Looking for Premium Plastic Granules (Dana) &amp; Custom Compounding?</h3>
+                    <p>From virgin PP &amp; HDPE granules to high-impact ABS, PVC compounds, and masterbatches — we supply certified quality at competitive bulk rates.</p>
+                </div>
+                <div class="gp-cta-strip-actions">
+                    <a href="contact.html" class="gp-btn gp-btn-light gp-btn-lg">
+                        <span>Request Bulk Price Quote</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a href="tel:918591585497" class="gp-btn gp-btn-glass gp-btn-lg">
+                        <span>Speak to Polymer Specialist</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Site Footer -->
+    <footer id="colophon" class="site-footer gp-footer">
+        <div class="gp-container gp-footer-widgets">
+            <div class="gp-footer-grid">
+                <!-- Col 1: Bio & Cert -->
+                <div class="gp-footer-col gp-footer-col-1">
+                    <div class="gp-footer-brand">
+                        <div class="gp-logo-mark">
+                            <svg width="42" height="42" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="25,4 45,15 45,37 25,48 5,37 5,15" stroke="#48cae4" stroke-width="2" fill="rgba(19, 64, 116, 0.5)" stroke-linejoin="round"/>
+                                <line x1="25" y1="16" x2="25" y2="36" stroke="#48cae4" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="13" y1="21" x2="37" y2="31" stroke="#48cae4" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="13" y1="31" x2="37" y2="21" stroke="#48cae4" stroke-width="1.8" stroke-linecap="round"/>
+                                <circle cx="25" cy="26" r="9" fill="var(--gp-primary)"/>
+                                <text x="25" y="29.5" text-anchor="middle" fill="#ffffff" font-size="7.5" font-weight="900" font-family="'Rajdhani', sans-serif">SRS</text>
+                                <circle cx="25" cy="16" r="3" fill="#00b4d8"/>
+                                <circle cx="25" cy="36" r="3" fill="#ef233c"/>
+                                <circle cx="13" cy="21" r="3" fill="#ef233c"/>
+                                <circle cx="37" cy="31" r="3" fill="#00b4d8"/>
+                                <circle cx="13" cy="31" r="3" fill="#00b4d8"/>
+                                <circle cx="37" cy="21" r="3" fill="#ef233c"/>
+                            </svg>
+                        </div>
+                        <div class="gp-footer-brand-text">
+                            <h3 class="gp-footer-company" style="margin: 0; font-size: 1.15rem; font-weight: 800; line-height: 1.25; color: #ffffff;">SRS POLYMER</h3>
+                            <span class="gp-footer-company-sub" style="display: block; font-size: 0.72rem; font-weight: 700; color: var(--gp-accent-cyan); letter-spacing: 0.04em; margin-top: 3px; text-transform: uppercase;">Shri Ram Sharnam Overseas • Green Polytech (SRS)</span>
+                        </div>
+                    </div>
+                    <p class="gp-footer-cert-badge">
+                        <span class="gp-pulse-dot"></span> ISO 9001:2015 Certified Polymer Supplier                    </p>
+                    <p class="gp-footer-desc">
+                        Leading manufacturer, importer, and supplier of Virgin and Reprocessed Plastic Granules (Plastic Dana) including PP, HDPE, LDPE, ABS, PVC, and Color Masterbatches for plastic moulding and extrusion industries across India.                    </p>
+                    <div class="gp-footer-socials">
+                                                    <a href="https://in.linkedin.com/company/srs-polymer" target="_blank" rel="noopener" aria-label="LinkedIn" class="gp-social-circle">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.75-1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                                                                            <a href="https://www.facebook.com/srspolymer/" target="_blank" rel="noopener" aria-label="Facebook" class="gp-social-circle">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.595 0 9 1.582 9 4.615V8z"/></svg>
+                            </a>
+                                            </div>
+                </div>
+
+                <!-- Col 2: Useful Links -->
+                <div class="gp-footer-col gp-footer-col-2">
+                    <h4 class="gp-footer-heading">Quick Links</h4>
+                    <ul class="gp-footer-links">
+                        <li><a href="about.html"><span class="gp-arrow">›</span> About SRS Polymer</a></li>
+                        <li><a href="about.html#vision"><span class="gp-arrow">›</span> Our 25-Year Journey</a></li>
+                        <li><a href="certificates.html"><span class="gp-arrow">›</span> Quality Certifications (ISO 9001)</a></li>
+                        <li><a href="testing.html"><span class="gp-arrow">›</span> ASTM Lab &amp; Testing Protocols</a></li>
+                        <li><a href="industries.html"><span class="gp-arrow">›</span> Industries &amp; Market Sectors</a></li>
+                        <li><a href="products.html"><span class="gp-arrow">›</span> Plastic Dana Catalog</a></li>
+                        <li><a href="contact.html"><span class="gp-arrow">›</span> Contact &amp; Factory Connect</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Products Offered -->
+                <div class="gp-footer-col gp-footer-col-3">
+                    <h4 class="gp-footer-heading">Polymer Products</h4>
+                    <ul class="gp-footer-links">
+                        <li><a href="products.html#pp"><span class="gp-arrow">›</span> Polypropylene (PP) Granules</a></li>
+                        <li><a href="products.html#hdpe"><span class="gp-arrow">›</span> HDPE Granules (Blow &amp; Pipe)</a></li>
+                        <li><a href="products.html#abs"><span class="gp-arrow">›</span> ABS Engineering Pellets</a></li>
+                        <li><a href="products.html#pvc"><span class="gp-arrow">›</span> PVC Compounds &amp; Dana</a></li>
+                        <li><a href="products.html#nylon"><span class="gp-arrow">›</span> Nylon &amp; Polyamide Dana</a></li>
+                        <li><a href="products.html"><span class="gp-arrow">›</span> Reprocessed Plastic Dana</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact Us -->
+                <div class="gp-footer-col gp-footer-col-4">
+                    <h4 class="gp-footer-heading">Contact Plant &amp; Office</h4>
+                    <div class="gp-footer-contact-item">
+                        <div class="gp-contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </div>
+                        <div class="gp-contact-text">
+                            <strong>Plant Location:</strong>
+                            <p>Plot No. 42, Sector 8, IMT Manesar, Gurugram, Haryana - 122050</p>
+                        </div>
+                    </div>
+
+                    <div class="gp-footer-contact-item">
+                        <div class="gp-contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                        <div class="gp-contact-text">
+                            <strong>Call Direct:</strong>
+                            <p><a href="tel:918591585497">+91-8591585497</a></p>
+                        </div>
+                    </div>
+
+                    <div class="gp-footer-contact-item">
+                        <div class="gp-contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <div class="gp-contact-text">
+                            <strong>Email Enquiry:</strong>
+                            <p><a href="mailto:info@srspolymer.com">info@srspolymer.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="gp-footer-bottom">
+            <div class="gp-container gp-footer-bottom-inner">
+                <p class="gp-copyright-text">
+                    &copy; 2026 <strong>SRS POLYMER (Shri Ram Sharnam Overseas • Green Polytech)</strong>. All Rights Reserved.                </p>
+                <div class="gp-footer-bottom-links">
+                    <a href="#investors">Privacy Policy</a>
+                    <span class="sep">•</span>
+                    <a href="#investors">Terms of Supply</a>
+                    <span class="sep">•</span>
+                    <a href="#investors">SEBI Disclosures</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Widget (matching Jyoti Joinchat) -->
+        <div class="gp-whatsapp-widget" id="gp-whatsapp-widget" style="position: fixed !important; bottom: 30px !important; right: 30px !important; left: auto !important; z-index: 99999 !important;">
+        <!-- Chat Popup Box -->
+        <div class="gp-wa-chatbox" id="gp-wa-chatbox" style="position: absolute !important; bottom: 75px !important; right: 0 !important; left: auto !important; transform-origin: bottom right !important;">
+            <div class="gp-wa-header">
+                <div class="gp-wa-avatar">
+                    <div class="gp-wa-avatar-img">SP</div>
+                    <span class="gp-wa-status-dot"></span>
+                </div>
+                <div class="gp-wa-info">
+                    <h4>SRS Polymer</h4>
+                    <span>Typically replies within minutes</span>
+                </div>
+                <button class="gp-wa-close" id="gp-wa-close" aria-label="Close WhatsApp Dialog">✕</button>
+            </div>
+            <div class="gp-wa-body">
+                <div class="gp-wa-msg-bubble">
+                    <p>Hello 👋 How can we help you today?</p>
+                    <p class="gp-wa-sub">Ask about today’s rates for PP Granules, HDPE Dana, ABS Engineering Pellets, or Masterbatches.</p>
+                    <span class="gp-wa-time">13:31</span>
+                </div>
+            </div>
+            <div class="gp-wa-footer">
+                <a href="https://api.whatsapp.com/send?phone=918591585497&text=Hi%20SRS%20Polymer%21%20I%20need%20price%20and%20availability%20for%20Plastic%20Granules%20%28Dana%29." target="_blank" rel="noopener" class="gp-btn-wa-send">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    <span>Open Chat on WhatsApp</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Trigger Button -->
+        <button class="gp-wa-trigger" id="gp-wa-trigger" aria-label="Chat with us on WhatsApp">
+            <span class="gp-wa-pulse"></span>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="#ffffff"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span class="gp-wa-badge-notify">1</span>
+        </button>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <button id="gp-back-to-top" class="gp-back-to-top" style="bottom: 102px !important; right: 36px !important; left: auto !important; background: linear-gradient(135deg, #0b2545 0%, #134074 100%) !important; color: #ffffff !important;" aria-label="Back to top">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.8"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- Quick RFQ Modal Dialog -->
+    <div class="gp-modal" id="gp-rfq-modal" aria-hidden="true" role="dialog">
+        <div class="gp-modal-dialog">
+            <div class="gp-modal-header">
+                <h3>Request a Custom Quotation</h3>
+                <p>Direct line to our technical sales team for bulk supply &amp; OEM custom moulding.</p>
+                <button class="gp-modal-close" id="gp-rfq-modal-close" aria-label="Close">✕</button>
+            </div>
+            <form class="gp-modal-form gp-ajax-rfq-form">
+                <input type="hidden" name="action" value="gp_submit_contact">
+                <div class="gp-form-row">
+                    <div class="gp-form-group">
+                        <label>Full Name *</label>
+                        <input type="text" name="fullname" required placeholder="Example Name">
+                    </div>
+                    <div class="gp-form-group">
+                        <label>Company Name</label>
+                        <input type="text" name="company" placeholder="ABC Chemicals Ltd">
+                    </div>
+                </div>
+                <div class="gp-form-row">
+                    <div class="gp-form-group">
+                        <label>Email Address *</label>
+                        <input type="email" name="email" required placeholder="example@example.com">
+                    </div>
+                    <div class="gp-form-group">
+                        <label>Mobile / WhatsApp *</label>
+                        <input type="tel" name="phone" required placeholder="+91 98765 43210">
+                    </div>
+                </div>
+                <div class="gp-form-row">
+                    <div class="gp-form-group">
+                        <label>Product of Interest</label>
+                        <input type="text" name="product" id="gp-modal-product-field" placeholder="e.g. PP Granules / HDPE Dana (MFI 12)">
+                    </div>
+                    <div class="gp-form-group">
+                        <label>Estimated Quantity</label>
+                        <input type="text" name="quantity" placeholder="e.g. 5,000 pcs / 10 Units">
+                    </div>
+                </div>
+                <div class="gp-form-group">
+                    <label>Detailed Requirements / Specifications</label>
+                    <textarea name="message" rows="3" placeholder="Please specify UN certification needs, color, neck aperture, delivery timeline..."></textarea>
+                </div>
+                <div class="gp-form-feedback"></div>
+                <button type="submit" class="gp-btn gp-btn-primary gp-btn-full gp-btn-submit">
+                    <span>Submit Request Now</span>
+                </button>
+            </form>
+        </div>
+        <div class="gp-modal-backdrop" id="gp-rfq-modal-backdrop"></div>
+    </div>
+
+</div><!-- #page -->
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

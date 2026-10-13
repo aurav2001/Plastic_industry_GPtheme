@@ -4,7 +4,7 @@ Theme URI: https://github.com/aurav2001/Plastic_industry_GPtheme
 Author: Antigravity & Gulshan Pandey
 Author URI: https://github.com/aurav2001/Plastic_industry_GPtheme
 Description: A modern, high-performance, responsive WordPress theme designed for Shri Ram Sharnam Overseas - Green Polytech Limited (SRS). Tailored for Plastic Granules (Plastic Dana), Polymer Compounding, Blow & Injection Moulding Raw Materials, and Color Masterbatches with dynamic global color customizer and 1-click demo import.
-Version: 1.3.0
+Version: 1.5.0
 Tested up to: 6.7
 Requires at least: 5.8
 Requires PHP: 7.4
@@ -122,4 +122,63 @@ a img.aligncenter {
     bottom: 102px !important;
     right: 36px !important;
     left: auto !important;
+    width: 50px !important;
+    height: 50px !important;
+    background: #0b2545 !important;
+    background: linear-gradient(135deg, #0b2545 0%, #134074 100%) !important;
+    color: #ffffff !important;
+    border: 2px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 50% !important;
+    box-shadow: 0 8px 24px rgba(11, 37, 69, 0.35), 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    z-index: 99999 !important;
+    text-decoration: none !important;
 }
+
+.gp-back-to-top svg,
+#gp-back-to-top svg {
+    stroke: #ffffff !important;
+    width: 22px !important;
+    height: 22px !important;
+    display: block !important;
+}
+
+.gp-back-to-top:hover,
+#gp-back-to-top:hover {
+    background: #ef233c !important;
+    background: linear-gradient(135deg, #ef233c 0%, #d90429 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 12px 30px rgba(239, 35, 60, 0.55) !important;
+}
+
+/* Global High-Contrast Form Inputs on White/Light Backgrounds */
+.gp-form-group input,
+.gp-form-group select,
+.gp-form-group textarea,
+.gp-modal-form input,
+.gp-modal-form select,
+.gp-modal-form textarea,
+.gp-ajax-rfq-form input,
+.gp-ajax-rfq-form select,
+.gp-ajax-rfq-form textarea {
+    border: 1.5px solid #cbd5e1 !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+}
+
+.gp-form-group input:focus,
+.gp-form-group select:focus,
+.gp-form-group textarea:focus,
+.gp-modal-form input:focus,
+.gp-modal-form select:focus,
+.gp-modal-form textarea:focus,
+.gp-ajax-rfq-form input:focus,
+.gp-ajax-rfq-form select:focus,
+.gp-ajax-rfq-form textarea:focus {
+    border-color: #0b2545 !important;
+    box-shadow: 0 0 0 3px rgba(11, 37, 69, 0.18) !important;
+}
+

@@ -15,12 +15,51 @@ if ( ! defined( 'ABSPATH' ) ) {
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-    <link rel="profile" href="https://gmpg.org/xfn/11">
     <?php if ( ! function_exists( 'has_site_icon' ) || ! has_site_icon() ) : ?>
         <link rel="icon" type="image/svg+xml" href="<?php echo esc_url( get_template_directory_uri() . '/assets/images/favicon.svg' ); ?>">
     <?php endif; ?>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Rajdhani:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <?php wp_head(); ?>
-    <style id="gp-whatsapp-critical-override">
+    <style id="gp-critical-layout-override">
+        html {
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: #ffffff !important;
+        }
+        body {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            box-shadow: none !important;
+            background: #ffffff !important;
+            overflow-x: hidden;
+        }
+        #page, .site-wrapper {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            box-shadow: none !important;
+            overflow-x: hidden;
+        }
+        .gp-topbar-inner {
+            min-height: 40px;
+            height: auto !important;
+            padding: 4px 0 !important;
+        }
+        .gp-badge-iso {
+            white-space: nowrap !important;
+            flex-shrink: 0 !important;
+        }
+        .gp-topbar-item, .gp-topbar-link {
+            white-space: nowrap !important;
+        }
         .gp-whatsapp-widget, #gp-whatsapp-widget, .joinchat, #joinchat, .wa-chat-box, .whatsapp-chat-button {
             position: fixed !important;
             bottom: 30px !important;
@@ -40,6 +79,32 @@ if ( ! defined( 'ABSPATH' ) ) {
             bottom: 102px !important;
             right: 36px !important;
             left: auto !important;
+            width: 50px !important;
+            height: 50px !important;
+            background: #0b2545 !important;
+            background: linear-gradient(135deg, #0b2545 0%, #134074 100%) !important;
+            color: #ffffff !important;
+            border: 2px solid rgba(255, 255, 255, 0.25) !important;
+            border-radius: 50% !important;
+            box-shadow: 0 8px 24px rgba(11, 37, 69, 0.35), 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            cursor: pointer !important;
+            z-index: 99999 !important;
+            text-decoration: none !important;
+        }
+        .gp-back-to-top svg, #gp-back-to-top svg {
+            stroke: #ffffff !important;
+            width: 22px !important;
+            height: 22px !important;
+            display: block !important;
+        }
+        .gp-back-to-top:hover, #gp-back-to-top:hover {
+            background: #ef233c !important;
+            background: linear-gradient(135deg, #ef233c 0%, #d90429 100%) !important;
+            color: #ffffff !important;
+            box-shadow: 0 12px 30px rgba(239, 35, 60, 0.55) !important;
         }
         @media (max-width: 768px) {
             .gp-whatsapp-widget, #gp-whatsapp-widget, .joinchat, #joinchat {
@@ -66,9 +131,6 @@ if ( ! defined( 'ABSPATH' ) ) {
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'gp-theme' ); ?></a>
 
     <!-- Top Contact & Notification Bar -->
-    <?php
-    if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'header' ) ) :
-    ?>
     <div class="gp-topbar">
         <div class="gp-container gp-topbar-inner">
             <div class="gp-topbar-left">
@@ -91,6 +153,10 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     <span><?php echo esc_html( get_theme_mod( 'gp_company_email', 'info@srspolymer.com' ) ); ?></span>
                 </a>
+                <button type="button" class="gp-topbar-quick-rfq gp-rfq-modal-trigger" id="gp-topbar-rfq-btn">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <span><?php esc_html_e( 'Instant RFQ', 'gp-theme' ); ?></span>
+                </button>
                 <div class="gp-topbar-socials gp-hidden-sm">
                     <?php if ( get_theme_mod( 'gp_social_linkedin', 'https://in.linkedin.com/company/srs-polymer' ) ) : ?>
                         <a href="<?php echo esc_url( get_theme_mod( 'gp_social_linkedin', 'https://in.linkedin.com/company/srs-polymer' ) ); ?>" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -107,119 +173,90 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
     </div>
 
-    <!-- Main Navigation Header -->
-    <header id="masthead" class="site-header gp-header">
+    <!-- Main Navigation Header (Professional Unified Header) -->
+    <header id="masthead" class="site-header gp-header gp-clean-header">
         <div class="gp-container gp-header-inner">
-            <!-- Brand / Logo -->
+            <!-- Brand Logo -->
             <div class="site-branding">
-                <?php if ( has_custom_logo() ) : ?>
-                    <?php the_custom_logo(); ?>
-                <?php else : 
-                    $company_name  = get_theme_mod( 'gp_company_name', 'SHRI RAM SHARNAM OVERSEAS' );
-                    $company_div   = get_theme_mod( 'gp_company_division', 'GREEN POLYTECH LIMITED' );
-                    $company_short = get_theme_mod( 'gp_company_short', 'SRS' );
-                ?>
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="gp-logo-link" rel="home">
-                        <div class="gp-logo-mark">
-                            <svg width="42" height="42" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <polygon points="25,4 45,15 45,37 25,48 5,37 5,15" stroke="var(--gp-primary)" stroke-width="2.5" fill="#f0f7fd" stroke-linejoin="round"/>
-                                <line x1="25" y1="16" x2="25" y2="36" stroke="var(--gp-accent-cyan)" stroke-width="2" stroke-linecap="round"/>
-                                <line x1="13" y1="21" x2="37" y2="31" stroke="var(--gp-accent-cyan)" stroke-width="2" stroke-linecap="round"/>
-                                <line x1="13" y1="31" x2="37" y2="21" stroke="var(--gp-accent-cyan)" stroke-width="2" stroke-linecap="round"/>
-                                <circle cx="25" cy="26" r="9.5" fill="var(--gp-primary)"/>
-                                <text x="25" y="29.5" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="900" font-family="'Rajdhani', sans-serif"><?php echo esc_html( $company_short ); ?></text>
-                                <circle cx="25" cy="16" r="3" fill="var(--gp-accent-cyan)"/>
-                                <circle cx="25" cy="36" r="3" fill="var(--gp-accent-red)"/>
-                                <circle cx="13" cy="21" r="3" fill="var(--gp-accent-red)"/>
-                                <circle cx="37" cy="31" r="3" fill="var(--gp-accent-cyan)"/>
-                                <circle cx="13" cy="31" r="3" fill="var(--gp-accent-cyan)"/>
-                                <circle cx="37" cy="21" r="3" fill="var(--gp-accent-red)"/>
-                            </svg>
-                        </div>
-                        <div class="gp-logo-text">
-                            <span class="gp-brand-name"><?php echo esc_html( $company_name ); ?></span>
-                            <span class="gp-brand-sub"><?php echo esc_html( $company_div ); ?></span>
-                        </div>
-                    </a>
-                <?php endif; ?>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="gp-logo-link" rel="home">
+                    <div class="gp-logo-mark">
+                        <svg width="40" height="40" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="25,4 45,15 45,37 25,48 5,37 5,15" stroke="#0097db" stroke-width="2.5" fill="#f0f7fd" stroke-linejoin="round"/>
+                            <line x1="25" y1="16" x2="25" y2="36" stroke="#0097db" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="13" y1="21" x2="37" y2="31" stroke="#0097db" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="13" y1="31" x2="37" y2="21" stroke="#0097db" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="25" cy="26" r="9.5" fill="#0b2545"/>
+                            <text x="25" y="29.5" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="900" font-family="'Poppins', sans-serif">SRS</text>
+                            <circle cx="25" cy="16" r="3" fill="#0097db"/>
+                            <circle cx="25" cy="36" r="3" fill="#00b4d8"/>
+                            <circle cx="13" cy="21" r="3" fill="#0b2545"/>
+                            <circle cx="37" cy="31" r="3" fill="#0097db"/>
+                            <circle cx="13" cy="31" r="3" fill="#0097db"/>
+                            <circle cx="37" cy="21" r="3" fill="#00b4d8"/>
+                        </svg>
+                    </div>
+                    <div class="gp-logo-text">
+                        <span class="gp-brand-name">SRS <span class="gp-accent" style="color:#0097db;">POLYMER</span></span>
+                        <span class="gp-brand-sub"><span class="gp-live-dot-sub"></span> GREEN POLYTECH • ISO 9001:2015</span>
+                    </div>
+                </a>
             </div>
 
-            <!-- Main Navigation Menu -->
+            <!-- Main Navigation Menu (Single Row, Crisp) -->
             <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Main Menu', 'gp-theme' ); ?>">
-                <?php
-                if ( has_nav_menu( 'primary' ) ) :
-                    wp_nav_menu( array(
-                        'theme_location' => 'primary',
-                        'menu_id'        => 'primary-menu',
-                        'container'      => false,
-                        'menu_class'     => 'gp-nav-menu',
-                    ) );
-                else :
-                    // Default Fallback Menu matching Jyoti Global Plast reference
-                ?>
-                <?php
-                $about_url   = home_url( '/about/' );
-                $contact_url = home_url( '/contact/' );
-                ?>
                 <ul id="primary-menu" class="gp-nav-menu">
-                    <li class="menu-item <?php echo is_front_page() ? 'current-menu-item' : ''; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'gp-theme' ); ?></a></li>
-                    
-                    <li class="menu-item <?php echo is_page( array( 'about', 'about-us' ) ) ? 'current-menu-item' : ''; ?>">
-                        <a href="<?php echo esc_url( $about_url ); ?>"><?php esc_html_e( 'About Us', 'gp-theme' ); ?></a>
+                    <li class="menu-item <?php echo is_front_page() ? 'current-menu-item' : ''; ?>">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'gp-theme' ); ?></a>
                     </li>
-
-                    <li class="menu-item menu-item-has-children <?php echo ( is_post_type_archive( 'gp_product' ) || is_singular( 'gp_product' ) || is_tax( 'gp_product_cat' ) ) ? 'current-menu-item' : ''; ?>">
-                        <a href="<?php echo esc_url( get_post_type_archive_link( 'gp_product' ) ?: home_url( '/products/' ) ); ?>">
-                            <?php esc_html_e( 'Products', 'gp-theme' ); ?> <span class="gp-dropdown-icon">▾</span>
+                    <li class="menu-item menu-item-has-children <?php echo is_page( 'products' ) || is_page_template( 'page-templates/template-products.php' ) ? 'current-menu-item' : ''; ?>">
+                        <a href="<?php echo esc_url( home_url( '/products/' ) ); ?>">
+                            <?php esc_html_e( 'Products', 'gp-theme' ); ?> <span class="gp-dropdown-arrow">▾</span>
                         </a>
                         <ul class="sub-menu">
-                            <li>
-                                <a href="<?php echo esc_url( get_post_type_archive_link( 'gp_product' ) ?: home_url( '/products/' ) ); ?>" style="font-weight: 700; color: #00b4d8; display: inline-flex; align-items: center;">
-                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 6px;"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg>
-                                    <?php esc_html_e( 'All Products Catalog', 'gp-theme' ); ?>
-                                </a>
-                            </li>
-                            <?php
-                            $product_cats = get_terms( array(
-                                'taxonomy'   => 'gp_product_cat',
-                                'hide_empty' => false,
-                            ) );
-                            if ( ! empty( $product_cats ) && ! is_wp_error( $product_cats ) ) :
-                                foreach ( $product_cats as $pcat ) :
-                                    printf(
-                                        '<li><a href="%s">%s</a></li>',
-                                        esc_url( get_term_link( $pcat ) ),
-                                        esc_html( $pcat->name )
-                                    );
-                                endforeach;
-                            else :
-                            ?>
-                                <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="pp-granules"><?php esc_html_e( 'PP Granules', 'gp-theme' ); ?></a></li>
-                                <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="hdpe-granules"><?php esc_html_e( 'HDPE Granules', 'gp-theme' ); ?></a></li>
-                                <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="abs-granules"><?php esc_html_e( 'ABS Granules', 'gp-theme' ); ?></a></li>
-                                <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="pvc-compounds"><?php esc_html_e( 'PVC Compounds', 'gp-theme' ); ?></a></li>
-                                <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="masterbatches"><?php esc_html_e( 'Masterbatches', 'gp-theme' ); ?></a></li>
-                            <?php endif; ?>
+                            <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#pp">PPCP &amp; PP Compounds</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#hdpe">HDPE &amp; Blow Grades</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#abs">ABS Engineering Pellets</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#pvc">PVC Compounds &amp; Wire</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#nylon">Nylon &amp; Polyamide Dana</a></li>
                         </ul>
                     </li>
-
-                    <li class="menu-item <?php echo ( is_home() || is_singular( 'post' ) || is_category() || is_tag() ) ? 'current-menu-item' : ''; ?>">
-                        <a href="<?php echo esc_url( ( $blog_id = get_option( 'page_for_posts' ) ) ? get_permalink( $blog_id ) : home_url( '/blog/' ) ); ?>"><?php esc_html_e( 'Blog', 'gp-theme' ); ?></a>
+                    <li class="menu-item <?php echo is_page( 'about' ) || is_page_template( 'page-templates/template-about.php' ) ? 'current-menu-item' : ''; ?>">
+                        <a href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><?php esc_html_e( 'About Mill', 'gp-theme' ); ?></a>
                     </li>
-
-                    <li class="menu-item <?php echo is_page( array( 'contact', 'contact-us' ) ) ? 'current-menu-item' : ''; ?>"><a href="<?php echo esc_url( $contact_url ); ?>"><?php esc_html_e( 'Contact', 'gp-theme' ); ?></a></li>
+                    <li class="menu-item <?php echo is_page( 'testing' ) || is_page_template( 'page-templates/template-testing.php' ) ? 'current-menu-item' : ''; ?>">
+                        <a href="<?php echo esc_url( home_url( '/testing/' ) ); ?>"><?php esc_html_e( 'ASTM Lab', 'gp-theme' ); ?></a>
+                    </li>
+                    <li class="menu-item <?php echo is_page( 'certificates' ) || is_page_template( 'page-templates/template-certificates.php' ) ? 'current-menu-item' : ''; ?>">
+                        <a href="<?php echo esc_url( home_url( '/certificates/' ) ); ?>"><?php esc_html_e( 'Certifications', 'gp-theme' ); ?></a>
+                    </li>
+                    <li class="menu-item <?php echo is_page( 'industries' ) || is_page_template( 'page-templates/template-industries.php' ) ? 'current-menu-item' : ''; ?>">
+                        <a href="<?php echo esc_url( home_url( '/industries/' ) ); ?>"><?php esc_html_e( 'Industries', 'gp-theme' ); ?></a>
+                    </li>
+                    <li class="menu-item <?php echo is_page( 'contact' ) || is_page_template( 'page-templates/template-contact.php' ) ? 'current-menu-item' : ''; ?>">
+                        <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Contact', 'gp-theme' ); ?></a>
+                    </li>
                 </ul>
-                <?php endif; ?>
             </nav>
 
-            <!-- Header Right CTAs -->
+            <!-- Header Right CTAs (Phone & RFQ Button) -->
             <div class="gp-header-actions">
-                <a href="<?php echo esc_url( $contact_url ); ?>" class="gp-btn gp-btn-primary gp-btn-rfq" id="gp-header-rfq-btn">
-                    <span><?php esc_html_e( 'Request a Quote', 'gp-theme' ); ?></span>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <a href="tel:<?php echo esc_attr( str_replace( array(' ', '-'), '', get_theme_mod( 'gp_company_phone', '+91-8591585497' ) ) ); ?>" class="gp-header-phone-quick gp-hidden-mobile" title="Call Mill Sales Desk">
+                    <div class="gp-hp-icon">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span class="gp-hp-pulse"></span>
+                    </div>
+                    <div class="gp-hp-details">
+                        <span class="gp-hp-lbl"><?php esc_html_e( 'Mill Sales Desk', 'gp-theme' ); ?></span>
+                        <strong class="gp-hp-val"><?php echo esc_html( get_theme_mod( 'gp_company_phone', '+91-8591585497' ) ); ?></strong>
+                    </div>
                 </a>
 
-                <!-- Mobile Menu Button -->
+                <button type="button" class="gp-btn gp-btn-header-rfq gp-rfq-modal-trigger" id="gp-header-rfq-btn">
+                    <span><?php esc_html_e( 'Instant Quote', 'gp-theme' ); ?></span>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+
+                <!-- Mobile Menu Hamburger Button -->
                 <button class="gp-menu-toggle" id="gp-menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle Navigation', 'gp-theme' ); ?>">
                     <span class="gp-hamburger-bar"></span>
                     <span class="gp-hamburger-bar"></span>
@@ -252,6 +289,5 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
     </div>
     <div class="gp-drawer-backdrop" id="gp-drawer-backdrop"></div>
-    <?php endif; ?>
 
     <div id="content" class="site-content">

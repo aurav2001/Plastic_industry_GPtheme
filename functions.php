@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 
-define( 'GP_THEME_VERSION', '1.2.0' );
+define( 'GP_THEME_VERSION', '1.5.0' );
 define( 'GP_THEME_DIR', get_template_directory() );
 define( 'GP_THEME_URI', get_template_directory_uri() );
 
@@ -114,13 +114,14 @@ add_action( 'widgets_init', 'gp_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function gp_theme_scripts() {
-    // Google Fonts: Rajdhani & Inter
-    wp_enqueue_style( 'gp-google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap', array(), null );
+    // Google Fonts: Poppins, Rajdhani & Inter
+    wp_enqueue_style( 'gp-google-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Rajdhani:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap', array(), null );
 
     // Core Theme Stylesheet with automatic cache-busting
-    $css_version = file_exists( GP_THEME_DIR . '/assets/css/main.css' ) ? filemtime( GP_THEME_DIR . '/assets/css/main.css' ) : GP_THEME_VERSION;
+    $css_version   = file_exists( GP_THEME_DIR . '/assets/css/main.css' ) ? filemtime( GP_THEME_DIR . '/assets/css/main.css' ) : GP_THEME_VERSION;
+    $style_version = file_exists( GP_THEME_DIR . '/style.css' ) ? filemtime( GP_THEME_DIR . '/style.css' ) : GP_THEME_VERSION;
     wp_enqueue_style( 'gp-main-style', GP_THEME_URI . '/assets/css/main.css', array(), $css_version );
-    wp_enqueue_style( 'gp-style', get_stylesheet_uri(), array( 'gp-main-style' ), $css_version );
+    wp_enqueue_style( 'gp-style', get_stylesheet_uri(), array( 'gp-main-style' ), $style_version );
 
     // Custom Logo Dimension dynamic styles from Customizer
     $logo_w = absint( get_theme_mod( 'gp_logo_width', 180 ) );

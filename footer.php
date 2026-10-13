@@ -23,9 +23,6 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
 
     </div><!-- #content -->
 
-    <?php
-    if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'footer' ) ) :
-    ?>
     <!-- Industrial CTA Banner before footer -->
     <section class="gp-cta-strip">
         <div class="gp-container">
@@ -102,10 +99,11 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
                     <ul class="gp-footer-links">
                         <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><span class="gp-arrow">›</span> <?php esc_html_e( 'About SRS Polymer', 'gp-theme' ); ?></a></li>
                         <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>#vision"><span class="gp-arrow">›</span> <?php esc_html_e( 'Our 25-Year Journey', 'gp-theme' ); ?></a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>#infrastructure"><span class="gp-arrow">›</span> <?php esc_html_e( 'Compounding Infrastructure', 'gp-theme' ); ?></a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>#lab"><span class="gp-arrow">›</span> <?php esc_html_e( 'MFI Testing & Lab Standards', 'gp-theme' ); ?></a></li>
-                        <li><a href="<?php echo esc_url( get_post_type_archive_link( 'gp_product' ) ?: home_url( '/products/' ) ); ?>"><span class="gp-arrow">›</span> <?php esc_html_e( 'Plastic Dana Catalog', 'gp-theme' ); ?></a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><span class="gp-arrow">›</span> <?php esc_html_e( 'Contact & Direct Enquiry', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/certificates/' ) ); ?>"><span class="gp-arrow">›</span> <?php esc_html_e( 'Quality Certifications (ISO 9001)', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/testing/' ) ); ?>"><span class="gp-arrow">›</span> <?php esc_html_e( 'ASTM Lab & Testing Protocols', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/industries/' ) ); ?>"><span class="gp-arrow">›</span> <?php esc_html_e( 'Industries & Market Sectors', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>"><span class="gp-arrow">›</span> <?php esc_html_e( 'Plastic Dana Catalog', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><span class="gp-arrow">›</span> <?php esc_html_e( 'Contact & Factory Connect', 'gp-theme' ); ?></a></li>
                     </ul>
                 </div>
 
@@ -113,12 +111,12 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
                 <div class="gp-footer-col gp-footer-col-3">
                     <h4 class="gp-footer-heading"><?php esc_html_e( 'Polymer Products', 'gp-theme' ); ?></h4>
                     <ul class="gp-footer-links">
-                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="pp-granules"><span class="gp-arrow">›</span> <?php esc_html_e( 'Polypropylene (PP) Granules', 'gp-theme' ); ?></a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="hdpe-granules"><span class="gp-arrow">›</span> <?php esc_html_e( 'HDPE Granules (Blow & Pipe)', 'gp-theme' ); ?></a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="abs-granules"><span class="gp-arrow">›</span> <?php esc_html_e( 'ABS Engineering Pellets', 'gp-theme' ); ?></a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="pvc-compounds"><span class="gp-arrow">›</span> <?php esc_html_e( 'PVC Compounds & Dana', 'gp-theme' ); ?></a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="masterbatches"><span class="gp-arrow">›</span> <?php esc_html_e( 'Color Masterbatches', 'gp-theme' ); ?></a></li>
-                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#products" data-cat="pp-granules"><span class="gp-arrow">›</span> <?php esc_html_e( 'Reprocessed Plastic Dana', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#pp"><span class="gp-arrow">›</span> <?php esc_html_e( 'Polypropylene (PP) Granules', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#hdpe"><span class="gp-arrow">›</span> <?php esc_html_e( 'HDPE Granules (Blow & Pipe)', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#abs"><span class="gp-arrow">›</span> <?php esc_html_e( 'ABS Engineering Pellets', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#pvc"><span class="gp-arrow">›</span> <?php esc_html_e( 'PVC Compounds & Dana', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>#nylon"><span class="gp-arrow">›</span> <?php esc_html_e( 'Nylon & Polyamide Dana', 'gp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/products/' ) ); ?>"><span class="gp-arrow">›</span> <?php esc_html_e( 'Reprocessed Plastic Dana', 'gp-theme' ); ?></a></li>
                     </ul>
                 </div>
 
@@ -174,7 +172,6 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
             </div>
         </div>
     </footer>
-    <?php endif; ?>
 
     <!-- Floating WhatsApp Widget (matching Jyoti Joinchat) -->
     <?php if ( $wa_enable ) : ?>
@@ -217,8 +214,8 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
     <?php endif; ?>
 
     <!-- Back to Top Button -->
-    <button id="gp-back-to-top" class="gp-back-to-top" style="bottom: 102px !important; right: 36px !important; left: auto !important;" aria-label="<?php esc_attr_e( 'Back to top', 'gp-theme' ); ?>">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    <button id="gp-back-to-top" class="gp-back-to-top" style="bottom: 102px !important; right: 36px !important; left: auto !important; background: linear-gradient(135deg, #0b2545 0%, #134074 100%) !important; color: #ffffff !important;" aria-label="<?php esc_attr_e( 'Back to top', 'gp-theme' ); ?>">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.8"><polyline points="18 15 12 9 6 15"></polyline></svg>
     </button>
 
     <!-- Quick RFQ Modal Dialog -->
