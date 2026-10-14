@@ -197,48 +197,6 @@ $default_news         = gp_get_default_news();
 
     </section>
 
-    <!-- ========================================================================= -->
-    <!-- 2. PLASTIN DAILY BENCHMARK POLYMER RATES STRIP                            -->
-    <!-- ========================================================================= -->
-    <section class="gp-plastin-ticker-strip">
-        <div class="gp-container">
-            <div class="gp-ticker-strip-flex">
-                <div class="gp-ticker-label">
-                    <span class="gp-pulse-badge"></span>
-                    <strong><?php esc_html_e( 'DAILY DANA RATES (DELHI-NCR):', 'gp-theme' ); ?></strong>
-                </div>
-                <div class="gp-ticker-items-scroll">
-                    <div class="gp-ticker-item">
-                        <span class="gp-ti-grade">PPCP Copolymer:</span>
-                        <span class="gp-ti-rate">₹108 - ₹118 / Kg</span>
-                    </div>
-                    <div class="gp-ticker-item">
-                        <span class="gp-ti-grade">PP 20% Glass Filled:</span>
-                        <span class="gp-ti-rate">₹124 - ₹138 / Kg</span>
-                    </div>
-                    <div class="gp-ticker-item">
-                        <span class="gp-ti-grade">HDPE Blow Grade:</span>
-                        <span class="gp-ti-rate">₹102 - ₹112 / Kg</span>
-                    </div>
-                    <div class="gp-ticker-item">
-                        <span class="gp-ti-grade">ABS Black Granules:</span>
-                        <span class="gp-ti-rate">₹128 - ₹145 / Kg</span>
-                    </div>
-                    <div class="gp-ticker-item">
-                        <span class="gp-ti-grade">PP Reprocessed Dana:</span>
-                        <span class="gp-ti-rate">₹78 - ₹88 / Kg</span>
-                    </div>
-                    <div class="gp-ticker-item">
-                        <span class="gp-ti-grade">Nylon 6 Natural:</span>
-                        <span class="gp-ti-rate">₹210 - ₹240 / Kg</span>
-                    </div>
-                </div>
-                <div class="gp-ticker-action">
-                    <a href="#contact" class="gp-btn-ticker-rfq"><?php esc_html_e( 'Get Custom Grade Rate', 'gp-theme' ); ?> →</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ========================================================================= -->
     <!-- 2B. LATEST PRODUCTS SHOWCASE (PLASTIN-STYLE MOLECULAR POLYMER GRID)       -->
@@ -266,15 +224,17 @@ $default_news         = gp_get_default_news();
                 <?php
                 $latest_products = array(
                     array(
+                        'slug'        => 'ppcp-grey',
                         'name'        => 'PPCP Grey Granules',
-                        'grade'       => 'MFI: 10 - 12',
+                        'grade'       => 'MFI: 10 – 12',
                         'app'         => 'Automotive & Battery Cases',
                         'image'       => 'assets/images/granules-ppcp-grey.jpg',
                         'badge'       => 'Automotive',
                         'badge_color' => '#0097db',
                     ),
                     array(
-                        'name'        => 'PPCP Impact Copolymer',
+                        'slug'        => 'ppcp-impact',
+                        'name'        => 'PPCP Impact Copolymer Granules',
                         'grade'       => 'High Izod Impact',
                         'app'         => 'Auto Bumpers & Industrial Parts',
                         'image'       => 'assets/images/granules-natural-white.jpg',
@@ -282,6 +242,7 @@ $default_news         = gp_get_default_news();
                         'badge_color' => '#10b981',
                     ),
                     array(
+                        'slug'        => 'ppcp-black',
                         'name'        => 'PPCP Black Granules',
                         'grade'       => 'Carbon Black Compound',
                         'app'         => 'Industrial Logistics Crates',
@@ -290,64 +251,100 @@ $default_news         = gp_get_default_news();
                         'badge_color' => '#0b2545',
                     ),
                     array(
+                        'slug'        => 'pp-talc',
                         'name'        => 'PP Talc Filled Granules',
-                        'grade'       => '20% - 40% Mineral Filled',
+                        'grade'       => '20% – 40% Mineral Filled',
                         'app'         => 'Appliance Bodies & Tubs',
                         'image'       => 'assets/images/granules-talc-filled.jpg',
                         'badge'       => 'Compounded',
                         'badge_color' => '#6366f1',
                     ),
                     array(
-                        'name'        => 'Polypropylene Natural White',
+                        'slug'        => 'polypropylene-natural-white',
+                        'name'        => 'Polypropylene Natural White Granules',
                         'grade'       => 'Prime Homopolymer',
                         'app'         => 'Household Bins & Furniture',
-                        'image'       => 'assets/images/product-pp-granules.jpg',
+                        'image'       => 'assets/images/granules-natural-white.jpg',
                         'badge'       => 'Virgin Grade',
                         'badge_color' => '#0097db',
                     ),
                     array(
-                        'name'        => 'HDPE Blow Moulding',
-                        'grade'       => 'High ESCR • MFI: 0.3 - 0.7',
-                        'app'         => '200L Drums & Jerrycans',
-                        'image'       => 'assets/images/product-hdpe-granules.jpg',
-                        'badge'       => 'Blow Grade',
-                        'badge_color' => '#f59e0b',
+                        'slug'        => 'polypropylene-glass-filled',
+                        'name'        => 'Polypropylene Glass Filled Granules',
+                        'grade'       => '10% – 30% GF Compounded',
+                        'app'         => 'Under-the-hood & Power Tools',
+                        'image'       => 'assets/images/granules-glass-filled.jpg',
+                        'badge'       => 'Glass Reinforced',
+                        'badge_color' => '#059669',
                     ),
                     array(
-                        'name'        => 'PP Milky White Granules',
-                        'grade'       => 'High Whiteness & Shine',
-                        'app'         => 'Consumer Containers & Caps',
+                        'slug'        => 'abs-white',
+                        'name'        => 'ABS White Granules',
+                        'grade'       => 'High Rigidity & Whiteness',
+                        'app'         => 'Electronics & Home Appliances',
                         'image'       => 'assets/images/granules-pp-milky-white.jpg',
-                        'badge'       => 'Milky White',
-                        'badge_color' => '#14b8a6',
+                        'badge'       => 'High Gloss',
+                        'badge_color' => '#0891b2',
                     ),
                     array(
-                        'name'        => 'Color & Red Masterbatch',
-                        'grade'       => '40% High Pigment Loading',
-                        'app'         => 'Precise RAL Shade Compounding',
-                        'image'       => 'assets/images/granules-masterbatch-red.jpg',
-                        'badge'       => 'Masterbatch',
-                        'badge_color' => '#ef233c',
+                        'slug'        => 'red-pmma',
+                        'name'        => 'Red PMMA Granules',
+                        'grade'       => 'UV Stabilized Ruby Red',
+                        'app'         => 'Auto Tail Lights & Signals',
+                        'image'       => 'assets/images/granules-red-pmma.jpg',
+                        'badge'       => 'Optical Grade',
+                        'badge_color' => '#dc2626',
                     ),
                     array(
-                        'name'        => 'Transparent / Clear PP',
-                        'grade'       => 'High Clarity Copolymer',
-                        'app'         => 'Food Grade Microwave Packs',
+                        'slug'        => 'acrylic-granules',
+                        'name'        => 'Acrylic Granules',
+                        'grade'       => '92% Light Transmission',
+                        'app'         => 'Optical Lenses, Signs & Displays',
                         'image'       => 'assets/images/granules-clear-transparent.jpg',
                         'badge'       => 'Crystal Clear',
-                        'badge_color' => '#8b5cf6',
+                        'badge_color' => '#7c3aed',
                     ),
                     array(
-                        'name'        => 'High-Impact Engineering ABS',
-                        'grade'       => 'High Tensile & Gloss Pellets',
-                        'app'         => 'Switchplates & White Goods',
-                        'image'       => 'assets/images/product-abs-granules.jpg',
-                        'badge'       => 'Engineering',
-                        'badge_color' => '#0b2545',
+                        'slug'        => 'nylon-black',
+                        'name'        => 'Nylon Black Granules',
+                        'grade'       => 'High Wear & Thermal Rating',
+                        'app'         => 'Gears, Bushings & Fasteners',
+                        'image'       => 'assets/images/granules-nylon-black.jpg',
+                        'badge'       => 'Polyamide 6/66',
+                        'badge_color' => '#1e293b',
+                    ),
+                    array(
+                        'slug'        => 'nylon-white',
+                        'name'        => 'Nylon White Granules',
+                        'grade'       => 'Virgin Polyamide Pellets',
+                        'app'         => 'Monofilament, Zip Ties & Industrial',
+                        'image'       => 'assets/images/granules-natural-white.jpg',
+                        'badge'       => 'Natural PA6',
+                        'badge_color' => '#2563eb',
+                    ),
+                    array(
+                        'slug'        => 'abs-black',
+                        'name'        => 'ABS Black Granules',
+                        'grade'       => 'High Impact & Chemical Resistance',
+                        'app'         => 'Automotive Trims & Helmets',
+                        'image'       => 'assets/images/granules-ppcp-black.jpg',
+                        'badge'       => 'Engineering Grade',
+                        'badge_color' => '#0f172a',
+                    ),
+                    array(
+                        'slug'        => 'abs-fr-granules',
+                        'name'        => 'ABS FR Plastic Granules',
+                        'grade'       => 'UL94 V-0 Self Extinguishing',
+                        'app'         => 'Switchgear, Meter Boxes & EV Chargers',
+                        'image'       => 'assets/images/granules-abs-fr.jpg',
+                        'badge'       => 'Flame Retardant V0',
+                        'badge_color' => '#ea580c',
                     ),
                 );
 
-                foreach ( $latest_products as $prod ) : ?>
+                foreach ( $latest_products as $prod ) : 
+                    $detail_url = esc_url( home_url( '/product-detail.html?product=' . $prod['slug'] ) );
+                ?>
                     <div class="gp-latest-product-card">
                         <div class="gp-lp-shape-wrap">
                             <div class="gp-lp-shape-hex">
@@ -356,8 +353,11 @@ $default_news         = gp_get_default_news();
                                          alt="<?php echo esc_attr( $prod['name'] ); ?>" 
                                          loading="lazy">
                                     <div class="gp-lp-overlay-action">
-                                        <a href="#contact" class="gp-lp-quote-btn gp-rfq-modal-trigger" data-product="<?php echo esc_attr( $prod['name'] ); ?>" title="<?php esc_attr_e( 'Request Mill Price', 'gp-theme' ); ?>">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        <a href="<?php echo $detail_url; ?>" class="gp-lp-action-btn gp-lp-view-btn" title="<?php esc_attr_e( 'View Details & Specs', 'gp-theme' ); ?>">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </a>
+                                        <a href="#contact" class="gp-lp-action-btn gp-lp-quote-btn gp-rfq-modal-trigger" data-product="<?php echo esc_attr( $prod['name'] ); ?>" title="<?php esc_attr_e( 'Request Mill Price', 'gp-theme' ); ?>">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                         </a>
                                     </div>
                                 </div>
@@ -369,7 +369,7 @@ $default_news         = gp_get_default_news();
 
                         <div class="gp-latest-product-info">
                             <h3 class="gp-lp-title">
-                                <a href="#contact" class="gp-rfq-modal-trigger" data-product="<?php echo esc_attr( $prod['name'] ); ?>">
+                                <a href="<?php echo $detail_url; ?>" title="<?php esc_attr_e( 'View Details', 'gp-theme' ); ?>">
                                     <?php echo esc_html( $prod['name'] ); ?>
                                 </a>
                             </h3>

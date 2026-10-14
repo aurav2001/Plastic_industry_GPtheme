@@ -182,3 +182,50 @@ a img.aligncenter {
     box-shadow: 0 0 0 3px rgba(11, 37, 69, 0.18) !important;
 }
 
+/* Ensure Hero Fits Cleanly within 100vh Viewport */
+@media (min-width: 769px) {
+    .gp-hero-slider-section {
+        height: calc(100vh - 110px) !important;
+        min-height: 500px !important;
+        max-height: 820px !important;
+    }
+    .gp-hero-slider {
+        height: 100% !important;
+        min-height: 100% !important;
+    }
+    .gp-hero-slider-section .gp-hero-slide {
+        height: 100% !important;
+        min-height: 100% !important;
+        padding: 10px 0 52px !important;
+    }
+    .gp-hero-slider-pagination {
+        bottom: 12px !important;
+    }
+}
+
+@media (max-height: 768px) and (min-width: 769px) {
+    .gp-hero-slider-section {
+        height: calc(100vh - 105px) !important;
+        min-height: 480px !important;
+    }
+    .gp-hero-slider-section .gp-plastin-hero-title {
+        font-size: clamp(1.6rem, 2.3vw, 2.2rem) !important;
+        margin-bottom: 8px !important;
+    }
+    .gp-hero-slider-section .gp-plastin-hero-lead {
+        font-size: 0.85rem !important;
+        line-height: 1.45 !important;
+        margin-bottom: 10px !important;
+    }
+    .gp-hero-spec-chips {
+        margin-bottom: 12px !important;
+    }
+    .gp-hero-slider-section .gp-hero-slide {
+        padding: 5px 0 44px !important;
+    }
+    .gp-hero-slider-pagination {
+        bottom: 8px !important;
+    }
+}
+
+

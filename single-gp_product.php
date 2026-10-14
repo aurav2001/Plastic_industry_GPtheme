@@ -143,6 +143,38 @@ $cat_name = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : 'Industria
                         </a>
                     </div>
 
+                    <!-- Direct Side Contact Form -->
+                    <div class="gp-single-side-form-wrap" style="margin-top: 30px; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 22px;">
+                        <h4 style="font-size: 1.1rem; font-weight: 800; color: #0b2545; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                            <span style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block;"></span>
+                            <?php esc_html_e( 'Direct Mill Enquiry & Free Sample Bag', 'gp-theme' ); ?>
+                        </h4>
+                        <p style="font-size: 0.82rem; color: #64748b; margin-bottom: 14px;"><?php esc_html_e( 'Fill out for immediate lot availability, custom MFI matching, and test sample bags.', 'gp-theme' ); ?></p>
+                        
+                        <form class="gp-ajax-rfq-form" style="display: flex; flex-direction: column; gap: 10px;">
+                            <input type="hidden" name="product" value="<?php echo esc_attr( get_the_title() ); ?>">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                <input type="text" name="name" placeholder="<?php esc_attr_e( 'Your Name *', 'gp-theme' ); ?>" required style="padding: 9px 12px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-size: 0.88rem;">
+                                <input type="text" name="company" placeholder="<?php esc_attr_e( 'Company Name *', 'gp-theme' ); ?>" required style="padding: 9px 12px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-size: 0.88rem;">
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                <input type="tel" name="phone" placeholder="<?php esc_attr_e( 'Phone / WhatsApp *', 'gp-theme' ); ?>" required style="padding: 9px 12px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-size: 0.88rem;">
+                                <input type="email" name="email" placeholder="<?php esc_attr_e( 'Email Address', 'gp-theme' ); ?>" style="padding: 9px 12px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-size: 0.88rem;">
+                            </div>
+                            <select name="quantity" style="padding: 9px 12px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-size: 0.88rem; background: #ffffff;">
+                                <option value="Free 5-10 Kg Trial Sample"><?php esc_html_e( 'Free 5-10 Kg Trial Sample Bag', 'gp-theme' ); ?></option>
+                                <option value="1-5 MT Pilot Order"><?php esc_html_e( '1 - 5 MT Pilot Order', 'gp-theme' ); ?></option>
+                                <option value="5-15 MT / Month" selected><?php esc_html_e( '5 - 15 MT / Month Regular Supply', 'gp-theme' ); ?></option>
+                                <option value="25+ MT Bulk Supply"><?php esc_html_e( '25+ MT Bulk Mill Supply', 'gp-theme' ); ?></option>
+                            </select>
+                            <textarea name="notes" rows="2" placeholder="<?php esc_attr_e( 'Requirements (e.g. MFI, Tensile, Moulding Application)...', 'gp-theme' ); ?>" style="padding: 9px 12px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-size: 0.88rem;"></textarea>
+                            <button type="submit" class="gp-btn gp-btn-primary gp-btn-block" style="padding: 10px 18px; font-weight: 700; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                <span><?php esc_html_e( 'Send Mill Enquiry', 'gp-theme' ); ?></span>
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </button>
+                        </form>
+                    </div>
+
                 </div>
 
             </div>

@@ -113,6 +113,49 @@
                 right: 26px !important;
             }
         }
+        @media (min-width: 769px) {
+            .gp-hero-slider-section {
+                height: calc(100vh - 110px) !important;
+                min-height: 500px !important;
+                max-height: 820px !important;
+            }
+            .gp-hero-slider {
+                height: 100% !important;
+                min-height: 100% !important;
+            }
+            .gp-hero-slider-section .gp-hero-slide {
+                height: 100% !important;
+                min-height: 100% !important;
+                padding: 10px 0 52px !important;
+            }
+            .gp-hero-slider-pagination {
+                bottom: 12px !important;
+            }
+        }
+        @media (max-height: 768px) and (min-width: 769px) {
+            .gp-hero-slider-section {
+                height: calc(100vh - 105px) !important;
+                min-height: 480px !important;
+            }
+            .gp-hero-slider-section .gp-plastin-hero-title {
+                font-size: clamp(1.6rem, 2.3vw, 2.2rem) !important;
+                margin-bottom: 8px !important;
+            }
+            .gp-hero-slider-section .gp-plastin-hero-lead {
+                font-size: 0.85rem !important;
+                line-height: 1.45 !important;
+                margin-bottom: 10px !important;
+            }
+            .gp-hero-spec-chips {
+                margin-bottom: 12px !important;
+            }
+            .gp-hero-slider-section .gp-hero-slide {
+                padding: 5px 0 44px !important;
+            }
+            .gp-hero-slider-pagination {
+                bottom: 8px !important;
+            }
+        }
     </style>
 </head>
 
@@ -452,48 +495,6 @@
 
     </section>
 
-    <!-- ========================================================================= -->
-    <!-- 2. PLASTIN DAILY BENCHMARK POLYMER RATES STRIP                            -->
-    <!-- ========================================================================= -->
-    <section class="gp-plastin-ticker-strip">
-        <div class="gp-container">
-            <div class="gp-ticker-strip-flex">
-                <div class="gp-ticker-label">
-                    <span class="gp-pulse-badge"></span>
-                    <strong>DAILY DANA RATES (DELHI-NCR):</strong>
-                </div>
-                <div class="gp-ticker-items-scroll">
-                    <div class="gp-ticker-item">
-                        <span class="gp-ti-grade">PPCP Copolymer:</span>
-                        <span class="gp-ti-rate">₹108 - ₹118 / Kg</span>
-                    </div>
-                    <div class="gp-ticker-item">
-                        <span class="gp-ti-grade">PP 20% Glass Filled:</span>
-                        <span class="gp-ti-rate">₹124 - ₹138 / Kg</span>
-                    </div>
-                    <div class="gp-ticker-item">
-                        <span class="gp-ti-grade">HDPE Blow Grade:</span>
-                        <span class="gp-ti-rate">₹102 - ₹112 / Kg</span>
-                    </div>
-                    <div class="gp-ticker-item">
-                        <span class="gp-ti-grade">ABS Black Granules:</span>
-                        <span class="gp-ti-rate">₹128 - ₹145 / Kg</span>
-                    </div>
-                    <div class="gp-ticker-item">
-                        <span class="gp-ti-grade">PP Reprocessed Dana:</span>
-                        <span class="gp-ti-rate">₹78 - ₹88 / Kg</span>
-                    </div>
-                    <div class="gp-ticker-item">
-                        <span class="gp-ti-grade">Nylon 6 Natural:</span>
-                        <span class="gp-ti-rate">₹210 - ₹240 / Kg</span>
-                    </div>
-                </div>
-                <div class="gp-ticker-action">
-                    <a href="#contact" class="gp-btn-ticker-rfq">Get Custom Grade Rate →</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ========================================================================= -->
     <!-- 2B. LATEST PRODUCTS SHOWCASE (PLASTIN-STYLE MOLECULAR POLYMER GRID)       -->
@@ -517,7 +518,7 @@
 
             <!-- 5-Column Responsive Product Showcase Grid -->
             <div class="gp-latest-products-grid">
-                                    <div class="gp-latest-product-card">
+                    <div class="gp-latest-product-card">
                         <div class="gp-lp-shape-wrap">
                             <div class="gp-lp-shape-hex">
                                 <div class="gp-lp-shape-inner">
@@ -525,53 +526,57 @@
                                          alt="PPCP Grey Granules" 
                                          loading="lazy">
                                     <div class="gp-lp-overlay-action">
-                                        <a href="#contact" class="gp-lp-quote-btn gp-rfq-modal-trigger" data-product="PPCP Grey Granules" title="Request Mill Price">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        <a href="product-detail.html?product=ppcp-grey" class="gp-lp-action-btn gp-lp-view-btn" title="View Details & Specs">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </a>
+                                        <a href="#contact" class="gp-lp-action-btn gp-lp-quote-btn gp-rfq-modal-trigger" data-product="PPCP Grey Granules" title="Request Mill Price">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <span class="gp-lp-floating-badge" style="background: #0097db;">
-                                Automotive                            </span>
+                            <span class="gp-lp-floating-badge" style="background: #0097db;">Automotive</span>
                         </div>
 
                         <div class="gp-latest-product-info">
                             <h3 class="gp-lp-title">
-                                <a href="#contact" class="gp-rfq-modal-trigger" data-product="PPCP Grey Granules">
-                                    PPCP Grey Granules                                </a>
+                                <a href="product-detail.html?product=ppcp-grey" title="View Details">PPCP Grey Granules</a>
                             </h3>
-                            <span class="gp-lp-spec">MFI: 10 - 12</span>
-                            <span class="gp-lp-app">Automotive &amp; Battery Cases</span>
+                            <span class="gp-lp-spec">MFI: 10 – 12</span>
+                            <span class="gp-lp-app">Automotive & Battery Cases</span>
                         </div>
                     </div>
-                                    <div class="gp-latest-product-card">
+
+                    <div class="gp-latest-product-card">
                         <div class="gp-lp-shape-wrap">
                             <div class="gp-lp-shape-hex">
                                 <div class="gp-lp-shape-inner">
                                     <img src="./assets/images/granules-natural-white.jpg" 
-                                         alt="PPCP Impact Copolymer" 
+                                         alt="PPCP Impact Copolymer Granules" 
                                          loading="lazy">
                                     <div class="gp-lp-overlay-action">
-                                        <a href="#contact" class="gp-lp-quote-btn gp-rfq-modal-trigger" data-product="PPCP Impact Copolymer" title="Request Mill Price">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        <a href="product-detail.html?product=ppcp-impact" class="gp-lp-action-btn gp-lp-view-btn" title="View Details & Specs">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </a>
+                                        <a href="#contact" class="gp-lp-action-btn gp-lp-quote-btn gp-rfq-modal-trigger" data-product="PPCP Impact Copolymer Granules" title="Request Mill Price">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <span class="gp-lp-floating-badge" style="background: #10b981;">
-                                High Impact                            </span>
+                            <span class="gp-lp-floating-badge" style="background: #10b981;">High Impact</span>
                         </div>
 
                         <div class="gp-latest-product-info">
                             <h3 class="gp-lp-title">
-                                <a href="#contact" class="gp-rfq-modal-trigger" data-product="PPCP Impact Copolymer">
-                                    PPCP Impact Copolymer                                </a>
+                                <a href="product-detail.html?product=ppcp-impact" title="View Details">PPCP Impact Copolymer Granules</a>
                             </h3>
                             <span class="gp-lp-spec">High Izod Impact</span>
-                            <span class="gp-lp-app">Auto Bumpers &amp; Industrial Parts</span>
+                            <span class="gp-lp-app">Auto Bumpers & Industrial Parts</span>
                         </div>
                     </div>
-                                    <div class="gp-latest-product-card">
+
+                    <div class="gp-latest-product-card">
                         <div class="gp-lp-shape-wrap">
                             <div class="gp-lp-shape-hex">
                                 <div class="gp-lp-shape-inner">
@@ -579,26 +584,28 @@
                                          alt="PPCP Black Granules" 
                                          loading="lazy">
                                     <div class="gp-lp-overlay-action">
-                                        <a href="#contact" class="gp-lp-quote-btn gp-rfq-modal-trigger" data-product="PPCP Black Granules" title="Request Mill Price">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        <a href="product-detail.html?product=ppcp-black" class="gp-lp-action-btn gp-lp-view-btn" title="View Details & Specs">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </a>
+                                        <a href="#contact" class="gp-lp-action-btn gp-lp-quote-btn gp-rfq-modal-trigger" data-product="PPCP Black Granules" title="Request Mill Price">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <span class="gp-lp-floating-badge" style="background: #0b2545;">
-                                Crate Grade                            </span>
+                            <span class="gp-lp-floating-badge" style="background: #0b2545;">Crate Grade</span>
                         </div>
 
                         <div class="gp-latest-product-info">
                             <h3 class="gp-lp-title">
-                                <a href="#contact" class="gp-rfq-modal-trigger" data-product="PPCP Black Granules">
-                                    PPCP Black Granules                                </a>
+                                <a href="product-detail.html?product=ppcp-black" title="View Details">PPCP Black Granules</a>
                             </h3>
                             <span class="gp-lp-spec">Carbon Black Compound</span>
                             <span class="gp-lp-app">Industrial Logistics Crates</span>
                         </div>
                     </div>
-                                    <div class="gp-latest-product-card">
+
+                    <div class="gp-latest-product-card">
                         <div class="gp-lp-shape-wrap">
                             <div class="gp-lp-shape-hex">
                                 <div class="gp-lp-shape-inner">
@@ -606,188 +613,288 @@
                                          alt="PP Talc Filled Granules" 
                                          loading="lazy">
                                     <div class="gp-lp-overlay-action">
-                                        <a href="#contact" class="gp-lp-quote-btn gp-rfq-modal-trigger" data-product="PP Talc Filled Granules" title="Request Mill Price">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        <a href="product-detail.html?product=pp-talc" class="gp-lp-action-btn gp-lp-view-btn" title="View Details & Specs">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </a>
+                                        <a href="#contact" class="gp-lp-action-btn gp-lp-quote-btn gp-rfq-modal-trigger" data-product="PP Talc Filled Granules" title="Request Mill Price">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <span class="gp-lp-floating-badge" style="background: #6366f1;">
-                                Compounded                            </span>
+                            <span class="gp-lp-floating-badge" style="background: #6366f1;">Compounded</span>
                         </div>
 
                         <div class="gp-latest-product-info">
                             <h3 class="gp-lp-title">
-                                <a href="#contact" class="gp-rfq-modal-trigger" data-product="PP Talc Filled Granules">
-                                    PP Talc Filled Granules                                </a>
+                                <a href="product-detail.html?product=pp-talc" title="View Details">PP Talc Filled Granules</a>
                             </h3>
-                            <span class="gp-lp-spec">20% - 40% Mineral Filled</span>
-                            <span class="gp-lp-app">Appliance Bodies &amp; Tubs</span>
+                            <span class="gp-lp-spec">20% – 40% Mineral Filled</span>
+                            <span class="gp-lp-app">Appliance Bodies & Tubs</span>
                         </div>
                     </div>
-                                    <div class="gp-latest-product-card">
+
+                    <div class="gp-latest-product-card">
                         <div class="gp-lp-shape-wrap">
                             <div class="gp-lp-shape-hex">
                                 <div class="gp-lp-shape-inner">
-                                    <img src="./assets/images/product-pp-granules.jpg" 
-                                         alt="Polypropylene Natural White" 
+                                    <img src="./assets/images/granules-natural-white.jpg" 
+                                         alt="Polypropylene Natural White Granules" 
                                          loading="lazy">
                                     <div class="gp-lp-overlay-action">
-                                        <a href="#contact" class="gp-lp-quote-btn gp-rfq-modal-trigger" data-product="Polypropylene Natural White" title="Request Mill Price">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        <a href="product-detail.html?product=polypropylene-natural-white" class="gp-lp-action-btn gp-lp-view-btn" title="View Details & Specs">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </a>
+                                        <a href="#contact" class="gp-lp-action-btn gp-lp-quote-btn gp-rfq-modal-trigger" data-product="Polypropylene Natural White Granules" title="Request Mill Price">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <span class="gp-lp-floating-badge" style="background: #0097db;">
-                                Virgin Grade                            </span>
+                            <span class="gp-lp-floating-badge" style="background: #0097db;">Virgin Grade</span>
                         </div>
 
                         <div class="gp-latest-product-info">
                             <h3 class="gp-lp-title">
-                                <a href="#contact" class="gp-rfq-modal-trigger" data-product="Polypropylene Natural White">
-                                    Polypropylene Natural White                                </a>
+                                <a href="product-detail.html?product=polypropylene-natural-white" title="View Details">Polypropylene Natural White Granules</a>
                             </h3>
                             <span class="gp-lp-spec">Prime Homopolymer</span>
-                            <span class="gp-lp-app">Household Bins &amp; Furniture</span>
+                            <span class="gp-lp-app">Household Bins & Furniture</span>
                         </div>
                     </div>
-                                    <div class="gp-latest-product-card">
+
+                    <div class="gp-latest-product-card">
                         <div class="gp-lp-shape-wrap">
                             <div class="gp-lp-shape-hex">
                                 <div class="gp-lp-shape-inner">
-                                    <img src="./assets/images/product-hdpe-granules.jpg" 
-                                         alt="HDPE Blow Moulding" 
+                                    <img src="./assets/images/granules-glass-filled.jpg" 
+                                         alt="Polypropylene Glass Filled Granules" 
                                          loading="lazy">
                                     <div class="gp-lp-overlay-action">
-                                        <a href="#contact" class="gp-lp-quote-btn gp-rfq-modal-trigger" data-product="HDPE Blow Moulding" title="Request Mill Price">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        <a href="product-detail.html?product=polypropylene-glass-filled" class="gp-lp-action-btn gp-lp-view-btn" title="View Details & Specs">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </a>
+                                        <a href="#contact" class="gp-lp-action-btn gp-lp-quote-btn gp-rfq-modal-trigger" data-product="Polypropylene Glass Filled Granules" title="Request Mill Price">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <span class="gp-lp-floating-badge" style="background: #f59e0b;">
-                                Blow Grade                            </span>
+                            <span class="gp-lp-floating-badge" style="background: #059669;">Glass Reinforced</span>
                         </div>
 
                         <div class="gp-latest-product-info">
                             <h3 class="gp-lp-title">
-                                <a href="#contact" class="gp-rfq-modal-trigger" data-product="HDPE Blow Moulding">
-                                    HDPE Blow Moulding                                </a>
+                                <a href="product-detail.html?product=polypropylene-glass-filled" title="View Details">Polypropylene Glass Filled Granules</a>
                             </h3>
-                            <span class="gp-lp-spec">High ESCR • MFI: 0.3 - 0.7</span>
-                            <span class="gp-lp-app">200L Drums &amp; Jerrycans</span>
+                            <span class="gp-lp-spec">10% – 30% GF Compounded</span>
+                            <span class="gp-lp-app">Under-the-hood & Power Tools</span>
                         </div>
                     </div>
-                                    <div class="gp-latest-product-card">
+
+                    <div class="gp-latest-product-card">
                         <div class="gp-lp-shape-wrap">
                             <div class="gp-lp-shape-hex">
                                 <div class="gp-lp-shape-inner">
                                     <img src="./assets/images/granules-pp-milky-white.jpg" 
-                                         alt="PP Milky White Granules" 
+                                         alt="ABS White Granules" 
                                          loading="lazy">
                                     <div class="gp-lp-overlay-action">
-                                        <a href="#contact" class="gp-lp-quote-btn gp-rfq-modal-trigger" data-product="PP Milky White Granules" title="Request Mill Price">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        <a href="product-detail.html?product=abs-white" class="gp-lp-action-btn gp-lp-view-btn" title="View Details & Specs">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </a>
+                                        <a href="#contact" class="gp-lp-action-btn gp-lp-quote-btn gp-rfq-modal-trigger" data-product="ABS White Granules" title="Request Mill Price">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <span class="gp-lp-floating-badge" style="background: #14b8a6;">
-                                Milky White                            </span>
+                            <span class="gp-lp-floating-badge" style="background: #0891b2;">High Gloss</span>
                         </div>
 
                         <div class="gp-latest-product-info">
                             <h3 class="gp-lp-title">
-                                <a href="#contact" class="gp-rfq-modal-trigger" data-product="PP Milky White Granules">
-                                    PP Milky White Granules                                </a>
+                                <a href="product-detail.html?product=abs-white" title="View Details">ABS White Granules</a>
                             </h3>
-                            <span class="gp-lp-spec">High Whiteness &amp; Shine</span>
-                            <span class="gp-lp-app">Consumer Containers &amp; Caps</span>
+                            <span class="gp-lp-spec">High Rigidity & Whiteness</span>
+                            <span class="gp-lp-app">Electronics & Home Appliances</span>
                         </div>
                     </div>
-                                    <div class="gp-latest-product-card">
+
+                    <div class="gp-latest-product-card">
                         <div class="gp-lp-shape-wrap">
                             <div class="gp-lp-shape-hex">
                                 <div class="gp-lp-shape-inner">
-                                    <img src="./assets/images/granules-masterbatch-red.jpg" 
-                                         alt="Color &amp; Red Masterbatch" 
+                                    <img src="./assets/images/granules-red-pmma.jpg" 
+                                         alt="Red PMMA Granules" 
                                          loading="lazy">
                                     <div class="gp-lp-overlay-action">
-                                        <a href="#contact" class="gp-lp-quote-btn gp-rfq-modal-trigger" data-product="Color &amp; Red Masterbatch" title="Request Mill Price">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        <a href="product-detail.html?product=red-pmma" class="gp-lp-action-btn gp-lp-view-btn" title="View Details & Specs">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </a>
+                                        <a href="#contact" class="gp-lp-action-btn gp-lp-quote-btn gp-rfq-modal-trigger" data-product="Red PMMA Granules" title="Request Mill Price">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <span class="gp-lp-floating-badge" style="background: #ef233c;">
-                                Masterbatch                            </span>
+                            <span class="gp-lp-floating-badge" style="background: #dc2626;">Optical Grade</span>
                         </div>
 
                         <div class="gp-latest-product-info">
                             <h3 class="gp-lp-title">
-                                <a href="#contact" class="gp-rfq-modal-trigger" data-product="Color &amp; Red Masterbatch">
-                                    Color &amp; Red Masterbatch                                </a>
+                                <a href="product-detail.html?product=red-pmma" title="View Details">Red PMMA Granules</a>
                             </h3>
-                            <span class="gp-lp-spec">40% High Pigment Loading</span>
-                            <span class="gp-lp-app">Precise RAL Shade Compounding</span>
+                            <span class="gp-lp-spec">UV Stabilized Ruby Red</span>
+                            <span class="gp-lp-app">Auto Tail Lights & Signals</span>
                         </div>
                     </div>
-                                    <div class="gp-latest-product-card">
+
+                    <div class="gp-latest-product-card">
                         <div class="gp-lp-shape-wrap">
                             <div class="gp-lp-shape-hex">
                                 <div class="gp-lp-shape-inner">
                                     <img src="./assets/images/granules-clear-transparent.jpg" 
-                                         alt="Transparent / Clear PP" 
+                                         alt="Acrylic Granules" 
                                          loading="lazy">
                                     <div class="gp-lp-overlay-action">
-                                        <a href="#contact" class="gp-lp-quote-btn gp-rfq-modal-trigger" data-product="Transparent / Clear PP" title="Request Mill Price">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        <a href="product-detail.html?product=acrylic-granules" class="gp-lp-action-btn gp-lp-view-btn" title="View Details & Specs">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </a>
+                                        <a href="#contact" class="gp-lp-action-btn gp-lp-quote-btn gp-rfq-modal-trigger" data-product="Acrylic Granules" title="Request Mill Price">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <span class="gp-lp-floating-badge" style="background: #8b5cf6;">
-                                Crystal Clear                            </span>
+                            <span class="gp-lp-floating-badge" style="background: #7c3aed;">Crystal Clear</span>
                         </div>
 
                         <div class="gp-latest-product-info">
                             <h3 class="gp-lp-title">
-                                <a href="#contact" class="gp-rfq-modal-trigger" data-product="Transparent / Clear PP">
-                                    Transparent / Clear PP                                </a>
+                                <a href="product-detail.html?product=acrylic-granules" title="View Details">Acrylic Granules</a>
                             </h3>
-                            <span class="gp-lp-spec">High Clarity Copolymer</span>
-                            <span class="gp-lp-app">Food Grade Microwave Packs</span>
+                            <span class="gp-lp-spec">92% Light Transmission</span>
+                            <span class="gp-lp-app">Optical Lenses, Signs & Displays</span>
                         </div>
                     </div>
-                                    <div class="gp-latest-product-card">
+
+                    <div class="gp-latest-product-card">
                         <div class="gp-lp-shape-wrap">
                             <div class="gp-lp-shape-hex">
                                 <div class="gp-lp-shape-inner">
-                                    <img src="./assets/images/product-abs-granules.jpg" 
-                                         alt="High-Impact Engineering ABS" 
+                                    <img src="./assets/images/granules-nylon-black.jpg" 
+                                         alt="Nylon Black Granules" 
                                          loading="lazy">
                                     <div class="gp-lp-overlay-action">
-                                        <a href="#contact" class="gp-lp-quote-btn gp-rfq-modal-trigger" data-product="High-Impact Engineering ABS" title="Request Mill Price">
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        <a href="product-detail.html?product=nylon-black" class="gp-lp-action-btn gp-lp-view-btn" title="View Details & Specs">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </a>
+                                        <a href="#contact" class="gp-lp-action-btn gp-lp-quote-btn gp-rfq-modal-trigger" data-product="Nylon Black Granules" title="Request Mill Price">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <span class="gp-lp-floating-badge" style="background: #0b2545;">
-                                Engineering                            </span>
+                            <span class="gp-lp-floating-badge" style="background: #1e293b;">Polyamide 6/66</span>
                         </div>
 
                         <div class="gp-latest-product-info">
                             <h3 class="gp-lp-title">
-                                <a href="#contact" class="gp-rfq-modal-trigger" data-product="High-Impact Engineering ABS">
-                                    High-Impact Engineering ABS                                </a>
+                                <a href="product-detail.html?product=nylon-black" title="View Details">Nylon Black Granules</a>
                             </h3>
-                            <span class="gp-lp-spec">High Tensile &amp; Gloss Pellets</span>
-                            <span class="gp-lp-app">Switchplates &amp; White Goods</span>
+                            <span class="gp-lp-spec">High Wear & Thermal Rating</span>
+                            <span class="gp-lp-app">Gears, Bushings & Fasteners</span>
                         </div>
                     </div>
+
+                    <div class="gp-latest-product-card">
+                        <div class="gp-lp-shape-wrap">
+                            <div class="gp-lp-shape-hex">
+                                <div class="gp-lp-shape-inner">
+                                    <img src="./assets/images/granules-natural-white.jpg" 
+                                         alt="Nylon White Granules" 
+                                         loading="lazy">
+                                    <div class="gp-lp-overlay-action">
+                                        <a href="product-detail.html?product=nylon-white" class="gp-lp-action-btn gp-lp-view-btn" title="View Details & Specs">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </a>
+                                        <a href="#contact" class="gp-lp-action-btn gp-lp-quote-btn gp-rfq-modal-trigger" data-product="Nylon White Granules" title="Request Mill Price">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+                            <span class="gp-lp-floating-badge" style="background: #2563eb;">Natural PA6</span>
+                        </div>
+
+                        <div class="gp-latest-product-info">
+                            <h3 class="gp-lp-title">
+                                <a href="product-detail.html?product=nylon-white" title="View Details">Nylon White Granules</a>
+                            </h3>
+                            <span class="gp-lp-spec">Virgin Polyamide Pellets</span>
+                            <span class="gp-lp-app">Monofilament, Zip Ties & Industrial</span>
+                        </div>
+                    </div>
+
+                    <div class="gp-latest-product-card">
+                        <div class="gp-lp-shape-wrap">
+                            <div class="gp-lp-shape-hex">
+                                <div class="gp-lp-shape-inner">
+                                    <img src="./assets/images/granules-ppcp-black.jpg" 
+                                         alt="ABS Black Granules" 
+                                         loading="lazy">
+                                    <div class="gp-lp-overlay-action">
+                                        <a href="product-detail.html?product=abs-black" class="gp-lp-action-btn gp-lp-view-btn" title="View Details & Specs">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </a>
+                                        <a href="#contact" class="gp-lp-action-btn gp-lp-quote-btn gp-rfq-modal-trigger" data-product="ABS Black Granules" title="Request Mill Price">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="gp-lp-floating-badge" style="background: #0f172a;">Engineering Grade</span>
+                        </div>
+
+                        <div class="gp-latest-product-info">
+                            <h3 class="gp-lp-title">
+                                <a href="product-detail.html?product=abs-black" title="View Details">ABS Black Granules</a>
+                            </h3>
+                            <span class="gp-lp-spec">High Impact & Chemical Resistance</span>
+                            <span class="gp-lp-app">Automotive Trims & Helmets</span>
+                        </div>
+                    </div>
+
+                    <div class="gp-latest-product-card">
+                        <div class="gp-lp-shape-wrap">
+                            <div class="gp-lp-shape-hex">
+                                <div class="gp-lp-shape-inner">
+                                    <img src="./assets/images/granules-abs-fr.jpg" 
+                                         alt="ABS FR Plastic Granules" 
+                                         loading="lazy">
+                                    <div class="gp-lp-overlay-action">
+                                        <a href="product-detail.html?product=abs-fr-granules" class="gp-lp-action-btn gp-lp-view-btn" title="View Details & Specs">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </a>
+                                        <a href="#contact" class="gp-lp-action-btn gp-lp-quote-btn gp-rfq-modal-trigger" data-product="ABS FR Plastic Granules" title="Request Mill Price">
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="gp-lp-floating-badge" style="background: #ea580c;">Flame Retardant V0</span>
+                        </div>
+
+                        <div class="gp-latest-product-info">
+                            <h3 class="gp-lp-title">
+                                <a href="product-detail.html?product=abs-fr-granules" title="View Details">ABS FR Plastic Granules</a>
+                            </h3>
+                            <span class="gp-lp-spec">UL94 V-0 Self Extinguishing</span>
+                            <span class="gp-lp-app">Switchgear, Meter Boxes & EV Chargers</span>
+                        </div>
+                    </div>
+            </div>
 
             <!-- Bottom Quick Formulation Help Bar -->
             <div class="gp-latest-cta-bar">
