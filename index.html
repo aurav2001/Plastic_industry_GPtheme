@@ -277,6 +277,23 @@
             border-color: #0097db !important;
             transform: none !important;
         }
+        /* Compounding Facility Visual */
+        .gp-about-facility-img {
+            width: 100% !important;
+            height: 480px !important;
+            object-fit: cover !important;
+            display: block !important;
+            border-radius: 12px !important;
+            transition: transform 0.4s ease !important;
+        }
+        .gp-about-main-image-wrap:hover .gp-about-facility-img {
+            transform: scale(1.03) !important;
+        }
+        @media (max-width: 768px) {
+            .gp-about-facility-img {
+                height: 290px !important;
+            }
+        }
     </style>
 </head>
 
