@@ -9,9 +9,33 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+// 1. Elementor Pro Theme Builder Single/Front Page Location
+if ( function_exists( 'elementor_theme_do_location' ) && elementor_theme_do_location( 'single' ) ) {
+    return;
+}
+
+// 2. Elementor Fullwidth Auto-Handling:
+// If the front page is built with Elementor or currently in Elementor editor/preview mode
+if ( function_exists( 'gp_is_elementor_active_on_page' ) && gp_is_elementor_active_on_page() ) {
+    get_header();
+    ?>
+    <main id="primary" class="site-main gp-elementor-content-wrapper" style="width:100%; max-width:100%; padding:0; margin:0;">
+        <?php
+        while ( have_posts() ) :
+            the_post();
+            the_content();
+        endwhile;
+        ?>
+    </main>
+    <?php
+    get_footer();
+    return;
+}
+
 get_header();
 
 // Fetch default fallback data
+
 $default_products     = gp_get_default_products();
 $default_industries   = gp_get_default_industries();
 $default_clients      = gp_get_default_clients();

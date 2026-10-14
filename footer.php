@@ -23,8 +23,25 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
 
     </div><!-- #content -->
 
+    <?php
+    $elementor_footer_rendered = false;
+
+    // 1. Elementor Pro Theme Builder Footer
+    if ( function_exists( 'elementor_theme_do_location' ) && elementor_theme_do_location( 'footer' ) ) {
+        $elementor_footer_rendered = true;
+    }
+
+    // 2. Elementor Header & Footer Builder plugin support
+    if ( ! $elementor_footer_rendered && function_exists( 'hfe_render_footer' ) && function_exists( 'hfe_footer_enabled' ) && hfe_footer_enabled() ) {
+        hfe_render_footer();
+        $elementor_footer_rendered = true;
+    }
+
+    if ( ! $elementor_footer_rendered ) :
+    ?>
     <!-- Industrial CTA Banner before footer -->
     <section class="gp-cta-strip">
+
         <div class="gp-container">
             <div class="gp-cta-strip-card">
                 <div class="gp-cta-strip-text">
@@ -172,6 +189,7 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
             </div>
         </div>
     </footer>
+    <?php endif; ?>
 
     <!-- Floating WhatsApp Widget (matching Jyoti Joinchat) -->
     <?php if ( $wa_enable ) : ?>

@@ -63,8 +63,9 @@ function gp_theme_setup() {
     add_theme_support( 'responsive-embeds' );
     add_theme_support( 'align-wide' );
 
-    // Add support for Elementor Page Builder
+    // Add support for Elementor Page Builder & Header/Footer plugins
     add_theme_support( 'elementor' );
+    add_theme_support( 'header-footer-elementor' );
 }
 add_action( 'after_setup_theme', 'gp_theme_setup' );
 
@@ -75,6 +76,32 @@ function gp_theme_register_elementor_locations( $elementor_theme_manager ) {
     $elementor_theme_manager->register_all_core_location();
 }
 add_action( 'elementor/theme/register_locations', 'gp_theme_register_elementor_locations' );
+
+/**
+ * Automatically enable Elementor for Pages, Posts, and Products (gp_product)
+ */
+function gp_theme_elementor_cpt_support() {
+    $cpt_support = get_option( 'elementor_cpt_support' );
+    if ( ! $cpt_support ) {
+        $cpt_support = array( 'page', 'post', 'gp_product' );
+        update_option( 'elementor_cpt_support', $cpt_support );
+    } elseif ( is_array( $cpt_support ) && ! in_array( 'gp_product', $cpt_support, true ) ) {
+        $cpt_support[] = 'gp_product';
+        update_option( 'elementor_cpt_support', $cpt_support );
+    }
+}
+add_action( 'after_switch_theme', 'gp_theme_elementor_cpt_support' );
+add_action( 'init', 'gp_theme_elementor_cpt_support', 20 );
+
+/**
+ * Enqueue Theme Fonts inside Elementor Editor & Live Preview
+ */
+function gp_theme_elementor_editor_styles() {
+    wp_enqueue_style( 'gp-elementor-google-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Rajdhani:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap', array(), null );
+}
+add_action( 'elementor/editor/after_enqueue_styles', 'gp_theme_elementor_editor_styles' );
+add_action( 'elementor/preview/enqueue_styles', 'gp_theme_elementor_editor_styles' );
+
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

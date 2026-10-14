@@ -9,6 +9,11 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+// Elementor Pro Theme Builder Archive Location
+if ( function_exists( 'elementor_theme_do_location' ) && elementor_theme_do_location( 'archive' ) ) {
+    return;
+}
+
 get_header();
 ?>
 

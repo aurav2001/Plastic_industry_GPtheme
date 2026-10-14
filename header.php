@@ -130,9 +130,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div id="page" class="site-wrapper">
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'gp-theme' ); ?></a>
 
+    <?php
+    $elementor_header_rendered = false;
+
+    // 1. Elementor Pro Theme Builder Header
+    if ( function_exists( 'elementor_theme_do_location' ) && elementor_theme_do_location( 'header' ) ) {
+        $elementor_header_rendered = true;
+    }
+
+    // 2. Elementor Header & Footer Builder plugin support
+    if ( ! $elementor_header_rendered && function_exists( 'hfe_render_header' ) && function_exists( 'hfe_header_enabled' ) && hfe_header_enabled() ) {
+        hfe_render_header();
+        $elementor_header_rendered = true;
+    }
+
+    if ( ! $elementor_header_rendered ) :
+    ?>
     <!-- Top Contact & Notification Bar -->
     <div class="gp-topbar">
         <div class="gp-container gp-topbar-inner">
+
             <div class="gp-topbar-left">
                 <span class="gp-badge-iso">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
@@ -321,5 +338,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
     </div>
     <div class="gp-drawer-backdrop" id="gp-drawer-backdrop"></div>
+    <?php endif; ?>
 
     <div id="content" class="site-content">
+

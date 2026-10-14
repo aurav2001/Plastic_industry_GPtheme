@@ -355,13 +355,22 @@
             menuClone.id = 'mobile-menu-clone';
             drawerContent.appendChild(menuClone);
 
+            // Ensure submenus start collapsed inside the mobile drawer
+            menuClone.querySelectorAll('.sub-menu').forEach(function (sub) {
+                sub.style.display = 'none';
+                sub.classList.remove('gp-drawer-sub-open');
+            });
+
             // Add toggle for submenus on mobile
             menuClone.querySelectorAll('.menu-item-has-children > a').forEach(function (link) {
                 link.addEventListener('click', function (e) {
                     var subMenu = this.nextElementSibling;
                     if (subMenu && subMenu.classList.contains('sub-menu')) {
                         e.preventDefault();
-                        subMenu.style.display = (subMenu.style.display === 'block') ? 'none' : 'block';
+                        e.stopPropagation();
+                        var isOpen = subMenu.classList.toggle('gp-drawer-sub-open');
+                        subMenu.style.display = isOpen ? 'block' : 'none';
+                        this.classList.toggle('gp-sub-expanded', isOpen);
                     }
                 });
             });

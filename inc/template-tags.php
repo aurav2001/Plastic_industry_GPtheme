@@ -78,3 +78,43 @@ if ( ! function_exists( 'gp_breadcrumbs' ) ) :
         echo '</nav>';
     }
 endif;
+
+if ( ! function_exists( 'gp_is_elementor_active_on_page' ) ) :
+    /**
+     * Check if the current post or given post ID is built or being edited with Elementor.
+     *
+     * @param int|null $post_id
+     * @return bool
+     */
+    function gp_is_elementor_active_on_page( $post_id = null ) {
+        if ( ! $post_id ) {
+            $post_id = get_the_ID();
+        }
+
+        // Check if currently in Elementor editor or preview
+        if ( class_exists( '\Elementor\Plugin' ) ) {
+            if ( isset( \Elementor\Plugin::$instance->preview ) && \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
+                return true;
+            }
+            if ( $post_id ) {
+                $document = \Elementor\Plugin::$instance->documents->get( $post_id );
+                if ( $document && $document->is_built_with_elementor() ) {
+                    return true;
+                }
+            }
+        }
+
+        // Check Elementor editor action or preview parameter
+        if ( isset( $_GET['elementor-preview'] ) || ( isset( $_GET['action'] ) && $_GET['action'] === 'elementor' ) ) {
+            return true;
+        }
+
+        // Check standard post meta
+        if ( $post_id && get_post_meta( $post_id, '_elementor_edit_mode', true ) === 'builder' ) {
+            return true;
+        }
+
+        return false;
+    }
+endif;
+

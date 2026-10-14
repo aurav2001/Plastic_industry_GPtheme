@@ -9380,7 +9380,7 @@ ul, ol {
 /* ==========================================================================
    Mega Dropdown for Products Menu (All 13 Grades)
    ========================================================================== */
-.gp-clean-header .sub-menu.gp-products-mega-menu {
+.gp-clean-header .main-navigation .sub-menu.gp-products-mega-menu {
     width: 630px !important;
     max-width: 95vw !important;
     padding: 16px 20px 14px !important;
@@ -9393,7 +9393,7 @@ ul, ol {
 }
 
 @media (max-width: 1200px) {
-    .gp-clean-header .sub-menu.gp-products-mega-menu {
+    .gp-clean-header .main-navigation .sub-menu.gp-products-mega-menu {
         left: -120px !important;
     }
 }
@@ -9788,10 +9788,10 @@ html, body, .site-wrapper {
         margin-top: 6px !important;
         transform: none !important;
         width: 100% !important;
-        display: none;
+        display: none !important;
     }
-    .gp-drawer-content .sub-menu.gp-active-mobile,
-    .gp-drawer-content .sub-menu[style*="display: block"] {
+    .gp-drawer-content .sub-menu.gp-drawer-sub-open,
+    .gp-drawer-content .sub-menu.is-open {
         display: block !important;
     }
     .gp-drawer-content .gp-mega-cols-grid {
@@ -9817,4 +9817,31 @@ html, body, .site-wrapper {
         font-size: 0.82rem !important;
     }
 }
+
+/* ==========================================================================
+   Elementor Page Builder Compatibility
+   ========================================================================== */
+.gp-elementor-content-wrapper,
+.gp-elementor-fullwidth-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+body.elementor-page #primary,
+body.elementor-page .site-main,
+body.elementor-editor-active #primary,
+body.elementor-editor-active .site-main {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.elementor-section.elementor-section-stretched {
+    max-width: 100% !important;
+}
+
 

@@ -9,7 +9,30 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-// If this page is the Front Page, directly render the full front-page.php template
+// 1. Elementor Pro Theme Builder Single/Page Location
+if ( function_exists( 'elementor_theme_do_location' ) && elementor_theme_do_location( 'single' ) ) {
+    return;
+}
+
+// 2. Elementor Fullwidth Auto-Handling:
+// If this page was edited/built with Elementor, or is currently in Elementor preview/editor mode
+if ( function_exists( 'gp_is_elementor_active_on_page' ) && gp_is_elementor_active_on_page() ) {
+    get_header();
+    ?>
+    <main id="primary" class="site-main gp-elementor-content-wrapper" style="width:100%; max-width:100%; padding:0; margin:0;">
+        <?php
+        while ( have_posts() ) :
+            the_post();
+            the_content();
+        endwhile;
+        ?>
+    </main>
+    <?php
+    get_footer();
+    return;
+}
+
+// 3. If this page is the Front Page (and not built with Elementor), directly render the full front-page.php template
 if ( is_front_page() || ( is_page() && get_the_ID() == get_option( 'page_on_front' ) ) ) {
     include get_template_directory() . '/front-page.php';
     return;
