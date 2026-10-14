@@ -210,7 +210,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     </li>
                     <li class="menu-item menu-item-has-children <?php echo is_page( 'products' ) || is_page_template( 'page-templates/template-products.php' ) ? 'current-menu-item' : ''; ?>">
                         <a href="<?php echo esc_url( home_url( '/products/' ) ); ?>">
-                            <?php esc_html_e( 'Products', 'gp-theme' ); ?> <span class="gp-dropdown-arrow">▾</span>
+                            <?php esc_html_e( 'Products', 'gp-theme' ); ?> <svg class="gp-nav-chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
                         </a>
                         <div class="sub-menu gp-products-mega-menu">
                             <div class="gp-mega-cols-grid">

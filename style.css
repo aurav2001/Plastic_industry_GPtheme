@@ -370,3 +370,66 @@ a img.aligncenter {
     border-color: #0097db !important;
     transform: none !important;
 }
+
+/* ==========================================================================
+   Clean Header Navigation Links & Micro-Interactions
+   ========================================================================== */
+.gp-clean-header .gp-nav-menu {
+    gap: 4px !important;
+}
+
+.gp-clean-header .gp-nav-menu > li > a {
+    gap: 4px !important;
+    padding: 7px 13px !important;
+    font-size: 0.84rem !important;
+    font-weight: 500 !important;
+    color: #334155 !important;
+    border-radius: 8px !important;
+    border: 1px solid transparent !important;
+}
+
+.gp-clean-header .gp-nav-menu > li > a::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 3px !important;
+    left: 50% !important;
+    width: 0 !important;
+    height: 2.5px !important;
+    background: linear-gradient(90deg, #0097db, #00b4d8) !important;
+    border-radius: 99px !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transform: translateX(-50%) !important;
+}
+
+.gp-clean-header .gp-nav-menu > li:hover > a {
+    color: #0084c7 !important;
+    background: rgba(0, 151, 219, 0.06) !important;
+}
+
+.gp-clean-header .gp-nav-menu > li:hover > a::after {
+    width: 50% !important;
+}
+
+.gp-clean-header .gp-nav-menu > li.current-menu-item > a {
+    color: #0077b6 !important;
+    font-weight: 600 !important;
+    background: rgba(0, 151, 219, 0.08) !important;
+    border: 1px solid rgba(0, 151, 219, 0.18) !important;
+    box-shadow: 0 2px 8px rgba(0, 151, 219, 0.08) !important;
+}
+
+.gp-clean-header .gp-nav-menu > li.current-menu-item > a::after {
+    width: 50% !important;
+}
+
+.gp-nav-chevron {
+    display: inline-block !important;
+    color: #94a3b8 !important;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease !important;
+}
+
+.gp-clean-header .gp-nav-menu > li:hover .gp-nav-chevron {
+    transform: rotate(180deg) !important;
+    color: #0084c7 !important;
+}
+

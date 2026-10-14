@@ -418,30 +418,6 @@ $wa_num    = get_theme_mod( 'gp_wa_number', '918591585497' );
         </div>
     </section>
 
-    <!-- ========================================================================= -->
-    <!-- 8. ABOUT PAGE CTA STRIP                                                   -->
-    <!-- ========================================================================= -->
-    <section class="gp-cta-strip">
-        <div class="gp-container">
-            <div class="gp-cta-strip-card">
-                <div class="gp-cta-strip-text">
-                    <span class="gp-tag-pill"><?php esc_html_e( 'SAMPLE BAGS AVAILABLE', 'gp-theme' ); ?></span>
-                    <h3><?php esc_html_e( 'Looking for High-Consistency Plastic Dana for Your Moulding Machines?', 'gp-theme' ); ?></h3>
-                    <p><?php esc_html_e( 'Test our PP, HDPE, ABS, and PVC granules on your own production floor. We provide 25kg sample bags and comprehensive lab test reports.', 'gp-theme' ); ?></p>
-                </div>
-                <div class="gp-cta-strip-actions">
-                    <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="gp-btn gp-btn-light gp-btn-lg">
-                        <span><?php esc_html_e( 'Request Sample / Quote', 'gp-theme' ); ?></span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </a>
-                    <a href="https://wa.me/<?php echo esc_attr( $wa_num ); ?>?text=Hello%20SRS%20Polymer,%20I%20would%20like%20to%20know%20more%20about%20your%20plastic%20granules." target="_blank" rel="noopener" class="gp-btn gp-btn-glass gp-btn-lg">
-                        <span><?php esc_html_e( 'WhatsApp Us Directly', 'gp-theme' ); ?></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
 </main>
 
 <?php

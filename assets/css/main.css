@@ -8021,7 +8021,7 @@ ul, ol {
 .gp-clean-header .gp-nav-menu {
     display: flex;
     align-items: center;
-    gap: 1px;
+    gap: 4px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -8034,14 +8034,15 @@ ul, ol {
 .gp-clean-header .gp-nav-menu > li > a {
     display: inline-flex;
     align-items: center;
-    gap: 3px;
-    padding: 6px 9px;
+    gap: 4px;
+    padding: 7px 13px;
     font-family: 'Poppins', sans-serif;
-    font-size: 0.81rem;
-    font-weight: 600;
-    color: #1e293b;
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: #334155;
     text-decoration: none;
-    border-radius: 7px;
+    border-radius: 8px;
+    border: 1px solid transparent;
     white-space: nowrap;
     position: relative;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -8049,14 +8050,14 @@ ul, ol {
 
 /* Animated bottom indicator bar on hover */
 .gp-clean-header .gp-nav-menu > li > a::after {
-    content: '';
+    content: '' !important;
     position: absolute;
     bottom: 3px;
     left: 50%;
     width: 0;
     height: 2.5px;
     background: linear-gradient(90deg, #0097db, #00b4d8);
-    border-radius: 2px;
+    border-radius: 99px;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateX(-50%);
 }
@@ -8067,19 +8068,31 @@ ul, ol {
 }
 
 .gp-clean-header .gp-nav-menu > li:hover > a::after {
-    width: 55%;
+    width: 50%;
 }
 
-/* Active Menu Item styling */
+/* Active Menu Item styling (Only for current page) */
 .gp-clean-header .gp-nav-menu > li.current-menu-item > a {
     color: #0077b6;
-    background: linear-gradient(135deg, rgba(0, 151, 219, 0.12) 0%, rgba(0, 151, 219, 0.04) 100%);
-    border: 1px solid rgba(0, 151, 219, 0.22);
+    font-weight: 600;
+    background: rgba(0, 151, 219, 0.08);
+    border: 1px solid rgba(0, 151, 219, 0.18);
     box-shadow: 0 2px 8px rgba(0, 151, 219, 0.08);
 }
 
 .gp-clean-header .gp-nav-menu > li.current-menu-item > a::after {
     width: 50%;
+}
+
+.gp-nav-chevron {
+    display: inline-block;
+    color: #94a3b8;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
+}
+
+.gp-clean-header .gp-nav-menu > li:hover .gp-nav-chevron {
+    transform: rotate(180deg);
+    color: #0084c7;
 }
 
 .gp-dropdown-arrow {
