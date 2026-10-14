@@ -113,6 +113,127 @@
                 right: 26px !important;
             }
         }
+    
+        /* Mega Dropdown for Products Menu (All 13 Polymer Grades) */
+        .gp-nav-menu > li.menu-item-has-children {
+            position: relative;
+        }
+        .gp-clean-header .sub-menu.gp-products-mega-menu,
+        .gp-nav-menu .sub-menu.gp-products-mega-menu {
+            position: absolute !important;
+            top: 100% !important;
+            left: -40px !important;
+            width: 630px !important;
+            max-width: 95vw !important;
+            padding: 16px 20px 14px !important;
+            border-radius: 14px !important;
+            border-top: 3.5px solid #0097db !important;
+            box-shadow: 0 22px 50px -8px rgba(11, 37, 69, 0.22), 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+            background: #ffffff !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(12px) !important;
+            transition: all 0.24s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            z-index: 9999 !important;
+            pointer-events: none;
+        }
+        .gp-nav-menu li.menu-item-has-children:hover > .sub-menu.gp-products-mega-menu,
+        .gp-clean-header .gp-nav-menu li:hover > .sub-menu.gp-products-mega-menu {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+            pointer-events: auto !important;
+        }
+        .gp-mega-cols-grid {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 20px !important;
+        }
+        .gp-mega-col-head {
+            font-size: 0.72rem !important;
+            font-weight: 800 !important;
+            color: #0097db !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.08em !important;
+            padding-bottom: 8px !important;
+            margin-bottom: 8px !important;
+            border-bottom: 1.5px solid #e2e8f0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+        }
+        .gp-mega-col-count {
+            font-size: 0.65rem !important;
+            color: #64748b !important;
+            background: #f1f5f9 !important;
+            padding: 2px 8px !important;
+            border-radius: 12px !important;
+            font-weight: 700 !important;
+        }
+        .gp-mega-col-list {
+            list-style: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 3px !important;
+        }
+        .gp-mega-col-list li {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .gp-mega-col-list li a {
+            display: flex !important;
+            align-items: center !important;
+            gap: 9px !important;
+            padding: 7px 10px !important;
+            font-size: 0.83rem !important;
+            font-weight: 600 !important;
+            color: #1e293b !important;
+            border-radius: 6px !important;
+            text-decoration: none !important;
+            transition: all 0.18s ease !important;
+            border-left: none !important;
+            transform: none !important;
+        }
+        .gp-mega-col-list li a:hover {
+            background: #f0f9ff !important;
+            color: #0097db !important;
+            transform: translateX(4px) !important;
+        }
+        .gp-mega-dot {
+            width: 8px !important;
+            height: 8px !important;
+            border-radius: 50% !important;
+            flex-shrink: 0 !important;
+        }
+        .gp-mega-footer-bar {
+            margin-top: 14px !important;
+            padding-top: 10px !important;
+            border-top: 1px solid #e2e8f0 !important;
+        }
+        .gp-mega-footer-bar a {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            padding: 9px 14px !important;
+            background: #f8fafc !important;
+            border: 1px solid #e2e8f0 !important;
+            border-radius: 8px !important;
+            color: #0077b6 !important;
+            font-weight: 700 !important;
+            font-size: 0.82rem !important;
+            text-decoration: none !important;
+            transition: all 0.2s ease !important;
+            border-left: none !important;
+            transform: none !important;
+        }
+        .gp-mega-footer-bar a:hover {
+            background: #0097db !important;
+            color: #ffffff !important;
+            border-color: #0097db !important;
+            transform: none !important;
+        }
     </style>
 </head>
 
@@ -198,13 +319,45 @@
                         <a href="products.html">
                             Products <span class="gp-dropdown-arrow">▾</span>
                         </a>
-                        <ul class="sub-menu">
-                            <li><a href="products.html#pp">PPCP &amp; PP Compounds</a></li>
-                            <li><a href="products.html#hdpe">HDPE &amp; Blow Grades</a></li>
-                            <li><a href="products.html#abs">ABS Engineering Pellets</a></li>
-                            <li><a href="products.html#pvc">PVC Compounds &amp; Wire</a></li>
-                            <li><a href="products.html#nylon">Nylon &amp; Polyamide Dana</a></li>
-                        </ul>
+                        <div class="sub-menu gp-products-mega-menu">
+                            <div class="gp-mega-cols-grid">
+                                <div class="gp-mega-col">
+                                    <div class="gp-mega-col-head">
+                                        <span>PPCP &amp; Polypropylene</span>
+                                        <span class="gp-mega-col-count">6 Grades</span>
+                                    </div>
+                                    <ul class="gp-mega-col-list">
+                                        <li><a href="product-detail.html?product=ppcp-grey"><span class="gp-mega-dot" style="background:#0097db;"></span>PPCP Grey Granules</a></li>
+                                        <li><a href="product-detail.html?product=ppcp-impact"><span class="gp-mega-dot" style="background:#10b981;"></span>PPCP Impact Copolymer</a></li>
+                                        <li><a href="product-detail.html?product=ppcp-black"><span class="gp-mega-dot" style="background:#0b2545;"></span>PPCP Black Granules</a></li>
+                                        <li><a href="product-detail.html?product=pp-talc"><span class="gp-mega-dot" style="background:#6366f1;"></span>PP Talc Filled Granules</a></li>
+                                        <li><a href="product-detail.html?product=polypropylene-natural-white"><span class="gp-mega-dot" style="background:#0097db;"></span>PP Natural White Granules</a></li>
+                                        <li><a href="product-detail.html?product=polypropylene-glass-filled"><span class="gp-mega-dot" style="background:#059669;"></span>PP Glass Filled Granules</a></li>
+                                    </ul>
+                                </div>
+                                <div class="gp-mega-col">
+                                    <div class="gp-mega-col-head">
+                                        <span>ABS, PMMA &amp; Nylon</span>
+                                        <span class="gp-mega-col-count">7 Grades</span>
+                                    </div>
+                                    <ul class="gp-mega-col-list">
+                                        <li><a href="product-detail.html?product=abs-white"><span class="gp-mega-dot" style="background:#0891b2;"></span>ABS White Granules</a></li>
+                                        <li><a href="product-detail.html?product=abs-black"><span class="gp-mega-dot" style="background:#0f172a;"></span>ABS Black Granules</a></li>
+                                        <li><a href="product-detail.html?product=abs-fr-granules"><span class="gp-mega-dot" style="background:#ea580c;"></span>ABS FR Plastic Granules</a></li>
+                                        <li><a href="product-detail.html?product=red-pmma"><span class="gp-mega-dot" style="background:#dc2626;"></span>Red PMMA Granules</a></li>
+                                        <li><a href="product-detail.html?product=acrylic-granules"><span class="gp-mega-dot" style="background:#7c3aed;"></span>Acrylic Granules</a></li>
+                                        <li><a href="product-detail.html?product=nylon-black"><span class="gp-mega-dot" style="background:#1e293b;"></span>Nylon Black Granules</a></li>
+                                        <li><a href="product-detail.html?product=nylon-white"><span class="gp-mega-dot" style="background:#2563eb;"></span>Nylon White Granules</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="gp-mega-footer-bar">
+                                <a href="products.html">
+                                    <span>Explore All 13 Polymer Grades &amp; Lab Specs</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                </a>
+                            </div>
+                        </div>
                     </li>
                     <li class="menu-item current-menu-item">
                         <a href="about.html">About Mill</a>

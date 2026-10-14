@@ -9349,3 +9349,126 @@ ul, ol {
 
 
 
+
+
+/* ==========================================================================
+   Mega Dropdown for Products Menu (All 13 Grades)
+   ========================================================================== */
+.gp-clean-header .sub-menu.gp-products-mega-menu {
+    width: 630px !important;
+    max-width: 95vw !important;
+    padding: 16px 20px 14px !important;
+    border-radius: 14px !important;
+    border-top: 3.5px solid #0097db !important;
+    box-shadow: 0 22px 50px -8px rgba(11, 37, 69, 0.22), 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+    background: #ffffff !important;
+    left: -60px !important;
+    z-index: 1000 !important;
+}
+
+@media (max-width: 1200px) {
+    .gp-clean-header .sub-menu.gp-products-mega-menu {
+        left: -120px !important;
+    }
+}
+
+.gp-mega-cols-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+}
+
+.gp-mega-col-head {
+    font-size: 0.72rem !important;
+    font-weight: 800 !important;
+    color: #0097db !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 8px !important;
+    border-bottom: 1.5px solid #e2e8f0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+.gp-mega-col-count {
+    font-size: 0.65rem !important;
+    color: #64748b !important;
+    background: #f1f5f9 !important;
+    padding: 2px 8px !important;
+    border-radius: 12px !important;
+    font-weight: 700 !important;
+}
+
+.gp-mega-col-list {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3px !important;
+}
+
+.gp-mega-col-list li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.gp-mega-col-list li a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+    padding: 7px 10px !important;
+    font-size: 0.83rem !important;
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    transition: all 0.18s ease !important;
+    border-left: none !important;
+    transform: none !important;
+}
+
+.gp-mega-col-list li a:hover {
+    background: #f0f9ff !important;
+    color: #0097db !important;
+    transform: translateX(4px) !important;
+}
+
+.gp-mega-dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
+}
+
+.gp-mega-footer-bar {
+    margin-top: 14px !important;
+    padding-top: 10px !important;
+    border-top: 1px solid #e2e8f0 !important;
+}
+
+.gp-mega-footer-bar a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 9px 14px !important;
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    color: #0077b6 !important;
+    font-weight: 700 !important;
+    font-size: 0.82rem !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    border-left: none !important;
+    transform: none !important;
+}
+
+.gp-mega-footer-bar a:hover {
+    background: #0097db !important;
+    color: #ffffff !important;
+    border-color: #0097db !important;
+    transform: none !important;
+}
