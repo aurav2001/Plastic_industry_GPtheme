@@ -367,7 +367,7 @@ $default_news         = gp_get_default_news();
                 );
 
                 foreach ( $latest_products as $prod ) : 
-                    $detail_url = esc_url( home_url( '/product-detail.html?product=' . $prod['slug'] ) );
+                    $detail_url = esc_url( home_url( '/product-detail/?product=' . $prod['slug'] ) );
                 ?>
                     <div class="gp-latest-product-card">
                         <div class="gp-lp-shape-wrap">

@@ -237,12 +237,12 @@ if ( ! defined( 'ABSPATH' ) ) {
                                         <span class="gp-mega-col-count">6 Grades</span>
                                     </div>
                                     <ul class="gp-mega-col-list">
-                                        <li><a href="<?php echo esc_url( home_url( '/product-detail.html?product=ppcp-grey' ) ); ?>"><span class="gp-mega-dot" style="background:#0097db;"></span>PPCP Grey Granules</a></li>
-                                        <li><a href="<?php echo esc_url( home_url( '/product-detail.html?product=ppcp-impact' ) ); ?>"><span class="gp-mega-dot" style="background:#10b981;"></span>PPCP Impact Copolymer</a></li>
-                                        <li><a href="<?php echo esc_url( home_url( '/product-detail.html?product=ppcp-black' ) ); ?>"><span class="gp-mega-dot" style="background:#0b2545;"></span>PPCP Black Granules</a></li>
-                                        <li><a href="<?php echo esc_url( home_url( '/product-detail.html?product=pp-talc' ) ); ?>"><span class="gp-mega-dot" style="background:#6366f1;"></span>PP Talc Filled Granules</a></li>
-                                        <li><a href="<?php echo esc_url( home_url( '/product-detail.html?product=polypropylene-natural-white' ) ); ?>"><span class="gp-mega-dot" style="background:#0097db;"></span>PP Natural White Granules</a></li>
-                                        <li><a href="<?php echo esc_url( home_url( '/product-detail.html?product=polypropylene-glass-filled' ) ); ?>"><span class="gp-mega-dot" style="background:#059669;"></span>PP Glass Filled Granules</a></li>
+                                        <li><a href="<?php echo esc_url( home_url( '/product-detail/?product=ppcp-grey' ) ); ?>"><span class="gp-mega-dot" style="background:#0097db;"></span>PPCP Grey Granules</a></li>
+                                        <li><a href="<?php echo esc_url( home_url( '/product-detail/?product=ppcp-impact' ) ); ?>"><span class="gp-mega-dot" style="background:#10b981;"></span>PPCP Impact Copolymer</a></li>
+                                        <li><a href="<?php echo esc_url( home_url( '/product-detail/?product=ppcp-black' ) ); ?>"><span class="gp-mega-dot" style="background:#0b2545;"></span>PPCP Black Granules</a></li>
+                                        <li><a href="<?php echo esc_url( home_url( '/product-detail/?product=pp-talc' ) ); ?>"><span class="gp-mega-dot" style="background:#6366f1;"></span>PP Talc Filled Granules</a></li>
+                                        <li><a href="<?php echo esc_url( home_url( '/product-detail/?product=polypropylene-natural-white' ) ); ?>"><span class="gp-mega-dot" style="background:#0097db;"></span>PP Natural White Granules</a></li>
+                                        <li><a href="<?php echo esc_url( home_url( '/product-detail/?product=polypropylene-glass-filled' ) ); ?>"><span class="gp-mega-dot" style="background:#059669;"></span>PP Glass Filled Granules</a></li>
                                     </ul>
                                 </div>
                                 <div class="gp-mega-col">
@@ -251,13 +251,13 @@ if ( ! defined( 'ABSPATH' ) ) {
                                         <span class="gp-mega-col-count">7 Grades</span>
                                     </div>
                                     <ul class="gp-mega-col-list">
-                                        <li><a href="<?php echo esc_url( home_url( '/product-detail.html?product=abs-white' ) ); ?>"><span class="gp-mega-dot" style="background:#0891b2;"></span>ABS White Granules</a></li>
-                                        <li><a href="<?php echo esc_url( home_url( '/product-detail.html?product=abs-black' ) ); ?>"><span class="gp-mega-dot" style="background:#0f172a;"></span>ABS Black Granules</a></li>
-                                        <li><a href="<?php echo esc_url( home_url( '/product-detail.html?product=abs-fr-granules' ) ); ?>"><span class="gp-mega-dot" style="background:#ea580c;"></span>ABS FR Plastic Granules</a></li>
-                                        <li><a href="<?php echo esc_url( home_url( '/product-detail.html?product=red-pmma' ) ); ?>"><span class="gp-mega-dot" style="background:#dc2626;"></span>Red PMMA Granules</a></li>
-                                        <li><a href="<?php echo esc_url( home_url( '/product-detail.html?product=acrylic-granules' ) ); ?>"><span class="gp-mega-dot" style="background:#7c3aed;"></span>Acrylic Granules</a></li>
-                                        <li><a href="<?php echo esc_url( home_url( '/product-detail.html?product=nylon-black' ) ); ?>"><span class="gp-mega-dot" style="background:#1e293b;"></span>Nylon Black Granules</a></li>
-                                        <li><a href="<?php echo esc_url( home_url( '/product-detail.html?product=nylon-white' ) ); ?>"><span class="gp-mega-dot" style="background:#2563eb;"></span>Nylon White Granules</a></li>
+                                        <li><a href="<?php echo esc_url( home_url( '/product-detail/?product=abs-white' ) ); ?>"><span class="gp-mega-dot" style="background:#0891b2;"></span>ABS White Granules</a></li>
+                                        <li><a href="<?php echo esc_url( home_url( '/product-detail/?product=abs-black' ) ); ?>"><span class="gp-mega-dot" style="background:#0f172a;"></span>ABS Black Granules</a></li>
+                                        <li><a href="<?php echo esc_url( home_url( '/product-detail/?product=abs-fr-granules' ) ); ?>"><span class="gp-mega-dot" style="background:#ea580c;"></span>ABS FR Plastic Granules</a></li>
+                                        <li><a href="<?php echo esc_url( home_url( '/product-detail/?product=red-pmma' ) ); ?>"><span class="gp-mega-dot" style="background:#dc2626;"></span>Red PMMA Granules</a></li>
+                                        <li><a href="<?php echo esc_url( home_url( '/product-detail/?product=acrylic-granules' ) ); ?>"><span class="gp-mega-dot" style="background:#7c3aed;"></span>Acrylic Granules</a></li>
+                                        <li><a href="<?php echo esc_url( home_url( '/product-detail/?product=nylon-black' ) ); ?>"><span class="gp-mega-dot" style="background:#1e293b;"></span>Nylon Black Granules</a></li>
+                                        <li><a href="<?php echo esc_url( home_url( '/product-detail/?product=nylon-white' ) ); ?>"><span class="gp-mega-dot" style="background:#2563eb;"></span>Nylon White Granules</a></li>
                                     </ul>
                                 </div>
                             </div>

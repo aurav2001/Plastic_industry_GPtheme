@@ -32,7 +32,8 @@ $filesToCopy = @(
     "comments.php",
     "404.php",
     "README.md",
-    "favicon.svg"
+    "favicon.svg",
+    "product-detail.html"
 )
 
 foreach ($file in $filesToCopy) {

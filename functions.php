@@ -398,4 +398,28 @@ function gp_create_default_pages() {
 }
 add_action( 'init', 'gp_create_default_pages', 20 );
 
+/**
+ * Route /product-detail, /product-detail/, and /product-detail.html to template-product-detail.php
+ */
+function gp_route_product_detail_template( $template ) {
+    $request_uri = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '';
+    
+    // Match /product-detail, /product-detail/, /product-detail.html with query parameters
+    if ( preg_match( '#/product-detail(\.html)?(/|\?|$)#i', $request_uri ) ) {
+        $custom_template = GP_THEME_DIR . '/page-templates/template-product-detail.php';
+        if ( file_exists( $custom_template ) ) {
+            global $wp_query;
+            if ( $wp_query ) {
+                $wp_query->is_404  = false;
+                $wp_query->is_page = true;
+            }
+            status_header( 200 );
+            return $custom_template;
+        }
+    }
+    return $template;
+}
+add_filter( 'template_include', 'gp_route_product_detail_template', 99 );
+
+
 
