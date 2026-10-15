@@ -58,9 +58,23 @@ if (Test-Path $zipOutputPath) {
     Remove-Item -Path $zipOutputPath -Force
 }
 
-# Compress into gp-theme.zip with optimal compression
-Write-Host "Compressing to $zipOutputPath..." -ForegroundColor Cyan
-Compress-Archive -Path $themeFolder -DestinationPath $zipOutputPath -CompressionLevel Optimal -Force
+# Compress into gp-theme.zip with optimal compression and standard forward slashes (required for WordPress)
+Write-Host "Compressing to $zipOutputPath (WordPress-compliant forward-slash format)..." -ForegroundColor Cyan
+
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+Add-Type -AssemblyName System.IO.Compression
+
+$zipFile = [System.IO.Compression.ZipFile]::Open($zipOutputPath, [System.IO.Compression.ZipArchiveMode]::Create)
+$allFiles = Get-ChildItem -Path $themeFolder -Recurse -File
+$prefixLen = $tempBase.Length
+
+foreach ($f in $allFiles) {
+    $relPath = $f.FullName.Substring($prefixLen).TrimStart('\', '/')
+    $entryName = $relPath.Replace('\', '/')
+    [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zipFile, $f.FullName, $entryName, [System.IO.Compression.CompressionLevel]::Optimal) | Out-Null
+}
+
+$zipFile.Dispose()
 
 # Clean up temporary staging directory
 Remove-Item -Path $tempBase -Recurse -Force

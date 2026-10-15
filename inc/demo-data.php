@@ -921,20 +921,17 @@ function gp_register_demo_import_menu() {
 add_action( 'admin_menu', 'gp_register_demo_import_menu' );
 
 /**
- * Theme Activation Hook - Automatically Setup Homepage, Pages, Products & Menus
+/**
+ * Theme Activation Hook
  */
 function gp_theme_activation_flag() {
-    update_option( 'gp_show_activation_notice', 1 );
-    
-    // Automatically setup pages, menus, reading settings and products on activation
-    if ( ! get_option( 'gp_demo_imported' ) ) {
-        gp_run_full_demo_import();
-    }
+    // Do not auto-import demo data on activation to avoid overwriting user content
+    update_option( 'gp_show_activation_notice', 0 );
 }
 add_action( 'after_switch_theme', 'gp_theme_activation_flag' );
 
 /**
- * Handle 1-Click Instant Setup Request from Admin
+ * Handle 1-Click Instant Setup Request from Admin (Manual only)
  */
 function gp_handle_instant_setup_request() {
     if ( ! is_admin() || ! current_user_can( 'manage_options' ) ) {
@@ -949,66 +946,8 @@ function gp_handle_instant_setup_request() {
 }
 add_action( 'admin_init', 'gp_handle_instant_setup_request' );
 
-/**
- * Admin Notice Prompting Demo Import & Instant Setup
- */
-function gp_demo_import_admin_notice() {
-    if ( ! current_user_can( 'manage_options' ) ) {
-        return;
-    }
-
-    if ( isset( $_GET['gp_setup_done'] ) ) {
-        ?>
-        <div class="notice notice-success is-dismissible" style="padding: 14px 18px; border-left-color: #10b981; background: #ecfdf5;">
-            <strong style="color: #065f46; font-size: 15px;">✅ Theme Content & Homepage Successfully Activated!</strong>
-            <p style="margin: 4px 0 0 0; color: #047857; font-size: 13px;">
-                Homepage, Products Catalog, Navigation Menus, and Company Pages have been set up. 
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" target="_blank" style="font-weight: 700; color: #065f46; text-decoration: underline; margin-left: 8px;">View Live Site &rarr;</a>
-            </p>
-        </div>
-        <?php
-    }
-
-    // Dismiss notice if dismissed
-    if ( get_option( 'gp_dismiss_import_notice' ) ) {
-        return;
-    }
-
-    $current_screen = get_current_screen();
-    if ( $current_screen && $current_screen->id === 'appearance_page_gp-demo-import' ) {
-        return;
-    }
-
-    $setup_url = wp_nonce_url( add_query_arg( 'gp_run_instant_setup', '1' ), 'gp_instant_setup_action', 'gp_nonce' );
-    $import_url = admin_url( 'themes.php?page=gp-demo-import' );
-    $dismiss_url = wp_nonce_url( add_query_arg( 'gp_dismiss_notice', '1' ), 'gp_dismiss_nonce' );
-
-    if ( isset( $_GET['gp_dismiss_notice'] ) && check_admin_referer( 'gp_dismiss_nonce' ) ) {
-        update_option( 'gp_dismiss_import_notice', 1 );
-        return;
-    }
-    ?>
-    <div class="notice notice-info is-dismissible" style="padding: 16px 20px; border-left-color: #0b2545; background: #f0f7fd; box-shadow: 0 4px 12px rgba(11,37,69,0.06); border-radius: 6px; margin: 15px 0;">
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
-            <div>
-                <strong style="font-size: 16px; color: #0b2545;">🏭 SRS Polymer (Green Polytech) Theme Setup</strong>
-                <p style="margin: 5px 0 0 0; color: #334155; font-size: 13.5px;">
-                    Make this theme's full content, homepage layout, products catalog, and navigation active on your site in 1 click!
-                </p>
-            </div>
-            <div style="display: flex; gap: 10px; align-items: center;">
-                <a href="<?php echo esc_url( $setup_url ); ?>" class="button button-primary" style="background: #0b2545; border-color: #07172b; font-weight: 700; padding: 6px 18px; font-size: 13px; height: auto;">
-                    ⚡ 1-Click Activate Theme Content & Menus
-                </a>
-                <a href="<?php echo esc_url( $import_url ); ?>" class="button button-secondary" style="font-weight: 600;">
-                    ⚙️ Custom Setup
-                </a>
-            </div>
-        </div>
-    </div>
-    <?php
-}
-add_action( 'admin_notices', 'gp_demo_import_admin_notice' );
+// Global auto-install notice removed to keep admin clean and prevent forced setup.
+// Users can still optionally import demo content from Appearance -> Import Demo Data.
 
 /**
  * Render Demo Import Admin Page
