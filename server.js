@@ -24,11 +24,20 @@ const MIME_TYPES = {
 
 const server = http.createServer((req, res) => {
     let reqUrl = decodeURI(req.url.split('?')[0]);
-    if (reqUrl === '/') {
+    if (reqUrl === '/' || reqUrl === '') {
         reqUrl = '/index.html';
     }
 
-    const filePath = path.join(ROOT, reqUrl);
+    let filePath = path.join(ROOT, reqUrl);
+
+    // If requesting a clean route like /about or /about/, check if /about.html exists
+    if (!path.extname(filePath)) {
+        const cleanPath = reqUrl.replace(/\/+$/, '');
+        const candidateHtml = path.join(ROOT, cleanPath + '.html');
+        if (fs.existsSync(candidateHtml)) {
+            filePath = candidateHtml;
+        }
+    }
 
     // Prevent directory traversal
     if (!filePath.startsWith(ROOT)) {
@@ -39,17 +48,22 @@ const server = http.createServer((req, res) => {
 
     fs.stat(filePath, (err, stats) => {
         if (err || !stats.isFile()) {
-            // Fallback to index.html for single page navigation or 404
-            fs.readFile(path.join(ROOT, 'index.html'), (err404, fallbackContent) => {
-                if (err404) {
-                    res.writeHead(404, { 'Content-Type': 'text/plain' });
-                    res.end('File Not Found');
-                } else {
-                    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-                    res.end(fallbackContent);
-                }
-            });
-            return;
+            // Check if there's an index.html in the directory or fallback
+            const candidateIndex = path.join(filePath, 'index.html');
+            if (!err && stats.isDirectory() && fs.existsSync(candidateIndex)) {
+                filePath = candidateIndex;
+            } else {
+                fs.readFile(path.join(ROOT, 'index.html'), (err404, fallbackContent) => {
+                    if (err404) {
+                        res.writeHead(404, { 'Content-Type': 'text/plain' });
+                        res.end('File Not Found');
+                    } else {
+                        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+                        res.end(fallbackContent);
+                    }
+                });
+                return;
+            }
         }
 
         const ext = path.extname(filePath).toLowerCase();

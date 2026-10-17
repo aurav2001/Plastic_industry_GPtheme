@@ -15,88 +15,264 @@ if ( ! defined( 'ABSPATH' ) ) {
 function gp_get_default_products() {
     return array(
         array(
-            'title'       => 'Polypropylene (PP) Granules',
-            'category'    => 'PP Granules',
-            'cat_slug'    => 'pp-granules',
-            'desc'        => 'Prime virgin and reprocessed Polypropylene (PP) plastic dana pellets. High tensile stiffness, low density, and smooth flowability for high-speed injection moulding and raffia woven applications.',
-            'capacity'    => 'MFI: 11 - 14 g/10min (Injection Grade)',
-            'material'    => 'Polypropylene Homo/Copolymer (PPHP & PPCP)',
-            'weight'      => '25 Kg Moisture-Proof Poly Bags',
-            'neck_size'   => 'Rice-shaped pellets (2.5mm)',
-            'color'       => 'Milky White, Natural Translucent, Red, Blue',
-            'application' => 'Injection Moulded Chairs, Buckets, Containers, Box Straps, Raffia Bags',
-            'badge'       => 'Virgin & Reprocessed',
-            'image_type'  => 'pp_granules',
-        ),
-        array(
-            'title'       => 'HDPE Granules (Blow & Extrusion Grade)',
-            'category'    => 'HDPE Granules',
-            'cat_slug'    => 'hdpe-granules',
-            'desc'        => 'High-density polyethylene plastic dana featuring high impact strength and environmental stress crack resistance (ESCR) for chemical containers, jerry cans, and pressure pipes.',
-            'capacity'    => 'MFI: 0.35 - 1.2 g/10min (Blow & Pipe Grade)',
-            'material'    => 'Virgin & Recycled HDPE (PE100 / PE80 Grade)',
-            'weight'      => '25 Kg HDPE Laminated Sacks',
+            'slug'        => 'ppcp-grey',
+            'title'       => 'PPCP Grey Granules',
+            'category'    => 'PPCP & Polypropylene',
+            'cat_slug'    => 'ppcp-polypropylene',
+            'desc'        => 'SRS Polymer PPCP Grey Granules are engineered from high-grade virgin and precision reprocessed polypropylene block copolymer. Compounded with specialized thermal and processing stabilizers to ensure excellent melt flow, minimal warpage, and high impact resistance under extreme vibration and temperature cycles.',
+            'capacity'    => 'MFI: 10 – 12 g/10min (ASTM D1238, 230°C / 2.16 kg)',
+            'material'    => 'Automotive PP Block Copolymer (PPCP)',
+            'weight'      => '25 Kg Net Multiwall Bags / 1,000 Kg Jumbo',
             'neck_size'   => 'Uniform 3mm Dana Pellets',
-            'color'       => 'Natural White, Industrial Blue, Black UV',
-            'application' => 'Blow Moulded Bottles, Chemical Drums, Water & Gas Pipes, Cable Ducts',
-            'badge'       => 'High ESCR Grade',
-            'image_type'  => 'hdpe_granules',
+            'color'       => 'Industrial Grey / Dark Grey',
+            'application' => 'Automotive Battery Casings, Two-Wheeler Fairings, Heavy Logistics Crates, Electrical Enclosures',
+            'badge'       => 'Automotive Grade',
+            'image_file'  => 'granules-ppcp-grey.jpg',
+            'density'     => '0.905 g/cm³ (ASTM D792)',
+            'tensile'     => '27 MPa (ASTM D638)',
+            'impact'      => '105 J/m (ASTM D256, 23°C)',
+            'flex'        => '1,250 MPa (ASTM D790)',
+            'elong'       => '55% (ASTM D638)',
         ),
         array(
-            'title'       => 'ABS Engineering Polymer Dana',
-            'category'    => 'ABS Granules',
-            'cat_slug'    => 'abs-granules',
-            'desc'        => 'High-performance ABS plastic dana offering superior impact resistance, dimensional stability, and high-gloss surface finish for electrical and automotive manufacturing.',
-            'capacity'    => 'MFI: 18 - 25 g/10min @ 220°C',
-            'material'    => 'Acrylonitrile Butadiene Styrene (ABS Terpolymer)',
+            'slug'        => 'ppcp-impact',
+            'title'       => 'PPCP Impact Copolymer Granules',
+            'category'    => 'PPCP & Polypropylene',
+            'cat_slug'    => 'ppcp-polypropylene',
+            'desc'        => 'Designed for components requiring unmatched toughness and resistance to high-energy shocks. Incorporates rubber-phase ethylene-propylene elastomer compounding to eliminate brittle failure even in sub-zero winter temperatures.',
+            'capacity'    => 'MFI: 8 – 14 g/10min (ASTM D1238, 230°C / 2.16 kg)',
+            'material'    => 'Elastomer Modified Polypropylene Block Copolymer',
+            'weight'      => '25 Kg Net Laminated Bags',
+            'neck_size'   => 'Milky Translucent Pellets',
+            'color'       => 'Natural Milky / Off-White',
+            'application' => 'Auto Front & Rear Bumpers, Crash Trays, Cold-Room Bins, Chemical Vessels, Industrial Pallets',
+            'badge'       => 'High Impact',
+            'image_file'  => 'granules-natural-white.jpg',
+            'density'     => '0.900 g/cm³ (ASTM D792)',
+            'tensile'     => '25 MPa (ASTM D638)',
+            'impact'      => '135 J/m (At -20°C: 60 J/m)',
+            'flex'        => '1,150 MPa (ASTM D790)',
+            'elong'       => '85% (ASTM D638)',
+        ),
+        array(
+            'slug'        => 'ppcp-black',
+            'title'       => 'PPCP Black Granules',
+            'category'    => 'PPCP & Polypropylene',
+            'cat_slug'    => 'ppcp-polypropylene',
+            'desc'        => 'SRS Polymer Carbon Black PPCP Pellets offer exceptional UV stabilization and environmental stress cracking resistance. Highly favored by crate manufacturers across India for quick cycle times and superior stacking strength.',
+            'capacity'    => 'MFI: 9 – 13 g/10min (ASTM D1238, 230°C / 2.16 kg)',
+            'material'    => 'Carbon Black Compounded Block Copolymer',
+            'weight'      => '25 Kg Bags / 1,000 Kg Jumbo Bags',
+            'neck_size'   => 'Jet Black Uniform Pellets',
+            'color'       => 'Jet Black (2.5% Furnace Carbon Dispersion)',
+            'application' => 'Logistics Crates, Warehouse Pallets, Cable Spools, Underbody Automotive Covers, Harvest Bins',
+            'badge'       => 'Crate Grade',
+            'image_file'  => 'granules-ppcp-black.jpg',
+            'density'     => '0.920 g/cm³ (ASTM D792)',
+            'tensile'     => '29 MPa (ASTM D638)',
+            'impact'      => '90 J/m (ASTM D256)',
+            'flex'        => '1,350 MPa (ASTM D790)',
+            'elong'       => '45% (ASTM D638)',
+        ),
+        array(
+            'slug'        => 'pp-talc',
+            'title'       => 'PP Talc Filled Granules',
+            'category'    => 'PPCP & Polypropylene',
+            'cat_slug'    => 'ppcp-polypropylene',
+            'desc'        => 'Compounded with ultra-fine surface-treated micronized talc to significantly boost heat deflection temperature (HDT up to 125°C) and dimensional stability, ensuring zero post-mould shrinkage and warped edges.',
+            'capacity'    => 'MFI: 12 – 16 g/10min (ASTM D1238, 230°C / 2.16 kg)',
+            'material'    => '20% – 40% Micronized Talc Reinforced PP',
             'weight'      => '25 Kg Moisture Barrier Bags',
-            'neck_size'   => 'High-Gloss Uniform Pellets',
-            'color'       => 'Natural Ivory, Jet Black, Pre-colored',
-            'application' => 'Electronic Appliance Enclosures, Switchboards, Automotive Dashboards, Helmets',
-            'badge'       => 'High Impact Resistant',
-            'image_type'  => 'abs_granules',
+            'neck_size'   => 'Compounded High-Stiffness Pellets',
+            'color'       => 'Natural Greyish White / Pre-colored',
+            'application' => 'Washing Machine Tubs, Air Conditioner Grilles, Automotive Dashboard Backing, Microwave Parts',
+            'badge'       => 'Compounded',
+            'image_file'  => 'granules-talc-filled.jpg',
+            'density'     => '1.050 – 1.250 g/cm³ (ASTM D792)',
+            'tensile'     => '32 MPa (ASTM D638)',
+            'impact'      => '45 J/m (ASTM D256)',
+            'flex'        => '2,600 MPa (ASTM D790)',
+            'elong'       => '18% (ASTM D638)',
         ),
         array(
-            'title'       => 'PVC Compound & Resins',
-            'category'    => 'PVC Compounds',
-            'cat_slug'    => 'pvc-compounds',
-            'desc'        => 'Pre-mixed rigid and flexible plasticized PVC compound dana pellets with thermal stabilizers and fire retardants for cable insulation, shoes, and plumbing profiles.',
-            'capacity'    => 'Hardness: Shore A 60 - Shore D 85',
-            'material'    => 'Suspension Grade PVC Resin + Plasticizers',
-            'weight'      => '25 Kg Poly Woven Bags',
-            'neck_size'   => 'Extruded Cylindrical Granules',
-            'color'       => 'Crystal Clear, Black, Red, Blue, Grey',
-            'application' => 'Wire & Cable Sheathing, Footwear Soles, Flexible Tubing, Conduit Pipes',
-            'badge'       => 'Flame Retardant (FR)',
-            'image_type'  => 'pvc_granules',
-        ),
-        array(
-            'title'       => 'LDPE & LLDPE Film Grade Granules',
-            'category'    => 'LDPE & LLDPE',
-            'cat_slug'    => 'ldpe-lldpe',
-            'desc'        => 'Premium clarity virgin and recycled LDPE and metallocene LLDPE plastic dana with high dart impact and puncture resistance for blown film and packaging pouches.',
-            'capacity'    => 'MFI: 2.0 - 4.5 g/10min (Film Grade)',
-            'material'    => 'Low-Density Polyethylene (LDPE / m-LLDPE)',
+            'slug'        => 'polypropylene-natural-white',
+            'title'       => 'Polypropylene Natural White Granules',
+            'category'    => 'PPCP & Polypropylene',
+            'cat_slug'    => 'ppcp-polypropylene',
+            'desc'        => 'Prime virgin homopolymer polypropylene granules with superior crystal clarity, high stiffness, and FDA-compliant purity. Engineered for ultra-clean food container injection and medical packaging.',
+            'capacity'    => 'MFI: 11 – 15 g/10min (ASTM D1238)',
+            'material'    => 'Prime Homopolymer Polypropylene (PPHP)',
             'weight'      => '25 Kg Laminated Bags',
-            'neck_size'   => 'Translucent Spherical Pellets',
-            'color'       => 'Natural High-Clarity, Milky White',
-            'application' => 'Packaging Pouches, Shrink Wrap, Greenhouse Mulch Film, Squeeze Bottles',
-            'badge'       => 'Food Grade Compliant',
-            'image_type'  => 'pp_granules',
+            'neck_size'   => 'High Clarity Pellets',
+            'color'       => 'Natural Translucent White',
+            'application' => 'Food Containers, Household Bins, High-Speed Injection Furniture, Syringes',
+            'badge'       => 'Virgin Grade',
+            'image_file'  => 'granules-natural-white.jpg',
+            'density'     => '0.905 g/cm³ (ASTM D792)',
+            'tensile'     => '34 MPa (ASTM D638)',
+            'impact'      => '35 J/m (ASTM D256)',
+            'flex'        => '1,500 MPa (ASTM D790)',
+            'elong'       => '110% (ASTM D638)',
         ),
         array(
-            'title'       => 'Color & Additive Masterbatches',
-            'category'    => 'Masterbatches',
-            'cat_slug'    => 'masterbatches',
-            'desc'        => 'Highly concentrated polymer color masterbatches (White TiO2, Carbon Black, Red, Blue, Green, UV Stabilizers) delivering streak-free dispersion in plastic processing.',
-            'capacity'    => 'Concentration: 30% - 75% Pigment Loading',
-            'material'    => 'Polymer Carrier (PE / PP Based Matrix)',
-            'weight'      => '25 Kg Sealed Moisture-Proof Bags',
-            'neck_size'   => 'Micro-Pellet Granules (2mm)',
-            'color'       => 'Vibrant Red, Blue, Green, Yellow, Pure White, Deep Black',
-            'application' => 'Universal Coloring for PP, HDPE, LDPE, ABS Moulding & Film Extrusion',
-            'badge'       => 'Streak-Free Dispersion',
-            'image_type'  => 'masterbatch',
+            'slug'        => 'polypropylene-glass-filled',
+            'title'       => 'Polypropylene Glass Filled Granules',
+            'category'    => 'PPCP & Polypropylene',
+            'cat_slug'    => 'ppcp-polypropylene',
+            'desc'        => 'Reinforced with 10% to 30% chemically coupled E-glass fibers, achieving extreme mechanical rigidity, creep resistance, and elevated HDT up to 150°C for under-the-hood engine bay applications.',
+            'capacity'    => 'MFI: 6 – 10 g/10min (ASTM D1238)',
+            'material'    => '10% – 30% Chemically Coupled Glass Fiber PP',
+            'weight'      => '25 Kg Moisture Barrier Bags',
+            'neck_size'   => 'Reinforced Engineering Pellets',
+            'color'       => 'Natural / Black / Custom Shade',
+            'application' => 'Automotive Radiator Fans, Power Tool Housings, Pump Impellers, Industrial Brackets',
+            'badge'       => 'Glass Reinforced',
+            'image_file'  => 'granules-glass-filled.jpg',
+            'density'     => '1.120 g/cm³ (ASTM D792)',
+            'tensile'     => '65 MPa (ASTM D638)',
+            'impact'      => '85 J/m (ASTM D256)',
+            'flex'        => '3,800 MPa (ASTM D790)',
+            'elong'       => '6% (ASTM D638)',
+        ),
+        array(
+            'slug'        => 'abs-white',
+            'title'       => 'ABS White Granules',
+            'category'    => 'ABS, PMMA & Nylon',
+            'cat_slug'    => 'abs-pmma-nylon',
+            'desc'        => 'Premium engineering ABS polymer with brilliant high-gloss surface aesthetics, high Izod impact strength, and exceptional dimensional stability for white goods and electronics manufacturing.',
+            'capacity'    => 'MFI: 18 – 25 g/10min @ 220°C',
+            'material'    => 'High-Gloss Acrylonitrile Butadiene Styrene (ABS)',
+            'weight'      => '25 Kg Multiwall Bags',
+            'neck_size'   => 'High-Rigidity Pellets',
+            'color'       => 'Pure High-Whiteness Ivory White',
+            'application' => 'Electronic Appliance Casings, Refrigerator Trims, Vacuum Cleaner Bodies, Switchgear',
+            'badge'       => 'High Gloss',
+            'image_file'  => 'granules-pp-milky-white.jpg',
+            'density'     => '1.045 g/cm³ (ASTM D792)',
+            'tensile'     => '44 MPa (ASTM D638)',
+            'impact'      => '210 J/m (ASTM D256)',
+            'flex'        => '2,250 MPa (ASTM D790)',
+            'elong'       => '28% (ASTM D638)',
+        ),
+        array(
+            'slug'        => 'red-pmma',
+            'title'       => 'Red PMMA Granules',
+            'category'    => 'ABS, PMMA & Nylon',
+            'cat_slug'    => 'abs-pmma-nylon',
+            'desc'        => 'Automotive lighting grade polymethyl methacrylate with precision UV stabilizers, delivering crystal clear optical transmittance and certified chromaticity coordinates for automotive rear lamp lenses.',
+            'capacity'    => 'MFI: 1.5 – 3.0 g/10min @ 230°C',
+            'material'    => 'UV-Stabilized Polymethyl Methacrylate (PMMA)',
+            'weight'      => '25 Kg Moisture Sealed Bags',
+            'neck_size'   => 'High Transparency Pellets',
+            'color'       => 'Ruby Red Optical Transmission',
+            'application' => 'Automotive Tail Lights, Warning Beacon Domes, Instrument Cluster Covers',
+            'badge'       => 'Optical Grade',
+            'image_file'  => 'granules-red-pmma.jpg',
+            'density'     => '1.180 g/cm³ (ASTM D792)',
+            'tensile'     => '68 MPa (ASTM D638)',
+            'impact'      => '20 J/m (ASTM D256)',
+            'flex'        => '3,100 MPa (ASTM D790)',
+            'elong'       => '4% (ASTM D638)',
+        ),
+        array(
+            'slug'        => 'acrylic-granules',
+            'title'       => 'Acrylic Granules',
+            'category'    => 'ABS, PMMA & Nylon',
+            'cat_slug'    => 'abs-pmma-nylon',
+            'desc'        => 'Prime optical grade virgin acrylic pellets offering 92% light transmittance, superior surface hardness, and weather resistance for light guides, cosmetic packaging, and high-clarity lenses.',
+            'capacity'    => 'MFI: 2.0 – 4.5 g/10min @ 230°C',
+            'material'    => 'Prime Optical Grade Virgin Acrylic Resin',
+            'weight'      => '25 Kg Sealed Bags',
+            'neck_size'   => '92% Light Transmittance Pellets',
+            'color'       => 'Crystal Clear Glass Transparency',
+            'application' => 'Optical Lenses, Cosmetic Jars, Signage Boards, Light Guide Panels',
+            'badge'       => 'Crystal Clear',
+            'image_file'  => 'granules-clear-transparent.jpg',
+            'density'     => '1.190 g/cm³ (ASTM D792)',
+            'tensile'     => '72 MPa (ASTM D638)',
+            'impact'      => '18 J/m (ASTM D256)',
+            'flex'        => '3,200 MPa (ASTM D790)',
+            'elong'       => '5% (ASTM D638)',
+        ),
+        array(
+            'slug'        => 'nylon-black',
+            'title'       => 'Nylon Black Granules',
+            'category'    => 'ABS, PMMA & Nylon',
+            'cat_slug'    => 'abs-pmma-nylon',
+            'desc'        => 'Compounded Polyamide 6/66 engineering resin featuring high tensile strength, self-lubricating wear resistance, and high thermal stability for mechanical gears and heavy industrial bushings.',
+            'capacity'    => 'MFI: 25 – 40 g/10min @ 275°C',
+            'material'    => 'Polyamide 6 / 66 (PA6/PA66) Compounded',
+            'weight'      => '25 Kg Aluminium Foil Barrier Bags',
+            'neck_size'   => 'Thermal Resistant Pellets',
+            'color'       => 'Jet Black Wear-Resistant',
+            'application' => 'Precision Gears, Heavy Bushings, Cable Ties, Industrial Fasteners',
+            'badge'       => 'Polyamide 6/66',
+            'image_file'  => 'granules-nylon-black.jpg',
+            'density'     => '1.140 g/cm³ (ASTM D792)',
+            'tensile'     => '78 MPa (ASTM D638)',
+            'impact'      => '65 J/m (ASTM D256)',
+            'flex'        => '2,800 MPa (ASTM D790)',
+            'elong'       => '35% (ASTM D638)',
+        ),
+        array(
+            'slug'        => 'nylon-white',
+            'title'       => 'Nylon White Granules',
+            'category'    => 'ABS, PMMA & Nylon',
+            'cat_slug'    => 'abs-pmma-nylon',
+            'desc'        => 'Unfilled virgin Polyamide 6 pellets delivering superior dielectric insulation, high toughness, and smooth melt flow for industrial monofilament, zip ties, and precision electronic insulators.',
+            'capacity'    => 'MFI: 30 – 45 g/10min @ 235°C',
+            'material'    => 'Unfilled Virgin Polyamide 6 (PA6)',
+            'weight'      => '25 Kg Foil Vacuum Sacks',
+            'neck_size'   => 'Natural PA6 Dana Pellets',
+            'color'       => 'Natural Translucent White',
+            'application' => 'Industrial Monofilament, Zip Fasteners, Precision Electronic Insulators',
+            'badge'       => 'Natural PA6',
+            'image_file'  => 'granules-natural-white.jpg',
+            'density'     => '1.130 g/cm³ (ASTM D792)',
+            'tensile'     => '75 MPa (ASTM D638)',
+            'impact'      => '70 J/m (ASTM D256)',
+            'flex'        => '2,750 MPa (ASTM D790)',
+            'elong'       => '50% (ASTM D638)',
+        ),
+        array(
+            'slug'        => 'abs-black',
+            'title'       => 'ABS Black Granules',
+            'category'    => 'ABS, PMMA & Nylon',
+            'cat_slug'    => 'abs-pmma-nylon',
+            'desc'        => 'High-impact engineering ABS compounded with deep jet furnace black for superior scratch resistance, high surface gloss, and dimensional stability in automotive exterior mouldings and protective gear.',
+            'capacity'    => 'MFI: 16 – 22 g/10min @ 220°C',
+            'material'    => 'High-Impact Engineering ABS Terpolymer',
+            'weight'      => '25 Kg Laminated Bags',
+            'neck_size'   => 'Deep Jet Black Pellets',
+            'color'       => 'High-Gloss Jet Black',
+            'application' => 'Automotive Exterior Trims, Two-Wheeler Helmets, Industrial Tool Casings',
+            'badge'       => 'Engineering Grade',
+            'image_file'  => 'granules-ppcp-black.jpg',
+            'density'     => '1.050 g/cm³ (ASTM D792)',
+            'tensile'     => '46 MPa (ASTM D638)',
+            'impact'      => '220 J/m (ASTM D256)',
+            'flex'        => '2,300 MPa (ASTM D790)',
+            'elong'       => '25% (ASTM D638)',
+        ),
+        array(
+            'slug'        => 'abs-fr-granules',
+            'title'       => 'ABS FR Plastic Granules',
+            'category'    => 'ABS, PMMA & Nylon',
+            'cat_slug'    => 'abs-pmma-nylon',
+            'desc'        => 'UL94 V-0 certified flame retardant ABS compound formulated with eco-friendly halogen-free flame retardants. Delivers self-extinguishing safety and high glow wire index for EV charging stations and electrical meters.',
+            'capacity'    => 'MFI: 14 – 20 g/10min @ 220°C',
+            'material'    => 'Flame Retardant ABS (UL94 V-0 Certified)',
+            'weight'      => '25 Kg Moisture Barrier Bags',
+            'neck_size'   => 'Self-Extinguishing Pellets',
+            'color'       => 'Grey / Black / Custom Electric Shade',
+            'application' => 'EV Charger Enclosures, Electrical Switchgear, Digital Energy Meter Boxes',
+            'badge'       => 'Flame Retardant V0',
+            'image_file'  => 'granules-abs-fr.jpg',
+            'density'     => '1.180 g/cm³ (ASTM D792)',
+            'tensile'     => '42 MPa (ASTM D638)',
+            'impact'      => '160 J/m (ASTM D256)',
+            'flex'        => '2,400 MPa (ASTM D790)',
+            'elong'       => '20% (ASTM D638)',
         ),
     );
 }
@@ -432,156 +608,168 @@ function gp_attach_theme_image_to_post( $filename, $post_id, $title = '' ) {
 function gp_import_demo_pages() {
     $pages_created = 0;
 
-    // 1. Home Page
-    $home_page = get_page_by_path( 'home' );
-    if ( ! $home_page ) {
-        $home_id = wp_insert_post( array(
-            'post_title'     => 'Home',
-            'post_name'      => 'home',
-            'post_status'    => 'publish',
-            'post_type'      => 'page',
-            'comment_status' => 'closed',
-        ) );
-        if ( $home_id && ! is_wp_error( $home_id ) ) {
-            $pages_created++;
-        }
-    } else {
-        $home_id = $home_page->ID;
-    }
+    $pages_def = array(
+        'home' => array(
+            'title'    => 'Home',
+            'template' => '',
+            'is_front' => true,
+        ),
+        'about' => array(
+            'title'    => 'About Us',
+            'template' => 'page-templates/template-about.php',
+            'is_front' => false,
+        ),
+        'products' => array(
+            'title'    => 'Products',
+            'template' => 'page-templates/template-products.php',
+            'is_front' => false,
+        ),
+        'testing' => array(
+            'title'    => 'ASTM Lab Standards',
+            'template' => 'page-templates/template-testing.php',
+            'is_front' => false,
+        ),
+        'certificates' => array(
+            'title'    => 'Official Certifications',
+            'template' => 'page-templates/template-certificates.php',
+            'is_front' => false,
+        ),
+        'industries' => array(
+            'title'    => 'Industries Served',
+            'template' => 'page-templates/template-industries.php',
+            'is_front' => false,
+        ),
+        'product-detail' => array(
+            'title'    => 'Product Technical Specifications',
+            'template' => 'page-templates/template-product-detail.php',
+            'is_front' => false,
+        ),
+        'contact' => array(
+            'title'    => 'Contact Us',
+            'template' => 'page-templates/template-contact.php',
+            'is_front' => false,
+        ),
+        'blog' => array(
+            'title'    => 'Blog',
+            'template' => '',
+            'is_posts' => true,
+        ),
+    );
 
-    // 2. About Us Page
-    $about_page = get_page_by_path( 'about' ) ?: get_page_by_path( 'about-us' );
-    if ( ! $about_page ) {
-        $about_id = wp_insert_post( array(
-            'post_title'     => 'About Us',
-            'post_name'      => 'about',
-            'post_status'    => 'publish',
-            'post_type'      => 'page',
-            'comment_status' => 'closed',
-        ) );
-        if ( $about_id && ! is_wp_error( $about_id ) ) {
-            update_post_meta( $about_id, '_wp_page_template', 'page-templates/template-about.php' );
-            $pages_created++;
-        }
-    } else {
-        $about_id = $about_page->ID;
-        update_post_meta( $about_id, '_wp_page_template', 'page-templates/template-about.php' );
-    }
+    $home_id = 0;
+    $blog_id = 0;
 
-    // 3. Contact Us Page
-    $contact_page = get_page_by_path( 'contact' ) ?: get_page_by_path( 'contact-us' );
-    if ( ! $contact_page ) {
-        $contact_id = wp_insert_post( array(
-            'post_title'     => 'Contact Us',
-            'post_name'      => 'contact',
-            'post_status'    => 'publish',
-            'post_type'      => 'page',
-            'comment_status' => 'closed',
-        ) );
-        if ( $contact_id && ! is_wp_error( $contact_id ) ) {
-            update_post_meta( $contact_id, '_wp_page_template', 'page-templates/template-contact.php' );
-            $pages_created++;
+    foreach ( $pages_def as $slug => $data ) {
+        $page = get_page_by_path( $slug );
+        if ( ! $page && $slug === 'about' ) {
+            $page = get_page_by_path( 'about-us' );
         }
-    } else {
-        $contact_id = $contact_page->ID;
-        update_post_meta( $contact_id, '_wp_page_template', 'page-templates/template-contact.php' );
-    }
-
-    // 4. Blog Page
-    $blog_page = get_page_by_path( 'blog' ) ?: get_page_by_path( 'news' );
-    if ( ! $blog_page ) {
-        $blog_id = wp_insert_post( array(
-            'post_title'     => 'Blog',
-            'post_name'      => 'blog',
-            'post_status'    => 'publish',
-            'post_type'      => 'page',
-            'comment_status' => 'closed',
-        ) );
-        if ( $blog_id && ! is_wp_error( $blog_id ) ) {
-            $pages_created++;
+        if ( ! $page && $slug === 'contact' ) {
+            $page = get_page_by_path( 'contact-us' );
         }
-    } else {
-        $blog_id = $blog_page->ID;
-    }
+        if ( ! $page && $slug === 'blog' ) {
+            $page = get_page_by_path( 'news' );
+        }
 
-    // 5. Products Catalog Page
-    $products_page = get_page_by_path( 'products' );
-    if ( ! $products_page ) {
-        $prod_id = wp_insert_post( array(
-            'post_title'     => 'Products Catalog',
-            'post_name'      => 'products',
-            'post_status'    => 'publish',
-            'post_type'      => 'page',
-            'comment_status' => 'closed',
-        ) );
-        if ( $prod_id && ! is_wp_error( $prod_id ) ) {
-            $pages_created++;
+        if ( ! $page ) {
+            $page_id = wp_insert_post( array(
+                'post_title'     => $data['title'],
+                'post_name'      => $slug,
+                'post_status'    => 'publish',
+                'post_type'      => 'page',
+                'comment_status' => 'closed',
+            ) );
+            if ( $page_id && ! is_wp_error( $page_id ) ) {
+                $pages_created++;
+            }
+        } else {
+            $page_id = $page->ID;
+        }
+
+        if ( $page_id && ! is_wp_error( $page_id ) ) {
+            if ( ! empty( $data['template'] ) ) {
+                update_post_meta( $page_id, '_wp_page_template', $data['template'] );
+            }
+            if ( ! empty( $data['is_front'] ) ) {
+                $home_id = $page_id;
+            }
+            if ( ! empty( $data['is_posts'] ) ) {
+                $blog_id = $page_id;
+            }
         }
     }
 
     // Auto-configure Reading Settings
-    if ( ! empty( $home_id ) && ! is_wp_error( $home_id ) ) {
+    if ( $home_id ) {
         update_option( 'show_on_front', 'page' );
         update_option( 'page_on_front', $home_id );
     }
-    if ( ! empty( $blog_id ) && ! is_wp_error( $blog_id ) ) {
+    if ( $blog_id ) {
         update_option( 'page_for_posts', $blog_id );
     }
 
     return array(
         'created'  => $pages_created,
         'home_id'  => $home_id,
-        'about_id' => isset( $about_id ) ? $about_id : 0,
-        'contact_id' => isset( $contact_id ) ? $contact_id : 0,
         'blog_id'  => $blog_id,
     );
 }
 
 /**
- * 2. Import Demo Products
+ * 2. Import Demo Products (All 13 Polymer Grades with Full Technical Data)
  */
 function gp_import_demo_products() {
     $products = gp_get_default_products();
-    $image_map = array(
-        'pp_granules'   => 'product-pp-granules.jpg',
-        'hdpe_granules' => 'product-hdpe-granules.jpg',
-        'abs_granules'  => 'product-abs-granules.jpg',
-        'pvc_granules'  => 'product-hdpe-granules.jpg',
-        'masterbatch'   => 'hero-slide-granules.jpg',
-    );
-
-    $count = 0;
+    $count    = 0;
 
     foreach ( $products as $p ) {
-        // Check if product already exists
-        $existing = get_page_by_path( sanitize_title( $p['title'] ), OBJECT, 'gp_product' );
-        if ( $existing ) {
-            continue;
+        $slug     = ! empty( $p['slug'] ) ? $p['slug'] : sanitize_title( $p['title'] );
+        $existing = get_page_by_path( $slug, OBJECT, 'gp_product' );
+        if ( ! $existing ) {
+            $existing = get_page_by_path( sanitize_title( $p['title'] ), OBJECT, 'gp_product' );
         }
 
-        $post_id = wp_insert_post( array(
-            'post_title'   => $p['title'],
-            'post_name'    => sanitize_title( $p['title'] ),
-            'post_content' => '<p>' . esc_html( $p['desc'] ) . '</p>' .
-                '<h3>High Performance Polymer Dana Quality</h3>' .
-                '<p>Manufactured and compounded using prime virgin polymers and precision reprocessed resins under ASTM D1238 and ISO 9001:2015 testing protocols. Engineered for consistent Melt Flow Index (MFI), zero nozzle clogging, high tensile strength, and uniform pellet cut.</p>' .
-                '<ul>' .
-                '<li><strong>Melt Flow Index:</strong> ' . esc_html( $p['capacity'] ) . '</li>' .
-                '<li><strong>Base Polymer:</strong> ' . esc_html( $p['material'] ) . '</li>' .
-                '<li><strong>Color Options:</strong> ' . esc_html( $p['color'] ) . '</li>' .
-                '<li><strong>Primary Applications:</strong> ' . esc_html( $p['application'] ) . '</li>' .
-                '<li><strong>Standard Packaging:</strong> ' . esc_html( $p['weight'] ) . ' with moisture barrier inner liner.</li>' .
-                '</ul>' .
-                '<h3>Quality Assurance & Certification</h3>' .
-                '<p>Every dispatch includes a comprehensive Certificate of Analysis (COA) specifying tested MFI values, ash content (<0.5%), moisture ratio, and tensile yield strength.</p>',
-            'post_excerpt' => $p['desc'],
-            'post_status'  => 'publish',
-            'post_type'    => 'gp_product',
-        ) );
+        $post_content = '<p>' . esc_html( $p['desc'] ) . '</p>' .
+            '<h3>Technical Polymer Specifications</h3>' .
+            '<ul>' .
+            '<li><strong>Melt Flow Index:</strong> ' . esc_html( $p['capacity'] ) . '</li>' .
+            '<li><strong>Base Polymer:</strong> ' . esc_html( $p['material'] ) . '</li>' .
+            '<li><strong>Color Options:</strong> ' . esc_html( $p['color'] ) . '</li>' .
+            '<li><strong>Primary Applications:</strong> ' . esc_html( $p['application'] ) . '</li>' .
+            '<li><strong>Standard Packaging:</strong> ' . esc_html( $p['weight'] ) . '</li>' .
+            ( ! empty( $p['density'] ) ? '<li><strong>Density:</strong> ' . esc_html( $p['density'] ) . '</li>' : '' ) .
+            ( ! empty( $p['tensile'] ) ? '<li><strong>Tensile Yield:</strong> ' . esc_html( $p['tensile'] ) . '</li>' : '' ) .
+            ( ! empty( $p['impact'] )  ? '<li><strong>Izod Impact:</strong> ' . esc_html( $p['impact'] ) . '</li>' : '' ) .
+            ( ! empty( $p['flex'] )    ? '<li><strong>Flexural Modulus:</strong> ' . esc_html( $p['flex'] ) . '</li>' : '' ) .
+            ( ! empty( $p['elong'] )   ? '<li><strong>Elongation at Break:</strong> ' . esc_html( $p['elong'] ) . '</li>' : '' ) .
+            '</ul>' .
+            '<h3>Quality Assurance & Certification</h3>' .
+            '<p>Manufactured and compounded under ISO 9001:2015 and ASTM D1238 precision testing standards. Every dispatch includes a comprehensive Certificate of Analysis (COA) guaranteeing zero particulate impurities, consistent melt flow, and complete lot traceability.</p>';
 
-        if ( ! is_wp_error( $post_id ) ) {
+        if ( ! $existing ) {
+            $post_id = wp_insert_post( array(
+                'post_title'   => $p['title'],
+                'post_name'    => $slug,
+                'post_content' => $post_content,
+                'post_excerpt' => $p['desc'],
+                'post_status'  => 'publish',
+                'post_type'    => 'gp_product',
+            ) );
+            if ( ! is_wp_error( $post_id ) ) {
+                $count++;
+            }
+        } else {
+            $post_id = $existing->ID;
+            wp_update_post( array(
+                'ID'           => $post_id,
+                'post_title'   => $p['title'],
+                'post_content' => $post_content,
+                'post_excerpt' => $p['desc'],
+            ) );
             $count++;
+        }
 
+        if ( $post_id && ! is_wp_error( $post_id ) ) {
             // Assign Category
             wp_set_object_terms( $post_id, $p['category'], 'gp_product_cat' );
 
@@ -593,9 +781,14 @@ function gp_import_demo_products() {
             update_post_meta( $post_id, '_gp_color', $p['color'] );
             update_post_meta( $post_id, '_gp_application', $p['application'] );
             update_post_meta( $post_id, '_gp_cert', $p['badge'] );
+            if ( ! empty( $p['density'] ) ) update_post_meta( $post_id, '_gp_density', $p['density'] );
+            if ( ! empty( $p['tensile'] ) ) update_post_meta( $post_id, '_gp_tensile', $p['tensile'] );
+            if ( ! empty( $p['impact'] ) )  update_post_meta( $post_id, '_gp_impact', $p['impact'] );
+            if ( ! empty( $p['flex'] ) )    update_post_meta( $post_id, '_gp_flex', $p['flex'] );
+            if ( ! empty( $p['elong'] ) )   update_post_meta( $post_id, '_gp_elong', $p['elong'] );
 
             // Attach image
-            $img_filename = isset( $image_map[ $p['image_type'] ] ) ? $image_map[ $p['image_type'] ] : 'product-pp-granules.jpg';
+            $img_filename = ! empty( $p['image_file'] ) ? $p['image_file'] : 'granules-ppcp-grey.jpg';
             gp_attach_theme_image_to_post( $img_filename, $post_id, $p['title'] );
         }
     }
@@ -769,95 +962,94 @@ function gp_import_demo_menus() {
         return false;
     }
 
-    // Check if menu already has items
-    $menu_items = wp_get_nav_menu_items( $menu_id );
-    if ( empty( $menu_items ) ) {
-        // 1. Home
-        wp_update_nav_menu_item( $menu_id, 0, array(
-            'menu-item-title'  => __( 'Home', 'gp-theme' ),
-            'menu-item-url'    => home_url( '/' ),
-            'menu-item-status' => 'publish',
-        ) );
-
-        // 2. About Us
-        $about_page = get_page_by_path( 'about' ) ?: get_page_by_path( 'about-us' );
-        if ( $about_page ) {
-            wp_update_nav_menu_item( $menu_id, 0, array(
-                'menu-item-title'     => __( 'About Us', 'gp-theme' ),
-                'menu-item-object'    => 'page',
-                'menu-item-object-id' => $about_page->ID,
-                'menu-item-type'      => 'post_type',
-                'menu-item-status'    => 'publish',
-            ) );
+    // Clear any previous menu items to ensure a clean, authentic structure on re-import
+    $existing_items = wp_get_nav_menu_items( $menu_id );
+    if ( ! empty( $existing_items ) ) {
+        foreach ( $existing_items as $item ) {
+            wp_delete_post( $item->ID, true );
         }
+    }
 
-        // 3. Products (Parent)
-        $prod_archive_url = get_post_type_archive_link( 'gp_product' ) ?: home_url( '/products/' );
-        $prod_item_id = wp_update_nav_menu_item( $menu_id, 0, array(
-            'menu-item-title'  => __( 'Products', 'gp-theme' ),
-            'menu-item-url'    => $prod_archive_url,
-            'menu-item-status' => 'publish',
-        ) );
+    // 1. Home
+    wp_update_nav_menu_item( $menu_id, 0, array(
+        'menu-item-title'  => __( 'Home', 'gp-theme' ),
+        'menu-item-url'    => home_url( '/' ),
+        'menu-item-status' => 'publish',
+    ) );
 
-        // Sub items for Product Categories
-        if ( $prod_item_id && ! is_wp_error( $prod_item_id ) ) {
-            $product_cats = get_terms( array(
-                'taxonomy'   => 'gp_product_cat',
-                'hide_empty' => false,
-            ) );
+    // 2. Products (Parent with Mega-Menu children)
+    $products_page = get_page_by_path( 'products' );
+    $products_url  = $products_page ? get_permalink( $products_page->ID ) : home_url( '/products/' );
+    $prod_item_id  = wp_update_nav_menu_item( $menu_id, 0, array(
+        'menu-item-title'  => __( 'Products', 'gp-theme' ),
+        'menu-item-url'    => $products_url,
+        'menu-item-status' => 'publish',
+    ) );
 
-            if ( ! empty( $product_cats ) && ! is_wp_error( $product_cats ) ) {
-                foreach ( $product_cats as $cat ) {
-                    wp_update_nav_menu_item( $menu_id, 0, array(
-                        'menu-item-title'     => $cat->name,
-                        'menu-item-url'       => get_term_link( $cat ),
-                        'menu-item-parent-id' => $prod_item_id,
-                        'menu-item-status'    => 'publish',
-                    ) );
-                }
+    // Add all 13 products as child items under Products
+    if ( $prod_item_id && ! is_wp_error( $prod_item_id ) ) {
+        $products_data = gp_get_default_products();
+        foreach ( $products_data as $p ) {
+            $p_slug = ! empty( $p['slug'] ) ? $p['slug'] : sanitize_title( $p['title'] );
+            $detail_page = get_page_by_path( 'product-detail' );
+            if ( $detail_page ) {
+                $p_url = add_query_arg( 'product', $p_slug, get_permalink( $detail_page->ID ) );
             } else {
-                $default_subcats = array(
-                    'PP Granules'     => home_url( '/product-cat/pp-granules/' ),
-                    'HDPE Granules'   => home_url( '/product-cat/hdpe-granules/' ),
-                    'ABS Granules'    => home_url( '/product-cat/abs-granules/' ),
-                    'PVC Compounds'   => home_url( '/product-cat/pvc-compounds/' ),
-                    'Masterbatches'   => home_url( '/product-cat/masterbatches/' ),
-                );
-                foreach ( $default_subcats as $name => $url ) {
-                    wp_update_nav_menu_item( $menu_id, 0, array(
-                        'menu-item-title'     => $name,
-                        'menu-item-url'       => $url,
-                        'menu-item-parent-id' => $prod_item_id,
-                        'menu-item-status'    => 'publish',
-                    ) );
-                }
+                $p_url = home_url( '/product-detail/?product=' . $p_slug );
             }
-        }
-
-        // 4. Blog
-        $blog_page = get_page_by_path( 'blog' ) ?: get_page_by_path( 'news' );
-        if ( $blog_page ) {
             wp_update_nav_menu_item( $menu_id, 0, array(
-                'menu-item-title'     => __( 'Blog', 'gp-theme' ),
-                'menu-item-object'    => 'page',
-                'menu-item-object-id' => $blog_page->ID,
-                'menu-item-type'      => 'post_type',
-                'menu-item-status'    => 'publish',
-            ) );
-        }
-
-        // 5. Contact Us
-        $contact_page = get_page_by_path( 'contact' ) ?: get_page_by_path( 'contact-us' );
-        if ( $contact_page ) {
-            wp_update_nav_menu_item( $menu_id, 0, array(
-                'menu-item-title'     => __( 'Contact', 'gp-theme' ),
-                'menu-item-object'    => 'page',
-                'menu-item-object-id' => $contact_page->ID,
-                'menu-item-type'      => 'post_type',
+                'menu-item-title'     => $p['title'],
+                'menu-item-url'       => $p_url,
+                'menu-item-parent-id' => $prod_item_id,
                 'menu-item-status'    => 'publish',
             ) );
         }
     }
+
+    // 3. About Us / Mill
+    $about_page = get_page_by_path( 'about' ) ?: get_page_by_path( 'about-us' );
+    $about_url  = $about_page ? get_permalink( $about_page->ID ) : home_url( '/about/' );
+    wp_update_nav_menu_item( $menu_id, 0, array(
+        'menu-item-title'  => __( 'About Us', 'gp-theme' ),
+        'menu-item-url'    => $about_url,
+        'menu-item-status' => 'publish',
+    ) );
+
+    // 4. ASTM Lab Standards
+    $testing_page = get_page_by_path( 'testing' );
+    $testing_url  = $testing_page ? get_permalink( $testing_page->ID ) : home_url( '/testing/' );
+    wp_update_nav_menu_item( $menu_id, 0, array(
+        'menu-item-title'  => __( 'ASTM Lab', 'gp-theme' ),
+        'menu-item-url'    => $testing_url,
+        'menu-item-status' => 'publish',
+    ) );
+
+    // 5. Official Certifications
+    $cert_page = get_page_by_path( 'certificates' );
+    $cert_url  = $cert_page ? get_permalink( $cert_page->ID ) : home_url( '/certificates/' );
+    wp_update_nav_menu_item( $menu_id, 0, array(
+        'menu-item-title'  => __( 'Certifications', 'gp-theme' ),
+        'menu-item-url'    => $cert_url,
+        'menu-item-status' => 'publish',
+    ) );
+
+    // 6. Industries Served
+    $ind_page = get_page_by_path( 'industries' );
+    $ind_url  = $ind_page ? get_permalink( $ind_page->ID ) : home_url( '/industries/' );
+    wp_update_nav_menu_item( $menu_id, 0, array(
+        'menu-item-title'  => __( 'Industries', 'gp-theme' ),
+        'menu-item-url'    => $ind_url,
+        'menu-item-status' => 'publish',
+    ) );
+
+    // 7. Contact Us
+    $contact_page = get_page_by_path( 'contact' ) ?: get_page_by_path( 'contact-us' );
+    $contact_url  = $contact_page ? get_permalink( $contact_page->ID ) : home_url( '/contact/' );
+    wp_update_nav_menu_item( $menu_id, 0, array(
+        'menu-item-title'  => __( 'Contact', 'gp-theme' ),
+        'menu-item-url'    => $contact_url,
+        'menu-item-status' => 'publish',
+    ) );
 
     // Assign to Primary theme location
     $locations = get_theme_mod( 'nav_menu_locations' );
@@ -874,16 +1066,36 @@ function gp_import_demo_menus() {
  * Master Demo Import Runner
  */
 function gp_run_full_demo_import() {
-    // 1. Pages
+    // 0. Update Site Title & Tagline to Authentic SRS POLYMER
+    update_option( 'blogname', 'SRS POLYMER' );
+    update_option( 'blogdescription', 'Prime Virgin & Recycled Plastic Granules (Dana) | ISO 9001:2015' );
+
+    // Configure core theme mods
+    set_theme_mod( 'gp_company_name', 'SRS POLYMER' );
+    set_theme_mod( 'gp_company_tagline', 'POLYMER RECYCLING & MANUFACTURING' );
+    set_theme_mod( 'gp_company_division', 'SRS POLYMERS & DANA COMPOUNDING' );
+    set_theme_mod( 'gp_company_phone', '+91 99999 99999' );
+    set_theme_mod( 'gp_company_email', 'sales@srspolymer.com' );
+    set_theme_mod( 'gp_company_address', 'Plot No. 42, Sector 8, IMT Manesar, Gurugram, Haryana - 122051' );
+    set_theme_mod( 'gp_company_hours', 'Mon - Sat: 9:00 AM - 7:00 PM' );
+    set_theme_mod( 'gp_whatsapp_number', '919999999999' );
+    set_theme_mod( 'gp_whatsapp_message', 'Hello SRS Polymer, I am interested in your polymer granules catalog.' );
+
+    // Ensure clean permalinks structure
+    if ( get_option( 'permalink_structure' ) !== '/%postname%/' ) {
+        update_option( 'permalink_structure', '/%postname%/' );
+    }
+
+    // 1. Pages (All 7 core templates)
     $pages_data = gp_import_demo_pages();
 
-    // 2. Products
+    // 2. Products (All 13 Polymer Grades with ASTM Specs)
     $products_count = gp_import_demo_products();
 
-    // 3. Blog Posts
+    // 3. Blog Posts (Technical polymer insights)
     $posts_count = gp_import_demo_posts();
 
-    // 4. Menus
+    // 4. Menus (Full 7-item nav with 13 products)
     $menu_done = gp_import_demo_menus();
 
     // 5. Flush rewrite rules
@@ -920,7 +1132,6 @@ function gp_register_demo_import_menu() {
 }
 add_action( 'admin_menu', 'gp_register_demo_import_menu' );
 
-/**
 /**
  * Theme Activation Hook
  */
@@ -960,9 +1171,9 @@ function gp_render_demo_import_page() {
     }
 
     $is_imported = get_option( 'gp_demo_imported' );
-    $posts_count = wp_count_posts( 'post' )->publish;
-    $prod_count  = wp_count_posts( 'gp_product' )->publish;
-    $pages_count = wp_count_posts( 'page' )->publish;
+    $posts_count = wp_count_posts( 'post' ) ? wp_count_posts( 'post' )->publish : 0;
+    $prod_count  = wp_count_posts( 'gp_product' ) ? wp_count_posts( 'gp_product' )->publish : 0;
+    $pages_count = wp_count_posts( 'page' ) ? wp_count_posts( 'page' )->publish : 0;
     ?>
     <div class="wrap" style="max-width: 900px; margin-top: 25px;">
         <div style="background: linear-gradient(135deg, #0b2545 0%, #134074 100%); color: #fff; padding: 26px 30px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 10px 25px rgba(11,37,69,0.15);">
@@ -970,21 +1181,22 @@ function gp_render_demo_import_page() {
                 <span style="font-size: 36px;">🏭</span>
                 <div>
                     <h1 style="color: #fff; margin: 0; font-size: 24px; font-weight: 700;">SRS Polymer — 1-Click Demo Importer</h1>
-                    <p style="margin: 6px 0 0 0; color: #8ecae6; font-size: 14px;">Quickly import sample products, technical blog posts, essential company pages, and pre-configured navigation menus.</p>
+                    <p style="margin: 6px 0 0 0; color: #8ecae6; font-size: 14px;">Quickly import the 100% authentic original theme: all 13 polymer products with ASTM datasheets, 7 dedicated pages, technical blog articles, and primary navigation mega-menu.</p>
                 </div>
             </div>
         </div>
 
         <?php if ( $import_result ) : ?>
             <div class="notice notice-success" style="padding: 16px 20px; border-left-color: #2a9d8f; background: #e8f8f5; border-radius: 8px; margin-bottom: 25px;">
-                <h3 style="margin: 0 0 8px 0; color: #155724; font-size: 17px;">🎉 Demo Content Imported Successfully!</h3>
-                <p style="margin: 0 0 12px 0; color: #222; font-size: 14px;">Your WordPress website has been populated with full industrial catalog content:</p>
+                <h3 style="margin: 0 0 8px 0; color: #155724; font-size: 17px;">🎉 Authentic SRS Polymer Demo Content Imported Successfully!</h3>
+                <p style="margin: 0 0 12px 0; color: #222; font-size: 14px;">Your WordPress website has been populated with the complete industrial factory content:</p>
                 <ul style="list-style: disc; margin-left: 20px; color: #2d3748; line-height: 1.8;">
-                    <li><strong>Pages Created:</strong> <?php echo intval( $import_result['pages'] ); ?> (Home, About Us, Contact Us, Blog, Products)</li>
-                    <li><strong>Blog Articles Added:</strong> <?php echo intval( $import_result['posts'] ); ?> (with compounding categories & high-res images)</li>
-                    <li><strong>Products Added:</strong> <?php echo intval( $import_result['products'] ); ?> (PP, HDPE, ABS, PVC, LDPE, Masterbatches)</li>
-                    <li><strong>Navigation Menu:</strong> Header primary menu created and linked!</li>
-                    <li><strong>Reading Settings:</strong> Front page set to Home, Posts page set to Blog!</li>
+                    <li><strong>Site Identity & Theme Mods:</strong> Site title updated to "SRS POLYMER" with ISO 9001:2015 tagline.</li>
+                    <li><strong>Pages Created & Assigned:</strong> <?php echo intval( $import_result['pages'] ); ?> pages (Home, Products, About Us, ASTM Lab Standards, Official Certifications, Industries Served, Contact Us).</li>
+                    <li><strong>Products Added:</strong> <?php echo intval( $import_result['products'] ); ?> polymer grades (All 13 PPCP, PP Talc, ABS, PMMA, Acrylic, and Nylon resins with full ASTM testing metrics).</li>
+                    <li><strong>Blog Articles Added:</strong> <?php echo intval( $import_result['posts'] ); ?> technical guides with high-res compounding images.</li>
+                    <li><strong>Navigation Menu:</strong> Header primary menu created with full 7 navigation items & 13-grade dropdown!</li>
+                    <li><strong>Reading Settings:</strong> Front page assigned to Home, Posts page assigned to Blog.</li>
                 </ul>
                 <div style="margin-top: 15px; display: flex; gap: 10px;">
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" target="_blank" class="button button-primary" style="background: #0077b6; border-color: #005f92; font-weight: 600;">
@@ -994,7 +1206,7 @@ function gp_render_demo_import_page() {
                         🧭 Manage Menus
                     </a>
                     <a href="<?php echo esc_url( admin_url( 'edit.php?post_type=gp_product' ) ); ?>" class="button button-secondary">
-                        📦 View Products
+                        📦 View Products (13)
                     </a>
                 </div>
             </div>
@@ -1004,29 +1216,29 @@ function gp_render_demo_import_page() {
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 25px;">
             <div style="background: #fff; padding: 18px; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center;">
                 <span style="font-size: 28px;">📄</span>
-                <h3 style="margin: 10px 0 4px 0; font-size: 16px;">Pages</h3>
-                <p style="margin: 0; color: #64748b; font-size: 13px;">Home, About Us, Contact, Blog, Catalog</p>
+                <h3 style="margin: 10px 0 4px 0; font-size: 16px;">7 Core Pages</h3>
+                <p style="margin: 0; color: #64748b; font-size: 13px;">Home, Products, About, ASTM Lab, Certs, Industries, Contact</p>
                 <div style="margin-top: 8px; font-weight: 700; color: #0077b6;"><?php echo intval( $pages_count ); ?> Current Pages</div>
             </div>
 
             <div style="background: #fff; padding: 18px; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center;">
                 <span style="font-size: 28px;">📦</span>
-                <h3 style="margin: 10px 0 4px 0; font-size: 16px;">Products</h3>
-                <p style="margin: 0; color: #64748b; font-size: 13px;">PP, HDPE, ABS, PVC, Masterbatches</p>
+                <h3 style="margin: 10px 0 4px 0; font-size: 16px;">13 Polymer Grades</h3>
+                <p style="margin: 0; color: #64748b; font-size: 13px;">PPCP, PP Talc, ABS, PMMA, Acrylic, Nylon PA6/66</p>
                 <div style="margin-top: 8px; font-weight: 700; color: #0077b6;"><?php echo intval( $prod_count ); ?> Current Products</div>
             </div>
 
             <div style="background: #fff; padding: 18px; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center;">
                 <span style="font-size: 28px;">📰</span>
-                <h3 style="margin: 10px 0 4px 0; font-size: 16px;">Blog Articles</h3>
-                <p style="margin: 0; color: #64748b; font-size: 13px;">Technical polymer insights & guides</p>
+                <h3 style="margin: 10px 0 4px 0; font-size: 16px;">5 Blog Articles</h3>
+                <p style="margin: 0; color: #64748b; font-size: 13px;">MFI testing, recycling, and compounding insights</p>
                 <div style="margin-top: 8px; font-weight: 700; color: #0077b6;"><?php echo intval( $posts_count ); ?> Current Posts</div>
             </div>
 
             <div style="background: #fff; padding: 18px; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center;">
                 <span style="font-size: 28px;">🧭</span>
-                <h3 style="margin: 10px 0 4px 0; font-size: 16px;">Navbar Menu</h3>
-                <p style="margin: 0; color: #64748b; font-size: 13px;">Auto-linked header menu with dropdowns</p>
+                <h3 style="margin: 10px 0 4px 0; font-size: 16px;">Mega-Menu</h3>
+                <p style="margin: 0; color: #64748b; font-size: 13px;">7 main links + 13-grade product catalog mega menu</p>
                 <div style="margin-top: 8px; font-weight: 700; color: #2a9d8f;">Primary Location</div>
             </div>
         </div>
@@ -1035,10 +1247,10 @@ function gp_render_demo_import_page() {
         <div style="background: #fff; padding: 25px 30px; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 2px 10px rgba(0,0,0,0.04);">
             <h2 style="margin-top: 0; font-size: 18px; color: #0b2545;">Ready to Import?</h2>
             <p style="color: #4a5568; line-height: 1.6; font-size: 14px;">
-                Clicking the button below will safely create all demo pages, assign templates, populate the plastic products catalog with specifications, write sample technical blog articles with images, and build the primary header navigation menu. Existing content will not be overwritten.
+                Clicking the button below will configure site identity ("SRS POLYMER"), generate and assign all 7 page templates, seed all 13 polymer grades with complete ASTM datasheets and images, publish technical blog posts, and build the primary header navigation mega-menu matching the original static site.
             </p>
 
-            <form method="post" onsubmit="return confirm('Do you want to import complete demo data (pages, blogs, products, and menu)?');">
+            <form method="post" onsubmit="return confirm('Do you want to import complete authentic demo data (all 7 pages, 13 polymer products, blogs, and mega-menu)?');">
                 <?php wp_nonce_field( 'gp_import_demo_action', 'gp_demo_nonce' ); ?>
                 <button type="submit" name="gp_do_import" value="1" class="button button-primary button-hero" style="background: #0077b6; border-color: #005f92; font-weight: 700; padding: 8px 32px; height: auto; font-size: 16px; border-radius: 6px;">
                     🚀 <?php echo $is_imported ? esc_html__( 'Re-Import / Sync Demo Content', 'gp-theme' ) : esc_html__( 'Import Complete Demo Data', 'gp-theme' ); ?>

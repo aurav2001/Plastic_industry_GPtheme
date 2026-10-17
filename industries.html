@@ -15,11 +15,128 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="style.css">
     <style id="gp-critical-layout-override">
-        html {
+        html:not(.wp-toolbar) {
             width: 100% !important;
             margin: 0 !important;
             padding: 0 !important;
             background: #ffffff !important;
+        }
+        html.wp-toolbar {
+            margin-top: 32px !important;
+            background: #ffffff !important;
+        }
+        @media screen and (max-width: 782px) {
+            html.wp-toolbar {
+                margin-top: 46px !important;
+            }
+        }
+        /* Lock WordPress Admin Bar firmly to the top of the viewport */
+        body.admin-bar #wpadminbar {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
+            z-index: 999999 !important;
+        }
+        /* Hide WordPress logo dropdown menu in admin bar so it never blocks the theme header or logo */
+        body.admin-bar #wpadminbar #wp-admin-bar-wp-logo {
+            display: none !important;
+        }
+        body.admin-bar .gp-clean-header,
+        body.admin-bar #masthead {
+            top: 32px !important;
+        }
+        @media screen and (max-width: 782px) {
+            body.admin-bar .gp-clean-header,
+            body.admin-bar #masthead {
+                top: 46px !important;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            body.admin-bar #wpadminbar {
+                position: fixed !important;
+                top: 0 !important;
+            }
+            body.admin-bar .gp-clean-header,
+            body.admin-bar #masthead {
+                top: 46px !important;
+            }
+        }
+        @media (min-width: 769px) {
+            .gp-hero-slider-section {
+                height: calc(100vh - 110px) !important;
+                min-height: 500px !important;
+                max-height: 820px !important;
+            }
+            .gp-hero-slider {
+                height: 100% !important;
+                min-height: 100% !important;
+            }
+            .gp-hero-slider-section .gp-hero-slide {
+                height: 100% !important;
+                min-height: 100% !important;
+                padding: 10px 0 52px !important;
+            }
+            .gp-hero-slider-pagination {
+                bottom: 12px !important;
+            }
+        }
+        @media (max-height: 768px) and (min-width: 769px) {
+            .gp-hero-slider-section {
+                height: calc(100vh - 105px) !important;
+                min-height: 480px !important;
+            }
+            .gp-hero-slider-section .gp-plastin-hero-title {
+                font-size: clamp(1.6rem, 2.3vw, 2.2rem) !important;
+                margin-bottom: 8px !important;
+            }
+            .gp-hero-slider-section .gp-plastin-hero-lead {
+                font-size: 0.85rem !important;
+                line-height: 1.45 !important;
+                margin-bottom: 10px !important;
+            }
+            .gp-hero-spec-chips {
+                margin-bottom: 12px !important;
+            }
+            .gp-hero-slider-section .gp-hero-slide {
+                padding: 5px 0 44px !important;
+            }
+            .gp-hero-slider-pagination {
+                bottom: 8px !important;
+            }
+        }
+        /* Mega Dropdown for Products Menu (All 13 Polymer Grades) */
+        .gp-nav-menu > li.menu-item-has-children {
+            position: relative;
+        }
+        .gp-clean-header .main-navigation .sub-menu.gp-products-mega-menu,
+        #site-navigation .sub-menu.gp-products-mega-menu,
+        .gp-nav-menu .sub-menu.gp-products-mega-menu {
+            position: absolute !important;
+            top: 100% !important;
+            left: -40px !important;
+            width: 630px !important;
+            max-width: 95vw !important;
+            padding: 16px 20px 14px !important;
+            border-radius: 14px !important;
+            border-top: 3.5px solid #0097db !important;
+            box-shadow: 0 22px 50px -8px rgba(11, 37, 69, 0.22), 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+            background: #ffffff !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(12px) !important;
+            transition: all 0.24s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            z-index: 9999 !important;
+            pointer-events: none;
+        }
+        #site-navigation li.menu-item-has-children:hover > .sub-menu.gp-products-mega-menu,
+        .gp-clean-header .main-navigation li:hover > .sub-menu.gp-products-mega-menu,
+        .gp-nav-menu > li.menu-item-has-children:hover > .sub-menu.gp-products-mega-menu {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+            pointer-events: auto !important;
         }
         body {
             width: 100% !important;
@@ -29,7 +146,6 @@
             border: none !important;
             box-shadow: none !important;
             background: #ffffff !important;
-            overflow-x: hidden;
         }
         #page, .site-wrapper {
             width: 100% !important;
@@ -113,127 +229,6 @@
                 right: 26px !important;
             }
         }
-    
-        /* Mega Dropdown for Products Menu (All 13 Polymer Grades) */
-        .gp-nav-menu > li.menu-item-has-children {
-            position: relative;
-        }
-        .gp-clean-header .main-navigation .sub-menu.gp-products-mega-menu,
-        #site-navigation .sub-menu.gp-products-mega-menu {
-            position: absolute !important;
-            top: 100% !important;
-            left: -40px !important;
-            width: 630px !important;
-            max-width: 95vw !important;
-            padding: 16px 20px 14px !important;
-            border-radius: 14px !important;
-            border-top: 3.5px solid #0097db !important;
-            box-shadow: 0 22px 50px -8px rgba(11, 37, 69, 0.22), 0 4px 16px rgba(0, 0, 0, 0.05) !important;
-            background: #ffffff !important;
-            opacity: 0 !important;
-            visibility: hidden !important;
-            transform: translateY(12px) !important;
-            transition: all 0.24s cubic-bezier(0.4, 0, 0.2, 1) !important;
-            z-index: 9999 !important;
-            pointer-events: none;
-        }
-        #site-navigation li.menu-item-has-children:hover > .sub-menu.gp-products-mega-menu,
-        .gp-clean-header .main-navigation li:hover > .sub-menu.gp-products-mega-menu {
-            opacity: 1 !important;
-            visibility: visible !important;
-            transform: translateY(0) !important;
-            pointer-events: auto !important;
-        }
-        .gp-mega-cols-grid {
-            display: grid !important;
-            grid-template-columns: 1fr 1fr !important;
-            gap: 20px !important;
-        }
-        .gp-mega-col-head {
-            font-size: 0.72rem !important;
-            font-weight: 800 !important;
-            color: #0097db !important;
-            text-transform: uppercase !important;
-            letter-spacing: 0.08em !important;
-            padding-bottom: 8px !important;
-            margin-bottom: 8px !important;
-            border-bottom: 1.5px solid #e2e8f0 !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: space-between !important;
-        }
-        .gp-mega-col-count {
-            font-size: 0.65rem !important;
-            color: #64748b !important;
-            background: #f1f5f9 !important;
-            padding: 2px 8px !important;
-            border-radius: 12px !important;
-            font-weight: 700 !important;
-        }
-        .gp-mega-col-list {
-            list-style: none !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 3px !important;
-        }
-        .gp-mega-col-list li {
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-        .gp-mega-col-list li a {
-            display: flex !important;
-            align-items: center !important;
-            gap: 9px !important;
-            padding: 7px 10px !important;
-            font-size: 0.83rem !important;
-            font-weight: 600 !important;
-            color: #1e293b !important;
-            border-radius: 6px !important;
-            text-decoration: none !important;
-            transition: all 0.18s ease !important;
-            border-left: none !important;
-            transform: none !important;
-        }
-        .gp-mega-col-list li a:hover {
-            background: #f0f9ff !important;
-            color: #0097db !important;
-            transform: translateX(4px) !important;
-        }
-        .gp-mega-dot {
-            width: 8px !important;
-            height: 8px !important;
-            border-radius: 50% !important;
-            flex-shrink: 0 !important;
-        }
-        .gp-mega-footer-bar {
-            margin-top: 14px !important;
-            padding-top: 10px !important;
-            border-top: 1px solid #e2e8f0 !important;
-        }
-        .gp-mega-footer-bar a {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: space-between !important;
-            padding: 9px 14px !important;
-            background: #f8fafc !important;
-            border: 1px solid #e2e8f0 !important;
-            border-radius: 8px !important;
-            color: #0077b6 !important;
-            font-weight: 700 !important;
-            font-size: 0.82rem !important;
-            text-decoration: none !important;
-            transition: all 0.2s ease !important;
-            border-left: none !important;
-            transform: none !important;
-        }
-        .gp-mega-footer-bar a:hover {
-            background: #0097db !important;
-            color: #ffffff !important;
-            border-color: #0097db !important;
-            transform: none !important;
-        }
     </style>
 </head>
 
@@ -242,9 +237,10 @@
 <div id="page" class="site-wrapper">
     <a class="skip-link screen-reader-text" href="#primary">Skip to content</a>
 
-    <!-- Top Contact & Notification Bar -->
+        <!-- Top Contact & Notification Bar -->
     <div class="gp-topbar">
         <div class="gp-container gp-topbar-inner">
+
             <div class="gp-topbar-left">
                 <span class="gp-badge-iso">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
@@ -311,13 +307,13 @@
 
             <!-- Main Navigation Menu (Single Row, Crisp) -->
             <nav id="site-navigation" class="main-navigation" aria-label="Main Menu">
-                <ul id="primary-menu" class="gp-nav-menu">
+                                <ul id="primary-menu" class="gp-nav-menu">
                     <li class="menu-item ">
                         <a href="index.html">Home</a>
                     </li>
                     <li class="menu-item menu-item-has-children ">
                         <a href="products.html">
-                            Products <span class="gp-dropdown-arrow">▾</span>
+                            Products <svg class="gp-nav-chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
                         </a>
                         <div class="sub-menu gp-products-mega-menu">
                             <div class="gp-mega-cols-grid">
@@ -327,12 +323,12 @@
                                         <span class="gp-mega-col-count">6 Grades</span>
                                     </div>
                                     <ul class="gp-mega-col-list">
-                                        <li><a href="product-detail.html?product=ppcp-grey"><span class="gp-mega-dot" style="background:#0097db;"></span>PPCP Grey Granules</a></li>
-                                        <li><a href="product-detail.html?product=ppcp-impact"><span class="gp-mega-dot" style="background:#10b981;"></span>PPCP Impact Copolymer</a></li>
-                                        <li><a href="product-detail.html?product=ppcp-black"><span class="gp-mega-dot" style="background:#0b2545;"></span>PPCP Black Granules</a></li>
-                                        <li><a href="product-detail.html?product=pp-talc"><span class="gp-mega-dot" style="background:#6366f1;"></span>PP Talc Filled Granules</a></li>
-                                        <li><a href="product-detail.html?product=polypropylene-natural-white"><span class="gp-mega-dot" style="background:#0097db;"></span>PP Natural White Granules</a></li>
-                                        <li><a href="product-detail.html?product=polypropylene-glass-filled"><span class="gp-mega-dot" style="background:#059669;"></span>PP Glass Filled Granules</a></li>
+                                        <li><a href="product-detail/?product=ppcp-grey.html"><span class="gp-mega-dot" style="background:#0097db;"></span>PPCP Grey Granules</a></li>
+                                        <li><a href="product-detail/?product=ppcp-impact.html"><span class="gp-mega-dot" style="background:#10b981;"></span>PPCP Impact Copolymer</a></li>
+                                        <li><a href="product-detail/?product=ppcp-black.html"><span class="gp-mega-dot" style="background:#0b2545;"></span>PPCP Black Granules</a></li>
+                                        <li><a href="product-detail/?product=pp-talc.html"><span class="gp-mega-dot" style="background:#6366f1;"></span>PP Talc Filled Granules</a></li>
+                                        <li><a href="product-detail/?product=polypropylene-natural-white.html"><span class="gp-mega-dot" style="background:#0097db;"></span>PP Natural White Granules</a></li>
+                                        <li><a href="product-detail/?product=polypropylene-glass-filled.html"><span class="gp-mega-dot" style="background:#059669;"></span>PP Glass Filled Granules</a></li>
                                     </ul>
                                 </div>
                                 <div class="gp-mega-col">
@@ -341,13 +337,13 @@
                                         <span class="gp-mega-col-count">7 Grades</span>
                                     </div>
                                     <ul class="gp-mega-col-list">
-                                        <li><a href="product-detail.html?product=abs-white"><span class="gp-mega-dot" style="background:#0891b2;"></span>ABS White Granules</a></li>
-                                        <li><a href="product-detail.html?product=abs-black"><span class="gp-mega-dot" style="background:#0f172a;"></span>ABS Black Granules</a></li>
-                                        <li><a href="product-detail.html?product=abs-fr-granules"><span class="gp-mega-dot" style="background:#ea580c;"></span>ABS FR Plastic Granules</a></li>
-                                        <li><a href="product-detail.html?product=red-pmma"><span class="gp-mega-dot" style="background:#dc2626;"></span>Red PMMA Granules</a></li>
-                                        <li><a href="product-detail.html?product=acrylic-granules"><span class="gp-mega-dot" style="background:#7c3aed;"></span>Acrylic Granules</a></li>
-                                        <li><a href="product-detail.html?product=nylon-black"><span class="gp-mega-dot" style="background:#1e293b;"></span>Nylon Black Granules</a></li>
-                                        <li><a href="product-detail.html?product=nylon-white"><span class="gp-mega-dot" style="background:#2563eb;"></span>Nylon White Granules</a></li>
+                                        <li><a href="product-detail/?product=abs-white.html"><span class="gp-mega-dot" style="background:#0891b2;"></span>ABS White Granules</a></li>
+                                        <li><a href="product-detail/?product=abs-black.html"><span class="gp-mega-dot" style="background:#0f172a;"></span>ABS Black Granules</a></li>
+                                        <li><a href="product-detail/?product=abs-fr-granules.html"><span class="gp-mega-dot" style="background:#ea580c;"></span>ABS FR Plastic Granules</a></li>
+                                        <li><a href="product-detail/?product=red-pmma.html"><span class="gp-mega-dot" style="background:#dc2626;"></span>Red PMMA Granules</a></li>
+                                        <li><a href="product-detail/?product=acrylic-granules.html"><span class="gp-mega-dot" style="background:#7c3aed;"></span>Acrylic Granules</a></li>
+                                        <li><a href="product-detail/?product=nylon-black.html"><span class="gp-mega-dot" style="background:#1e293b;"></span>Nylon Black Granules</a></li>
+                                        <li><a href="product-detail/?product=nylon-white.html"><span class="gp-mega-dot" style="background:#2563eb;"></span>Nylon White Granules</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -375,7 +371,7 @@
                         <a href="contact.html">Contact</a>
                     </li>
                 </ul>
-            </nav>
+                            </nav>
 
             <!-- Header Right CTAs (Phone & RFQ Button) -->
             <div class="gp-header-actions">
@@ -427,8 +423,9 @@
         </div>
     </div>
     <div class="gp-drawer-backdrop" id="gp-drawer-backdrop"></div>
-
+    
     <div id="content" class="site-content">
+
 
 <main id="primary" class="site-main gp-industries-page">
 
@@ -528,8 +525,9 @@
 
     </div><!-- #content -->
 
-    <!-- Industrial CTA Banner before footer -->
+        <!-- Industrial CTA Banner before footer -->
     <section class="gp-cta-strip">
+
         <div class="gp-container">
             <div class="gp-cta-strip-card">
                 <div class="gp-cta-strip-text">
@@ -670,7 +668,7 @@
             </div>
         </div>
     </footer>
-
+    
     <!-- Floating WhatsApp Widget (matching Jyoti Joinchat) -->
         <div class="gp-whatsapp-widget" id="gp-whatsapp-widget" style="position: fixed !important; bottom: 30px !important; right: 30px !important; left: auto !important; z-index: 99999 !important;">
         <!-- Chat Popup Box -->
@@ -690,7 +688,7 @@
                 <div class="gp-wa-msg-bubble">
                     <p>Hello 👋 How can we help you today?</p>
                     <p class="gp-wa-sub">Ask about today’s rates for PP Granules, HDPE Dana, ABS Engineering Pellets, or Masterbatches.</p>
-                    <span class="gp-wa-time">13:31</span>
+                    <span class="gp-wa-time">10:10</span>
                 </div>
             </div>
             <div class="gp-wa-footer">
@@ -765,6 +763,90 @@
             </form>
         </div>
         <div class="gp-modal-backdrop" id="gp-rfq-modal-backdrop"></div>
+    </div>
+
+    <!-- Global Realistic Certificate Lightbox Modal (#gp-cert-modal) -->
+    <div class="gp-cert-modal-backdrop" id="gp-cert-modal" role="dialog" aria-modal="true" aria-labelledby="gp-cert-modal-code" style="display: none;">
+        <div class="gp-cert-modal-dialog">
+            <button type="button" class="gp-cert-modal-close" id="gp-cert-modal-close" aria-label="Close Certificate">✕</button>
+
+            <div class="gp-cert-frame">
+                <div class="gp-cert-frame-inner">
+                    <div class="gp-cert-modal-header">
+                        <div class="gp-cert-guilloche">
+                            <svg width="48" height="48" viewBox="0 0 100 100" fill="none" stroke="#0097db" stroke-width="2">
+                                <circle cx="50" cy="50" r="45" stroke-dasharray="3 3"/>
+                                <circle cx="50" cy="50" r="38"/>
+                                <polygon points="50,15 62,38 85,38 67,52 73,75 50,62 27,75 33,52 15,38 38,38" fill="rgba(0, 151, 219, 0.1)"/>
+                            </svg>
+                        </div>
+                        <div class="gp-cert-modal-titles">
+                            <span class="gp-cert-super-title">CERTIFICATE OF COMPLIANCE &amp; QUALITY REGISTRATION</span>
+                            <h2 class="gp-cert-main-title" id="gp-cert-modal-code">ISO 9001:2015</h2>
+                            <p class="gp-cert-accreditor-tag" id="gp-cert-modal-title">Quality Management System</p>
+                        </div>
+                    </div>
+
+                    <div class="gp-cert-certified-block">
+                        <span class="gp-cert-certifies-text">This is to officially certify that the manufacturing, testing, and compounding operations of:</span>
+                        <h3 class="gp-cert-recipient-name">SRS POLYMER</h3>
+                        <p class="gp-cert-recipient-div">Shri Ram Sharnam Overseas • Green Polytech</p>
+                        <p class="gp-cert-facility-address">Plot No. 42, Sector 8, IMT Manesar, Gurugram, Haryana - 122050</p>
+                    </div>
+
+                    <div class="gp-cert-scope-box">
+                        <strong class="gp-cert-scope-title">Certified Scope of Operations:</strong>
+                        <p class="gp-cert-scope-text" id="gp-cert-modal-scope">
+                            Manufacture, compounding, laboratory batch-testing, and supply of virgin and reprocessed Polymer Granules (PP, HDPE, ABS, PVC) and specialized additive masterbatches for industrial moulding applications.
+                        </p>
+                    </div>
+
+                    <div class="gp-cert-verification-strip">
+                        <div class="gp-cert-reg-item">
+                            <span>Registration / Certificate No:</span>
+                            <strong id="gp-cert-modal-certno">QMS/SRS/2024/9081</strong>
+                        </div>
+                        <div class="gp-cert-reg-item">
+                            <span>Current Validity Through:</span>
+                            <strong id="gp-cert-modal-validity">Valid through Dec 2027</strong>
+                        </div>
+                        <div class="gp-cert-reg-item">
+                            <span>Accredited Registrar / Body:</span>
+                            <strong id="gp-cert-modal-body" class="gp-verified-text">TUV SUD / IAF Accredited</strong>
+                        </div>
+                    </div>
+
+                    <div class="gp-cert-footer-auth">
+                        <div class="gp-cert-seal-gold">
+                            <div class="gp-gold-seal-inner">
+                                <span>OFFICIAL</span>
+                                <strong>SEAL</strong>
+                                <span>ACCREDITED</span>
+                            </div>
+                        </div>
+                        <div class="gp-cert-qr-wrap">
+                            <div class="gp-cert-qr-box">
+                                <svg width="54" height="54" viewBox="0 0 24 24" fill="#0b2545">
+                                    <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 0h4v2h-4v-2zm-4 0h2v4h-2v-4zm4 4h4v2h-4v-2zm-2-2h2v2h-2v-2zm-2 2h2v2h-2v-2z"/>
+                                </svg>
+                            </div>
+                            <span class="gp-qr-caption">Scan for COA Verification</span>
+                        </div>
+                        <div class="gp-cert-signature">
+                            <div class="gp-signature-line">SRS Polymer Quality Directorate</div>
+                            <span class="gp-sig-label">Head of Quality Assurance &amp;amp; Technical Testing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gp-cert-modal-actions">
+                <a href="#contact" class="gp-btn gp-btn-primary gp-cert-modal-quote gp-rfq-modal-trigger" id="gp-cert-modal-req-btn" data-product="Official Certificate Copy">
+                    <span>Request Official Certificate Copy / COA</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </div>
     </div>
 
 </div><!-- #page -->

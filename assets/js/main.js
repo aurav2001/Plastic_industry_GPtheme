@@ -228,20 +228,24 @@
             });
         });
 
-        // Allow navigation links to switch category filter
-        document.querySelectorAll('a[data-cat], a[data-filter]').forEach(function (link) {
-            link.addEventListener('click', function () {
-                var cat = this.getAttribute('data-cat') || this.getAttribute('data-filter');
-                var matchingBtn = document.querySelector('.gp-cat-btn[data-filter="' + cat + '"], .gp-filter-btn[data-filter="' + cat + '"]');
-                if (matchingBtn) {
-                    matchingBtn.click();
+        // Check URL hash on page load or change (e.g. #pp, #hdpe, #abs, #pvc, #nylon)
+        function checkHashFilter() {
+            var currentHash = window.location.hash.replace('#', '').toLowerCase();
+            if (currentHash) {
+                var hashBtn = document.querySelector('.gp-cat-btn[data-filter="' + currentHash + '"], .gp-filter-btn[data-filter="' + currentHash + '"]');
+                if (hashBtn) {
+                    setTimeout(function() {
+                        hashBtn.click();
+                        var catalogEl = document.getElementById('catalog') || document.getElementById('gp-products-grid');
+                        if (catalogEl) {
+                            catalogEl.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }, 100);
                 }
-                var track = document.getElementById('gp-products-track');
-                if (track) {
-                    track.scrollTo({ left: 0, behavior: 'smooth' });
-                }
-            });
-        });
+            }
+        }
+        checkHashFilter();
+        window.addEventListener('hashchange', checkHashFilter);
     }
 
     /**

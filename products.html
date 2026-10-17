@@ -15,11 +15,128 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="style.css">
     <style id="gp-critical-layout-override">
-        html {
+        html:not(.wp-toolbar) {
             width: 100% !important;
             margin: 0 !important;
             padding: 0 !important;
             background: #ffffff !important;
+        }
+        html.wp-toolbar {
+            margin-top: 32px !important;
+            background: #ffffff !important;
+        }
+        @media screen and (max-width: 782px) {
+            html.wp-toolbar {
+                margin-top: 46px !important;
+            }
+        }
+        /* Lock WordPress Admin Bar firmly to the top of the viewport */
+        body.admin-bar #wpadminbar {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
+            z-index: 999999 !important;
+        }
+        /* Hide WordPress logo dropdown menu in admin bar so it never blocks the theme header or logo */
+        body.admin-bar #wpadminbar #wp-admin-bar-wp-logo {
+            display: none !important;
+        }
+        body.admin-bar .gp-clean-header,
+        body.admin-bar #masthead {
+            top: 32px !important;
+        }
+        @media screen and (max-width: 782px) {
+            body.admin-bar .gp-clean-header,
+            body.admin-bar #masthead {
+                top: 46px !important;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            body.admin-bar #wpadminbar {
+                position: fixed !important;
+                top: 0 !important;
+            }
+            body.admin-bar .gp-clean-header,
+            body.admin-bar #masthead {
+                top: 46px !important;
+            }
+        }
+        @media (min-width: 769px) {
+            .gp-hero-slider-section {
+                height: calc(100vh - 110px) !important;
+                min-height: 500px !important;
+                max-height: 820px !important;
+            }
+            .gp-hero-slider {
+                height: 100% !important;
+                min-height: 100% !important;
+            }
+            .gp-hero-slider-section .gp-hero-slide {
+                height: 100% !important;
+                min-height: 100% !important;
+                padding: 10px 0 52px !important;
+            }
+            .gp-hero-slider-pagination {
+                bottom: 12px !important;
+            }
+        }
+        @media (max-height: 768px) and (min-width: 769px) {
+            .gp-hero-slider-section {
+                height: calc(100vh - 105px) !important;
+                min-height: 480px !important;
+            }
+            .gp-hero-slider-section .gp-plastin-hero-title {
+                font-size: clamp(1.6rem, 2.3vw, 2.2rem) !important;
+                margin-bottom: 8px !important;
+            }
+            .gp-hero-slider-section .gp-plastin-hero-lead {
+                font-size: 0.85rem !important;
+                line-height: 1.45 !important;
+                margin-bottom: 10px !important;
+            }
+            .gp-hero-spec-chips {
+                margin-bottom: 12px !important;
+            }
+            .gp-hero-slider-section .gp-hero-slide {
+                padding: 5px 0 44px !important;
+            }
+            .gp-hero-slider-pagination {
+                bottom: 8px !important;
+            }
+        }
+        /* Mega Dropdown for Products Menu (All 13 Polymer Grades) */
+        .gp-nav-menu > li.menu-item-has-children {
+            position: relative;
+        }
+        .gp-clean-header .main-navigation .sub-menu.gp-products-mega-menu,
+        #site-navigation .sub-menu.gp-products-mega-menu,
+        .gp-nav-menu .sub-menu.gp-products-mega-menu {
+            position: absolute !important;
+            top: 100% !important;
+            left: -40px !important;
+            width: 630px !important;
+            max-width: 95vw !important;
+            padding: 16px 20px 14px !important;
+            border-radius: 14px !important;
+            border-top: 3.5px solid #0097db !important;
+            box-shadow: 0 22px 50px -8px rgba(11, 37, 69, 0.22), 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+            background: #ffffff !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(12px) !important;
+            transition: all 0.24s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            z-index: 9999 !important;
+            pointer-events: none;
+        }
+        #site-navigation li.menu-item-has-children:hover > .sub-menu.gp-products-mega-menu,
+        .gp-clean-header .main-navigation li:hover > .sub-menu.gp-products-mega-menu,
+        .gp-nav-menu > li.menu-item-has-children:hover > .sub-menu.gp-products-mega-menu {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+            pointer-events: auto !important;
         }
         body {
             width: 100% !important;
@@ -29,7 +146,6 @@
             border: none !important;
             box-shadow: none !important;
             background: #ffffff !important;
-            overflow-x: hidden;
         }
         #page, .site-wrapper {
             width: 100% !important;
@@ -113,127 +229,6 @@
                 right: 26px !important;
             }
         }
-    
-        /* Mega Dropdown for Products Menu (All 13 Polymer Grades) */
-        .gp-nav-menu > li.menu-item-has-children {
-            position: relative;
-        }
-        .gp-clean-header .main-navigation .sub-menu.gp-products-mega-menu,
-        #site-navigation .sub-menu.gp-products-mega-menu {
-            position: absolute !important;
-            top: 100% !important;
-            left: -40px !important;
-            width: 630px !important;
-            max-width: 95vw !important;
-            padding: 16px 20px 14px !important;
-            border-radius: 14px !important;
-            border-top: 3.5px solid #0097db !important;
-            box-shadow: 0 22px 50px -8px rgba(11, 37, 69, 0.22), 0 4px 16px rgba(0, 0, 0, 0.05) !important;
-            background: #ffffff !important;
-            opacity: 0 !important;
-            visibility: hidden !important;
-            transform: translateY(12px) !important;
-            transition: all 0.24s cubic-bezier(0.4, 0, 0.2, 1) !important;
-            z-index: 9999 !important;
-            pointer-events: none;
-        }
-        #site-navigation li.menu-item-has-children:hover > .sub-menu.gp-products-mega-menu,
-        .gp-clean-header .main-navigation li:hover > .sub-menu.gp-products-mega-menu {
-            opacity: 1 !important;
-            visibility: visible !important;
-            transform: translateY(0) !important;
-            pointer-events: auto !important;
-        }
-        .gp-mega-cols-grid {
-            display: grid !important;
-            grid-template-columns: 1fr 1fr !important;
-            gap: 20px !important;
-        }
-        .gp-mega-col-head {
-            font-size: 0.72rem !important;
-            font-weight: 800 !important;
-            color: #0097db !important;
-            text-transform: uppercase !important;
-            letter-spacing: 0.08em !important;
-            padding-bottom: 8px !important;
-            margin-bottom: 8px !important;
-            border-bottom: 1.5px solid #e2e8f0 !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: space-between !important;
-        }
-        .gp-mega-col-count {
-            font-size: 0.65rem !important;
-            color: #64748b !important;
-            background: #f1f5f9 !important;
-            padding: 2px 8px !important;
-            border-radius: 12px !important;
-            font-weight: 700 !important;
-        }
-        .gp-mega-col-list {
-            list-style: none !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 3px !important;
-        }
-        .gp-mega-col-list li {
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-        .gp-mega-col-list li a {
-            display: flex !important;
-            align-items: center !important;
-            gap: 9px !important;
-            padding: 7px 10px !important;
-            font-size: 0.83rem !important;
-            font-weight: 600 !important;
-            color: #1e293b !important;
-            border-radius: 6px !important;
-            text-decoration: none !important;
-            transition: all 0.18s ease !important;
-            border-left: none !important;
-            transform: none !important;
-        }
-        .gp-mega-col-list li a:hover {
-            background: #f0f9ff !important;
-            color: #0097db !important;
-            transform: translateX(4px) !important;
-        }
-        .gp-mega-dot {
-            width: 8px !important;
-            height: 8px !important;
-            border-radius: 50% !important;
-            flex-shrink: 0 !important;
-        }
-        .gp-mega-footer-bar {
-            margin-top: 14px !important;
-            padding-top: 10px !important;
-            border-top: 1px solid #e2e8f0 !important;
-        }
-        .gp-mega-footer-bar a {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: space-between !important;
-            padding: 9px 14px !important;
-            background: #f8fafc !important;
-            border: 1px solid #e2e8f0 !important;
-            border-radius: 8px !important;
-            color: #0077b6 !important;
-            font-weight: 700 !important;
-            font-size: 0.82rem !important;
-            text-decoration: none !important;
-            transition: all 0.2s ease !important;
-            border-left: none !important;
-            transform: none !important;
-        }
-        .gp-mega-footer-bar a:hover {
-            background: #0097db !important;
-            color: #ffffff !important;
-            border-color: #0097db !important;
-            transform: none !important;
-        }
     </style>
 </head>
 
@@ -242,9 +237,10 @@
 <div id="page" class="site-wrapper">
     <a class="skip-link screen-reader-text" href="#primary">Skip to content</a>
 
-    <!-- Top Contact & Notification Bar -->
+        <!-- Top Contact & Notification Bar -->
     <div class="gp-topbar">
         <div class="gp-container gp-topbar-inner">
+
             <div class="gp-topbar-left">
                 <span class="gp-badge-iso">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
@@ -311,13 +307,13 @@
 
             <!-- Main Navigation Menu (Single Row, Crisp) -->
             <nav id="site-navigation" class="main-navigation" aria-label="Main Menu">
-                <ul id="primary-menu" class="gp-nav-menu">
+                                <ul id="primary-menu" class="gp-nav-menu">
                     <li class="menu-item ">
                         <a href="index.html">Home</a>
                     </li>
                     <li class="menu-item menu-item-has-children current-menu-item">
                         <a href="products.html">
-                            Products <span class="gp-dropdown-arrow">▾</span>
+                            Products <svg class="gp-nav-chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
                         </a>
                         <div class="sub-menu gp-products-mega-menu">
                             <div class="gp-mega-cols-grid">
@@ -327,12 +323,12 @@
                                         <span class="gp-mega-col-count">6 Grades</span>
                                     </div>
                                     <ul class="gp-mega-col-list">
-                                        <li><a href="product-detail.html?product=ppcp-grey"><span class="gp-mega-dot" style="background:#0097db;"></span>PPCP Grey Granules</a></li>
-                                        <li><a href="product-detail.html?product=ppcp-impact"><span class="gp-mega-dot" style="background:#10b981;"></span>PPCP Impact Copolymer</a></li>
-                                        <li><a href="product-detail.html?product=ppcp-black"><span class="gp-mega-dot" style="background:#0b2545;"></span>PPCP Black Granules</a></li>
-                                        <li><a href="product-detail.html?product=pp-talc"><span class="gp-mega-dot" style="background:#6366f1;"></span>PP Talc Filled Granules</a></li>
-                                        <li><a href="product-detail.html?product=polypropylene-natural-white"><span class="gp-mega-dot" style="background:#0097db;"></span>PP Natural White Granules</a></li>
-                                        <li><a href="product-detail.html?product=polypropylene-glass-filled"><span class="gp-mega-dot" style="background:#059669;"></span>PP Glass Filled Granules</a></li>
+                                        <li><a href="product-detail/?product=ppcp-grey.html"><span class="gp-mega-dot" style="background:#0097db;"></span>PPCP Grey Granules</a></li>
+                                        <li><a href="product-detail/?product=ppcp-impact.html"><span class="gp-mega-dot" style="background:#10b981;"></span>PPCP Impact Copolymer</a></li>
+                                        <li><a href="product-detail/?product=ppcp-black.html"><span class="gp-mega-dot" style="background:#0b2545;"></span>PPCP Black Granules</a></li>
+                                        <li><a href="product-detail/?product=pp-talc.html"><span class="gp-mega-dot" style="background:#6366f1;"></span>PP Talc Filled Granules</a></li>
+                                        <li><a href="product-detail/?product=polypropylene-natural-white.html"><span class="gp-mega-dot" style="background:#0097db;"></span>PP Natural White Granules</a></li>
+                                        <li><a href="product-detail/?product=polypropylene-glass-filled.html"><span class="gp-mega-dot" style="background:#059669;"></span>PP Glass Filled Granules</a></li>
                                     </ul>
                                 </div>
                                 <div class="gp-mega-col">
@@ -341,13 +337,13 @@
                                         <span class="gp-mega-col-count">7 Grades</span>
                                     </div>
                                     <ul class="gp-mega-col-list">
-                                        <li><a href="product-detail.html?product=abs-white"><span class="gp-mega-dot" style="background:#0891b2;"></span>ABS White Granules</a></li>
-                                        <li><a href="product-detail.html?product=abs-black"><span class="gp-mega-dot" style="background:#0f172a;"></span>ABS Black Granules</a></li>
-                                        <li><a href="product-detail.html?product=abs-fr-granules"><span class="gp-mega-dot" style="background:#ea580c;"></span>ABS FR Plastic Granules</a></li>
-                                        <li><a href="product-detail.html?product=red-pmma"><span class="gp-mega-dot" style="background:#dc2626;"></span>Red PMMA Granules</a></li>
-                                        <li><a href="product-detail.html?product=acrylic-granules"><span class="gp-mega-dot" style="background:#7c3aed;"></span>Acrylic Granules</a></li>
-                                        <li><a href="product-detail.html?product=nylon-black"><span class="gp-mega-dot" style="background:#1e293b;"></span>Nylon Black Granules</a></li>
-                                        <li><a href="product-detail.html?product=nylon-white"><span class="gp-mega-dot" style="background:#2563eb;"></span>Nylon White Granules</a></li>
+                                        <li><a href="product-detail/?product=abs-white.html"><span class="gp-mega-dot" style="background:#0891b2;"></span>ABS White Granules</a></li>
+                                        <li><a href="product-detail/?product=abs-black.html"><span class="gp-mega-dot" style="background:#0f172a;"></span>ABS Black Granules</a></li>
+                                        <li><a href="product-detail/?product=abs-fr-granules.html"><span class="gp-mega-dot" style="background:#ea580c;"></span>ABS FR Plastic Granules</a></li>
+                                        <li><a href="product-detail/?product=red-pmma.html"><span class="gp-mega-dot" style="background:#dc2626;"></span>Red PMMA Granules</a></li>
+                                        <li><a href="product-detail/?product=acrylic-granules.html"><span class="gp-mega-dot" style="background:#7c3aed;"></span>Acrylic Granules</a></li>
+                                        <li><a href="product-detail/?product=nylon-black.html"><span class="gp-mega-dot" style="background:#1e293b;"></span>Nylon Black Granules</a></li>
+                                        <li><a href="product-detail/?product=nylon-white.html"><span class="gp-mega-dot" style="background:#2563eb;"></span>Nylon White Granules</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -375,7 +371,7 @@
                         <a href="contact.html">Contact</a>
                     </li>
                 </ul>
-            </nav>
+                            </nav>
 
             <!-- Header Right CTAs (Phone & RFQ Button) -->
             <div class="gp-header-actions">
@@ -427,8 +423,9 @@
         </div>
     </div>
     <div class="gp-drawer-backdrop" id="gp-drawer-backdrop"></div>
-
+    
     <div id="content" class="site-content">
+
 
 <main id="primary" class="site-main gp-products-page">
 
@@ -454,7 +451,7 @@
             
             <div class="gp-catalog-controls-bar">
                 <div class="gp-catalog-filter-tabs" id="gp-product-filters">
-                    <button class="gp-cat-btn active" data-filter="all">All Polymer Products (13)</button>
+                    <button class="gp-cat-btn active" data-filter="all">All Polymer Products (8)</button>
                     <button class="gp-cat-btn" data-filter="pp">PPCP &amp; PP Compounds</button>
                     <button class="gp-cat-btn" data-filter="hdpe">HDPE &amp; Blow Grades</button>
                     <button class="gp-cat-btn" data-filter="abs">ABS Engineering Pellets</button>
@@ -466,626 +463,386 @@
             <!-- Full Product Grid -->
             <div class="gp-plastin-products-grid" id="gp-products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 24px; margin-top: 30px;">
 
-                <!-- 1. PPCP Grey Granules -->
+                <!-- 1. PPCP Impact Copolymer Granules -->
                 <article class="gp-plastin-product-card" data-category="pp">
-                    <div class="gp-pcard-badge" style="background: #0097db; color: #fff;">Automotive</div>
+                    <div class="gp-pcard-badge">Best Seller</div>
                     <div class="gp-pcard-media">
-                        <img src="./assets/images/granules-ppcp-grey.jpg" alt="PPCP Grey Granules" loading="lazy">
+                        <img src="./assets/images/product-pp-granules.jpg" alt="PPCP Impact Copolymer Granules" loading="lazy">
                         <div class="gp-pcard-overlay-actions">
-                            <a href="product-detail.html?product=ppcp-grey" class="gp-pcard-quickview-btn" style="text-decoration: none;">
+                            <button type="button" class="gp-pcard-quickview-btn" data-prod-id="1">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Details</span>
-                            </a>
+                                <span>Quick View</span>
+                            </button>
                         </div>
                     </div>
                     <div class="gp-pcard-body">
-                        <div class="gp-pcard-cat">Polypropylene Copolymer (PPCP)</div>
+                        <div class="gp-pcard-cat">Polypropylene Compounding</div>
                         <h3 class="gp-pcard-title">
-                            <a href="product-detail.html?product=ppcp-grey">PPCP Grey Granules</a>
+                            <a href="#contact" class="gp-rfq-modal-trigger" data-product="PPCP Impact Copolymer Granules">PPCP Impact Copolymer Granules</a>
                         </h3>
-                        <p class="gp-pcard-desc">SRS Polymer PPCP Grey Granules are engineered from high-grade virgin and precision reprocessed polypropylene block copolymer. Comp...</p>
+                        <p class="gp-pcard-desc">Formulated for high cold-impact strength, optimal flowability, and crack resistance. Available in Black, Grey, and Natural shades.</p>
                         
                         <div class="gp-pcard-specs-table">
                             <div class="gp-spec-row">
-                                <span class="gp-spec-name">Melt Flow / Viscosity:</span>
-                                <span class="gp-spec-val">10 – 12 g/10min</span>
-                            </div>
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Density:</span>
-                                <span class="gp-spec-val">0.905 g/cm³ (ASTM D792)</span>
-                            </div>
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Tensile Strength:</span>
-                                <span class="gp-spec-val">27 MPa (ASTM D638)</span>
-                            </div>
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Applications:</span>
-                                <span class="gp-spec-val">Automotive & Battery Cases</span>
-                            </div>
-                        </div>
-
-                        <div class="gp-pcard-footer">
-                            <a href="product-detail.html?product=ppcp-grey" class="gp-btn gp-btn-pcard-quote" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Specs &amp; Quote</span>
-                            </a>
-                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="PPCP Grey Granules TDS">Fast RFQ</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 2. PPCP Impact Copolymer Granules -->
-                <article class="gp-plastin-product-card" data-category="pp">
-                    <div class="gp-pcard-badge" style="background: #10b981; color: #fff;">High Impact</div>
-                    <div class="gp-pcard-media">
-                        <img src="./assets/images/granules-natural-white.jpg" alt="PPCP Impact Copolymer Granules" loading="lazy">
-                        <div class="gp-pcard-overlay-actions">
-                            <a href="product-detail.html?product=ppcp-impact" class="gp-pcard-quickview-btn" style="text-decoration: none;">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Details</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="gp-pcard-body">
-                        <div class="gp-pcard-cat">High-Impact Polypropylene (PPCP)</div>
-                        <h3 class="gp-pcard-title">
-                            <a href="product-detail.html?product=ppcp-impact">PPCP Impact Copolymer Granules</a>
-                        </h3>
-                        <p class="gp-pcard-desc">Designed for components requiring unmatched toughness and resistance to high-energy shocks. Incorporates rubber-phase ethylene-pro...</p>
-                        
-                        <div class="gp-pcard-specs-table">
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Melt Flow / Viscosity:</span>
+                                <span class="gp-spec-name">Melt Flow Index (MFI):</span>
                                 <span class="gp-spec-val">8 – 14 g/10min</span>
                             </div>
                             <div class="gp-spec-row">
                                 <span class="gp-spec-name">Density:</span>
-                                <span class="gp-spec-val">0.900 g/cm³ (ASTM D792)</span>
+                                <span class="gp-spec-val">0.90 – 0.92 g/cm³</span>
                             </div>
                             <div class="gp-spec-row">
-                                <span class="gp-spec-name">Tensile Strength:</span>
-                                <span class="gp-spec-val">25 MPa (ASTM D638)</span>
+                                <span class="gp-spec-name">Izod Impact Strength:</span>
+                                <span class="gp-spec-val">85 – 110 J/m</span>
                             </div>
                             <div class="gp-spec-row">
                                 <span class="gp-spec-name">Applications:</span>
-                                <span class="gp-spec-val">Auto Bumpers & Industrial Parts</span>
+                                <span class="gp-spec-val">Battery Casings, Auto Parts, Crates</span>
                             </div>
                         </div>
 
                         <div class="gp-pcard-footer">
-                            <a href="product-detail.html?product=ppcp-impact" class="gp-btn gp-btn-pcard-quote" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Specs &amp; Quote</span>
-                            </a>
-                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="PPCP Impact Copolymer Granules TDS">Fast RFQ</a>
+                            <button type="button" class="gp-btn gp-btn-pcard-quote gp-rfq-modal-trigger" data-product="PPCP Impact Copolymer Granules">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                <span>Get Best Price</span>
+                            </button>
+                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="PPCP Technical Data Sheet">View TDS</a>
                         </div>
                     </div>
                 </article>
 
-                <!-- 3. PPCP Black Granules -->
+                <!-- 2. Polypropylene Glass Filled Granules -->
                 <article class="gp-plastin-product-card" data-category="pp">
-                    <div class="gp-pcard-badge" style="background: #0b2545; color: #fff;">Crate Grade</div>
+                    <div class="gp-pcard-badge gp-badge-accent">Engineering Grade</div>
                     <div class="gp-pcard-media">
-                        <img src="./assets/images/granules-ppcp-black.jpg" alt="PPCP Black Granules" loading="lazy">
+                        <img src="./assets/images/product-abs-granules.jpg" alt="Polypropylene Glass Filled Granules" loading="lazy">
                         <div class="gp-pcard-overlay-actions">
-                            <a href="product-detail.html?product=ppcp-black" class="gp-pcard-quickview-btn" style="text-decoration: none;">
+                            <button type="button" class="gp-pcard-quickview-btn" data-prod-id="2">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Details</span>
-                            </a>
+                                <span>Quick View</span>
+                            </button>
                         </div>
                     </div>
                     <div class="gp-pcard-body">
-                        <div class="gp-pcard-cat">Engineering Carbon Compounding</div>
+                        <div class="gp-pcard-cat">Reinforced Compounds</div>
                         <h3 class="gp-pcard-title">
-                            <a href="product-detail.html?product=ppcp-black">PPCP Black Granules</a>
+                            <a href="#contact" class="gp-rfq-modal-trigger" data-product="Polypropylene Glass Filled (PP GF 20%/30%)">PP Glass Filled Granules (10% - 30% GF)</a>
                         </h3>
-                        <p class="gp-pcard-desc">SRS Polymer Carbon Black PPCP Pellets offer exceptional UV stabilization and environmental stress cracking resistance. Highly favo...</p>
+                        <p class="gp-pcard-desc">Short glass fiber reinforced polypropylene offering high tensile modulus, elevated heat deflection, and dimensional stability.</p>
                         
                         <div class="gp-pcard-specs-table">
                             <div class="gp-spec-row">
-                                <span class="gp-spec-name">Melt Flow / Viscosity:</span>
-                                <span class="gp-spec-val">9 – 13 g/10min</span>
-                            </div>
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Density:</span>
-                                <span class="gp-spec-val">0.920 g/cm³ (ASTM D792)</span>
+                                <span class="gp-spec-name">Glass Fiber Content:</span>
+                                <span class="gp-spec-val">10%, 20%, 30% GF</span>
                             </div>
                             <div class="gp-spec-row">
                                 <span class="gp-spec-name">Tensile Strength:</span>
-                                <span class="gp-spec-val">29 MPa (ASTM D638)</span>
+                                <span class="gp-spec-val">60 – 85 MPa</span>
+                            </div>
+                            <div class="gp-spec-row">
+                                <span class="gp-spec-name">HDT (0.45 MPa):</span>
+                                <span class="gp-spec-val">140°C – 155°C</span>
                             </div>
                             <div class="gp-spec-row">
                                 <span class="gp-spec-name">Applications:</span>
-                                <span class="gp-spec-val">Industrial Logistics Crates</span>
+                                <span class="gp-spec-val">Automotive Under-the-Hood, Fans, Pumps</span>
                             </div>
                         </div>
 
                         <div class="gp-pcard-footer">
-                            <a href="product-detail.html?product=ppcp-black" class="gp-btn gp-btn-pcard-quote" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Specs &amp; Quote</span>
-                            </a>
-                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="PPCP Black Granules TDS">Fast RFQ</a>
+                            <button type="button" class="gp-btn gp-btn-pcard-quote gp-rfq-modal-trigger" data-product="Polypropylene Glass Filled (PP GF 20%/30%)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                <span>Get Best Price</span>
+                            </button>
+                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="PP Glass Filled TDS">View TDS</a>
                         </div>
                     </div>
                 </article>
 
-                <!-- 4. PP Talc Filled Granules -->
-                <article class="gp-plastin-product-card" data-category="pp">
-                    <div class="gp-pcard-badge" style="background: #6366f1; color: #fff;">Compounded</div>
-                    <div class="gp-pcard-media">
-                        <img src="./assets/images/granules-talc-filled.jpg" alt="PP Talc Filled Granules" loading="lazy">
-                        <div class="gp-pcard-overlay-actions">
-                            <a href="product-detail.html?product=pp-talc" class="gp-pcard-quickview-btn" style="text-decoration: none;">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Details</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="gp-pcard-body">
-                        <div class="gp-pcard-cat">Mineral Reinforced Compounding</div>
-                        <h3 class="gp-pcard-title">
-                            <a href="product-detail.html?product=pp-talc">PP Talc Filled Granules</a>
-                        </h3>
-                        <p class="gp-pcard-desc">Compounded with ultra-fine surface-treated micronized talc to significantly boost heat deflection temperature (HDT up to 125°C) an...</p>
-                        
-                        <div class="gp-pcard-specs-table">
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Melt Flow / Viscosity:</span>
-                                <span class="gp-spec-val">12 – 16 g/10min</span>
-                            </div>
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Density:</span>
-                                <span class="gp-spec-val">1.15 – 1.25 g/cm³</span>
-                            </div>
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Tensile Strength:</span>
-                                <span class="gp-spec-val">35 MPa (ASTM D638)</span>
-                            </div>
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Applications:</span>
-                                <span class="gp-spec-val">Appliance Bodies & Tubs</span>
-                            </div>
-                        </div>
-
-                        <div class="gp-pcard-footer">
-                            <a href="product-detail.html?product=pp-talc" class="gp-btn gp-btn-pcard-quote" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Specs &amp; Quote</span>
-                            </a>
-                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="PP Talc Filled Granules TDS">Fast RFQ</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 5. Polypropylene Natural White Granules -->
-                <article class="gp-plastin-product-card" data-category="pp">
-                    <div class="gp-pcard-badge" style="background: #0097db; color: #fff;">Virgin Grade</div>
-                    <div class="gp-pcard-media">
-                        <img src="./assets/images/granules-natural-white.jpg" alt="Polypropylene Natural White Granules" loading="lazy">
-                        <div class="gp-pcard-overlay-actions">
-                            <a href="product-detail.html?product=polypropylene-natural-white" class="gp-pcard-quickview-btn" style="text-decoration: none;">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Details</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="gp-pcard-body">
-                        <div class="gp-pcard-cat">Prime Homopolymer PP</div>
-                        <h3 class="gp-pcard-title">
-                            <a href="product-detail.html?product=polypropylene-natural-white">Polypropylene Natural White Granules</a>
-                        </h3>
-                        <p class="gp-pcard-desc">SRS Polymer Prime Homopolymer PP Granules deliver pristine optical cleanliness, brilliant surface gloss, and non-toxic food-safe c...</p>
-                        
-                        <div class="gp-pcard-specs-table">
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Melt Flow / Viscosity:</span>
-                                <span class="gp-spec-val">11 – 13 g/10min</span>
-                            </div>
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Density:</span>
-                                <span class="gp-spec-val">0.905 g/cm³ (ASTM D792)</span>
-                            </div>
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Tensile Strength:</span>
-                                <span class="gp-spec-val">32 MPa (ASTM D638)</span>
-                            </div>
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Applications:</span>
-                                <span class="gp-spec-val">Household Bins & Furniture</span>
-                            </div>
-                        </div>
-
-                        <div class="gp-pcard-footer">
-                            <a href="product-detail.html?product=polypropylene-natural-white" class="gp-btn gp-btn-pcard-quote" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Specs &amp; Quote</span>
-                            </a>
-                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="Polypropylene Natural White Granules TDS">Fast RFQ</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 6. Polypropylene Glass Filled Granules -->
-                <article class="gp-plastin-product-card" data-category="pp">
-                    <div class="gp-pcard-badge" style="background: #059669; color: #fff;">Glass Reinforced</div>
-                    <div class="gp-pcard-media">
-                        <img src="./assets/images/granules-glass-filled.jpg" alt="Polypropylene Glass Filled Granules" loading="lazy">
-                        <div class="gp-pcard-overlay-actions">
-                            <a href="product-detail.html?product=polypropylene-glass-filled" class="gp-pcard-quickview-btn" style="text-decoration: none;">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Details</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="gp-pcard-body">
-                        <div class="gp-pcard-cat">Fiber-Reinforced Polypropylene (PP GF)</div>
-                        <h3 class="gp-pcard-title">
-                            <a href="product-detail.html?product=polypropylene-glass-filled">Polypropylene Glass Filled Granules</a>
-                        </h3>
-                        <p class="gp-pcard-desc">Compounded with chemically coupled E-glass fibers (10% to 30% GF) providing superior tensile strength, creep resistance, and dimen...</p>
-                        
-                        <div class="gp-pcard-specs-table">
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Melt Flow / Viscosity:</span>
-                                <span class="gp-spec-val">6 – 10 g/10min</span>
-                            </div>
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Density:</span>
-                                <span class="gp-spec-val">1.04 – 1.15 g/cm³ (ASTM D792)</span>
-                            </div>
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Tensile Strength:</span>
-                                <span class="gp-spec-val">75 MPa (ASTM D638)</span>
-                            </div>
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Applications:</span>
-                                <span class="gp-spec-val">Under-the-hood & Power Tools</span>
-                            </div>
-                        </div>
-
-                        <div class="gp-pcard-footer">
-                            <a href="product-detail.html?product=polypropylene-glass-filled" class="gp-btn gp-btn-pcard-quote" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Specs &amp; Quote</span>
-                            </a>
-                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="Polypropylene Glass Filled Granules TDS">Fast RFQ</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 7. ABS White Granules -->
+                <!-- 3. ABS Engineering Pellets -->
                 <article class="gp-plastin-product-card" data-category="abs">
-                    <div class="gp-pcard-badge" style="background: #0891b2; color: #fff;">High Gloss</div>
+                    <div class="gp-pcard-badge">High Gloss</div>
                     <div class="gp-pcard-media">
-                        <img src="./assets/images/granules-pp-milky-white.jpg" alt="ABS White Granules" loading="lazy">
+                        <img src="./assets/images/product-abs-granules.jpg" alt="ABS Engineering Pellets" loading="lazy">
                         <div class="gp-pcard-overlay-actions">
-                            <a href="product-detail.html?product=abs-white" class="gp-pcard-quickview-btn" style="text-decoration: none;">
+                            <button type="button" class="gp-pcard-quickview-btn" data-prod-id="3">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Details</span>
-                            </a>
+                                <span>Quick View</span>
+                            </button>
                         </div>
                     </div>
                     <div class="gp-pcard-body">
-                        <div class="gp-pcard-cat">High-Impact Acrylonitrile Butadiene Styrene (ABS)</div>
+                        <div class="gp-pcard-cat">Acrylonitrile Butadiene Styrene</div>
                         <h3 class="gp-pcard-title">
-                            <a href="product-detail.html?product=abs-white">ABS White Granules</a>
+                            <a href="#contact" class="gp-rfq-modal-trigger" data-product="ABS Engineering Pellets (High Gloss Black & White)">ABS Engineering Pellets (Black &amp; Natural)</a>
                         </h3>
-                        <p class="gp-pcard-desc">Premium high-gloss ABS White Pellets engineered for maximum surface gloss, color uniformity, and excellent dimensional fidelity. C...</p>
+                        <p class="gp-pcard-desc">Virgin and premium reprocessed ABS granules with high surface gloss, rigid structural integrity, and flame retardancy options.</p>
                         
                         <div class="gp-pcard-specs-table">
                             <div class="gp-spec-row">
-                                <span class="gp-spec-name">Melt Flow / Viscosity:</span>
-                                <span class="gp-spec-val">16 – 22 g/10min</span>
+                                <span class="gp-spec-name">Melt Flow Index:</span>
+                                <span class="gp-spec-val">15 – 25 g/10min</span>
                             </div>
                             <div class="gp-spec-row">
                                 <span class="gp-spec-name">Density:</span>
-                                <span class="gp-spec-val">1.05 g/cm³ (ASTM D792)</span>
+                                <span class="gp-spec-val">1.04 – 1.06 g/cm³</span>
                             </div>
                             <div class="gp-spec-row">
                                 <span class="gp-spec-name">Tensile Strength:</span>
-                                <span class="gp-spec-val">46 MPa (ASTM D638)</span>
+                                <span class="gp-spec-val">42 – 50 MPa</span>
                             </div>
                             <div class="gp-spec-row">
                                 <span class="gp-spec-name">Applications:</span>
-                                <span class="gp-spec-val">Electronics & Home Appliances</span>
+                                <span class="gp-spec-val">Appliance Housings, Helmets, Toys</span>
                             </div>
                         </div>
 
                         <div class="gp-pcard-footer">
-                            <a href="product-detail.html?product=abs-white" class="gp-btn gp-btn-pcard-quote" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Specs &amp; Quote</span>
-                            </a>
-                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="ABS White Granules TDS">Fast RFQ</a>
+                            <button type="button" class="gp-btn gp-btn-pcard-quote gp-rfq-modal-trigger" data-product="ABS Engineering Pellets (High Gloss Black & White)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                <span>Get Best Price</span>
+                            </button>
+                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="ABS Pellets TDS">View TDS</a>
                         </div>
                     </div>
                 </article>
 
-                <!-- 8. Red PMMA Granules -->
-                <article class="gp-plastin-product-card" data-category="pmma">
-                    <div class="gp-pcard-badge" style="background: #dc2626; color: #fff;">Optical Grade</div>
+                <!-- 4. HDPE Granules (Blow & Pipe Grade) -->
+                <article class="gp-plastin-product-card" data-category="hdpe">
+                    <div class="gp-pcard-badge">Blow Moulding</div>
                     <div class="gp-pcard-media">
-                        <img src="./assets/images/granules-red-pmma.jpg" alt="Red PMMA Granules" loading="lazy">
+                        <img src="./assets/images/product-hdpe-granules.jpg" alt="HDPE Granules Blow & Pipe Grade" loading="lazy">
                         <div class="gp-pcard-overlay-actions">
-                            <a href="product-detail.html?product=red-pmma" class="gp-pcard-quickview-btn" style="text-decoration: none;">
+                            <button type="button" class="gp-pcard-quickview-btn" data-prod-id="4">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Details</span>
-                            </a>
+                                <span>Quick View</span>
+                            </button>
                         </div>
                     </div>
                     <div class="gp-pcard-body">
-                        <div class="gp-pcard-cat">Poly Methyl Methacrylate (PMMA / Acrylic)</div>
+                        <div class="gp-pcard-cat">High-Density Polyethylene</div>
                         <h3 class="gp-pcard-title">
-                            <a href="product-detail.html?product=red-pmma">Red PMMA Granules</a>
+                            <a href="#contact" class="gp-rfq-modal-trigger" data-product="HDPE Granules (Blow & Pipe Grade)">HDPE Granules (Blow &amp; Pipe Grade)</a>
                         </h3>
-                        <p class="gp-pcard-desc">Optical-grade ruby and signal red PMMA acrylic granules engineered specifically for automotive lighting lenses. Exceptional outdoo...</p>
+                        <p class="gp-pcard-desc">Engineered for exceptional environmental stress crack resistance (ESCR) and melt strength for blow drums, jerricans, and HDPE pipes.</p>
                         
                         <div class="gp-pcard-specs-table">
                             <div class="gp-spec-row">
-                                <span class="gp-spec-name">Melt Flow / Viscosity:</span>
-                                <span class="gp-spec-val">2.0 – 3.5 g/10min</span>
+                                <span class="gp-spec-name">MFI (190°C/2.16kg):</span>
+                                <span class="gp-spec-val">0.3 – 1.2 g/10min</span>
                             </div>
                             <div class="gp-spec-row">
                                 <span class="gp-spec-name">Density:</span>
-                                <span class="gp-spec-val">1.18 g/cm³ (ASTM D792)</span>
+                                <span class="gp-spec-val">0.952 – 0.958 g/cm³</span>
                             </div>
                             <div class="gp-spec-row">
-                                <span class="gp-spec-name">Tensile Strength:</span>
-                                <span class="gp-spec-val">68 MPa (ASTM D638)</span>
+                                <span class="gp-spec-name">ESCR (F50):</span>
+                                <span class="gp-spec-val">> 400 Hours</span>
                             </div>
                             <div class="gp-spec-row">
                                 <span class="gp-spec-name">Applications:</span>
-                                <span class="gp-spec-val">Auto Tail Lights & Signals</span>
+                                <span class="gp-spec-val">Jerricans, Drums, Bottles, Drip Pipes</span>
                             </div>
                         </div>
 
                         <div class="gp-pcard-footer">
-                            <a href="product-detail.html?product=red-pmma" class="gp-btn gp-btn-pcard-quote" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Specs &amp; Quote</span>
-                            </a>
-                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="Red PMMA Granules TDS">Fast RFQ</a>
+                            <button type="button" class="gp-btn gp-btn-pcard-quote gp-rfq-modal-trigger" data-product="HDPE Granules (Blow & Pipe Grade)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                <span>Get Best Price</span>
+                            </button>
+                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="HDPE Granules TDS">View TDS</a>
                         </div>
                     </div>
                 </article>
 
-                <!-- 9. Acrylic Granules -->
-                <article class="gp-plastin-product-card" data-category="pmma">
-                    <div class="gp-pcard-badge" style="background: #7c3aed; color: #fff;">Crystal Clear</div>
+                <!-- 5. PP Talc Filled Compounds -->
+                <article class="gp-plastin-product-card" data-category="pp">
+                    <div class="gp-pcard-badge gp-badge-accent">Mineral Filled</div>
                     <div class="gp-pcard-media">
-                        <img src="./assets/images/granules-clear-transparent.jpg" alt="Acrylic Granules" loading="lazy">
+                        <img src="./assets/images/product-pp-granules.jpg" alt="PP Talc Filled Compounds" loading="lazy">
                         <div class="gp-pcard-overlay-actions">
-                            <a href="product-detail.html?product=acrylic-granules" class="gp-pcard-quickview-btn" style="text-decoration: none;">
+                            <button type="button" class="gp-pcard-quickview-btn" data-prod-id="5">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Details</span>
-                            </a>
+                                <span>Quick View</span>
+                            </button>
                         </div>
                     </div>
                     <div class="gp-pcard-body">
-                        <div class="gp-pcard-cat">Pure PMMA Optical Molding Polymer</div>
+                        <div class="gp-pcard-cat">Mineral Filled Compounds</div>
                         <h3 class="gp-pcard-title">
-                            <a href="product-detail.html?product=acrylic-granules">Acrylic Granules</a>
+                            <a href="#contact" class="gp-rfq-modal-trigger" data-product="PP Talc Filled Compounds (20% - 40%)">PP Talc Filled Compounds (20% - 40%)</a>
                         </h3>
-                        <p class="gp-pcard-desc">Ultra-clear virgin PMMA acrylic granules exhibiting superior optical clarity (92% total luminous transmittance), high surface hard...</p>
+                        <p class="gp-pcard-desc">Micronized talc-filled polypropylene for minimum mold shrinkage, high dimensional stability, and low cycle times.</p>
                         
                         <div class="gp-pcard-specs-table">
                             <div class="gp-spec-row">
-                                <span class="gp-spec-name">Melt Flow / Viscosity:</span>
-                                <span class="gp-spec-val">2.2 – 4.5 g/10min</span>
+                                <span class="gp-spec-name">Talc Content:</span>
+                                <span class="gp-spec-val">20%, 30%, 40%</span>
                             </div>
                             <div class="gp-spec-row">
-                                <span class="gp-spec-name">Density:</span>
-                                <span class="gp-spec-val">1.19 g/cm³ (ASTM D792)</span>
+                                <span class="gp-spec-name">Flexural Modulus:</span>
+                                <span class="gp-spec-val">2200 – 3500 MPa</span>
                             </div>
                             <div class="gp-spec-row">
-                                <span class="gp-spec-name">Tensile Strength:</span>
-                                <span class="gp-spec-val">72 MPa (ASTM D638)</span>
+                                <span class="gp-spec-name">Shrinkage Rate:</span>
+                                <span class="gp-spec-val">0.6% – 0.9%</span>
                             </div>
                             <div class="gp-spec-row">
                                 <span class="gp-spec-name">Applications:</span>
-                                <span class="gp-spec-val">Optical Lenses, Signs & Displays</span>
+                                <span class="gp-spec-val">White Goods, AC Louvers, Dashboard Trim</span>
                             </div>
                         </div>
 
                         <div class="gp-pcard-footer">
-                            <a href="product-detail.html?product=acrylic-granules" class="gp-btn gp-btn-pcard-quote" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Specs &amp; Quote</span>
-                            </a>
-                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="Acrylic Granules TDS">Fast RFQ</a>
+                            <button type="button" class="gp-btn gp-btn-pcard-quote gp-rfq-modal-trigger" data-product="PP Talc Filled Compounds (20% - 40%)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                <span>Get Best Price</span>
+                            </button>
+                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="PP Talc Filled TDS">View TDS</a>
                         </div>
                     </div>
                 </article>
 
-                <!-- 10. Nylon Black Granules -->
+                <!-- 6. Nylon 6 & 66 Compounded Pellets -->
                 <article class="gp-plastin-product-card" data-category="nylon">
-                    <div class="gp-pcard-badge" style="background: #1e293b; color: #fff;">Polyamide 6/66</div>
+                    <div class="gp-pcard-badge">Polyamide</div>
                     <div class="gp-pcard-media">
-                        <img src="./assets/images/granules-nylon-black.jpg" alt="Nylon Black Granules" loading="lazy">
+                        <img src="./assets/images/product-abs-granules.jpg" alt="Nylon 6 & 66 Compounded Pellets" loading="lazy">
                         <div class="gp-pcard-overlay-actions">
-                            <a href="product-detail.html?product=nylon-black" class="gp-pcard-quickview-btn" style="text-decoration: none;">
+                            <button type="button" class="gp-pcard-quickview-btn" data-prod-id="6">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Details</span>
-                            </a>
+                                <span>Quick View</span>
+                            </button>
                         </div>
                     </div>
                     <div class="gp-pcard-body">
-                        <div class="gp-pcard-cat">Polyamide 6 / 66 (PA6/PA66)</div>
+                        <div class="gp-pcard-cat">Polyamide (PA6 / PA66)</div>
                         <h3 class="gp-pcard-title">
-                            <a href="product-detail.html?product=nylon-black">Nylon Black Granules</a>
+                            <a href="#contact" class="gp-rfq-modal-trigger" data-product="Nylon 6 & 66 (PA6/PA66) Pellets">Nylon 6 &amp; 66 Pellets (Unfilled &amp; Glass Filled)</a>
                         </h3>
-                        <p class="gp-pcard-desc">Heavy-duty black Polyamide 6 (Nylon 6) compound offering outstanding mechanical strength, abrasion resistance, and self-lubricatin...</p>
+                        <p class="gp-pcard-desc">Engineering polyamide granules offering superior abrasion resistance, high tensile endurance, and continuous service temperature up to 130°C.</p>
                         
                         <div class="gp-pcard-specs-table">
                             <div class="gp-spec-row">
-                                <span class="gp-spec-name">Melt Flow / Viscosity:</span>
-                                <span class="gp-spec-val">Medium-to-High Flow</span>
+                                <span class="gp-spec-name">Melting Point:</span>
+                                <span class="gp-spec-val">220°C (PA6) / 260°C (PA66)</span>
                             </div>
                             <div class="gp-spec-row">
-                                <span class="gp-spec-name">Density:</span>
-                                <span class="gp-spec-val">1.14 g/cm³ (ASTM D792)</span>
+                                <span class="gp-spec-name">Tensile Yield:</span>
+                                <span class="gp-spec-val">75 – 140 MPa</span>
                             </div>
                             <div class="gp-spec-row">
-                                <span class="gp-spec-name">Tensile Strength:</span>
-                                <span class="gp-spec-val">78 MPa (ASTM D638)</span>
+                                <span class="gp-spec-name">Water Absorption:</span>
+                                <span class="gp-spec-val">1.5% – 2.0%</span>
                             </div>
                             <div class="gp-spec-row">
                                 <span class="gp-spec-name">Applications:</span>
-                                <span class="gp-spec-val">Gears, Bushings & Fasteners</span>
+                                <span class="gp-spec-val">Gears, Bushes, Cable Ties, Fasteners</span>
                             </div>
                         </div>
 
                         <div class="gp-pcard-footer">
-                            <a href="product-detail.html?product=nylon-black" class="gp-btn gp-btn-pcard-quote" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Specs &amp; Quote</span>
-                            </a>
-                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="Nylon Black Granules TDS">Fast RFQ</a>
+                            <button type="button" class="gp-btn gp-btn-pcard-quote gp-rfq-modal-trigger" data-product="Nylon 6 & 66 (PA6/PA66) Pellets">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                <span>Get Best Price</span>
+                            </button>
+                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="Nylon Pellets TDS">View TDS</a>
                         </div>
                     </div>
                 </article>
 
-                <!-- 11. Nylon White Granules -->
-                <article class="gp-plastin-product-card" data-category="nylon">
-                    <div class="gp-pcard-badge" style="background: #2563eb; color: #fff;">Natural PA6</div>
+                <!-- 7. PVC Compounds (Rigid & Flexible) -->
+                <article class="gp-plastin-product-card" data-category="pvc">
+                    <div class="gp-pcard-badge">Compounded</div>
                     <div class="gp-pcard-media">
-                        <img src="./assets/images/granules-natural-white.jpg" alt="Nylon White Granules" loading="lazy">
+                        <img src="./assets/images/granules-clear-transparent.jpg" alt="PVC Compounds Rigid & Flexible" loading="lazy">
                         <div class="gp-pcard-overlay-actions">
-                            <a href="product-detail.html?product=nylon-white" class="gp-pcard-quickview-btn" style="text-decoration: none;">
+                            <button type="button" class="gp-pcard-quickview-btn" data-prod-id="7">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Details</span>
-                            </a>
+                                <span>Quick View</span>
+                            </button>
                         </div>
                     </div>
                     <div class="gp-pcard-body">
-                        <div class="gp-pcard-cat">Virgin Polyamide 6 (PA6 Natural / White)</div>
+                        <div class="gp-pcard-cat">Polyvinyl Chloride Compounds</div>
                         <h3 class="gp-pcard-title">
-                            <a href="product-detail.html?product=nylon-white">Nylon White Granules</a>
+                            <a href="#contact" class="gp-rfq-modal-trigger" data-product="PVC Compounds (Rigid & Flexible)">PVC Compounds (Wire, Cable &amp; Moulding)</a>
                         </h3>
-                        <p class="gp-pcard-desc">Virgin and high-grade natural Nylon 6 / 66 granules with exceptional tensile toughness, fatigue resistance, and chemical resistanc...</p>
+                        <p class="gp-pcard-desc">Plasticized and rigid PVC granules with lead-free non-toxic stabilizer options, high electrical insulation, and flame retardance.</p>
                         
                         <div class="gp-pcard-specs-table">
                             <div class="gp-spec-row">
-                                <span class="gp-spec-name">Melt Flow / Viscosity:</span>
-                                <span class="gp-spec-val">Medium Viscosity</span>
+                                <span class="gp-spec-name">Hardness:</span>
+                                <span class="gp-spec-val">Shore A 55 – 95 / Shore D 75</span>
                             </div>
                             <div class="gp-spec-row">
-                                <span class="gp-spec-name">Density:</span>
-                                <span class="gp-spec-val">1.13 g/cm³ (ASTM D792)</span>
+                                <span class="gp-spec-name">Volume Resistivity:</span>
+                                <span class="gp-spec-val">> 10¹³ Ω·cm</span>
                             </div>
                             <div class="gp-spec-row">
-                                <span class="gp-spec-name">Tensile Strength:</span>
-                                <span class="gp-spec-val">82 MPa (ASTM D638)</span>
+                                <span class="gp-spec-name">Oxygen Index (LOI):</span>
+                                <span class="gp-spec-val">> 30%</span>
                             </div>
                             <div class="gp-spec-row">
                                 <span class="gp-spec-name">Applications:</span>
-                                <span class="gp-spec-val">Monofilament, Zip Ties & Industrial</span>
+                                <span class="gp-spec-val">Wires, Cables, Gaskets, Shoe Soles</span>
                             </div>
                         </div>
 
                         <div class="gp-pcard-footer">
-                            <a href="product-detail.html?product=nylon-white" class="gp-btn gp-btn-pcard-quote" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Specs &amp; Quote</span>
-                            </a>
-                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="Nylon White Granules TDS">Fast RFQ</a>
+                            <button type="button" class="gp-btn gp-btn-pcard-quote gp-rfq-modal-trigger" data-product="PVC Compounds (Rigid & Flexible)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                <span>Get Best Price</span>
+                            </button>
+                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="PVC Compounds TDS">View TDS</a>
                         </div>
                     </div>
                 </article>
 
-                <!-- 12. ABS Black Granules -->
-                <article class="gp-plastin-product-card" data-category="abs">
-                    <div class="gp-pcard-badge" style="background: #0f172a; color: #fff;">Engineering Grade</div>
+                <!-- 8. Color & Additive Masterbatches -->
+                <article class="gp-plastin-product-card" data-category="pvc">
+                    <div class="gp-pcard-badge gp-badge-accent">Masterbatch</div>
                     <div class="gp-pcard-media">
-                        <img src="./assets/images/granules-ppcp-black.jpg" alt="ABS Black Granules" loading="lazy">
+                        <img src="./assets/images/granules-masterbatch-red.jpg" alt="Color & Additive Masterbatches" loading="lazy">
                         <div class="gp-pcard-overlay-actions">
-                            <a href="product-detail.html?product=abs-black" class="gp-pcard-quickview-btn" style="text-decoration: none;">
+                            <button type="button" class="gp-pcard-quickview-btn" data-prod-id="8">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Details</span>
-                            </a>
+                                <span>Quick View</span>
+                            </button>
                         </div>
                     </div>
                     <div class="gp-pcard-body">
-                        <div class="gp-pcard-cat">High-Impact Acrylonitrile Butadiene Styrene (ABS)</div>
+                        <div class="gp-pcard-cat">Colorants &amp; Functional Additives</div>
                         <h3 class="gp-pcard-title">
-                            <a href="product-detail.html?product=abs-black">ABS Black Granules</a>
+                            <a href="#contact" class="gp-rfq-modal-trigger" data-product="Color & Additive Masterbatches">Color, White, Black &amp; UV Masterbatches</a>
                         </h3>
-                        <p class="gp-pcard-desc">Premium engineering-grade ABS Black Pellets formulated with deep furnace carbon black dispersion. Delivers uniform jet-black color...</p>
+                        <p class="gp-pcard-desc">High pigment dispersion masterbatches for precise shade matching, UV stabilization, anti-static properties, and optical brightness.</p>
                         
                         <div class="gp-pcard-specs-table">
                             <div class="gp-spec-row">
-                                <span class="gp-spec-name">Melt Flow / Viscosity:</span>
-                                <span class="gp-spec-val">18 – 24 g/10min</span>
+                                <span class="gp-spec-name">Pigment Loading:</span>
+                                <span class="gp-spec-val">30% – 70% Dispersion</span>
                             </div>
                             <div class="gp-spec-row">
-                                <span class="gp-spec-name">Density:</span>
-                                <span class="gp-spec-val">1.05 g/cm³ (ASTM D792)</span>
+                                <span class="gp-spec-name">Carrier Resin:</span>
+                                <span class="gp-spec-val">PP, PE, PS, Universal Carrier</span>
                             </div>
                             <div class="gp-spec-row">
-                                <span class="gp-spec-name">Tensile Strength:</span>
-                                <span class="gp-spec-val">48 MPa (ASTM D638)</span>
+                                <span class="gp-spec-name">Dosage Ratio:</span>
+                                <span class="gp-spec-val">1% – 3%</span>
                             </div>
                             <div class="gp-spec-row">
                                 <span class="gp-spec-name">Applications:</span>
-                                <span class="gp-spec-val">Automotive Trims & Helmets</span>
+                                <span class="gp-spec-val">Moulding, Films, Extrusion Pipes</span>
                             </div>
                         </div>
 
                         <div class="gp-pcard-footer">
-                            <a href="product-detail.html?product=abs-black" class="gp-btn gp-btn-pcard-quote" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Specs &amp; Quote</span>
-                            </a>
-                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="ABS Black Granules TDS">Fast RFQ</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 13. ABS FR Plastic Granules -->
-                <article class="gp-plastin-product-card" data-category="abs">
-                    <div class="gp-pcard-badge" style="background: #ea580c; color: #fff;">Flame Retardant V0</div>
-                    <div class="gp-pcard-media">
-                        <img src="./assets/images/granules-abs-fr.jpg" alt="ABS FR Plastic Granules" loading="lazy">
-                        <div class="gp-pcard-overlay-actions">
-                            <a href="product-detail.html?product=abs-fr-granules" class="gp-pcard-quickview-btn" style="text-decoration: none;">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Details</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="gp-pcard-body">
-                        <div class="gp-pcard-cat">Flame Retardant ABS (UL94 V-0 Rated)</div>
-                        <h3 class="gp-pcard-title">
-                            <a href="product-detail.html?product=abs-fr-granules">ABS FR Plastic Granules</a>
-                        </h3>
-                        <p class="gp-pcard-desc">Halogen-free and UL94 V-0 certified Flame Retardant ABS granules engineered for critical electrical and electronics enclosures. Se...</p>
-                        
-                        <div class="gp-pcard-specs-table">
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Melt Flow / Viscosity:</span>
-                                <span class="gp-spec-val">14 – 20 g/10min</span>
-                            </div>
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Density:</span>
-                                <span class="gp-spec-val">1.18 – 1.20 g/cm³ (ASTM D792)</span>
-                            </div>
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Tensile Strength:</span>
-                                <span class="gp-spec-val">44 MPa (ASTM D638)</span>
-                            </div>
-                            <div class="gp-spec-row">
-                                <span class="gp-spec-name">Applications:</span>
-                                <span class="gp-spec-val">Switchgear, Meter Boxes & EV Chargers</span>
-                            </div>
-                        </div>
-
-                        <div class="gp-pcard-footer">
-                            <a href="product-detail.html?product=abs-fr-granules" class="gp-btn gp-btn-pcard-quote" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                                <span>View Specs &amp; Quote</span>
-                            </a>
-                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="ABS FR Plastic Granules TDS">Fast RFQ</a>
+                            <button type="button" class="gp-btn gp-btn-pcard-quote gp-rfq-modal-trigger" data-product="Color & Additive Masterbatches">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                <span>Get Best Price</span>
+                            </button>
+                            <a href="#contact" class="gp-btn-tds-link gp-rfq-modal-trigger" data-product="Masterbatches TDS">View TDS</a>
                         </div>
                     </div>
                 </article>
@@ -1115,8 +872,9 @@
 
     </div><!-- #content -->
 
-    <!-- Industrial CTA Banner before footer -->
+        <!-- Industrial CTA Banner before footer -->
     <section class="gp-cta-strip">
+
         <div class="gp-container">
             <div class="gp-cta-strip-card">
                 <div class="gp-cta-strip-text">
@@ -1257,7 +1015,7 @@
             </div>
         </div>
     </footer>
-
+    
     <!-- Floating WhatsApp Widget (matching Jyoti Joinchat) -->
         <div class="gp-whatsapp-widget" id="gp-whatsapp-widget" style="position: fixed !important; bottom: 30px !important; right: 30px !important; left: auto !important; z-index: 99999 !important;">
         <!-- Chat Popup Box -->
@@ -1277,7 +1035,7 @@
                 <div class="gp-wa-msg-bubble">
                     <p>Hello 👋 How can we help you today?</p>
                     <p class="gp-wa-sub">Ask about today’s rates for PP Granules, HDPE Dana, ABS Engineering Pellets, or Masterbatches.</p>
-                    <span class="gp-wa-time">13:31</span>
+                    <span class="gp-wa-time">10:10</span>
                 </div>
             </div>
             <div class="gp-wa-footer">
@@ -1352,6 +1110,90 @@
             </form>
         </div>
         <div class="gp-modal-backdrop" id="gp-rfq-modal-backdrop"></div>
+    </div>
+
+    <!-- Global Realistic Certificate Lightbox Modal (#gp-cert-modal) -->
+    <div class="gp-cert-modal-backdrop" id="gp-cert-modal" role="dialog" aria-modal="true" aria-labelledby="gp-cert-modal-code" style="display: none;">
+        <div class="gp-cert-modal-dialog">
+            <button type="button" class="gp-cert-modal-close" id="gp-cert-modal-close" aria-label="Close Certificate">✕</button>
+
+            <div class="gp-cert-frame">
+                <div class="gp-cert-frame-inner">
+                    <div class="gp-cert-modal-header">
+                        <div class="gp-cert-guilloche">
+                            <svg width="48" height="48" viewBox="0 0 100 100" fill="none" stroke="#0097db" stroke-width="2">
+                                <circle cx="50" cy="50" r="45" stroke-dasharray="3 3"/>
+                                <circle cx="50" cy="50" r="38"/>
+                                <polygon points="50,15 62,38 85,38 67,52 73,75 50,62 27,75 33,52 15,38 38,38" fill="rgba(0, 151, 219, 0.1)"/>
+                            </svg>
+                        </div>
+                        <div class="gp-cert-modal-titles">
+                            <span class="gp-cert-super-title">CERTIFICATE OF COMPLIANCE &amp; QUALITY REGISTRATION</span>
+                            <h2 class="gp-cert-main-title" id="gp-cert-modal-code">ISO 9001:2015</h2>
+                            <p class="gp-cert-accreditor-tag" id="gp-cert-modal-title">Quality Management System</p>
+                        </div>
+                    </div>
+
+                    <div class="gp-cert-certified-block">
+                        <span class="gp-cert-certifies-text">This is to officially certify that the manufacturing, testing, and compounding operations of:</span>
+                        <h3 class="gp-cert-recipient-name">SRS POLYMER</h3>
+                        <p class="gp-cert-recipient-div">Shri Ram Sharnam Overseas • Green Polytech</p>
+                        <p class="gp-cert-facility-address">Plot No. 42, Sector 8, IMT Manesar, Gurugram, Haryana - 122050</p>
+                    </div>
+
+                    <div class="gp-cert-scope-box">
+                        <strong class="gp-cert-scope-title">Certified Scope of Operations:</strong>
+                        <p class="gp-cert-scope-text" id="gp-cert-modal-scope">
+                            Manufacture, compounding, laboratory batch-testing, and supply of virgin and reprocessed Polymer Granules (PP, HDPE, ABS, PVC) and specialized additive masterbatches for industrial moulding applications.
+                        </p>
+                    </div>
+
+                    <div class="gp-cert-verification-strip">
+                        <div class="gp-cert-reg-item">
+                            <span>Registration / Certificate No:</span>
+                            <strong id="gp-cert-modal-certno">QMS/SRS/2024/9081</strong>
+                        </div>
+                        <div class="gp-cert-reg-item">
+                            <span>Current Validity Through:</span>
+                            <strong id="gp-cert-modal-validity">Valid through Dec 2027</strong>
+                        </div>
+                        <div class="gp-cert-reg-item">
+                            <span>Accredited Registrar / Body:</span>
+                            <strong id="gp-cert-modal-body" class="gp-verified-text">TUV SUD / IAF Accredited</strong>
+                        </div>
+                    </div>
+
+                    <div class="gp-cert-footer-auth">
+                        <div class="gp-cert-seal-gold">
+                            <div class="gp-gold-seal-inner">
+                                <span>OFFICIAL</span>
+                                <strong>SEAL</strong>
+                                <span>ACCREDITED</span>
+                            </div>
+                        </div>
+                        <div class="gp-cert-qr-wrap">
+                            <div class="gp-cert-qr-box">
+                                <svg width="54" height="54" viewBox="0 0 24 24" fill="#0b2545">
+                                    <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 0h4v2h-4v-2zm-4 0h2v4h-2v-4zm4 4h4v2h-4v-2zm-2-2h2v2h-2v-2zm-2 2h2v2h-2v-2z"/>
+                                </svg>
+                            </div>
+                            <span class="gp-qr-caption">Scan for COA Verification</span>
+                        </div>
+                        <div class="gp-cert-signature">
+                            <div class="gp-signature-line">SRS Polymer Quality Directorate</div>
+                            <span class="gp-sig-label">Head of Quality Assurance &amp;amp; Technical Testing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gp-cert-modal-actions">
+                <a href="#contact" class="gp-btn gp-btn-primary gp-cert-modal-quote gp-rfq-modal-trigger" id="gp-cert-modal-req-btn" data-product="Official Certificate Copy">
+                    <span>Request Official Certificate Copy / COA</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </div>
     </div>
 
 </div><!-- #page -->

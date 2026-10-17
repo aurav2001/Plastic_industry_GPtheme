@@ -289,6 +289,90 @@ $wa_text   = get_theme_mod( 'gp_whatsapp_text', 'Hi SRS Polymer! I need price an
         <div class="gp-modal-backdrop" id="gp-rfq-modal-backdrop"></div>
     </div>
 
+    <!-- Global Realistic Certificate Lightbox Modal (#gp-cert-modal) -->
+    <div class="gp-cert-modal-backdrop" id="gp-cert-modal" role="dialog" aria-modal="true" aria-labelledby="gp-cert-modal-code" style="display: none;">
+        <div class="gp-cert-modal-dialog">
+            <button type="button" class="gp-cert-modal-close" id="gp-cert-modal-close" aria-label="<?php esc_attr_e( 'Close Certificate', 'gp-theme' ); ?>">✕</button>
+
+            <div class="gp-cert-frame">
+                <div class="gp-cert-frame-inner">
+                    <div class="gp-cert-modal-header">
+                        <div class="gp-cert-guilloche">
+                            <svg width="48" height="48" viewBox="0 0 100 100" fill="none" stroke="#0097db" stroke-width="2">
+                                <circle cx="50" cy="50" r="45" stroke-dasharray="3 3"/>
+                                <circle cx="50" cy="50" r="38"/>
+                                <polygon points="50,15 62,38 85,38 67,52 73,75 50,62 27,75 33,52 15,38 38,38" fill="rgba(0, 151, 219, 0.1)"/>
+                            </svg>
+                        </div>
+                        <div class="gp-cert-modal-titles">
+                            <span class="gp-cert-super-title"><?php esc_html_e( 'CERTIFICATE OF COMPLIANCE & QUALITY REGISTRATION', 'gp-theme' ); ?></span>
+                            <h2 class="gp-cert-main-title" id="gp-cert-modal-code">ISO 9001:2015</h2>
+                            <p class="gp-cert-accreditor-tag" id="gp-cert-modal-title">Quality Management System</p>
+                        </div>
+                    </div>
+
+                    <div class="gp-cert-certified-block">
+                        <span class="gp-cert-certifies-text"><?php esc_html_e( 'This is to officially certify that the manufacturing, testing, and compounding operations of:', 'gp-theme' ); ?></span>
+                        <h3 class="gp-cert-recipient-name"><?php echo esc_html( get_theme_mod( 'gp_company_name', 'SRS POLYMER' ) ); ?></h3>
+                        <p class="gp-cert-recipient-div"><?php echo esc_html( get_theme_mod( 'gp_company_division', 'SRS POLYMERS & DANA COMPOUNDING' ) ); ?></p>
+                        <p class="gp-cert-facility-address"><?php echo esc_html( get_theme_mod( 'gp_company_address', 'Plot No. 42, Sector 8, IMT Manesar, Gurugram, Haryana - 122051' ) ); ?></p>
+                    </div>
+
+                    <div class="gp-cert-scope-box">
+                        <strong class="gp-cert-scope-title"><?php esc_html_e( 'Certified Scope of Operations:', 'gp-theme' ); ?></strong>
+                        <p class="gp-cert-scope-text" id="gp-cert-modal-scope">
+                            Manufacture, compounding, laboratory batch-testing, and supply of virgin and reprocessed Polymer Granules (PP, HDPE, ABS, PVC) and specialized additive masterbatches for industrial moulding applications.
+                        </p>
+                    </div>
+
+                    <div class="gp-cert-verification-strip">
+                        <div class="gp-cert-reg-item">
+                            <span><?php esc_html_e( 'Registration / Certificate No:', 'gp-theme' ); ?></span>
+                            <strong id="gp-cert-modal-certno">QMS/SRS/2024/9081</strong>
+                        </div>
+                        <div class="gp-cert-reg-item">
+                            <span><?php esc_html_e( 'Current Validity Through:', 'gp-theme' ); ?></span>
+                            <strong id="gp-cert-modal-validity">Valid through Dec 2027</strong>
+                        </div>
+                        <div class="gp-cert-reg-item">
+                            <span><?php esc_html_e( 'Accredited Registrar / Body:', 'gp-theme' ); ?></span>
+                            <strong id="gp-cert-modal-body" class="gp-verified-text">TUV SUD / IAF Accredited</strong>
+                        </div>
+                    </div>
+
+                    <div class="gp-cert-footer-auth">
+                        <div class="gp-cert-seal-gold">
+                            <div class="gp-gold-seal-inner">
+                                <span>OFFICIAL</span>
+                                <strong>SEAL</strong>
+                                <span>ACCREDITED</span>
+                            </div>
+                        </div>
+                        <div class="gp-cert-qr-wrap">
+                            <div class="gp-cert-qr-box">
+                                <svg width="54" height="54" viewBox="0 0 24 24" fill="#0b2545">
+                                    <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 0h4v2h-4v-2zm-4 0h2v4h-2v-4zm4 4h4v2h-4v-2zm-2-2h2v2h-2v-2zm-2 2h2v2h-2v-2z"/>
+                                </svg>
+                            </div>
+                            <span class="gp-qr-caption"><?php esc_html_e( 'Scan for COA Verification', 'gp-theme' ); ?></span>
+                        </div>
+                        <div class="gp-cert-signature">
+                            <div class="gp-signature-line">SRS Polymer Quality Directorate</div>
+                            <span class="gp-sig-label"><?php esc_html_e( 'Head of Quality Assurance &amp; Technical Testing', 'gp-theme' ); ?></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gp-cert-modal-actions">
+                <a href="#contact" class="gp-btn gp-btn-primary gp-cert-modal-quote gp-rfq-modal-trigger" id="gp-cert-modal-req-btn" data-product="Official Certificate Copy">
+                    <span><?php esc_html_e( 'Request Official Certificate Copy / COA', 'gp-theme' ); ?></span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

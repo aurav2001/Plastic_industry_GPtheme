@@ -23,11 +23,128 @@ if ( ! defined( 'ABSPATH' ) ) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Rajdhani:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <?php wp_head(); ?>
     <style id="gp-critical-layout-override">
-        html {
+        html:not(.wp-toolbar) {
             width: 100% !important;
             margin: 0 !important;
             padding: 0 !important;
             background: #ffffff !important;
+        }
+        html.wp-toolbar {
+            margin-top: 32px !important;
+            background: #ffffff !important;
+        }
+        @media screen and (max-width: 782px) {
+            html.wp-toolbar {
+                margin-top: 46px !important;
+            }
+        }
+        /* Lock WordPress Admin Bar firmly to the top of the viewport */
+        body.admin-bar #wpadminbar {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
+            z-index: 999999 !important;
+        }
+        /* Hide WordPress logo dropdown menu in admin bar so it never blocks the theme header or logo */
+        body.admin-bar #wpadminbar #wp-admin-bar-wp-logo {
+            display: none !important;
+        }
+        body.admin-bar .gp-clean-header,
+        body.admin-bar #masthead {
+            top: 32px !important;
+        }
+        @media screen and (max-width: 782px) {
+            body.admin-bar .gp-clean-header,
+            body.admin-bar #masthead {
+                top: 46px !important;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            body.admin-bar #wpadminbar {
+                position: fixed !important;
+                top: 0 !important;
+            }
+            body.admin-bar .gp-clean-header,
+            body.admin-bar #masthead {
+                top: 46px !important;
+            }
+        }
+        @media (min-width: 769px) {
+            .gp-hero-slider-section {
+                height: calc(100vh - 110px) !important;
+                min-height: 500px !important;
+                max-height: 820px !important;
+            }
+            .gp-hero-slider {
+                height: 100% !important;
+                min-height: 100% !important;
+            }
+            .gp-hero-slider-section .gp-hero-slide {
+                height: 100% !important;
+                min-height: 100% !important;
+                padding: 10px 0 52px !important;
+            }
+            .gp-hero-slider-pagination {
+                bottom: 12px !important;
+            }
+        }
+        @media (max-height: 768px) and (min-width: 769px) {
+            .gp-hero-slider-section {
+                height: calc(100vh - 105px) !important;
+                min-height: 480px !important;
+            }
+            .gp-hero-slider-section .gp-plastin-hero-title {
+                font-size: clamp(1.6rem, 2.3vw, 2.2rem) !important;
+                margin-bottom: 8px !important;
+            }
+            .gp-hero-slider-section .gp-plastin-hero-lead {
+                font-size: 0.85rem !important;
+                line-height: 1.45 !important;
+                margin-bottom: 10px !important;
+            }
+            .gp-hero-spec-chips {
+                margin-bottom: 12px !important;
+            }
+            .gp-hero-slider-section .gp-hero-slide {
+                padding: 5px 0 44px !important;
+            }
+            .gp-hero-slider-pagination {
+                bottom: 8px !important;
+            }
+        }
+        /* Mega Dropdown for Products Menu (All 13 Polymer Grades) */
+        .gp-nav-menu > li.menu-item-has-children {
+            position: relative;
+        }
+        .gp-clean-header .main-navigation .sub-menu.gp-products-mega-menu,
+        #site-navigation .sub-menu.gp-products-mega-menu,
+        .gp-nav-menu .sub-menu.gp-products-mega-menu {
+            position: absolute !important;
+            top: 100% !important;
+            left: -40px !important;
+            width: 630px !important;
+            max-width: 95vw !important;
+            padding: 16px 20px 14px !important;
+            border-radius: 14px !important;
+            border-top: 3.5px solid #0097db !important;
+            box-shadow: 0 22px 50px -8px rgba(11, 37, 69, 0.22), 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+            background: #ffffff !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(12px) !important;
+            transition: all 0.24s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            z-index: 9999 !important;
+            pointer-events: none;
+        }
+        #site-navigation li.menu-item-has-children:hover > .sub-menu.gp-products-mega-menu,
+        .gp-clean-header .main-navigation li:hover > .sub-menu.gp-products-mega-menu,
+        .gp-nav-menu > li.menu-item-has-children:hover > .sub-menu.gp-products-mega-menu {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+            pointer-events: auto !important;
         }
         body {
             width: 100% !important;
@@ -37,7 +154,6 @@ if ( ! defined( 'ABSPATH' ) ) {
             border: none !important;
             box-shadow: none !important;
             background: #ffffff !important;
-            overflow-x: hidden;
         }
         #page, .site-wrapper {
             width: 100% !important;
@@ -221,11 +337,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             <!-- Main Navigation Menu (Single Row, Crisp) -->
             <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Main Menu', 'gp-theme' ); ?>">
+                <?php
+                if ( has_nav_menu( 'primary' ) ) :
+                    wp_nav_menu( array(
+                        'theme_location' => 'primary',
+                        'menu_id'        => 'primary-menu',
+                        'menu_class'     => 'gp-nav-menu',
+                        'container'      => false,
+                        'walker'         => class_exists( 'GP_Mega_Menu_Walker' ) ? new GP_Mega_Menu_Walker() : '',
+                    ) );
+                else :
+                ?>
                 <ul id="primary-menu" class="gp-nav-menu">
                     <li class="menu-item <?php echo is_front_page() ? 'current-menu-item' : ''; ?>">
                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'gp-theme' ); ?></a>
                     </li>
-                    <li class="menu-item menu-item-has-children <?php echo is_page( 'products' ) || is_page_template( 'page-templates/template-products.php' ) ? 'current-menu-item' : ''; ?>">
+                    <li class="menu-item menu-item-has-children <?php echo function_exists( 'gp_is_active_nav_item' ) && gp_is_active_nav_item( 'products', 'page-templates/template-products.php' ) ? 'current-menu-item' : ''; ?>">
                         <a href="<?php echo esc_url( home_url( '/products/' ) ); ?>">
                             <?php esc_html_e( 'Products', 'gp-theme' ); ?> <svg class="gp-nav-chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
                         </a>
@@ -269,22 +396,23 @@ if ( ! defined( 'ABSPATH' ) ) {
                             </div>
                         </div>
                     </li>
-                    <li class="menu-item <?php echo is_page( 'about' ) || is_page_template( 'page-templates/template-about.php' ) ? 'current-menu-item' : ''; ?>">
+                    <li class="menu-item <?php echo function_exists( 'gp_is_active_nav_item' ) && ( gp_is_active_nav_item( 'about', 'page-templates/template-about.php' ) || gp_is_active_nav_item( 'about-us', 'page-templates/template-about.php' ) ) ? 'current-menu-item' : ''; ?>">
                         <a href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><?php esc_html_e( 'About Mill', 'gp-theme' ); ?></a>
                     </li>
-                    <li class="menu-item <?php echo is_page( 'testing' ) || is_page_template( 'page-templates/template-testing.php' ) ? 'current-menu-item' : ''; ?>">
+                    <li class="menu-item <?php echo function_exists( 'gp_is_active_nav_item' ) && gp_is_active_nav_item( 'testing', 'page-templates/template-testing.php' ) ? 'current-menu-item' : ''; ?>">
                         <a href="<?php echo esc_url( home_url( '/testing/' ) ); ?>"><?php esc_html_e( 'ASTM Lab', 'gp-theme' ); ?></a>
                     </li>
-                    <li class="menu-item <?php echo is_page( 'certificates' ) || is_page_template( 'page-templates/template-certificates.php' ) ? 'current-menu-item' : ''; ?>">
+                    <li class="menu-item <?php echo function_exists( 'gp_is_active_nav_item' ) && ( gp_is_active_nav_item( 'certificates', 'page-templates/template-certificates.php' ) || gp_is_active_nav_item( 'certifications', 'page-templates/template-certificates.php' ) ) ? 'current-menu-item' : ''; ?>">
                         <a href="<?php echo esc_url( home_url( '/certificates/' ) ); ?>"><?php esc_html_e( 'Certifications', 'gp-theme' ); ?></a>
                     </li>
-                    <li class="menu-item <?php echo is_page( 'industries' ) || is_page_template( 'page-templates/template-industries.php' ) ? 'current-menu-item' : ''; ?>">
+                    <li class="menu-item <?php echo function_exists( 'gp_is_active_nav_item' ) && gp_is_active_nav_item( 'industries', 'page-templates/template-industries.php' ) ? 'current-menu-item' : ''; ?>">
                         <a href="<?php echo esc_url( home_url( '/industries/' ) ); ?>"><?php esc_html_e( 'Industries', 'gp-theme' ); ?></a>
                     </li>
-                    <li class="menu-item <?php echo is_page( 'contact' ) || is_page_template( 'page-templates/template-contact.php' ) ? 'current-menu-item' : ''; ?>">
+                    <li class="menu-item <?php echo function_exists( 'gp_is_active_nav_item' ) && gp_is_active_nav_item( 'contact', 'page-templates/template-contact.php' ) ? 'current-menu-item' : ''; ?>">
                         <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Contact', 'gp-theme' ); ?></a>
                     </li>
                 </ul>
+                <?php endif; ?>
             </nav>
 
             <!-- Header Right CTAs (Phone & RFQ Button) -->
