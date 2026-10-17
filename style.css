@@ -1407,4 +1407,227 @@ body.admin-bar #masthead {
     border-color: #005f92 !important;
 }
 
+/* ==========================================================================
+   REINFORCED RFQ MODAL DIALOG
+   ========================================================================== */
+.gp-modal-dialog {
+    max-width: 610px !important;
+    padding: 24px 28px 22px !important;
+    border-radius: 18px !important;
+    border-top: 4px solid #0097db !important;
+    box-shadow: 0 25px 60px -15px rgba(11, 37, 69, 0.4), 0 0 0 1px rgba(11, 37, 69, 0.08) !important;
+    max-height: calc(100vh - 32px) !important;
+    overflow-y: auto !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: #cbd5e1 transparent !important;
+}
+
+.gp-modal-dialog::-webkit-scrollbar {
+    width: 5px !important;
+}
+.gp-modal-dialog::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+.gp-modal-dialog::-webkit-scrollbar-thumb {
+    background: #cbd5e1 !important;
+    border-radius: 999px !important;
+}
+
+.gp-modal-close {
+    position: absolute !important;
+    top: 16px !important;
+    right: 18px !important;
+    width: 34px !important;
+    height: 34px !important;
+    background: #f1f5f9 !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 50% !important;
+    color: #475569 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 20 !important;
+    padding: 0 !important;
+}
+
+.gp-modal-close:hover {
+    background: #fee2e2 !important;
+    border-color: #fca5a5 !important;
+    color: #dc2626 !important;
+    transform: rotate(90deg) !important;
+}
+
+.gp-modal-header {
+    position: relative !important;
+    margin-bottom: 16px !important;
+    padding-right: 48px !important; /* Zero overlap with close button */
+}
+
+.gp-rfq-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    background: rgba(0, 151, 219, 0.08) !important;
+    border: 1px solid rgba(0, 151, 219, 0.25) !important;
+    color: #0077b6 !important;
+    font-size: 0.7rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    padding: 3px 9px !important;
+    border-radius: 999px !important;
+    margin-bottom: 6px !important;
+}
+
+.gp-rfq-dot {
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 50% !important;
+    background: #0097db !important;
+    box-shadow: 0 0 6px rgba(0, 151, 219, 0.7) !important;
+    display: inline-block !important;
+}
+
+.gp-modal-header h3 {
+    font-size: 1.45rem !important;
+    font-weight: 800 !important;
+    color: #0b2545 !important;
+    margin: 0 0 4px 0 !important;
+    line-height: 1.25 !important;
+}
+
+.gp-modal-header p {
+    font-size: 0.85rem !important;
+    color: #64748b !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
+}
+
+.gp-modal-form .gp-form-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    margin-bottom: 11px !important;
+}
+
+.gp-modal-form .gp-form-group {
+    margin-bottom: 11px !important;
+}
+
+.gp-modal-form .gp-form-group-msg {
+    margin-bottom: 13px !important;
+}
+
+.gp-modal-form .gp-form-group label {
+    display: block !important;
+    font-size: 0.74rem !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    margin-bottom: 4px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+}
+
+.gp-modal-form input,
+.gp-modal-form select,
+.gp-modal-form textarea {
+    width: 100% !important;
+    padding: 9px 12px !important;
+    border: 1.5px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    font-family: inherit !important;
+    font-size: 0.88rem !important;
+    color: #0f172a !important;
+    background-color: #f8fafc !important;
+    box-shadow: inset 0 1px 2px rgba(11, 37, 69, 0.03) !important;
+    box-sizing: border-box !important;
+}
+
+.gp-modal-form input:focus,
+.gp-modal-form textarea:focus {
+    outline: none !important;
+    border-color: #0097db !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 0 0 3px rgba(0, 151, 219, 0.16) !important;
+    color: #0f172a !important;
+}
+
+.gp-modal-form textarea {
+    resize: none !important;
+    min-height: 52px !important;
+    line-height: 1.4 !important;
+}
+
+.gp-rfq-submit-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    padding: 11px 18px !important;
+    font-size: 0.92rem !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    background: linear-gradient(135deg, #0097db 0%, #0b2545 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 14px rgba(0, 151, 219, 0.35) !important;
+}
+
+.gp-rfq-submit-btn:hover {
+    background: linear-gradient(135deg, #0081bb 0%, #06192f 100%) !important;
+    box-shadow: 0 6px 18px rgba(0, 151, 219, 0.45) !important;
+    transform: translateY(-1px) !important;
+}
+
+.gp-rfq-footer-notes {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    margin-top: 10px !important;
+    padding-top: 8px !important;
+    border-top: 1px dashed #e2e8f0 !important;
+    font-size: 0.74rem !important;
+    color: #64748b !important;
+}
+
+.gp-rfq-note-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    font-weight: 600 !important;
+}
+
+.gp-rfq-wa-direct {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    color: #15803d !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+}
+
+@media (max-width: 640px) {
+    .gp-modal-dialog {
+        padding: 20px 18px 18px !important;
+        max-width: 95% !important;
+    }
+    .gp-modal-form .gp-form-row {
+        grid-template-columns: 1fr !important;
+        gap: 9px !important;
+        margin-bottom: 9px !important;
+    }
+    .gp-modal-header h3 {
+        font-size: 1.25rem !important;
+    }
+    .gp-rfq-footer-notes {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+    }
+}
+
 

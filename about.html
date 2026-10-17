@@ -1012,29 +1012,32 @@
     </button>
 
     <!-- Quick RFQ Modal Dialog -->
-    <div class="gp-modal" id="gp-rfq-modal" aria-hidden="true" role="dialog">
+    <div class="gp-modal" id="gp-rfq-modal" aria-hidden="true" role="dialog" aria-labelledby="gp-rfq-modal-title">
         <div class="gp-modal-dialog">
+            <button class="gp-modal-close" id="gp-rfq-modal-close" aria-label="Close">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
             <div class="gp-modal-header">
-                <h3>Request a Custom Quotation</h3>
-                <p>Direct line to our technical sales team for bulk supply &amp; OEM custom moulding.</p>
-                <button class="gp-modal-close" id="gp-rfq-modal-close" aria-label="Close">✕</button>
+                <div class="gp-rfq-badge"><span class="gp-rfq-dot"></span> B2B BULK RFQ DESK</div>
+                <h3 id="gp-rfq-modal-title">Request a Custom Quotation</h3>
+                <p>Direct line to our technical polymer sales team for bulk granules &amp; compounding.</p>
             </div>
             <form class="gp-modal-form gp-ajax-rfq-form">
                 <input type="hidden" name="action" value="gp_submit_contact">
                 <div class="gp-form-row">
                     <div class="gp-form-group">
                         <label>Full Name *</label>
-                        <input type="text" name="fullname" required placeholder="Example Name">
+                        <input type="text" name="fullname" required placeholder="e.g. Rajesh Sharma">
                     </div>
                     <div class="gp-form-group">
                         <label>Company Name</label>
-                        <input type="text" name="company" placeholder="ABC Chemicals Ltd">
+                        <input type="text" name="company" placeholder="e.g. Apex Polymer Moulding Ltd">
                     </div>
                 </div>
                 <div class="gp-form-row">
                     <div class="gp-form-group">
                         <label>Email Address *</label>
-                        <input type="email" name="email" required placeholder="example@example.com">
+                        <input type="email" name="email" required placeholder="rajesh@apexpolymers.com">
                     </div>
                     <div class="gp-form-group">
                         <label>Mobile / WhatsApp *</label>
@@ -1044,21 +1047,32 @@
                 <div class="gp-form-row">
                     <div class="gp-form-group">
                         <label>Product of Interest</label>
-                        <input type="text" name="product" id="gp-modal-product-field" placeholder="e.g. PP Granules / HDPE Dana (MFI 12)">
+                        <input type="text" name="product" id="gp-modal-product-field" placeholder="e.g. PPCP Impact Copolymer / ABS Black">
                     </div>
                     <div class="gp-form-group">
                         <label>Estimated Quantity</label>
-                        <input type="text" name="quantity" placeholder="e.g. 5,000 pcs / 10 Units">
+                        <input type="text" name="quantity" placeholder="e.g. 5 MT (5,000 kg) / 200 Bags">
                     </div>
                 </div>
-                <div class="gp-form-group">
+                <div class="gp-form-group gp-form-group-msg">
                     <label>Detailed Requirements / Specifications</label>
-                    <textarea name="message" rows="3" placeholder="Please specify UN certification needs, color, neck aperture, delivery timeline..."></textarea>
+                    <textarea name="message" rows="2" placeholder="e.g. Target MFI (8-14), required color/shade, application (Battery Box / Crate), delivery location..."></textarea>
                 </div>
                 <div class="gp-form-feedback"></div>
-                <button type="submit" class="gp-btn gp-btn-primary gp-btn-full gp-btn-submit">
-                    <span>Submit Request Now</span>
+                <button type="submit" class="gp-btn gp-btn-primary gp-btn-full gp-btn-submit gp-rfq-submit-btn">
+                    <span>Submit Request to Polymer Specialists</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </button>
+                <div class="gp-rfq-footer-notes">
+                    <span class="gp-rfq-note-item">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0097db" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        ISO 9001:2015 &amp; RoHS Certified Materials
+                    </span>
+                    <a href="https://wa.me/918591585497?text=Hi%20SRS%20Polymer,%20I%20need%20an%20urgent%20price%20quote%20for%20Plastic%20Granules." target="_blank" rel="noopener" class="gp-rfq-wa-direct">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        Direct WhatsApp Connect
+                    </a>
+                </div>
             </form>
         </div>
         <div class="gp-modal-backdrop" id="gp-rfq-modal-backdrop"></div>

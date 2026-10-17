@@ -2714,7 +2714,7 @@ ul, ol {
 }
 
 /* ==========================================================================
-   17. MODAL DIALOG (RFQ QUOTATION POPUP)
+   17. MODAL DIALOG (ENHANCED B2B RFQ QUOTATION POPUP)
    ========================================================================== */
 .gp-modal {
     position: fixed;
@@ -2722,82 +2722,20 @@ ul, ol {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 3000;
+    z-index: 99999;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 16px;
     opacity: 0;
     visibility: hidden;
-    transition: var(--gp-transition);
+    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
 }
 
 .gp-modal.open {
     opacity: 1;
     visibility: visible;
-}
-
-.gp-modal-dialog {
-    position: relative;
-    background: #ffffff;
-    width: 100%;
-    max-width: 620px;
-    border-radius: var(--gp-radius-lg);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    z-index: 10;
-    padding: 35px;
-    max-height: 90vh;
-    overflow-y: auto;
-    transform: scale(0.95);
-    transition: var(--gp-transition);
-}
-
-.gp-modal.open .gp-modal-dialog {
-    transform: scale(1);
-}
-
-.gp-modal-header {
-    position: relative;
-    margin-bottom: 24px;
-    padding-right: 30px;
-}
-
-.gp-modal-header h3 {
-    font-size: 1.8rem;
-    color: var(--gp-primary);
-    margin-bottom: 4px;
-}
-
-.gp-modal-header p {
-    font-size: 0.92rem;
-    color: var(--gp-text-muted);
-    margin-bottom: 0;
-}
-
-.gp-modal-close {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 36px;
-    height: 36px;
-    background: #f1f5f9;
-    border: 1.5px solid #cbd5e1;
-    border-radius: 50%;
-    font-size: 1.1rem;
-    color: #0b2545;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--gp-transition);
-    line-height: 1;
-}
-
-.gp-modal-close:hover {
-    background: #ef233c;
-    border-color: #ef233c;
-    color: #ffffff;
-    transform: rotate(90deg);
 }
 
 .gp-modal-backdrop {
@@ -2806,8 +2744,273 @@ ul, ol {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(7, 23, 43, 0.7);
-    backdrop-filter: blur(4px);
+    background: rgba(7, 23, 43, 0.78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.gp-modal-dialog {
+    position: relative;
+    background: #ffffff;
+    width: 100%;
+    max-width: 610px;
+    border-radius: 18px;
+    border-top: 4px solid #0097db;
+    box-shadow: 0 25px 60px -15px rgba(11, 37, 69, 0.4), 0 0 0 1px rgba(11, 37, 69, 0.08);
+    z-index: 10;
+    padding: 24px 28px 22px;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+    transform: scale(0.96) translateY(8px);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+    box-sizing: border-box;
+}
+
+.gp-modal-dialog::-webkit-scrollbar {
+    width: 5px;
+}
+.gp-modal-dialog::-webkit-scrollbar-track {
+    background: transparent;
+}
+.gp-modal-dialog::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 999px;
+}
+.gp-modal-dialog::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.gp-modal.open .gp-modal-dialog {
+    transform: scale(1) translateY(0);
+}
+
+/* Close button - Top right pinned, zero overlap with header text */
+.gp-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    width: 34px;
+    height: 34px;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+    color: #475569;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 20;
+    padding: 0;
+}
+
+.gp-modal-close:hover {
+    background: #fee2e2;
+    border-color: #fca5a5;
+    color: #dc2626;
+    transform: rotate(90deg);
+}
+
+/* Modal Header */
+.gp-modal-header {
+    position: relative;
+    margin-bottom: 16px;
+    padding-right: 48px; /* Guaranteed clearance for close button! */
+}
+
+.gp-rfq-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0, 151, 219, 0.08);
+    border: 1px solid rgba(0, 151, 219, 0.25);
+    color: #0077b6;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 999px;
+    margin-bottom: 6px;
+}
+
+.gp-rfq-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0097db;
+    box-shadow: 0 0 6px rgba(0, 151, 219, 0.7);
+    display: inline-block;
+}
+
+.gp-modal-header h3 {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #0b2545;
+    margin: 0 0 4px 0;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+}
+
+.gp-modal-header p {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Modal Form Fields - Compact, Sleek, High Contrast */
+.gp-modal-form .gp-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 11px;
+}
+
+.gp-modal-form .gp-form-group {
+    margin-bottom: 11px;
+}
+
+.gp-modal-form .gp-form-group-msg {
+    margin-bottom: 13px;
+}
+
+.gp-modal-form .gp-form-group label {
+    display: block;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.gp-modal-form input,
+.gp-modal-form select,
+.gp-modal-form textarea {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.88rem;
+    color: #0f172a;
+    background-color: #f8fafc;
+    box-shadow: inset 0 1px 2px rgba(11, 37, 69, 0.03);
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.gp-modal-form input::placeholder,
+.gp-modal-form textarea::placeholder {
+    color: #94a3b8;
+    font-weight: 400;
+    font-size: 0.85rem;
+}
+
+.gp-modal-form input:hover,
+.gp-modal-form textarea:hover {
+    border-color: #cbd5e1;
+    background-color: #ffffff;
+}
+
+.gp-modal-form input:focus,
+.gp-modal-form textarea:focus {
+    outline: none;
+    border-color: #0097db !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 0 0 3px rgba(0, 151, 219, 0.16) !important;
+    color: #0f172a !important;
+}
+
+.gp-modal-form textarea {
+    resize: none;
+    min-height: 52px;
+    line-height: 1.4;
+}
+
+.gp-rfq-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 11px 18px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #0097db 0%, #0b2545 100%);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 151, 219, 0.35);
+    transition: all 0.2s ease;
+}
+
+.gp-rfq-submit-btn:hover {
+    background: linear-gradient(135deg, #0081bb 0%, #06192f 100%);
+    box-shadow: 0 6px 18px rgba(0, 151, 219, 0.45);
+    transform: translateY(-1px);
+}
+
+.gp-rfq-submit-btn:active {
+    transform: translateY(1px);
+}
+
+.gp-rfq-footer-notes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed #e2e8f0;
+    font-size: 0.74rem;
+    color: #64748b;
+}
+
+.gp-rfq-note-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+}
+
+.gp-rfq-wa-direct {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #15803d;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.gp-rfq-wa-direct:hover {
+    color: #16a34a;
+    text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+    .gp-modal-dialog {
+        padding: 20px 18px 18px;
+        max-width: 95%;
+    }
+    .gp-modal-form .gp-form-row {
+        grid-template-columns: 1fr;
+        gap: 9px;
+        margin-bottom: 9px;
+    }
+    .gp-modal-header h3 {
+        font-size: 1.25rem;
+    }
+    .gp-rfq-footer-notes {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
 }
 
 /* ==========================================================================
